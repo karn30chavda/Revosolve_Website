@@ -1,0 +1,493 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue: #3451ff;
+  --primary-hover: #2a41cc;
+  --dark-navy: #0c1427;
+  --darkest: #050914;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --white: #ffffff;
+  --bg-light: #f8faff;
+  --font-inter: "Inter", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: #000; /* Matching the dark theme globally */
+  color: var(--white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header Styles - Fixed Glassmorphism */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: #000; /* Made opaque to hide particles */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background: #000; /* Kept opaque on scroll */
+  padding: 0.7rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  color: var(--white);
+  width: 24px;
+  height: 24px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
+.tagline {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+/* Teaser Section (The Blackhole/Planet Redesign) */
+.hero-teaser {
+  background-color: transparent;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px; /* Clears fixed navbar overlap */
+}
+
+/* --- Futuristic Orbital Design --- */
+.glow-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Central Energy Core */
+.glow-sphere {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #3451ff 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: core-pulse 4s infinite ease-in-out;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Rotating Orbital Rings */
+.crescent-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  max-width: 90vw;
+  max-height: 90vw;
+  border: 1px solid rgba(52, 81, 255, 0.3);
+  border-radius: 50%;
+  z-index: 2;
+  animation: ring-rotate 10s linear infinite;
+  bottom: auto;
+  left: auto;
+}
+
+.crescent-glow::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #3451ff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 15px #3451ff,
+    0 0 30px #3451ff;
+}
+
+/* Animations */
+@keyframes core-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.8;
+  }
+}
+
+@keyframes ring-rotate {
+  from {
+    transform: rotate(0deg) rotateX(65deg) rotateY(10deg);
+  }
+  to {
+    transform: rotate(360deg) rotateX(65deg) rotateY(10deg);
+  }
+}
+
+@keyframes scale-out-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.teaser-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+}
+
+.coming-soon {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 5vw, 2.8rem);
+  letter-spacing: 1.2rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  animation: scale-out-reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.coming-soon span {
+  display: inline-block;
+}
+
+.preparing-container {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  text-align: center; /* Centered for 2-line layout balance */
+}
+
+.preparing-text {
+  font-family: var(--font-inter);
+  font-weight: 900;
+  font-size: clamp(2rem, 8vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: scale-out-reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+.asterisk {
+  color: #ff3333;
+  font-weight: 700;
+  vertical-align: super; /* Ensure it stays strictly 'up' like a superscript */
+  font-size: 0.7em;
+  margin-left: 0.1rem;
+}
+
+.brand-name {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.6rem;
+  color: #3451ff;
+  margin-left: 0.6rem;
+  opacity: 0;
+  animation: scale-out-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  margin-bottom: 0.8rem;
+}
+
+.bottom-tagline {
+  margin-top: 1.5rem;
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  color: #ffffff;
+  text-transform: lowercase;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  opacity: 0;
+  animation: scale-out-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
+}
+
+.accent-text {
+  color: #3451ff;
+  font-weight: 600;
+}
+
+/* Background Particles Styles */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Changed to sit above body background but behind content blocks */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: #3451ff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-drift linear infinite;
+}
+
+/* Footer Styles - Refined for better density and visibility */
+.footer {
+  background-color: #0c1122;
+  color: #ffffff;
+  padding: 4rem 0 3rem; /* Reduced padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 10; /* Set above particles */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem; /* Reduced gap */
+  align-items: flex-end;
+}
+
+@media (min-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  margin-left: -15px; /* Shifting more to the left as requested */
+}
+
+.footer .brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.footer .sub-tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9); /* Increased opacity for visibility */
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* Reduced gap before contact */
+  max-width: 480px;
+}
+
+.contact-info {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem; /* Tighter spacing */
+}
+
+.contact-info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9); /* Increased visibility */
+  margin-bottom: 0;
+}
+
+.contact-info span {
+  color: rgba(255, 255, 255, 0.6); /* Slightly more visible label */
+  margin-right: 6px;
+}
+
+.contact-info a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.contact-info a:hover {
+  opacity: 1;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.7); /* Increased visibility */
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.legacy {
+  color: rgba(255, 255, 255, 0.4); /* Increased visibility */
+  font-size: 0.85rem;
+  margin-top: 0;
+}
+
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer .logo {
+    justify-content: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+
+  .footer-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .coming-soon {
+    font-size: 2.2rem;
+    letter-spacing: 0.6rem;
+  }
+
+  .brand-name {
+    font-size: 0.8rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .glow-container {
+    height: 400px;
+  }
+
+  .crescent-glow {
+    width: 300px;
+    height: 300px;
+  }
+
+  .header {
+    padding: 0.6rem 0;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  .tagline {
+    font-size: 0.65rem;
+  }
+
+  .logo-icon-container {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon {
+    font-size: 1.8rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .brand-name {
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .crescent-glow {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 360px) {
+  .coming-soon {
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+  }
+}
