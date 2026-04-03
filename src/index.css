@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Regular-iF6626350c83fdf.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Medium-iF6626350c78103.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Semibold-iF6626350c8d55c.otf') format('opentype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Bold-iF6626350c420cc.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Extrabold-iF6626350c4c856.otf') format('opentype');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Heavy-iF6626350c62afa.otf') format('opentype');
+  font-weight: 900;
+}
+
+@theme {
+  --color-bg-primary: #010218;
+  --color-nav-bg: rgba(1, 2, 24, 0.90);
+  --color-accent: #484cff;
+  --color-lavender: #D8B4FE;
+  --color-gold: #FBBF24;
+  --color-accent-hover: #3b5bdb;
+
+  --font-sans: "Blauer Nue", "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  @apply bg-bg-primary text-white antialiased min-h-screen font-sans;
+}
