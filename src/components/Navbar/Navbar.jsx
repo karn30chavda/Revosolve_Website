@@ -74,9 +74,9 @@ const Navbar = () => {
     <nav ref={navRef} className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[98%] h-20 px-6 rounded-2xl bg-bg-primary/95 border border-white/10 transition-all duration-300">
     
       {/* Logo on the left */}
-      <div className="flex items-center shrink-0">
+      <a href="/" className="flex items-center shrink-0 cursor-pointer">
         <img src="/navbar/Revosolve_logo.svg" alt="RevoSolve" className="h-12" />
-      </div>
+      </a>
 
       {/* Navigation Links and Connect Button grouped on the right */}
       <div className="flex items-center gap-10">
