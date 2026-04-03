@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-start m-0 p-0 font-sans pt-[193px] bg-bg-primary">
+    <section className="relative w-full  h-screen overflow-hidden flex flex-col items-center justify-center font-sans pt-32 pb-24 bg-bg-primary">
       {/* Background Video Container */}
       <div className="absolute inset-0 z-0">
         <video 
@@ -60,27 +60,27 @@ const Hero = () => {
         </div>
 
         {/* Heading Section */}
-        <div className="flex flex-col items-center justify-start shrink-0 relative mb-[15px]">
-          <div className="flex flex-col gap-[10px] items-center justify-start shrink-0 relative">
-            <div
-              className="text-center relative w-full sm:w-[934px] text-[32px] md:text-[54px] leading-[56px] 
+        <div className="flex flex-col items-center justify-start shrink-0 relative mb-[15px] w-full max-w-5xl mx-auto px-2">
+          <div className="flex flex-col gap-2 items-center justify-start shrink-0 relative w-full">
+            <h1
+              className="text-center relative w-full text-[clamp(2rem,4vw,3.375rem)] leading-[1.1] 
               bg-linear-[90.19deg,rgba(135,123,241,1)_0%,rgba(252,202,113,1)_100%] bg-clip-text text-transparent 
-              font-extrabold md:font-black tracking-[0.26px]"
+              font-extrabold md:font-black tracking-[0.26px] drop-shadow-sm"
             >
               Engineering Technology Systems
-            </div>
+            </h1>
             
-            <div className="text-[#ffffff] text-center relative w-full sm:w-[934px] text-[32px] md:text-[54px] 
-              leading-[56px] font-extrabold md:font-black tracking-[0.26px]">
+            <h2 className="text-[#ffffff] text-center relative w-full text-[clamp(2rem,4vw,3.375rem)] 
+              leading-[1.1] font-extrabold md:font-black tracking-[0.26px] drop-shadow-sm">
               for Governments, Finance, and Enterprise
-            </div>
+            </h2>
           </div>
 
-          <div className="text-[#fbfbff] text-center text-base md:text-lg font-normal relative w-full sm:w-[562px] opacity-60 leading-relaxed mt-[20px]">
+          <p className="text-[#fbfbff] text-center text-[clamp(1rem,1.5vw,1.125rem)] font-normal relative w-full max-w-[600px] opacity-70 leading-relaxed mt-6">
             Revosolve helps businesses transform ideas into scalable digital
             solutions using AI, cloud infrastructure and modern software
             engineering.
-          </div>
+          </p>
         </div>
 
         {/* CTA Buttons */}
