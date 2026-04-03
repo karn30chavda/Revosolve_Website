@@ -19,16 +19,14 @@ const Hero = () => {
         {/* Global Dark Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* Custom High-Fidelity Image Transition */}
-        <div className="absolute bottom-[-237px] left-0 right-0 w-full pointer-events-none z-1">
+        {/* Sharp Component Hider - Bottom Transition Bridge */}
+        <div className="absolute bottom-[-260px] left-0 right-0 w-full pointer-events-none z-50">
           <img 
             src="/hero_section/gradient.png" 
-            className="w-full h-auto object-cover translate-y-[2px]" 
-            alt="Section transition gradient" 
+            className="w-full h-auto object-cover scale-[1.05]" 
+            alt="" 
           />
         </div>
-
-
       </div>
 
       {/* Content Overlay - Strictly Tailwind Utility Classes and Precise Figma Spacing */}
