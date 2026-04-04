@@ -3,6 +3,8 @@ import Hero from "./components/Hero/Hero";
 import Marquee from "./components/Marquee/Marquee";
 import ProblemsWeSolve from "./components/ProblemsWeSolve/ProblemsWeSolve";
 import IntelligentSolutions from "./components/IntelligentSolutions/IntelligentSolutions";
+import CaseStudies from "./components/CaseStudies/CaseStudies";
+
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
             <Marquee />
             <ProblemsWeSolve />
             <IntelligentSolutions />
+            <CaseStudies />
 
           </div>
         </div>
