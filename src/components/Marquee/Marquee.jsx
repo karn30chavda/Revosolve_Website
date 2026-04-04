@@ -15,22 +15,20 @@ const Marquee = () => {
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="py-32 flex flex-col items-center relative z-20 bg-transparent">
+    <section className="py-32 flex flex-col items-center relative z-20 bg-transparent overflow-hidden">
       
       {/* Sharp Component Hider - Atmospheric Bridge Transition */}
-      <div className="absolute top-[-340px] left-0 right-0 w-full pointer-events-none z-50">
+      <div className="absolute -top-72 left-0 right-0 w-full pointer-events-none z-50">
         <img 
           src="/hero_section/gradient.png" 
-          className="w-full h-auto object-cover scale-[1.05]" 
+          className="w-full h-auto object-cover scale-105" 
           alt="" 
         />
       </div>
+
       {/* Heading - Single line, refined opacity */}
       <div className="w-[80%] mx-auto px-4 flex justify-center mb-16">
-        <p 
-          className="text-[#B9BAC8] text-[1.125rem] font-normal tracking-wide text-center"
-          style={{ fontFamily: "'Blauer Nue'", fontStyle: "normal", lineHeight: "normal" }}
-        >
+        <p className="text-[#B9BAC8] font-sans text-base md:text-lg font-normal tracking-wide text-center leading-normal">
           Relied upon by businesses excelling through data and AI.
         </p>
       </div>
@@ -53,11 +51,11 @@ const Marquee = () => {
           {marqueeLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex items-center justify-center shrink-0 w-[206px] h-[94px] bg-[#191A34] rounded-[4px] border-none shadow-xl hover:bg-[#1e1f40] transition-all duration-500"
+              className="flex items-center justify-center shrink-0 w-44 md:w-52 h-24 bg-[#191A34] rounded-sm border-none shadow-xl hover:bg-[#1e1f40] transition-all duration-500"
             >
               <img
                 src={logo}
-                className="max-h-[38px] max-w-[155px] w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                className="max-h-10 max-w-40 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 alt={`Partner Logo ${index + 1}`}
               />
             </div>
