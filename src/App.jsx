@@ -6,6 +6,8 @@ import IntelligentSolutions from "./components/IntelligentSolutions/IntelligentS
 import CaseStudies from "./components/CaseStudies/CaseStudies";
 import WhyUs from "./components/WhyUs/WhyUs";
 import CallToAction from "./components/CallToAction/CallToAction";
+import Footer from "./components/Footer/Footer";
+
 
 
 function App() {
@@ -53,11 +55,12 @@ function App() {
             <CaseStudies />
             <WhyUs />
             <CallToAction />
-
           </div>
         </div>
+        <Footer />
       </div>
     </div>
+
   );
 }
 
