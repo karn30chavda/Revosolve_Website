@@ -5,6 +5,8 @@ import ProblemsWeSolve from "./components/ProblemsWeSolve/ProblemsWeSolve";
 import IntelligentSolutions from "./components/IntelligentSolutions/IntelligentSolutions";
 import CaseStudies from "./components/CaseStudies/CaseStudies";
 import WhyUs from "./components/WhyUs/WhyUs";
+import CallToAction from "./components/CallToAction/CallToAction";
+
 
 function App() {
   return (
@@ -50,6 +52,8 @@ function App() {
             <IntelligentSolutions />
             <CaseStudies />
             <WhyUs />
+            <CallToAction />
+
           </div>
         </div>
       </div>
