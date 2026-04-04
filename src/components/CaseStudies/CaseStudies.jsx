@@ -15,7 +15,7 @@ const CaseStudies = () => {
         <div className="flex flex-row gap-[33px] items-end justify-start self-stretch relative">
           <div className="flex flex-col">
             <h2
-              className="text-left font-black text-[38px] leading-tight"
+              className="text-left font-black text-3xl md:text-5xl leading-tight font-sans"
               style={{
                 background: "linear-gradient(89.75deg, #877BF1 0%, #FCCA71 100%)",
                 backgroundClip: "text",
@@ -25,7 +25,7 @@ const CaseStudies = () => {
             >
               Real results, real impact
             </h2>
-            <div className="text-[#cacbdb] text-left font-sans text-[38px] font-normal lowercase">
+            <div className="text-[#cacbdb] text-left font-sans text-3xl md:text-5xl font-thin lowercase tracking-tight">
               see how we solve problems
             </div>
           </div>

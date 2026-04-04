@@ -32,12 +32,11 @@ const ComingSoon = () => {
 
         {/* Main Heading */}
         <h1 
-          className="text-[3.5rem] md:text-[5rem] lg:text-[6rem] font-bold leading-tight mb-8"
+          className="text-[3.5rem] md:text-[5rem] lg:text-[6rem] font-black leading-tight mb-8 font-sans"
           style={{
             background: "linear-gradient(89.75deg, rgba(135, 123, 241, 1) 0%, rgba(252, 202, 113, 1) 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            fontFamily: "'Blauer Nue Medium'"
           }}
         >
           Coming <br className="md:hidden" /> Soon

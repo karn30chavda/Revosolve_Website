@@ -160,7 +160,7 @@ const Navbar = () => {
         {/* Connect Button */}
         <Link 
           to="/connect" 
-          className="flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white font-semibold rounded-lg border border-accent hover:bg-accent/10 hover:shadow-lg transition-all duration-300 shrink-0"
+          className="flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white font-sans font-semibold rounded-lg border border-accent hover:bg-accent/10 hover:shadow-lg transition-all duration-300 shrink-0"
         >
           Connect 
           <img src="/navbar/connect_icon.svg" className="w-4 h-4" alt="" />

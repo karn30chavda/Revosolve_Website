@@ -87,7 +87,7 @@ const Connect = () => {
               </div>
               <div className="flex flex-col gap-1 items-start">
                 <span className="text-[#AAA9BE] text-sm leading-5 font-normal">Call us</span>
-                <span className="text-[#E7E6FC] text-lg leading-7 font-normal">+91 (123) 456-7890</span>
+                <span className="text-[#E7E6FC] text-lg leading-7 font-normal">+91 89765 75888</span>
               </div>
             </div>
 
@@ -132,7 +132,7 @@ const Connect = () => {
               </div>
 
               {/* Form Fields */}
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full font-sans">
                 
                 {/* Row 1: Name and Email */}
                 <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -143,7 +143,7 @@ const Connect = () => {
                         type="text" 
                         placeholder="Name" 
                         required
-                        className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40"
+                        className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
                       />
                     </div>
                   </div>
@@ -155,7 +155,7 @@ const Connect = () => {
                           type="email" 
                           placeholder="Email" 
                           required
-                          className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40"
+                          className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
                         />
                       </div>
                     </div>
@@ -170,7 +170,7 @@ const Connect = () => {
                       onClick={() => setIsSelectOpen(!isSelectOpen)}
                       className="bg-[#23243A] rounded-lg pr-3 pl-3 h-11 flex items-center justify-between border border-white/5 cursor-pointer hover:bg-[#2A2B45] transition-all relative"
                     >
-                      <span className={`text-sm ${selectedService ? "text-white" : "text-[#AAA9BE]/40"}`}>
+                      <span className={`text-sm font-sans ${selectedService ? "text-white" : "text-[#AAA9BE]/40"}`}>
                         {selectedService || "Select Service"}
                       </span>
                       <img 
@@ -182,7 +182,7 @@ const Connect = () => {
 
                     {/* Custom Dropdown Options */}
                     {isSelectOpen && (
-                      <div className="absolute top-[calc(100%+0.5rem)] left-0 w-full bg-[#1D1E32] border border-white/10 rounded-lg shadow-2xl z-50 py-2 animate-in fade-in zoom-in-95 duration-200 overflow-hidden">
+                      <div className="absolute top-[calc(100%+0.5rem)] left-0 w-full bg-[#1D1E32] border border-white/10 rounded-lg shadow-2xl z-50 py-2 animate-in fade-in zoom-in-95 duration-200 overflow-hidden font-sans">
                         {services.map((service) => (
                           <div
                             key={service}
@@ -208,7 +208,7 @@ const Connect = () => {
                       <input 
                         type="text" 
                         placeholder="Company" 
-                        className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40"
+                        className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
                       />
                     </div>
                   </div>
@@ -220,14 +220,14 @@ const Connect = () => {
                   <div className="bg-[#23243A] rounded-lg p-3 h-32 flex items-start focus-within:ring-1 focus-within:ring-[#787BBC] transition-all border border-white/5">
                     <textarea 
                       placeholder="Tell us about your project, or how we can help..." 
-                      className="bg-transparent border-none outline-none w-full h-full text-white text-sm placeholder-[#AAA9BE]/40 resize-none"
+                      className="bg-transparent border-none outline-none w-full h-full text-white text-sm placeholder-[#AAA9BE]/40 resize-none font-sans"
                     />
                   </div>
                 </div>
 
                 {/* Submit Button */}
-                <button type="submit" className="bg-[#ffaa00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-center md:justify-start w-full md:w-fit hover:bg-[#FFB733] transition-all active:scale-95 group relative overflow-hidden cursor-pointer">
-                  <span className="text-[#070784] text-center font-bold text-base leading-6" style={{ letterSpacing: "-0.31px" }}>
+                <button type="submit" className="bg-[#ffaa00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-center md:justify-start w-full md:w-fit hover:bg-[#FFB733] transition-all active:scale-95 group relative overflow-hidden cursor-pointer font-sans">
+                  <span className="text-[#070784] text-center font-medium text-base md:text-lg leading-6" style={{ letterSpacing: "-0.31px" }}>
                     Submit
                   </span>
                   <img src="/connect/submit_icon.svg" alt="" className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -235,7 +235,7 @@ const Connect = () => {
               </form>
             </>
           ) : (
-            <div className="flex flex-col gap-15.5 items-center justify-center self-stretch flex-1 relative animate-in fade-in duration-700">
+            <div className="flex flex-col gap-15.5 items-center justify-center self-stretch flex-1 relative animate-in fade-in duration-700 font-sans">
               {/* Success Icon */}
               <div className="bg-[#ffaa00] rounded-full shrink-0 w-30 h-30 relative flex items-center justify-center">
                 <img
@@ -251,16 +251,10 @@ const Connect = () => {
 
               {/* Thank You Text */}
               <div className="flex flex-col gap-3 items-center justify-center self-stretch shrink-0 relative">
-                  <div
-                    className="text-[#FBFBFFCC] text-center font-medium text-[2.375rem] leading-12"
-                    style={{ fontFamily: "'Blauer Nue Medium'" }}
-                  >
+                  <div className="text-[#FBFBFFCC] text-center font-medium text-[2.375rem] leading-12 font-sans">
                     Thank You!
                   </div>
-                  <div
-                    className="text-[#FFFFFF99] text-center font-normal text-base leading-6 max-w-99"
-                    style={{ fontFamily: "'Blauer Nue'" }}
-                  >
+                  <div className="text-[#FFFFFF99] text-center font-normal text-base leading-6 max-w-99 font-sans opacity-70">
                     Your inquiry has been successfully submitted.
                     <br />
                     Our team will review your request and get back to you within 24-48
@@ -271,7 +265,7 @@ const Connect = () => {
               {/* Back button */}
               <button
                 onClick={() => navigate("/")}
-                className="rounded-lg border-2 border-[#5B62BF5E] py-2.5 px-8.75 flex flex-row gap-5.5 items-center justify-center shrink-0 h-14 relative backdrop-blur-[2px] transition-all hover:bg-white/5 active:scale-95 cursor-pointer"
+                className="rounded-lg border-2 border-[#5B62BF5E] py-2.5 px-8.75 flex flex-row gap-5.5 items-center justify-center shrink-0 h-14 relative backdrop-blur-[2px] transition-all hover:bg-white/5 active:scale-95 cursor-pointer font-sans"
               >
                 <div
                   className="text-white text-center font-medium text-base leading-6"
