@@ -15,7 +15,7 @@ const Marquee = () => {
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="mt-28 pt-12 pb-24 flex flex-col items-center relative z-20 bg-transparent">
+    <section className="py-32 flex flex-col items-center relative z-20 bg-transparent">
       
       {/* Sharp Component Hider - Atmospheric Bridge Transition */}
       <div className="absolute top-[-340px] left-0 right-0 w-full pointer-events-none z-50">
@@ -26,8 +26,11 @@ const Marquee = () => {
         />
       </div>
       {/* Heading - Single line, refined opacity */}
-      <div className="flex justify-center mb-16 px-4">
-        <p className="text-white/50 text-[18px] font-normal tracking-wide text-center max-w-[1200px] font-sans">
+      <div className="w-[80%] mx-auto px-4 flex justify-center mb-16">
+        <p 
+          className="text-[#B9BAC8] text-[1.125rem] font-normal tracking-wide text-center"
+          style={{ fontFamily: "'Blauer Nue'", fontStyle: "normal", lineHeight: "normal" }}
+        >
           Relied upon by businesses excelling through data and AI.
         </p>
       </div>

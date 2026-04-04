@@ -42,7 +42,7 @@ const cardData = [
 
 const ProblemsWeSolve = () => {
   return (
-    <section className="relative w-full bg-transparent mt-14 pt-14 pb-48 overflow-visible">
+    <section className="relative w-full bg-transparent py-32 overflow-visible">
       
       <div className="relative z-30 w-[80%] mx-auto">
         

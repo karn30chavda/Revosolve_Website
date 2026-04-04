@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const navData = [
   {
@@ -73,10 +74,10 @@ const Navbar = () => {
   return (
     <nav ref={navRef} className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[98%] h-20 px-6 rounded-2xl bg-bg-primary/95 border border-white/10 transition-all duration-300">
     
-      {/* Logo on the left */}
-      <a href="/" className="flex items-center shrink-0 cursor-pointer">
+      {/* Logo on the left - Link to Home */}
+      <Link to="/" className="flex items-center shrink-0 cursor-pointer">
         <img src="/navbar/Revosolve_logo.svg" alt="RevoSolve" className="h-12" />
-      </a>
+      </Link>
 
       {/* Navigation Links and Connect Button grouped on the right */}
       <div className="flex items-center gap-10">
@@ -90,7 +91,11 @@ const Navbar = () => {
                 onClick={() => item.dropdown && setOpenDropdownIdx(isOpen ? null : idx)}
                 className="relative flex items-center justify-center gap-1.5 h-20 text-white font-sans text-[16px] font-medium leading-[24px] tracking-[-0.312px] hover:text-accent cursor-pointer transition-colors duration-300 text-center"
               >
-                {item.label}
+                {!item.dropdown ? (
+                  <Link to="/coming-soon">{item.label}</Link>
+                ) : (
+                  item.label
+                )}
                 
                 {/* Dropdown Arrow Indicator */}
                 {item.dropdown && (
@@ -126,9 +131,9 @@ const Navbar = () => {
                         
                         <div className={`grid ${item.dropdown.gridCols} gap-x-12 gap-y-5 w-full`}>
                           {item.dropdown.links.map((link, linkIdx) => (
-                            <a 
+                            <Link 
                               key={linkIdx}
-                              href="/coming-soon" 
+                              to="/coming-soon" 
                               className="flex items-center gap-2 text-[#070784] font-sans text-[14px] font-normal leading-[20px] tracking-[-0.15px] group/link w-fit"
                             >
                               <span className="group-hover/link:underline decoration-[#070784] underline-offset-4 transition-all">
@@ -141,7 +146,7 @@ const Navbar = () => {
                                 className="w-[14px] h-[14px] opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" 
                                 alt="" 
                               />
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -154,11 +159,14 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Connect Button */}
-        <button className="flex items-center justify-center gap-2.5 px-6 py-3 bg-transparent text-white font-semibold rounded-lg border border-accent hover:bg-accent/10 hover:shadow-[0_0_15px_rgba(72,76,255,0.3)] transition-all duration-300 cursor-pointer shrink-0">
+        {/* Connect Button - Redirects to /connect route */}
+        <Link 
+          to="/connect" 
+          className="flex items-center justify-center gap-2.5 px-6 py-3 bg-transparent text-white font-semibold rounded-lg border border-accent hover:bg-accent/10 hover:shadow-[0_0_15px_rgba(72,76,255,0.3)] transition-all duration-300 cursor-pointer shrink-0"
+        >
           Connect 
           <img src="/navbar/connect_icon.svg" className="w-4 h-4" alt="" />
-        </button>
+        </Link>
       </div>
     </nav>
   );

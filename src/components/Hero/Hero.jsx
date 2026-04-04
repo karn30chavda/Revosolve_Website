@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative w-full  h-screen overflow-hidden flex flex-col items-center justify-center font-sans pt-32 pb-24 bg-bg-primary">
+    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center font-sans pt-40 pb-32 bg-bg-primary">
       {/* Background Video Container */}
       <div className="absolute inset-0 z-0">
         <video 
@@ -58,7 +58,7 @@ const Hero = () => {
         </div>
 
         {/* Heading Section */}
-        <div className="flex flex-col items-center justify-start shrink-0 relative mb-[15px] w-full max-w-5xl mx-auto px-2">
+        <div className="flex flex-col items-center justify-start shrink-0 relative mb-[15px] w-[80%] mx-auto px-2">
           <div className="flex flex-col gap-2 items-center justify-start shrink-0 relative w-full">
             <h1
               className="text-center relative w-full text-[clamp(2rem,4vw,3.375rem)] leading-[1.1] 

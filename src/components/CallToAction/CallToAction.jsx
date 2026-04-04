@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const CallToAction = () => {
+  const navigate = useNavigate();
+
   return (
-    <section className="bg-transparent py-20 px-4 md:px-20 flex flex-col items-center justify-start relative w-full overflow-hidden">
+    <section className="bg-transparent py-32 px-4 flex flex-col items-center justify-start relative w-full overflow-hidden">
       <div 
-        className="w-full md:w-7xl max-w-full rounded-lg py-16 px-4 md:px-76 flex flex-col gap-8 items-center justify-end relative overflow-hidden"
+        className="w-[80%] mx-auto rounded-lg py-16 px-4 md:px-12 flex flex-col gap-8 items-center justify-end relative overflow-hidden"
         style={{
           background: "linear-gradient(290deg, #20CEFF -65.3%, #070784 64.5%), #151618",
         }}
@@ -48,6 +51,7 @@ const CallToAction = () => {
 
         {/* CTA Button */}
         <button
+          onClick={() => navigate("/connect")}
           className="bg-[#FFAA00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative overflow-hidden group hover:bg-[#ffb732] transition-colors duration-300 z-10 cursor-pointer"
         >
           <span

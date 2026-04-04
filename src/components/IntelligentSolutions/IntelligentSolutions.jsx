@@ -112,8 +112,8 @@ const IntelligentSolutions = () => {
   }, [offset]);
 
   return (
-    <section className="relative w-full bg-transparent overflow-hidden py-20 pb-32">
-      <div className="w-[90%] md:w-[85%] mx-auto px-4">
+    <section className="relative w-full bg-transparent overflow-hidden py-32">
+      <div className="w-[80%] mx-auto px-4">
         <div className="text-white/30 text-xs font-medium uppercase tracking-[3px] mb-6 font-sans">
           [Solutions]
         </div>

@@ -2,9 +2,9 @@ import React from "react";
 
 const CaseStudies = () => {
   return (
-    <section className="bg-transparent py-[46px] px-20 flex flex-col gap-16 items-center justify-start relative w-full">
+    <section className="bg-transparent py-32 flex flex-col gap-16 items-center justify-start relative w-full overflow-hidden">
       {/* Header section */}
-      <div className="flex flex-col gap-3 items-start justify-end w-full max-w-[1280px] relative">
+      <div className="w-[80%] mx-auto px-4 flex flex-col gap-3 items-start justify-end relative">
         <div
           className="text-white text-left font-sans text-lg leading-[57px] font-normal relative uppercase tracking-[0.26px]"
           style={{ opacity: 0.3 }}
@@ -41,7 +41,7 @@ const CaseStudies = () => {
       </div>
 
       {/* Cards section */}
-      <div className="flex flex-row gap-[22px] items-start justify-start w-full max-w-[1280px] relative">
+      <div className="w-[80%] mx-auto px-4 flex flex-row gap-[22px] items-start justify-start relative">
         {/* Card 1 */}
         <div
           className="rounded-lg border-2 border-transparent p-[25px] flex flex-col gap-4 items-start justify-start flex-1 h-[441px] relative overflow-hidden"

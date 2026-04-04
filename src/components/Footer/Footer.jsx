@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const footerData = {
   services: [
@@ -60,14 +61,14 @@ const Footer = () => {
                 </span>
                 <div className="flex flex-col gap-3 items-start md:items-end justify-start self-stretch relative">
                     {footerData.services.map((item, idx) => (
-                    <a
+                    <Link
                         key={idx}
-                        href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                        to="/coming-soon"
                         className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
                         style={{ letterSpacing: "-0.00938rem" }}
                     >
                         {item}
-                    </a>
+                    </Link>
                     ))}
                 </div>
             </div>
@@ -83,14 +84,14 @@ const Footer = () => {
                     </span>
                     <div className="flex flex-col gap-3 items-start md:items-end w-full">
                     {footerData.solutions.map((item, idx) => (
-                        <a
+                        <Link
                             key={idx}
-                            href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                            to="/coming-soon"
                             className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
                             style={{ letterSpacing: "-0.00938rem" }}
                         >
                             {item}
-                        </a>
+                        </Link>
                     ))}
                     </div>
                 </div>
@@ -103,14 +104,14 @@ const Footer = () => {
                     </span>
                     <div className="flex flex-col gap-3 items-start md:items-end w-full">
                     {footerData.products.map((item, idx) => (
-                        <a
+                        <Link
                             key={idx}
-                            href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                            to="/coming-soon"
                             className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
                             style={{ letterSpacing: "-0.00938rem" }}
                         >
                             {item}
-                        </a>
+                        </Link>
                     ))}
                     </div>
                 </div>
@@ -125,16 +126,20 @@ const Footer = () => {
                     Company
                 </span>
                 <div className="flex flex-col gap-3 items-start md:items-end justify-start self-stretch relative">
-                    {footerData.company.map((item, idx) => (
-                    <a
-                        key={idx}
-                        href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
-                        style={{ letterSpacing: "-0.00938rem" }}
-                    >
-                        {item}
-                    </a>
-                    ))}
+                    {footerData.company.map((item, idx) => {
+                      // Special case for Contact page which exists
+                      const to = item === "Contact" ? "/connect" : "/coming-soon";
+                      return (
+                        <Link
+                            key={idx}
+                            to={to}
+                            className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
+                            style={{ letterSpacing: "-0.00938rem" }}
+                        >
+                            {item}
+                        </Link>
+                      );
+                    })}
                 </div>
             </div>
         </div>
