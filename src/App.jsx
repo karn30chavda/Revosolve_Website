@@ -1,8 +1,9 @@
-import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Marquee from "./components/Marquee/Marquee";
 import ProblemsWeSolve from "./components/ProblemsWeSolve/ProblemsWeSolve";
+import IntelligentSolutions from "./components/IntelligentSolutions/IntelligentSolutions";
+
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
           <div className="relative z-10">
             <Marquee />
             <ProblemsWeSolve />
+            <IntelligentSolutions />
+
           </div>
         </div>
       </div>
