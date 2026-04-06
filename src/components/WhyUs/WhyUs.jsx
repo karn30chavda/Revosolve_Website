@@ -12,7 +12,7 @@ const WhyUs = () => {
   const testimonial = "Their AI surveillance system has significantly improved our security operations. The real-time alerting is incredibly accurate and reliable.";
 
   return (
-    <section className="bg-transparent py-20 md:py-16 px-4 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu">
+    <section className="bg-transparent py-20 md:py-16 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu">
       <div className="w-[90%] md:w-[80%] mx-auto flex flex-col gap-10 md:gap-16 items-start justify-start relative">
         {/* Header section */}
         <div className="flex flex-col items-start justify-end self-stretch shrink-0 relative">

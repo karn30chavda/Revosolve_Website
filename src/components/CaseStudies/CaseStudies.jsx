@@ -106,9 +106,9 @@ const CaseStudies = () => {
       </div>
 
       {/* Cards section - Mobile View */}
-      <div className="md:hidden w-full flex justify-center px-4">
+      <div className="md:hidden w-[90%] mx-auto">
         <div 
-          className="rounded-[10px] p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden w-[85vw]"
+          className="rounded-[10px] p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden w-full"
           style={{ background: "linear-gradient(186.41deg, rgba(202, 203, 235, 1) 4.87%, rgba(156, 160, 245, 1) 166.879%)" }}
         >
           <img

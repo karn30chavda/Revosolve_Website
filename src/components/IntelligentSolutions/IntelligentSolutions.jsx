@@ -272,7 +272,7 @@ const IntelligentSolutions = () => {
           {solutions.map((card, idx) => (
             <div 
               key={`card-mobile-${idx}`} 
-              className="snap-center shrink-0 w-[85vw] rounded-[10px] p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden"
+              className="snap-center shrink-0 w-full rounded-[10px] p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden"
               style={{
                 background: "linear-gradient(186.41deg, rgba(202, 203, 235, 1) 4.87%, rgba(156, 160, 245, 1) 166.88%)"
               }}
