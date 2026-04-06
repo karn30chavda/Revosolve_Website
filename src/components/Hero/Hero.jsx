@@ -21,10 +21,10 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[#01031c]/65 lg:bg-[#01031c]/50"></div>
 
         {/* Atmospheric Transition Gradient (The Bridge) */}
-        <div className="absolute bottom-5 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-1/2">
+        <div className="absolute bottom-3 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-1/2">
           <img
             src="/hero_section/gradient.png"
-            className="w-full h-auto object-cover scale-110 opacity-100"
+            className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
             alt=""
           />
         </div>

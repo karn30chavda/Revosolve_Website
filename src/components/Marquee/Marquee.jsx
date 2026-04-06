@@ -10,50 +10,51 @@ const Marquee = () => {
   ];
 
   // Multiple sets for a truly infinite feel
-  const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
+  const marqueeLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="py-32 flex flex-col items-center relative z-20 bg-transparent overflow-hidden">
+    <section className="py-20 md:py-32 flex flex-col items-center relative z-20 bg-transparent overflow-hidden transform-gpu">
       
-      {/* Sharp Component Hider - Atmospheric Bridge Transition */}
-      <div className="absolute -top-72 left-0 right-0 w-full pointer-events-none z-50">
+      {/* Top Atmospheric Transition Bridge */}
+      <div className="absolute -top-5 left-0 right-0 w-full pointer-events-none z-30 transform-gpu -translate-y-1/2">
         <img 
           src="/hero_section/gradient.png" 
-          className="w-full h-auto object-cover scale-105" 
+          className="w-full h-auto object-cover scale-125 opacity-100" 
           alt="" 
         />
       </div>
 
-      {/* Heading - Single line, refined opacity */}
-      <div className="w-[80%] mx-auto px-4 flex justify-center mb-16">
-        <p className="text-[#B9BAC8] font-sans text-base md:text-lg font-normal tracking-wide text-center leading-normal">
+      {/* Heading - Responsive typography */}
+      <div className="w-full max-w-2xl mx-auto px-6 flex justify-center mb-12 md:mb-16">
+        <p className="text-[#B9BAC8] font-sans text-sm md:text-lg font-normal tracking-wide text-center leading-relaxed opacity-80">
           Relied upon by businesses excelling through data and AI.
         </p>
       </div>
 
       {/* Infinite Carousel Container */}
-      <div className="relative flex overflow-hidden w-full group">
-        {/* Left & Right Edge Fades - Smooth infinite loop edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-linear-to-r from-bg-primary via-bg-primary/80 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-linear-to-l from-bg-primary via-bg-primary/80 to-transparent z-10 pointer-events-none"></div>
+      <div className="relative flex overflow-hidden w-full group py-4">
+        {/* Left & Right Edge Fades - Desktop Only */}
+        <div className="hidden md:block absolute left-0 top-0 bottom-0 w-64 bg-linear-to-r from-[#01031c] via-[#01031c]/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="hidden md:block absolute right-0 top-0 bottom-0 w-64 bg-linear-to-l from-[#01031c] via-[#01031c]/80 to-transparent z-10 pointer-events-none"></div>
 
         <Motion.div
-          className="flex items-center gap-6 shrink-0"
+          className="flex items-center gap-4 md:gap-8 shrink-0 py-2"
           animate={{ x: "-50%" }}
           transition={{
             duration: 40,
             repeat: Infinity,
             ease: "linear",
           }}
+          style={{ willChange: "transform" }}
         >
           {marqueeLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex items-center justify-center shrink-0 w-44 md:w-52 h-24 bg-[#191A34] rounded-sm border-none shadow-xl hover:bg-[#1e1f40] transition-all duration-500"
+              className="flex items-center justify-center shrink-0 w-48 h-22 md:w-52 md:h-24 bg-[#191A34] rounded-sm border-none shadow-lg hover:bg-[#1e1f40] transition-all duration-500 transform-gpu"
             >
               <img
                 src={logo}
-                className="max-h-10 max-w-40 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                className="max-h-9 md:max-h-10 max-w-[70%] md:max-w-[75%] w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 alt={`Partner Logo ${index + 1}`}
               />
             </div>
