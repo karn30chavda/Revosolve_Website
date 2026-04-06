@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center font-sans pt-56 pb-16 bg-bg-primary">
+    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center pt-22 bg-[#01031c] transform-gpu">
       {/* Background Video Container */}
       <div className="absolute inset-0 z-0">
         <video
@@ -11,126 +11,128 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105"
         >
           <source src="/hero_section/hero_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         {/* Global Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-[#01031c]/65 lg:bg-[#01031c]/50"></div>
 
-        {/* Sharp Component Hider - Bottom Transition Bridge */}
-        <div className="absolute -bottom-64 left-0 right-0 w-full pointer-events-none z-50">
+        {/* Atmospheric Transition Gradient (The Bridge) */}
+        <div className="absolute bottom-5 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-1/2">
           <img
             src="/hero_section/gradient.png"
-            className="w-full h-auto object-cover scale-105"
+            className="w-full h-auto object-cover scale-110 opacity-100"
             alt=""
           />
         </div>
       </div>
 
       {/* Content Overlay */}
-      <div className="flex flex-col items-center justify-start relative z-10 w-full px-4 text-center">
-        {/* Tagline Pill */}
+      <div className="flex flex-col items-center justify-center relative z-10 w-full px-5 text-center max-w-7xl mx-auto">
+        {/* Tagline Pill - Mobile Optimized */}
         <div
           className="flex items-center justify-center whitespace-nowrap overflow-hidden relative group 
-          rounded-full bg-white/10 h-10 px-5 py-2 gap-2.5 backdrop-blur-md 
-          border border-white/30 
-          shadow-inner
-          bg-linear-[110deg,transparent_40%,rgba(255,255,255,0.1)_50%,transparent_60%] 
-          bg-size-[200%_100%] animate-shine mb-6"
+          rounded-full bg-white/5 h-10 px-5 py-2 gap-2.5 backdrop-blur-md 
+          border border-white/20 mb-8"
         >
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-3/5 bg-linear-to-b from-transparent via-white/40 to-transparent"></div>
-
-          <div className="text-[#fbfbff] text-xs md:text-base font-normal tracking-wide">
+          <div className="text-[#fbfbff] text-[0.8125rem] md:text-base font-medium tracking-[0.01em] uppercase opacity-90">
             Revosolve
           </div>
 
           <img
-            className="shrink-0 w-3.5 h-3.5 md:w-4 md:h-4 object-contain"
+            className="shrink-0 w-3 h-3 md:w-3.5 md:h-3.5 object-contain"
             src="/hero_section/icon_1.svg"
             alt=""
           />
 
-          <div className="text-[#fbfbff] text-xs md:text-base font-normal tracking-wide">
+          <div className="text-[#fbfbff] text-[0.8125rem] md:text-base font-medium tracking-[0.01em] uppercase opacity-90">
             Building Future Tech
           </div>
         </div>
 
-        {/* Heading Section */}
-        <div className="flex flex-col items-center justify-start shrink-0 relative mb-4 w-[85%] mx-auto px-2">
-          <div className="flex flex-col gap-2 items-center justify-start shrink-0 relative w-full">
-            <h1
-              className="text-center relative w-full text-2xl md:text-4xl lg:text-5xl xl:text-5.5xl leading-tight 
+        {/* Main Heading Section - Redesigned for mobile impact */}
+        <div className="flex flex-col items-center justify-center relative mb-6 w-full px-2">
+          <h1 className="text-center w-full flex flex-col items-center gap-1">
+            <span
+              className="text-[1.85rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
               bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent 
-              font-extrabold md:font-black tracking-tight drop-shadow-sm"
+              font-bold md:font-black tracking-[-0.03em]"
             >
-              Engineering Technology Systems
-            </h1>
-
-            <h2
-              className="text-[#ffffff] text-center relative w-full text-2xl md:text-4xl lg:text-5xl xl:text-5.5xl 
-              leading-tight font-extrabold md:font-black tracking-tight drop-shadow-sm"
+              Engineering Technology
+            </span>
+            <span className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1">
+              <span
+                className="text-[1.85rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
+                text-[#888EBF]/90 font-bold md:font-black tracking-[-0.03em]"
+              >
+                Systems
+              </span>
+              <span
+                className="text-[1.85rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
+                text-[#ffffff] font-bold md:font-black tracking-[-0.03em]"
+              >
+                for Governments,
+              </span>
+            </span>
+            <span
+              className="text-[1.75rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
+              text-[#ffffff] font-bold md:font-black tracking-[-0.03em]"
             >
-              for Governments, Finance, and Enterprise
-            </h2>
-          </div>
+              Finance, and Enterprise
+            </span>
+          </h1>
 
-          <p className="text-[#fbfbff] text-center text-sm md:text-base lg:text-lg font-normal relative w-full max-w-xl opacity-70 leading-relaxed mt-6">
+          <p className="text-[#fbfbff] text-center text-sm md:text-lg lg:text-xl font-normal relative w-full max-w-2xl opacity-60 leading-relaxed mt-8 md:mt-12">
             Revosolve helps businesses transform ideas into scalable digital
             solutions using AI, cloud infrastructure and modern software
             engineering.
           </p>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 items-center justify-center shrink-0 relative w-full mt-8">
-          {/* Start a Conversation Button */}
+        {/* CTA Buttons - Mobile Stacked */}
+        <div className="flex flex-col md:flex-row gap-6 items-center justify-center shrink-0 relative w-full mt-10 md:mt-16">
+          {/* Main Button */}
           <button
-          onClick={() => navigate("/connect")}
-            className="bg-[#ffaa00] rounded-sm px-8 py-3.5 flex flex-row gap-2 items-center justify-start 
-            shrink-0 relative cursor-pointer border-none group transition-all duration-300 overflow-hidden
-            active:scale-95 shadow-xl"
+            onClick={() => navigate("/connect")}
+            className="w-4/5 md:w-64 h-[3.4rem] md:h-[3.8rem] bg-[#ffaa00] rounded-xl flex items-center justify-center gap-3
+            cursor-pointer border-none group transition-all duration-300 shadow-[0_0_25px_rgba(255,170,0,0.25)]
+            active:scale-95"
           >
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
-              bg-[radial-gradient(ellipse_at_bottom,#FFEBC3_0%,#FFaa00_70%)]"
-            ></div>
-
-            <div className="text-[#070784] text-center text-base md:text-lg leading-6 font-semibold relative z-10 tracking-tight">
+            <span className="text-[#070784] text-center  md:text-lg font-semibold tracking-tight">
               Start a Conversation
-            </div>
+            </span>
             <img
-              className="shrink-0 w-4 h-4 md:w-5 md:h-5 relative z-10 group-hover:translate-x-1 transition-transform"
+              className="shrink-0 w-4.5 h-4.5 md:w-5 md:h-5 group-hover:translate-x-1.5 transition-transform duration-300"
               src="/hero_section/icon_2.svg"
               alt=""
             />
           </button>
 
-          {/* Explore Case Studies Button */}
+          {/* Secondary Button */}
           <button
-          onClick={() => navigate("/coming-soon")}
-            className="rounded-sm border-2 border-white/20 px-8 py-3.5 h-auto
-            flex flex-row gap-5 items-center justify-center shrink-0 relative backdrop-blur-md 
-            cursor-pointer hover:bg-white/10 transition-all active:scale-95 text-white group bg-transparent"
+            onClick={() => navigate("/coming-soon")}
+            className="w-4/5 md:w-64 h-[3.4rem] md:h-[3.8rem] rounded-xl border-[1.5px] border-white/20 flex items-center justify-center gap-4 
+            backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent"
           >
-            <div className="text-center text-base md:text-lg leading-6 font-semibold relative tracking-tight">
-              Explore Case Studies
-            </div>
+            <span className="text-white text-center  md:text-lg font-semibold tracking-tight">
+              Explore case studies
+            </span>
             <img
-              className="shrink-0 w-3.5 h-3.5 md:w-4 md:h-3 relative group-hover:translate-x-1 transition-transform"
+              className="shrink-0 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"
               src="/hero_section/icon_3.svg"
               alt=""
             />
           </button>
         </div>
 
-        {/* Arrow Icon */}
-        <div className="mt-16 flex justify-center w-full">
+        {/* Scroll Arrow - Desktop Only */}
+        <div className="hidden md:flex mt-20 justify-center w-full">
           <img
             src="/hero_section/arrow_icon.svg"
-            className="w-5 h-4 md:w-6 md:h-5 object-contain opacity-70 hover:opacity-100 transition-opacity animate-bounce cursor-pointer"
+            className="w-6 h-5 object-contain opacity-50 hover:opacity-100 transition-opacity animate-bounce cursor-pointer"
             alt="Scroll down"
           />
         </div>

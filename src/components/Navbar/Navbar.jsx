@@ -91,7 +91,7 @@ const Navbar = () => {
   return (
     <nav 
       ref={navRef} 
-      className={`fixed z-50 transition-all duration-300 w-full min-[1290px]:w-[95%] min-[1290px]:left-1/2 min-[1290px]:-translate-x-1/2 ${
+      className={`fixed z-50 transition-all duration-300 transform-gpu w-full min-[1290px]:w-[95%] min-[1290px]:left-1/2 min-[1290px]:-translate-x-1/2 ${
         isMenuOpen 
           ? 'h-auto bg-[#010319] top-0 shadow-2xl' 
           : 'h-[3.74938rem] min-[1290px]:h-20 bg-[#010319] min-[1290px]:bg-nav-bg top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md'
@@ -101,11 +101,11 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full h-[3.74938rem] min-[1290px]:h-20 px-[1.24956rem] min-[1290px]:px-8">
         
         {/* Logo */}
-        <Link to="/" onClick={() => { setOpenDropdownIdx(null); setIsMenuOpen(false); }} className="flex items-center shrink-0 cursor-pointer">
+        <Link to="/" onClick={() => { setOpenDropdownIdx(null); setIsMenuOpen(false); }} className="flex items-center shrink-0 cursor-pointer transform-gpu">
           <img 
             src="/navbar/Revosolve_logo.svg" 
             alt="RevoSolve" 
-            className="w-44.5 h-[1.7955rem] min-[1290px]:w-auto min-[1290px]:h-12" 
+            className="w-55 h-10 min-[1290px]:w-auto min-[1290px]:h-12" 
           />
         </Link>
 
@@ -219,7 +219,7 @@ const Navbar = () => {
                     {item.dropdown && (
                       <img
                         src="/navbar/dropdown_arrow.svg"
-                        className={`w-3 h-3 transition-transform duration-300 ${isActive ? 'rotate-180' : ''} opacity-70`}
+                        className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'rotate-180' : ''} opacity-70`}
                         alt=""
                       />
                     )}
@@ -227,7 +227,7 @@ const Navbar = () => {
                   
                   {/* Detailed Sublinks for Mobile */}
                   {item.dropdown && (
-                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-[500px] py-4' : 'max-h-0'}`}>
+                    <div className={`overflow-hidden transition-all duration-200 ease-in-out transform-gpu will-change-[max-height] ${isActive ? 'max-h-[500px] py-4' : 'max-h-0'}`}>
                       <div className="flex flex-col gap-4 pl-4">
                         {item.dropdown.links.map((link, lIdx) => (
                           <Link
