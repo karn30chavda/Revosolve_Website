@@ -93,11 +93,16 @@ const ProblemsWeSolve = () => {
               
               {/* Card Media Section */}
               <div className="w-full h-40 rounded-lg overflow-hidden relative border border-white/10">
-                <LazyVideo
-                  src={card.video}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
+                >
+                  <source src={card.video} type="video/mp4" />
+                </video>
+                </div>
             </div>
           ))}
         </div>
@@ -129,7 +134,7 @@ const ProblemsWeSolve = () => {
                     className="w-[460px] flex flex-col justify-start items-start px-14 pt-[50px] pb-12 z-20 shrink-0 border-r border-white/10 font-sans"
                   >
                     <div className="w-[60px] h-[60px] flex items-center justify-center mb-10 scale-125 origin-left">
-                      <img src={card.icon} alt="" width="40" height="40" className="object-contain" loading="lazy" />
+                      <img src={card.icon} alt="" width="40" height="40" className="object-contain" />
                     </div>
                     <h3
                       style={{ color: "rgba(245, 245, 255, 0.80)" }}
@@ -147,10 +152,15 @@ const ProblemsWeSolve = () => {
 
                   {/* Video Side */}
                   <div className="flex-1 relative overflow-hidden h-full bg-black">
-                    <LazyVideo
-                      src={card.video}
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
                       className="absolute inset-0 w-full h-full object-cover"
-                    />
+                    >
+                      <source src={card.video} type="video/mp4" />
+                    </video>
                   </div>
                 </Motion.div>
               </div>
