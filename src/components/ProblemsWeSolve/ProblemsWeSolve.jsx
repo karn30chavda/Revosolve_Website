@@ -1,39 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { motion as Motion } from "framer-motion";
-
-const LazyVideo = ({ src, className }) => {
-  const [isInView, setIsInView] = useState(false);
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1, rootMargin: "100px" }
-    );
-    if (videoRef.current) observer.observe(videoRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <video
-      ref={videoRef}
-      className={className}
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="none"
-    >
-      {isInView && <source src={src} type="video/mp4" />}
-      Your browser does not support the video tag.
-    </video>
-  );
-};
 
 const ProblemsWeSolve = () => {
   const containerRef = useRef(null);

@@ -281,7 +281,6 @@ const IntelligentSolutions = () => {
                  <img 
                   src={card.image} 
                   alt={card.title}
-                  loading="lazy"
                   className="w-full h-full object-cover"
                   style={{ background: "linear-gradient(to left, rgba(29, 31, 76, 0.49), rgba(29, 31, 76, 0.49))" }}
                 />
