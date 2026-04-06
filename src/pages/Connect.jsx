@@ -189,37 +189,48 @@ const Connect = () => {
 
           <div className="flex flex-col gap-8 items-start justify-start w-full relative pt-4">
             {/* Email */}
-            <div className="flex flex-row gap-6 items-center justify-start w-full group cursor-pointer">
+            <a 
+              href="mailto:sales@revosolve.com"
+              className="flex flex-row gap-6 items-center justify-start w-full group"
+            >
               <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-14 h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
                 <img src="/connect/mail_icon.svg" alt="Email" className="w-6 h-6" />
               </div>
               <div className="flex flex-col gap-1 items-start">
                 <span className="text-[#AAA9BE] text-sm leading-5 font-normal">Email Us</span>
-                <span className="text-[#E7E6FC] text-lg leading-7 font-normal">sales@revosolve.com</span>
+                <span className="text-[#E7E6FC] text-lg leading-7 font-normal group-hover:text-white transition-colors">sales@revosolve.com</span>
               </div>
-            </div>
+            </a>
 
             {/* Call */}
-            <div className="flex flex-row gap-6 items-center justify-start w-full group cursor-pointer">
+            <a 
+              href="tel:+918976575888"
+              className="flex flex-row gap-6 items-center justify-start w-full group"
+            >
               <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-14 h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
                 <img src="/connect/call_icon.svg" alt="Call" className="w-6 h-6" />
               </div>
               <div className="flex flex-col gap-1 items-start">
                 <span className="text-[#AAA9BE] text-sm leading-5 font-normal">Call us</span>
-                <span className="text-[#E7E6FC] text-lg leading-7 font-normal">+91 89765 75888</span>
+                <span className="text-[#E7E6FC] text-lg leading-7 font-normal group-hover:text-white transition-colors">+91 89765 75888</span>
               </div>
-            </div>
+            </a>
 
             {/* Visit */}
-            <div className="flex flex-row gap-6 items-center justify-start w-full group cursor-pointer">
+            <a 
+              href="https://maps.app.goo.gl/t7wp9DNGyE5811DNA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-row gap-6 items-center justify-start w-full group"
+            >
               <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-14 h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
                 <img src="/connect/pin_icon.svg" alt="Visit" className="w-6 h-6" />
               </div>
               <div className="flex flex-col gap-1 items-start">
                 <span className="text-[#AAA9BE] text-sm leading-5 font-normal">Visit Us</span>
-                <span className="text-[#E7E6FC] text-lg leading-7 font-normal">Mumbai, India</span>
+                <span className="text-[#E7E6FC] text-lg leading-7 font-normal group-hover:text-white transition-colors">Mumbai, India</span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -370,7 +381,7 @@ const Connect = () => {
               </form>
             </>
           ) : (
-            <div className="flex flex-col gap-15.5 items-center justify-center self-stretch flex-1 relative animate-in fade-in duration-700 font-sans">
+            <div className="flex flex-col gap-15.5 items-center justify-center self-stretch flex-1 relative opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] font-sans">
               <div className="bg-[#ffaa00] rounded-full shrink-0 w-30 h-30 relative flex items-center justify-center">
                 <img
                   className="w-17.5 h-17.5 overflow-visible"

@@ -45,3 +45,8 @@
 body {
   @apply bg-bg-primary text-white antialiased min-h-screen font-sans;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

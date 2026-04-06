@@ -75,7 +75,7 @@ const Navbar = () => {
     <nav ref={navRef} className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] h-20 px-8 rounded-2xl bg-bg-primary/95 border border-white/10 transition-all duration-300">
     
       {/* Logo on the left */}
-      <Link to="/" className="flex items-center shrink-0">
+      <Link to="/" onClick={() => setOpenDropdownIdx(null)} className="flex items-center shrink-0">
         <img src="/navbar/Revosolve_logo.svg" alt="RevoSolve" className="h-10 md:h-12" />
       </Link>
 
