@@ -13,7 +13,7 @@ const Marquee = () => {
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="py-20 md:py-32 flex flex-col items-center relative z-20 bg-transparent overflow-hidden transform-gpu">
+    <section className="py-10 md:py-32 flex flex-col items-center relative z-20 bg-transparent overflow-hidden transform-gpu">
       
       {/* Top Atmospheric Transition Bridge */}
       <div className="absolute -top-5 left-0 right-0 w-full pointer-events-none z-30 transform-gpu -translate-y-1/2">
@@ -25,10 +25,15 @@ const Marquee = () => {
       </div>
 
       {/* Heading - Responsive typography */}
-      <div className="w-full max-w-2xl mx-auto px-6 flex justify-center mb-12 md:mb-16">
-        <p className="text-[#B9BAC8] font-sans text-sm md:text-lg font-normal tracking-wide text-center leading-relaxed opacity-80">
-          Relied upon by businesses excelling through data and AI.
-        </p>
+      <div className="w-full max-w-2xl mx-auto px-6 flex justify-center mt-12 md:mt-2 mb-6 md:mb-16">
+        <div className="text-[#B9BAC8] font-sans text-sm md:text-lg font-normal tracking-wide text-center leading-relaxed opacity-80">
+          <span className="block md:hidden whitespace-normal">
+            Trusted by businesses reshaping critical industries
+          </span>
+          <span className="hidden md:block">
+            Relied upon by businesses excelling through data and AI.
+          </span>
+        </div>
       </div>
 
       {/* Infinite Carousel Container */}
