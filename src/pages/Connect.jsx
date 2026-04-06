@@ -141,7 +141,7 @@ const Connect = () => {
   return (
     <div 
       key={location.key}
-      className="pt-32 pb-20 px-6 md:px-12 flex flex-col items-center justify-center relative w-full overflow-hidden self-stretch min-h-screen" 
+      className="pt-32 pb-20 flex flex-col items-center justify-center relative w-full overflow-hidden self-stretch min-h-screen"
       style={{ 
         fontFamily: "'Blauer Nue'",
         background: "linear-gradient(180deg, #1C1F52 0%, #050614 100%)"
@@ -156,15 +156,15 @@ const Connect = () => {
         }}
       />
 
-      <div className="flex flex-col lg:flex-row items-start justify-between w-[80%] mx-auto relative z-10 gap-16 lg:gap-8">
+      <div className="flex flex-col lg:flex-row items-start justify-between w-[90%] md:w-[80%] mx-auto relative z-10 gap-12 lg:gap-8">
         
         {/* Left Column: Contact Info */}
-        <div className="flex flex-col gap-[3.2rem] items-start justify-start flex-1 w-full relative">
+        <div className="flex flex-col gap-8 lg:gap-[3.2rem] items-start justify-start flex-1 w-full relative">
           
           {/* Header Section */}
           <div className="flex flex-col gap-2 items-start justify-start w-full relative">
             <div
-              className="text-white text-left font-normal text-lg leading-normal tracking-[0.016rem] opacity-30 h-10 flex items-center"
+              className="text-white text-left font-normal text-xs md:text-sm leading-normal tracking-widest opacity-30 flex items-center uppercase mb-2"
               style={{ letterSpacing: "0.26px" }}
             >
               <span>[ CONNECT ]</span>
@@ -172,7 +172,7 @@ const Connect = () => {
             
             <div className="flex flex-col items-start justify-start relative">
                 <h1
-                  className="text-left font-black text-[2.5rem] md:text-[3rem] leading-none text-white"
+                  className="text-left font-black text-[1.85rem] md:text-[3rem] leading-tight md:leading-none text-white"
                   style={{
                     background: "linear-gradient(89.75deg, rgba(135, 123, 241, 1) 0%, rgba(252, 202, 113, 1) 100%)",
                     WebkitBackgroundClip: "text",
@@ -181,38 +181,38 @@ const Connect = () => {
                 >
                   Get In Touch
                 </h1>
-                <h2 className="text-[#CACBDB] text-left text-[2.5rem] md:text-[3rem] font-normal leading-tight">
+                <h2 className="text-[#CACBDB] text-left text-[1.85rem] md:text-[3rem] font-normal leading-tight">
                   with Us
                 </h2>
             </div>
           </div>
 
-          <div className="flex flex-col gap-8 items-start justify-start w-full relative pt-4">
+          <div className="flex flex-col gap-6 md:gap-8 items-start justify-start w-full relative pt-2">
             {/* Email */}
             <a 
               href="mailto:sales@revosolve.com"
-              className="flex flex-row gap-6 items-center justify-start w-full group"
+              className="flex flex-row gap-4 items-center justify-start w-full group"
             >
-              <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-14 h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
-                <img src="/connect/mail_icon.svg" alt="Email" className="w-6 h-6" />
+              <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-9 h-9 md:w-14 md:h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
+                <img src="/connect/mail_icon.svg" alt="Email" className="w-4 h-4 md:w-6 md:h-6" />
               </div>
-              <div className="flex flex-col gap-1 items-start">
-                <span className="text-[#AAA9BE] text-sm leading-5 font-normal">Email Us</span>
-                <span className="text-[#E7E6FC] text-lg leading-7 font-normal group-hover:text-white transition-colors">sales@revosolve.com</span>
+              <div className="flex flex-col gap-0.5 items-start">
+                <span className="text-[#AAA9BE] text-[0.7rem] md:text-sm leading-tight font-normal">Email Us</span>
+                <span className="text-[#E7E6FC] text-sm md:text-lg leading-tight font-normal group-hover:text-white transition-colors">sales@revosolve.com</span>
               </div>
             </a>
 
             {/* Call */}
             <a 
               href="tel:+918976575888"
-              className="flex flex-row gap-6 items-center justify-start w-full group"
+              className="flex flex-row gap-4 items-center justify-start w-full group"
             >
-              <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-14 h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
-                <img src="/connect/call_icon.svg" alt="Call" className="w-6 h-6" />
+              <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-9 h-9 md:w-14 md:h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
+                <img src="/connect/call_icon.svg" alt="Call" className="w-4 h-4 md:w-6 md:h-6" />
               </div>
-              <div className="flex flex-col gap-1 items-start">
-                <span className="text-[#AAA9BE] text-sm leading-5 font-normal">Call us</span>
-                <span className="text-[#E7E6FC] text-lg leading-7 font-normal group-hover:text-white transition-colors">+91 89765 75888</span>
+              <div className="flex flex-col gap-0.5 items-start">
+                <span className="text-[#AAA9BE] text-[0.7rem] md:text-sm leading-tight font-normal">Call us</span>
+                <span className="text-[#E7E6FC] text-sm md:text-lg leading-tight font-normal group-hover:text-white transition-colors">+91 89765 75888</span>
               </div>
             </a>
 
@@ -221,14 +221,14 @@ const Connect = () => {
               href="https://maps.app.goo.gl/t7wp9DNGyE5811DNA"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row gap-6 items-center justify-start w-full group"
+              className="flex flex-row gap-4 items-center justify-start w-full group"
             >
-              <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-14 h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
-                <img src="/connect/pin_icon.svg" alt="Visit" className="w-6 h-6" />
+              <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-9 h-9 md:w-14 md:h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
+                <img src="/connect/pin_icon.svg" alt="Visit" className="w-4 h-4 md:w-6 md:h-6" />
               </div>
-              <div className="flex flex-col gap-1 items-start">
-                <span className="text-[#AAA9BE] text-sm leading-5 font-normal">Visit Us</span>
-                <span className="text-[#E7E6FC] text-lg leading-7 font-normal group-hover:text-white transition-colors">Mumbai, India</span>
+              <div className="flex flex-col gap-0.5 items-start">
+                <span className="text-[#AAA9BE] text-[0.7rem] md:text-sm leading-tight font-normal">Visit Us</span>
+                <span className="text-[#E7E6FC] text-sm md:text-lg leading-tight font-normal group-hover:text-white transition-colors">Mumbai, India</span>
               </div>
             </a>
           </div>
@@ -236,7 +236,7 @@ const Connect = () => {
 
         {/* Right Column: Contact Form */}
         <div 
-          className="rounded-2xl p-8 flex flex-col gap-10 items-center justify-start shrink-0 w-full lg:w-156 relative min-h-146"
+          className="rounded-2xl p-5 md:p-8 flex flex-col gap-8 md:gap-10 items-center justify-start shrink-0 w-full lg:w-156 relative min-h-146"
           style={{
             background: "linear-gradient(188.91deg, rgba(24, 25, 46, 1) 0%, rgba(15, 15, 37, 1) 100%)",
             border: "1px solid rgba(255, 255, 255, 0.05)"
@@ -251,7 +251,7 @@ const Connect = () => {
                     key={cat}
                     disabled={isSubmitting}
                     onClick={() => setActiveCategory(cat)}
-                    className={`py-3 px-2 flex-1 text-center font-medium text-sm transition-all rounded-md ${
+                    className={`py-3 px-1 sm:px-2 flex-1 text-center font-medium text-[0.75rem] sm:text-sm transition-all rounded-md ${
                       activeCategory === cat ? "bg-[#4A51B1] text-[#FBFBFF] shadow-lg" : "text-white/40 hover:text-white/70 cursor-pointer"
                     } ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
                     style={{ letterSpacing: "-0.15px" }}
@@ -279,19 +279,17 @@ const Connect = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex flex-col md:flex-row gap-4 w-full flex-1">
-                    <div className="flex flex-col gap-2 flex-1">
-                      <label className="text-[#AAA9BE] text-sm leading-4">Corporate Email</label>
-                      <div className="bg-[#23243A] rounded-lg p-3 h-11 flex items-center focus-within:ring-1 focus-within:ring-[#787BBC] transition-all border border-white/5">
-                        <input 
-                          type="email" 
-                          placeholder="Email" 
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
-                        />
-                      </div>
+                  <div className="flex flex-col gap-2 flex-1">
+                    <label className="text-[#AAA9BE] text-sm leading-4">Corporate Email</label>
+                    <div className="bg-[#23243A] rounded-lg p-3 h-11 flex items-center focus-within:ring-1 focus-within:ring-[#787BBC] transition-all border border-white/5">
+                      <input 
+                        type="email" 
+                        placeholder="Email" 
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
+                      />
                     </div>
                   </div>
                 </div>
@@ -301,8 +299,15 @@ const Connect = () => {
                   <div className="flex flex-col gap-2 flex-1 relative" ref={selectRef}>
                     <label className="text-[#AAA9BE] text-sm leading-4">{selectLabel}</label>
                     <div 
+                      tabIndex={0}
                       onClick={() => !isSubmitting && setIsSelectOpen(!isSelectOpen)}
-                      className={`bg-[#23243A] rounded-lg pr-3 pl-3 h-11 flex items-center justify-between border border-white/5 cursor-pointer hover:bg-[#2A2B45] transition-all relative ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          !isSubmitting && setIsSelectOpen(!isSelectOpen);
+                        }
+                      }}
+                      className={`bg-[#23243A] rounded-lg pr-3 pl-3 h-11 flex items-center justify-between border border-white/5 cursor-pointer hover:bg-[#2A2B45] focus:ring-1 focus:ring-[#787BBC] outline-none transition-all relative ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
                     >
                       <span className={`text-sm font-sans ${selectedService ? "text-white" : "text-[#AAA9BE]/40"}`}>
                         {isLoadingInterests ? "Loading..." : (selectedService || `Select ${activeCategory === "Product Inquiry" ? "Product" : "Service"}`)}
@@ -371,7 +376,7 @@ const Connect = () => {
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className={`bg-[#ffaa00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-center md:justify-start w-full md:w-fit transition-all active:scale-95 group relative overflow-hidden cursor-pointer font-sans ${isSubmitting ? "opacity-70" : "hover:bg-[#FFB733]"}`}
+                  className={`bg-[#ffaa00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-center md:justify-start w-full sm:w-[180px] transition-all active:scale-95 group relative overflow-hidden cursor-pointer font-sans mt-2 ${isSubmitting ? "opacity-70" : "hover:bg-[#FFB733]"}`}
                 >
                   <span className="text-[#070784] text-center font-medium text-base md:text-lg leading-6" style={{ letterSpacing: "-0.31px" }}>
                     {isSubmitting ? "Submitting..." : "Submit"}
@@ -381,24 +386,24 @@ const Connect = () => {
               </form>
             </>
           ) : (
-            <div className="flex flex-col gap-15.5 items-center justify-center self-stretch flex-1 relative opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] font-sans">
-              <div className="bg-[#ffaa00] rounded-full shrink-0 w-30 h-30 relative flex items-center justify-center">
+            <div className="flex flex-col gap-8 md:gap-15.5 items-center justify-center self-stretch flex-1 relative opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] font-sans">
+              <div className="bg-[#ffaa00] rounded-full shrink-0 w-16 h-16 md:w-30 md:h-30 relative flex items-center justify-center">
                 <img
-                  className="w-17.5 h-17.5 overflow-visible"
+                  className="w-9 h-9 md:w-17.5 md:h-17.5 overflow-visible"
                   src="/connect/tick_icon.svg"
                   alt="Success"
                 />
                 <div
-                  className="rounded-full border-solid border-[#ffaa00] border-4 p-1 w-[8.99rem] h-[8.99rem] absolute"
+                  className="rounded-full border-solid border-[#ffaa00] border-4 p-1 w-20 h-20 md:w-[8.99rem] md:h-[8.99rem] absolute"
                   style={{ opacity: 0.29 }}
                 ></div>
               </div>
 
-              <div className="flex flex-col gap-3 items-center justify-center self-stretch shrink-0 relative px-4">
-                  <div className="text-[#FBFBFFCC] text-center font-medium text-[2.375rem] leading-12 font-sans">
+              <div className="flex flex-col gap-2 md:gap-3 items-center justify-center self-stretch shrink-0 relative px-4">
+                  <div className="text-[#FBFBFFCC] text-center font-medium text-[1.75rem] md:text-[2.375rem] leading-tight md:leading-12 font-sans">
                     Thank You!
                   </div>
-                  <div className="text-[#FFFFFF99] text-center font-normal text-base leading-6 max-w-99 font-sans opacity-70">
+                  <div className="text-[#FFFFFF99] text-center font-normal text-sm md:text-base leading-6 max-w-99 font-sans opacity-70">
                     Your inquiry has been successfully submitted.
                     <br />
                     Our team will review your request and get back to you within 24-48
