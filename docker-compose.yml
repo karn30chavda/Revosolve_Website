@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build: .
+    container_name: revosolve-website
+    ports:
+      - "8083:80"
+    # env_file:
+    #   - .env
+    restart: unless-stopped
+    networks:
+      - revosolve-net
+networks:
+  revosolve-net:
+    driver: bridge
