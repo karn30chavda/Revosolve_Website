@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion as Motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const solutions = [
   {
@@ -111,8 +112,9 @@ const IntelligentSolutions = () => {
     return () => clearTimeout(timeout);
   }, [offset]);
 
+  const navigate = useNavigate();
   return (
-    <section className="relative w-full bg-transparent overflow-hidden py-32">
+    <section className="relative w-full bg-transparent overflow-hidden py-16">
       <div className="w-[80%] mx-auto px-4">
         <div className="text-white/30 text-xs font-medium uppercase tracking-[3px] mb-6 font-sans">
           [Solutions]
@@ -245,7 +247,7 @@ const IntelligentSolutions = () => {
                       </div>
 
                       <div className="mt-auto flex flex-row items-center gap-1.5 cursor-pointer group/link w-fit">
-                        <span className="text-[#050737] text-[16px] font-medium font-sans">
+                        <span onClick={() => navigate("/coming-soon")} className="text-[#050737] text-[16px] font-medium font-sans">
                           Explore
                         </span>
                         <img

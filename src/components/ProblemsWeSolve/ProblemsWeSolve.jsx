@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion as Motion } from "framer-motion";
 
 // ============================================
 // Card Data - High Fidelity Selection
@@ -9,16 +10,12 @@ const cardData = [
     description:
       "Digital governance platforms, citizen service automation, and workflow systems for public operations.",
     icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#FCCB71"
-        strokeWidth="1.8"
-      >
-        <path d="M3 21h18M3 10h18M5 10v11M19 10v11M12 10v11M12 3L2 10h20L12 3z" />
-      </svg>
+      <img
+        src="/home_section_3/government.svg"
+        alt="Government"
+        width="40"
+        height="40"
+      />
     ),
     video: "/home_section_3/government.mp4",
     reverse: false,
@@ -28,17 +25,12 @@ const cardData = [
     description:
       "Technology systems for customer interaction, identity verification, and financial operations enabling automated onboarding.",
     icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#FCCB71"
-        strokeWidth="1.8"
-      >
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="M7 15h0M2 9.5h20" />
-      </svg>
+      <img
+        src="/home_section_3/accounts.svg"
+        alt="Banking"
+        width="40"
+        height="40"
+      />
     ),
     video: "/home_section_3/accounts.mp4",
     reverse: true,
@@ -48,16 +40,12 @@ const cardData = [
     description:
       "AI-driven workflow automation, decision intelligence, and operational systems.",
     icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#FCCB71"
-        strokeWidth="1.8"
-      >
-        <path d="M3 21h18M3 7v14M19 7v14M9 7v14M15 7v14M3 3h18l-1 4H4L3 3z" />
-      </svg>
+      <img
+        src="/home_section_3/enterprice.svg"
+        alt="Enterprise"
+        width="40"
+        height="40"
+      />
     ),
     video: "/home_section_3/enterprice.mp4",
     reverse: false,
@@ -65,8 +53,10 @@ const cardData = [
 ];
 
 const ProblemsWeSolve = () => {
+  const containerRef = useRef(null);
+
   return (
-    <section className="relative w-full bg-transparent py-24 overflow-visible">
+    <section className="relative w-full bg-transparent py-16 overflow-visible">
       <div className="relative z-30 w-[80%] mx-auto">
         {/* Header Section - Pixel Perfect Image Match */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 w-full gap-8">
@@ -92,12 +82,22 @@ const ProblemsWeSolve = () => {
         </div>
 
         {/* The Frame: Enhanced Height (480px) masked container, 90% width context */}
-        <div className="relative w-full h-[410px] rounded-lg border border-white/5 shadow-2xl overflow-hidden bg-[#0a0a1a]">
+        <div className="relative w-full h-[450px] overflow-visible">
           {/* Scrollable Internal Content */}
-          <div className="w-full h-full overflow-y-auto scroll-smooth snap-y snap-mandatory scrollbar-hide">
+          <div 
+            ref={containerRef}
+            className="w-full h-full overflow-y-auto scroll-smooth snap-y snap-mandatory scrollbar-hide flex flex-col rounded-xl"
+          >
             {cardData.map((card, idx) => (
-              <div key={idx} className="w-full h-[410px] shrink-0 snap-start">
-                <div
+              <div 
+                key={idx} 
+                className="w-full h-full shrink-0 snap-start rounded-2xl border border-white/5 shadow-2xl overflow-hidden bg-[#0a0a1a]"
+              >
+                <Motion.div
+                  initial={{ opacity: 0, y: 30, scale: 0.98 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   className={`flex w-full h-full ${card.reverse ? "flex-row-reverse" : "flex-row"}`}
                 >
                   {/* Text Side - High-Fidelity Design Sync (460px Width, Top-Aligned) */}
@@ -106,7 +106,7 @@ const ProblemsWeSolve = () => {
                       background:
                         "linear-gradient(147deg, #222468 14.75%, #191A3E 90.8%)",
                     }}
-                    className="w-[460px] flex flex-col justify-start items-start px-14 pt-[50px] pb-12 z-20 shrink-0 border-r border-white/5 font-['Blauer_Nue',sans-serif]"
+                    className="w-[460px] flex flex-col justify-start items-start px-14 pt-[50px] pb-12 z-20 shrink-0 border-r border-white/10 font-['Blauer_Nue',sans-serif]"
                   >
                     <div className="w-[60px] h-[60px] flex items-center justify-center mb-10 scale-125 origin-left">
                       {card.icon}
@@ -137,7 +137,7 @@ const ProblemsWeSolve = () => {
                       <source src={card.video} type="video/mp4" />
                     </video>
                   </div>
-                </div>
+                </Motion.div>
               </div>
             ))}
           </div>

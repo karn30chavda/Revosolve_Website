@@ -146,14 +146,14 @@ const Footer = () => {
       </div>
 
       {/* 2. SHARED HORIZONTAL LINE WITH CORNER PATTERN OVERLAY */}
-      <div className="w-full max-w-[80%] relative">
+      <div className="w-full relative">
         <div className="h-[2px] w-full bg-white opacity-10" />
         
         {/* Pattern sitting directly on the far-left of this line */}
         <img 
             src="/footer/left_pattern.svg" 
             alt="" 
-            className="absolute bottom-0 left-[-4px] md:-left-6 w-44 md:w-60 h-auto opacity-30 pointer-events-none z-10"
+            className="absolute bottom-0 left-[-4px] md:-left-6 w-44 md:w-60 h-auto opacity-90 pointer-events-none z-10"
         />
       </div>
 

@@ -1,20 +1,136 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Connect = () => {
   const [activeCategory, setActiveCategory] = useState("Product Inquiry");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [selectedService, setSelectedService] = useState("");
+  const [selectedServiceName, setSelectedServiceName] = useState(""); // The "name" field for POST
   const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [interestOptions, setInterestOptions] = useState([]);
+  const [isLoadingInterests, setIsLoadingInterests] = useState(true);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: ""
+  });
+  
   const navigate = useNavigate();
+  const selectRef = useRef(null);
 
-  const handleSubmit = (e) => {
+  const ERP_BASE_URL = import.meta.env.VITE_ERP_BASE_URL || "https://erp.revosolve.com";
+
+  // Fetch Interest Options from API
+  useEffect(() => {
+    const fetchInterests = async () => {
+      try {
+        setIsLoadingInterests(true);
+        const fields = JSON.stringify(["name", "reason", "sub_reason"]);
+        const filters = JSON.stringify({ active: 1 });
+        
+        // Properly encoding the URL to handle spaces and JSON characters
+        const resource = encodeURIComponent("Interest of Connect");
+        const url = `${ERP_BASE_URL}/api/resource/${resource}?fields=${encodeURIComponent(fields)}&filters=${encodeURIComponent(filters)}`;
+        
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const result = await response.json();
+        setInterestOptions(result.data || []);
+      } catch (err) {
+        console.error("Error fetching interests:", err);
+      } finally {
+        setIsLoadingInterests(false);
+      }
+    };
+
+    fetchInterests();
+  }, [ERP_BASE_URL]);
+
+  // Click Outside logic to close select
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (selectRef.current && !selectRef.current.contains(event.target)) {
+        setIsSelectOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Handle Category Change (reset selection when switching Product/Services)
+  useEffect(() => {
+    setSelectedService("");
+    setSelectedServiceName("");
+  }, [activeCategory]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    if (!selectedServiceName) {
+      alert("Please select your area of interest");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Construct the 'data' payload for ERP
+      const payload = {
+        first_name: formData.name,
+        email_id: formData.email,
+        company_name: formData.company,
+        custom_reason_to_connect: activeCategory,
+        custom_connect_message: formData.message,
+        custom_interest_of_connect: selectedServiceName, // The 'name' value from GET API
+        lead_owner: "yashbhanushali.tech@gmail.com",
+        source: "Website",
+        status: "Lead",
+        doctype: "Lead",
+        web_form_name: "website-connect-form"
+      };
+
+      const body = new URLSearchParams();
+      body.append("data", JSON.stringify(payload));
+      body.append("web_form", "website-connect-form");
+      body.append("cmd", "frappe.website.doctype.web_form.web_form.accept");
+
+      const response = await fetch(ERP_BASE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: body.toString()
+      });
+
+      // Handle success (200) or lead already exists (409) as a unified success state
+      if (response.ok || response.status === 409) {
+        setIsSubmitted(true);
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || "Failed to submit form");
+      }
+    } catch (err) {
+      console.error("Form Submission Error:", err);
+      alert("There was an error submitting the form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const categories = ["Product Inquiry", "Services/Solution", "Join us"];
-  const services = ["Application Development", "Cloud & DevOps", "AI Solutions"];
+  const categories = ["Product Inquiry", "Services/Solution"];
+  
+  // Filter interests by active category
+  const filteredInterests = interestOptions.filter(item => 
+    item.reason === activeCategory
+  );
+
+  // Dynamic label based on category
+  const selectLabel = activeCategory === "Product Inquiry" ? "Product of Interest" : "Service of Interest";
 
   return (
     <div 
@@ -38,7 +154,7 @@ const Connect = () => {
         {/* Left Column: Contact Info */}
         <div className="flex flex-col gap-[3.2rem] items-start justify-start flex-1 w-full relative">
           
-          {/* Header Section - Fixed stacking issues */}
+          {/* Header Section */}
           <div className="flex flex-col gap-2 items-start justify-start w-full relative">
             <div
               className="text-white text-left font-normal text-lg leading-normal tracking-[0.016rem] opacity-30 h-10 flex items-center"
@@ -48,9 +164,8 @@ const Connect = () => {
             </div>
             
             <div className="flex flex-col items-start justify-start relative">
-                {/* Gradient Text Line */}
                 <h1
-                  className="text-left font-black text-[2.5rem] md:text-[3rem] leading-none"
+                  className="text-left font-black text-[2.5rem] md:text-[3rem] leading-none text-white"
                   style={{
                     background: "linear-gradient(89.75deg, rgba(135, 123, 241, 1) 0%, rgba(252, 202, 113, 1) 100%)",
                     WebkitBackgroundClip: "text",
@@ -59,16 +174,13 @@ const Connect = () => {
                 >
                   Get In Touch
                 </h1>
-                {/* Plain Text Line Below */}
                 <h2 className="text-[#CACBDB] text-left text-[2.5rem] md:text-[3rem] font-normal leading-tight">
                   with Us
                 </h2>
             </div>
           </div>
 
-          {/* Contact Details List */}
           <div className="flex flex-col gap-8 items-start justify-start w-full relative pt-4">
-            
             {/* Email */}
             <div className="flex flex-row gap-6 items-center justify-start w-full group cursor-pointer">
               <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-14 h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
@@ -101,7 +213,6 @@ const Connect = () => {
                 <span className="text-[#E7E6FC] text-lg leading-7 font-normal">Mumbai, India</span>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -120,10 +231,11 @@ const Connect = () => {
                 {categories.map((cat) => (
                   <button
                     key={cat}
+                    disabled={isSubmitting}
                     onClick={() => setActiveCategory(cat)}
                     className={`py-3 px-2 flex-1 text-center font-medium text-sm transition-all rounded-md ${
                       activeCategory === cat ? "bg-[#4A51B1] text-[#FBFBFF] shadow-lg" : "text-white/40 hover:text-white/70 cursor-pointer"
-                    }`}
+                    } ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
                     style={{ letterSpacing: "-0.15px" }}
                   >
                     {cat}
@@ -143,6 +255,8 @@ const Connect = () => {
                         type="text" 
                         placeholder="Name" 
                         required
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
                         className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
                       />
                     </div>
@@ -155,6 +269,8 @@ const Connect = () => {
                           type="email" 
                           placeholder="Email" 
                           required
+                          value={formData.email}
+                          onChange={(e) => setFormData({...formData, email: e.target.value})}
                           className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
                         />
                       </div>
@@ -164,14 +280,14 @@ const Connect = () => {
 
                 {/* Row 2: Service of Interest and Company */}
                 <div className="flex flex-col md:flex-row gap-4 w-full">
-                  <div className="flex flex-col gap-2 flex-1 relative">
-                    <label className="text-[#AAA9BE] text-sm leading-4">Service of Interest</label>
+                  <div className="flex flex-col gap-2 flex-1 relative" ref={selectRef}>
+                    <label className="text-[#AAA9BE] text-sm leading-4">{selectLabel}</label>
                     <div 
-                      onClick={() => setIsSelectOpen(!isSelectOpen)}
-                      className="bg-[#23243A] rounded-lg pr-3 pl-3 h-11 flex items-center justify-between border border-white/5 cursor-pointer hover:bg-[#2A2B45] transition-all relative"
+                      onClick={() => !isSubmitting && setIsSelectOpen(!isSelectOpen)}
+                      className={`bg-[#23243A] rounded-lg pr-3 pl-3 h-11 flex items-center justify-between border border-white/5 cursor-pointer hover:bg-[#2A2B45] transition-all relative ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
                     >
                       <span className={`text-sm font-sans ${selectedService ? "text-white" : "text-[#AAA9BE]/40"}`}>
-                        {selectedService || "Select Service"}
+                        {isLoadingInterests ? "Loading..." : (selectedService || `Select ${activeCategory === "Product Inquiry" ? "Product" : "Service"}`)}
                       </span>
                       <img 
                         src="/connect/select_drop_icon.svg" 
@@ -180,25 +296,29 @@ const Connect = () => {
                       />
                     </div>
 
-                    {/* Custom Dropdown Options */}
-                    {isSelectOpen && (
-                      <div className="absolute top-[calc(100%+0.5rem)] left-0 w-full bg-[#1D1E32] border border-white/10 rounded-lg shadow-2xl z-50 py-2 animate-in fade-in zoom-in-95 duration-200 overflow-hidden font-sans">
-                        {services.map((service) => (
-                          <div
-                            key={service}
-                            onClick={() => {
-                              setSelectedService(service);
-                              setIsSelectOpen(false);
-                            }}
-                            className={`px-4 py-3 text-sm transition-all cursor-pointer ${
-                              selectedService === service 
-                                ? "bg-[#4A51B1] text-white" 
-                                : "text-[#AAA9BE] hover:bg-[#2A2B45] hover:text-white"
-                            }`}
-                          >
-                            {service}
-                          </div>
-                        ))}
+                    {isSelectOpen && !isLoadingInterests && (
+                      <div className="absolute top-[calc(100%+0.5rem)] left-0 w-full bg-[#1D1E32] border border-white/10 rounded-lg shadow-2xl z-50 py-2 animate-in fade-in zoom-in-95 duration-200 overflow-hidden font-sans max-h-60 overflow-y-auto">
+                        {filteredInterests.length > 0 ? (
+                          filteredInterests.map((item) => (
+                            <div
+                              key={item.name}
+                              onClick={() => {
+                                setSelectedService(item.sub_reason);
+                                setSelectedServiceName(item.name);
+                                setIsSelectOpen(false);
+                              }}
+                              className={`px-4 py-3 text-sm transition-all cursor-pointer ${
+                                selectedServiceName === item.name 
+                                  ? "bg-[#4A51B1] text-white" 
+                                  : "text-[#AAA9BE] hover:bg-[#2A2B45] hover:text-white"
+                              }`}
+                            >
+                              {item.sub_reason}
+                            </div>
+                          ))
+                        ) : (
+                          <div className="px-4 py-3 text-sm text-[#AAA9BE]/40 italic">No options available for this category</div>
+                        )}
                       </div>
                     )}
                   </div>
@@ -208,6 +328,8 @@ const Connect = () => {
                       <input 
                         type="text" 
                         placeholder="Company" 
+                        value={formData.company}
+                        onChange={(e) => setFormData({...formData, company: e.target.value})}
                         className="bg-transparent border-none outline-none w-full text-white text-sm placeholder-[#AAA9BE]/40 font-sans"
                       />
                     </div>
@@ -220,23 +342,28 @@ const Connect = () => {
                   <div className="bg-[#23243A] rounded-lg p-3 h-32 flex items-start focus-within:ring-1 focus-within:ring-[#787BBC] transition-all border border-white/5">
                     <textarea 
                       placeholder="Tell us about your project, or how we can help..." 
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className="bg-transparent border-none outline-none w-full h-full text-white text-sm placeholder-[#AAA9BE]/40 resize-none font-sans"
                     />
                   </div>
                 </div>
 
                 {/* Submit Button */}
-                <button type="submit" className="bg-[#ffaa00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-center md:justify-start w-full md:w-fit hover:bg-[#FFB733] transition-all active:scale-95 group relative overflow-hidden cursor-pointer font-sans">
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className={`bg-[#ffaa00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-center md:justify-start w-full md:w-fit transition-all active:scale-95 group relative overflow-hidden cursor-pointer font-sans ${isSubmitting ? "opacity-70" : "hover:bg-[#FFB733]"}`}
+                >
                   <span className="text-[#070784] text-center font-medium text-base md:text-lg leading-6" style={{ letterSpacing: "-0.31px" }}>
-                    Submit
+                    {isSubmitting ? "Submitting..." : "Submit"}
                   </span>
-                  <img src="/connect/submit_icon.svg" alt="" className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {!isSubmitting && <img src="/connect/submit_icon.svg" alt="" className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
                 </button>
               </form>
             </>
           ) : (
             <div className="flex flex-col gap-15.5 items-center justify-center self-stretch flex-1 relative animate-in fade-in duration-700 font-sans">
-              {/* Success Icon */}
               <div className="bg-[#ffaa00] rounded-full shrink-0 w-30 h-30 relative flex items-center justify-center">
                 <img
                   className="w-17.5 h-17.5 overflow-visible"
@@ -249,8 +376,7 @@ const Connect = () => {
                 ></div>
               </div>
 
-              {/* Thank You Text */}
-              <div className="flex flex-col gap-3 items-center justify-center self-stretch shrink-0 relative">
+              <div className="flex flex-col gap-3 items-center justify-center self-stretch shrink-0 relative px-4">
                   <div className="text-[#FBFBFFCC] text-center font-medium text-[2.375rem] leading-12 font-sans">
                     Thank You!
                   </div>
@@ -262,7 +388,6 @@ const Connect = () => {
                   </div>
               </div>
 
-              {/* Back button */}
               <button
                 onClick={() => navigate("/")}
                 className="rounded-lg border-2 border-[#5B62BF5E] py-2.5 px-8.75 flex flex-row gap-5.5 items-center justify-center shrink-0 h-14 relative backdrop-blur-[2px] transition-all hover:bg-white/5 active:scale-95 cursor-pointer font-sans"

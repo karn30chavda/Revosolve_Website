@@ -92,7 +92,7 @@ const Navbar = () => {
                 className="relative flex items-center justify-center gap-2 h-20 text-white font-sans text-base font-medium tracking-tight hover:text-accent cursor-pointer transition-colors duration-300 text-center"
               >
                 {!item.dropdown ? (
-                  <Link to="/coming-soon">{item.label}</Link>
+                  <Link to="/coming-soon" onClick={() => setOpenDropdownIdx(null)}>{item.label}</Link>
                 ) : (
                   <span>{item.label}</span>
                 )}
@@ -133,6 +133,7 @@ const Navbar = () => {
                             <Link 
                               key={linkIdx}
                               to="/coming-soon" 
+                              onClick={() => setOpenDropdownIdx(null)}
                               className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-tight group/link w-fit"
                             >
                               <span className="group-hover/link:underline decoration-[#070784] underline-offset-4 transition-all">
@@ -160,6 +161,7 @@ const Navbar = () => {
         {/* Connect Button */}
         <Link 
           to="/connect" 
+          onClick={() => setOpenDropdownIdx(null)}
           className="flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white font-sans font-semibold rounded-lg border border-accent hover:bg-accent/10 hover:shadow-lg transition-all duration-300 shrink-0"
         >
           Connect 

@@ -1,8 +1,9 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const CaseStudies = () => {
+  const navigate = useNavigate();
   return (
-    <section className="bg-transparent py-32 flex flex-col gap-16 items-center justify-start relative w-full overflow-hidden">
+    <section className="bg-transparent py-16 flex flex-col gap-16 items-center justify-start relative w-full overflow-hidden">
       {/* Header section */}
       <div className="w-[80%] mx-auto px-4 flex flex-col gap-3 items-start justify-end relative">
         <div
@@ -72,7 +73,7 @@ const CaseStudies = () => {
               {/* Title and Goal */}
               <div className="flex flex-col gap-2 items-start justify-start self-stretch relative">
                 <h3 className="text-[#050737] text-left font-bold text-[28px] leading-tight self-stretch">
-                  UP Fraud Business Rule Engine Development
+                  UPI Fraud Business Rule Engine Development
                 </h3>
                 <p
                   className="text-[#050737] text-left font-sans text-base leading-[22.75px] font-normal self-stretch tracking-[-0.15px]"
@@ -103,10 +104,11 @@ const CaseStudies = () => {
               </div>
 
               {/* Explore Link */}
-              <div className="flex flex-row gap-[7px] items-center justify-start relative cursor-pointer group">
-                <span className="text-[#050737] text-left font-sans text-lg font-normal">
+              <div className="flex flex-row gap-[7px] items-center justify-start relative cursor-pointer group" onClick={() => navigate("/coming-soon")}>
+
+                <button className="text-[#050737] text-left font-sans text-lg font-normal cursor-pointer">
                   Explore
-                </span>
+                </button>
                 <img
                   className="w-5 h-5 transition-transform group-hover:translate-x-1"
                   src="/home_section_5/explore_arrow.svg"
@@ -130,6 +132,7 @@ const CaseStudies = () => {
 
       {/* Footer CTA */}
       <button
+        onClick={() => navigate("/coming-soon")}
         className="rounded-lg border-2 border-[rgba(91,98,191,0.37)] py-2.5 px-[35px] flex flex-row gap-[22px] items-center justify-center h-14 relative backdrop-blur-[2px] cursor-pointer hover:bg-white/5 transition-colors"
       >
         <span className="text-white text-center font-medium text-base leading-6 tracking-[-0.31px]">

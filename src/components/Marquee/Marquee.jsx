@@ -3,12 +3,10 @@ import { motion as Motion } from "framer-motion";
 
 const Marquee = () => {
   const logos = [
-    "/marquee_icons/icon_1.svg",
-    "/marquee_icons/icon_2.svg",
-    "/marquee_icons/icon_3.svg",
-    "/marquee_icons/icon_4.svg",
-    "/marquee_icons/icon_5.svg",
-    "/marquee_icons/icon_6.svg",
+    "/marquee_icons/1.svg",
+    "/marquee_icons/2.svg",
+    "/marquee_icons/3.svg",
+    "/marquee_icons/4.svg",
   ];
 
   // Multiple sets for a truly infinite feel

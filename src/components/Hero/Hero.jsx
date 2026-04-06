@@ -1,8 +1,9 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
-    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center font-sans pt-56 pb-32 bg-bg-primary">
+    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center font-sans pt-56 pb-16 bg-bg-primary">
       {/* Background Video Container */}
       <div className="absolute inset-0 z-0">
         <video
@@ -87,6 +88,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-6 items-center justify-center shrink-0 relative w-full mt-8">
           {/* Start a Conversation Button */}
           <button
+          onClick={() => navigate("/connect")}
             className="bg-[#ffaa00] rounded-sm px-8 py-3.5 flex flex-row gap-2 items-center justify-start 
             shrink-0 relative cursor-pointer border-none group transition-all duration-300 overflow-hidden
             active:scale-95 shadow-xl"
@@ -108,6 +110,7 @@ const Hero = () => {
 
           {/* Explore Case Studies Button */}
           <button
+          onClick={() => navigate("/coming-soon")}
             className="rounded-sm border-2 border-white/20 px-8 py-3.5 h-auto
             flex flex-row gap-5 items-center justify-center shrink-0 relative backdrop-blur-md 
             cursor-pointer hover:bg-white/10 transition-all active:scale-95 text-white group bg-transparent"

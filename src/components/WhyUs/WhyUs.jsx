@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyUs = () => {
   return (
-    <section className="bg-transparent py-32 px-4 flex flex-col items-center justify-start relative w-full overflow-hidden">
+    <section className="bg-transparent py-16 px-4 flex flex-col items-center justify-start relative w-full overflow-hidden">
       <div className="w-[80%] mx-auto flex flex-col gap-16 items-start justify-start relative">
         {/* Header section */}
         <div className="flex flex-col gap-3 items-start justify-end self-stretch shrink-0 relative">
