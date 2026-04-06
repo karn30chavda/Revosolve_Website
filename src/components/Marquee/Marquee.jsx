@@ -19,7 +19,7 @@ const Marquee = () => {
       <div className="absolute -top-5 left-0 right-0 w-full pointer-events-none z-30 transform-gpu -translate-y-1/2">
         <img 
           src="/hero_section/gradient.png" 
-          className="w-full h-auto object-cover scale-125 opacity-100" 
+          className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100" 
           alt="" 
         />
       </div>

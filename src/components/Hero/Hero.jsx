@@ -34,11 +34,11 @@ const Hero = () => {
       <div className="flex flex-col items-center justify-center relative z-10 w-full px-5 text-center max-w-7xl mx-auto">
         {/* Tagline Pill - Mobile Optimized */}
         <div
-          className="flex items-center justify-center whitespace-nowrap overflow-hidden relative group 
-          rounded-full bg-white/5 h-10 px-5 py-2 gap-2.5 backdrop-blur-md 
+          className="flex items-center justify-center whitespace-nowrap relative group 
+          rounded-full bg-white/5 h-10 px-5 md:px-7 gap-2 grow-0 shrink-0 md:min-w-[329px] md:w-fit md:h-[38px] backdrop-blur-md 
           border border-white/20 mb-8"
         >
-          <div className="text-[#fbfbff] text-[0.8125rem] md:text-base font-medium tracking-[0.01em] uppercase opacity-90">
+          <div className="text-[#fbfbff] text-[0.8125rem] md:text-lg font-medium tracking-[0.01em] uppercase opacity-90">
             Revosolve
           </div>
 
@@ -48,44 +48,32 @@ const Hero = () => {
             alt=""
           />
 
-          <div className="text-[#fbfbff] text-[0.8125rem] md:text-base font-medium tracking-[0.01em] uppercase opacity-90">
+          <div className="text-[#fbfbff] text-[0.8125rem] md:text-lg font-medium tracking-[0.01em] uppercase opacity-90">
             Building Future Tech
           </div>
         </div>
 
         {/* Main Heading Section - Redesigned for mobile impact */}
         <div className="flex flex-col items-center justify-center relative mb-6 w-full px-2">
-          <h1 className="text-center w-full flex flex-col items-center gap-1">
-            <span
-              className="text-[1.85rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
+          <h1 className="text-center w-full flex flex-col items-center gap-2.5">
+            <div
+              className="text-center relative w-full md:w-[934px] text-2xl md:text-[54px] md:leading-[56px] 
               bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent 
-              font-bold md:font-black tracking-[-0.03em]"
+              font-extrabold md:font-black tracking-tight"
+              style={{ letterSpacing: "0.26px" }}
             >
-              Engineering Technology
-            </span>
-            <span className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1">
-              <span
-                className="text-[1.85rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
-                text-[#888EBF]/90 font-bold md:font-black tracking-[-0.03em]"
-              >
-                Systems
-              </span>
-              <span
-                className="text-[1.85rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
-                text-[#ffffff] font-bold md:font-black tracking-[-0.03em]"
-              >
-                for Governments,
-              </span>
-            </span>
-            <span
-              className="text-[1.75rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] 
-              text-[#ffffff] font-bold md:font-black tracking-[-0.03em]"
+              Engineering Technology Systems
+            </div>
+            <div
+              className="text-[#ffffff] text-center relative w-full md:w-[934px] text-2xl md:text-[54px] 
+              md:leading-[56px] font-extrabold md:font-black tracking-tight"
+              style={{ letterSpacing: "0.26px" }}
             >
-              Finance, and Enterprise
-            </span>
+              for Governments, Finance, and Enterprise
+            </div>
           </h1>
 
-          <p className="text-[#fbfbff] text-center text-sm md:text-lg lg:text-xl font-normal relative w-full max-w-2xl opacity-60 leading-relaxed mt-8 md:mt-12">
+          <p className="text-[#fbfbff] text-center text-sm md:text-lg font-normal relative w-full md:w-[562px] opacity-60 leading-relaxed mt-10 md:mt-6">
             Revosolve helps businesses transform ideas into scalable digital
             solutions using AI, cloud infrastructure and modern software
             engineering.
@@ -97,15 +85,14 @@ const Hero = () => {
           {/* Main Button */}
           <button
             onClick={() => navigate("/connect")}
-            className="w-4/5 md:w-64 h-[3.4rem] md:h-[3.8rem] bg-[#ffaa00] rounded-xl flex items-center justify-center gap-3
-            cursor-pointer border-none group transition-all duration-300 shadow-[0_0_25px_rgba(255,170,0,0.25)]
-            active:scale-95"
+            className="btn-premium-glow w-4/5 md:w-64 h-[3.4rem] md:h-[3.8rem] rounded-xl flex items-center justify-center gap-3
+            cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
           >
-            <span className="text-[#070784] text-center  md:text-lg font-semibold tracking-tight">
+            <span className="relative z-10 text-center md:text-lg font-bold tracking-tight">
               Start a Conversation
             </span>
             <img
-              className="shrink-0 w-4.5 h-4.5 md:w-5 md:h-5 group-hover:translate-x-1.5 transition-transform duration-300"
+              className="relative z-10 shrink-0 w-4.5 h-4.5 md:w-5 md:h-5 group-hover:translate-x-1.5 transition-transform duration-300"
               src="/hero_section/icon_2.svg"
               alt=""
             />
@@ -117,7 +104,7 @@ const Hero = () => {
             className="w-4/5 md:w-64 h-[3.4rem] md:h-[3.8rem] rounded-xl border-[1.5px] border-white/20 flex items-center justify-center gap-4 
             backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent"
           >
-            <span className="text-white text-center  md:text-lg font-semibold tracking-tight">
+            <span className="text-white text-center md:text-lg font-semibold tracking-tight">
               Explore case studies
             </span>
             <img

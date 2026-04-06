@@ -50,3 +50,35 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* Custom UI Tokens */
+.btn-premium-glow {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 170, 0, 1) !important;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 235, 195, 1) 0%,
+    rgba(255, 170, 0, 1) 85%
+  ) !important;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn-premium-glow:hover::after {
+  opacity: 1;
+}
+
+.btn-premium-glow:hover {
+  transform: scale(1.02);
+}
