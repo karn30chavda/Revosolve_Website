@@ -63,6 +63,7 @@ const CaseStudies = () => {
           <img
             src="/home_section_5/right_top_pattern.svg"
             alt=""
+            loading="lazy"
             className="absolute top-0 right-0 pointer-events-none select-none"
           />
 
@@ -86,19 +87,19 @@ const CaseStudies = () => {
               <div className="rounded-lg flex flex-row gap-[15px] items-center justify-start relative">
                 {caseData.techLogos.map((src, index) => (
                   <div key={index} className="bg-white/50 rounded-lg p-2.5 flex items-center justify-center w-auto h-auto min-w-[60px]">
-                    <img className={`h-[45px] object-contain ${index === 2 ? 'mix-blend-multiply' : ''}`} src={src} alt="tech logo" />
+                    <img className={`h-[45px] object-contain ${index === 2 ? 'mix-blend-multiply' : ''}`} src={src} alt="tech logo" loading="lazy" />
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-row gap-[7px] items-center justify-start relative cursor-pointer group" onClick={() => navigate("/coming-soon")}>
                 <button className="text-[#050737] text-left font-sans text-lg font-normal cursor-pointer">Explore</button>
-                <img className="w-5 h-5 transition-transform group-hover:translate-x-1" src="/home_section_4/explore_arrow.svg" alt="explore" />
+                <img className="w-5 h-5 transition-transform group-hover:translate-x-1" src="/home_section_4/explore_arrow.svg" alt="explore" loading="lazy" />
               </div>
             </div>
 
             <div className="absolute right-0 bottom-0 w-[420px] h-[240px] overflow-hidden rounded-tl-lg shadow-2xl">
-              <img className="w-full h-full object-cover" src={caseData.previewImage} alt="case study preview" />
+              <img className="w-full h-full object-cover" src={caseData.previewImage} alt="case study preview" loading="lazy" />
               <div className="absolute inset-0 bg-[#1D1F4C]/50 pointer-events-none" />
             </div>
           </div>
@@ -115,6 +116,7 @@ const CaseStudies = () => {
             src="/home_section_5/right_img_mobile.svg"
             className="rounded-lg self-stretch h-[185px] object-cover relative border border-black/5"
             alt=""
+            loading="lazy"
           />
           
           <div className="flex flex-col gap-6 items-start justify-start self-stretch relative">
@@ -136,7 +138,7 @@ const CaseStudies = () => {
             <div className="flex flex-row gap-3 items-center justify-start flex-wrap content-center self-stretch shrink-0 relative">
               {caseData.techLogos.map((src, idx) => (
                 <div key={`tech-mobile-${idx}`} className="bg-white/50 rounded-lg p-2.5 flex items-center justify-center shrink-0">
-                  <img src={src} className={`h-[32px] w-auto object-contain ${idx === 2 ? 'mix-blend-multiply' : ''}`} alt="" />
+                  <img src={src} className={`h-[32px] w-auto object-contain ${idx === 2 ? 'mix-blend-multiply' : ''}`} alt="" loading="lazy" />
                 </div>
               ))}
             </div>
@@ -146,7 +148,7 @@ const CaseStudies = () => {
               className="flex flex-row gap-[7px] items-center justify-start shrink-0 relative cursor-pointer active:scale-95 transition-transform"
             >
               <div className="text-[#050737] text-left text-lg font-normal relative">Explore</div>
-              <img className="shrink-0 w-5 h-5 relative object-contain" src="/home_section_4/explore_arrow.svg" alt="" />
+              <img className="shrink-0 w-5 h-5 relative object-contain" src="/home_section_4/explore_arrow.svg" alt="" loading="lazy" />
             </div>
           </div>
         </div>

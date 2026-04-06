@@ -1,5 +1,39 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion as Motion } from "framer-motion";
+
+const LazyVideo = ({ src, className }) => {
+  const [isInView, setIsInView] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1, rootMargin: "100px" }
+    );
+    if (videoRef.current) observer.observe(videoRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      className={className}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="none"
+    >
+      {isInView && <source src={src} type="video/mp4" />}
+      Your browser does not support the video tag.
+    </video>
+  );
+};
 
 const ProblemsWeSolve = () => {
   const containerRef = useRef(null);
@@ -73,6 +107,7 @@ const ProblemsWeSolve = () => {
                   <img
                     className="shrink-0 w-10 h-10 relative object-contain"
                     src={card.icon}
+                    loading="lazy"
                     alt=""
                   />
                 </div>
@@ -92,15 +127,10 @@ const ProblemsWeSolve = () => {
               
               {/* Card Media Section */}
               <div className="w-full h-40 rounded-lg overflow-hidden relative border border-white/10">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <LazyVideo
+                  src={card.video}
                   className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={card.video} type="video/mp4" />
-                </video>
+                />
               </div>
             </div>
           ))}
@@ -133,7 +163,7 @@ const ProblemsWeSolve = () => {
                     className="w-[460px] flex flex-col justify-start items-start px-14 pt-[50px] pb-12 z-20 shrink-0 border-r border-white/10 font-sans"
                   >
                     <div className="w-[60px] h-[60px] flex items-center justify-center mb-10 scale-125 origin-left">
-                      <img src={card.icon} alt="" width="40" height="40" className="object-contain" />
+                      <img src={card.icon} alt="" width="40" height="40" className="object-contain" loading="lazy" />
                     </div>
                     <h3
                       style={{ color: "rgba(245, 245, 255, 0.80)" }}
@@ -151,15 +181,10 @@ const ProblemsWeSolve = () => {
 
                   {/* Video Side */}
                   <div className="flex-1 relative overflow-hidden h-full bg-black">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
+                    <LazyVideo
+                      src={card.video}
                       className="absolute inset-0 w-full h-full object-cover"
-                    >
-                      <source src={card.video} type="video/mp4" />
-                    </video>
+                    />
                   </div>
                 </Motion.div>
               </div>

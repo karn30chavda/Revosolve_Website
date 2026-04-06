@@ -154,6 +154,7 @@ const Footer = () => {
         <img 
             src="/footer/left_pattern.svg" 
             alt="Pattern overlay" 
+            loading="lazy"
             className="hidden md:block absolute bottom-0 left-[-24px] w-60 h-auto opacity-90 pointer-events-none z-10"
         />
       </div>
@@ -162,6 +163,7 @@ const Footer = () => {
       <img 
           src="/footer/left_pattern.svg" 
           alt="Pattern overlay" 
+          loading="lazy"
           className="md:hidden absolute bottom-0 left-[-4px] w-96 h-auto opacity-90 pointer-events-none z-10"
       />
 

@@ -280,7 +280,8 @@ const IntelligentSolutions = () => {
               <div className="w-full h-[185px] rounded-lg overflow-hidden relative border border-black/5 shrink-0">
                  <img 
                   src={card.image} 
-                  alt="" 
+                  alt={card.title}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   style={{ background: "linear-gradient(to left, rgba(29, 31, 76, 0.49), rgba(29, 31, 76, 0.49))" }}
                 />
