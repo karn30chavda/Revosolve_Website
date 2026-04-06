@@ -14,7 +14,7 @@ const CallToAction = () => {
       >
         {/* Background Pattern */}
         <img
-          className="absolute pointer-events-none select-none opacity-[0.3] object-contain overflow-visible"
+          className="absolute pointer-events-none select-none opacity-[0.9] object-contain overflow-visible"
           style={{
             width: "40.29156rem",
             height: "19.6875rem",

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Connect = () => {
   const [activeCategory, setActiveCategory] = useState("Product Inquiry");
@@ -19,8 +19,14 @@ const Connect = () => {
   
   const navigate = useNavigate();
   const selectRef = useRef(null);
+  const location = useLocation();
 
-  const ERP_BASE_URL = import.meta.env.VITE_ERP_BASE_URL || "https://erp.revosolve.com";
+  const ERP_BASE_URL = import.meta.env.VITE_ERP_BASE_URL
+
+  useEffect(() => {
+    // Force reset scroll to top on every navigation event
+    window.scrollTo(0, 0);
+  }, [location.key]);
 
   // Fetch Interest Options from API
   useEffect(() => {
@@ -134,6 +140,7 @@ const Connect = () => {
 
   return (
     <div 
+      key={location.key}
       className="pt-32 pb-20 px-6 md:px-12 flex flex-col items-center justify-center relative w-full overflow-hidden self-stretch min-h-screen" 
       style={{ 
         fontFamily: "'Blauer Nue'",
