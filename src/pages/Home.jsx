@@ -16,24 +16,27 @@ const Home = () => {
 
       <div className="relative z-30">
         {/* Unified Atmospheric Layer - Zigzag Glows without Seams */}
-        <div className="relative w-full overflow-hidden bg-bg-primary">
-          
+        <div className="relative w-full bg-bg-primary">
           {/* Ambient Glows Layer - Rhythmic zigzag across sections */}
-          <div 
+          <div
             className="absolute inset-0 z-0 pointer-events-none"
             style={{
               background: `
                 radial-gradient(circle at 15% 10%, rgba(25, 26, 62, 0.9) 0%, transparent 45%),
                 radial-gradient(circle at 85% 45%, rgba(25, 26, 62, 0.9) 0%, transparent 45%),
                 radial-gradient(circle at 15% 85%, rgba(25, 26, 62, 0.9) 0%, transparent 45%)
-              `
+              `,
             }}
           />
 
           {/* Shared Background Patterns */}
           <div className="absolute top-0 left-0 w-full h-full z-1 overflow-hidden pointer-events-none opacity-30">
             <div className="absolute top-0 left-[15%] -translate-x-1/2 w-[2351px] h-[869px]">
-                <img src="/home_section_3/bg_pattern.png" alt="" className="w-full h-full object-contain" />
+              <img
+                src="/home_section_3/bg_pattern.png"
+                alt=""
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 

@@ -14,40 +14,31 @@ const CaseStudies = () => {
       "/home_section_5/sql_.svg",
       "/home_section_5/react_icon.svg",
     ],
-    previewImage: "/home_section_5/right_photo.svg"
+    previewImage: "/home_section_5/right_photo.jpg"
   };
 
   return (
-    <section className="bg-transparent py-2 md:py-16 flex flex-col gap-10 md:gap-16 items-center justify-start relative w-full overflow-hidden transform-gpu">
+    <section className="bg-transparent py-2 md:py-16 flex flex-col gap-10 md:gap-16 items-center justify-start relative w-full overflow-hidden transform-gpu antialiased">
       {/* Header section */}
-      <div className="w-[90%] md:w-[80%] mx-auto px-4 flex flex-col gap-3 items-start justify-end relative">
-        <div
-          className="text-white text-left font-sans text-xs md:text-lg leading-normal md:leading-[57px] font-normal relative uppercase tracking-[0.26px]"
-          style={{ opacity: 0.3 }}
-        >
-          <span>[ Case study ]</span>
+      <div className="w-[90%] md:w-[80%] mx-auto px-4 flex flex-col gap-4 items-start justify-end relative">
+        <div className="text-white/30 text-left font-['Blauer_Nue'] text-xs md:text-lg leading-relaxed uppercase tracking-[0.26px]">
+          [ Case study ]
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 md:gap-[33px] items-start md:items-end justify-start self-stretch relative">
           <div className="flex flex-col">
-            <h2
-              className="text-left font-black text-3xl md:text-5xl leading-tight font-sans"
-              style={{
-                background: "linear-gradient(89.75deg, #877BF1 0%, #FCCA71 100%)",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
+            {/* Real results, real impact - 900 weight, Gradient */}
+            <h2 className="text-left leading-tight font-['Blauer_Nue'] font-black text-[2.375rem] bg-[linear-gradient(89.75deg,#877BF1_0%,#FCCA71_100%)] bg-clip-text text-transparent">
               Real results, real impact
             </h2>
-            <div className="text-[#cacbdb] text-left font-sans text-2xl md:text-5xl font-thin lowercase tracking-tight opacity-80">
+            {/* see how we solve problems - 100 weight */}
+            <div className="text-[#CACBDB] text-left font-['Blauer_Nue'] font-thin text-[2.375rem] lowercase tracking-tight leading-tight">
               see how we solve problems
             </div>
           </div>
 
-          <div className="md:pb-4 flex flex-row gap-2.5 items-center justify-start relative">
-            <div className="text-[#fbfbff] text-left font-sans text-xs md:text-sm font-normal max-w-[300px] md:w-[309px] opacity-40">
+          <div className="md:pb-2.5 flex flex-row gap-2.5 items-center justify-start relative">
+            <div className="text-[#FBFBFF]/50 text-left font-['Blauer_Nue'] text-[0.875rem] font-normal max-w-[300px] md:w-[320px] leading-normal">
               Discover how we’ve helped clients turn challenges into measurable success
             </div>
           </div>
@@ -56,10 +47,7 @@ const CaseStudies = () => {
 
       {/* Cards section - Desktop View */}
       <div className="hidden md:flex w-[80%] mx-auto px-4 flex-row gap-[22px] items-start justify-start relative">
-        <div
-          className="rounded-lg border-2 border-transparent p-[25px] flex flex-col gap-4 items-start justify-start flex-1 h-[441px] relative overflow-hidden"
-          style={{ background: "linear-gradient(186.16deg, #CACBEB 0%, #9CA0F5 100%)" }}
-        >
+        <div className="rounded-lg border-2 border-transparent p-[25px] flex flex-col gap-4 items-start justify-start flex-1 h-[441px] relative overflow-hidden bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           <img
             src="/home_section_5/right_top_pattern.svg"
             alt=""
@@ -70,16 +58,16 @@ const CaseStudies = () => {
           <div className="pt-4 pl-4 flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative">
             <div className="pb-4 flex flex-col gap-7 items-start justify-start w-[418px] relative">
               <div className="rounded-[58px] border-2 border-[rgba(91,98,191,0.37)] py-[3px] px-4 flex flex-row gap-2.5 items-center justify-center relative backdrop-blur-[2px]">
-                <div className="text-[#020319] text-center font-sans text-base leading-6 font-normal tracking-[-0.31px] opacity-60">
+                <div className="text-[#020319]/60 text-center font-['Blauer_Nue'] text-base leading-6 font-normal tracking-[-0.31px]">
                   Domain: {caseData.domain}
                 </div>
               </div>
 
               <div className="flex flex-col gap-2 items-start justify-start self-stretch relative">
-                <h3 className="text-[#050737] text-left font-bold text-[28px] leading-tight self-stretch">
+                <h3 className="text-[#050737] text-left font-bold text-[28px] leading-tight self-stretch font-['Blauer_Nue']">
                   {caseData.title}
                 </h3>
-                <p className="text-[#050737] text-left font-sans text-base leading-[22.75px] font-normal self-stretch tracking-[-0.15px]">
+                <p className="text-[#050737] text-left font-['Blauer_Nue'] text-base leading-[22.75px] font-normal self-stretch tracking-[-0.15px]">
                   {caseData.goal}
                 </p>
               </div>
@@ -93,7 +81,7 @@ const CaseStudies = () => {
               </div>
 
               <div className="flex flex-row gap-[7px] items-center justify-start relative cursor-pointer group" onClick={() => navigate("/coming-soon")}>
-                <button className="text-[#050737] text-left font-sans text-lg font-normal cursor-pointer">Explore</button>
+                <button className="text-[#050737] text-left font-['Blauer_Nue'] text-lg font-normal cursor-pointer">Explore</button>
                 <img className="w-5 h-5 transition-transform group-hover:translate-x-1" src="/home_section_4/explore_arrow.svg" alt="explore" />
               </div>
             </div>
@@ -108,10 +96,7 @@ const CaseStudies = () => {
 
       {/* Cards section - Mobile View */}
       <div className="md:hidden w-[90%] mx-auto">
-        <div 
-          className="rounded-[10px] p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden w-full"
-          style={{ background: "linear-gradient(186.41deg, rgba(202, 203, 235, 1) 4.87%, rgba(156, 160, 245, 1) 166.879%)" }}
-        >
+        <div className="rounded-lg p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden w-full bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           <img
             src="/home_section_5/right_img_mobile.svg"
             className="rounded-lg self-stretch h-[185px] object-cover relative border border-black/5"
@@ -121,16 +106,16 @@ const CaseStudies = () => {
           
           <div className="flex flex-col gap-6 items-start justify-start self-stretch relative">
             <div className="rounded-[58px] border-2 border-[rgba(91,98,191,0.37)] py-[3px] px-4 flex flex-row items-center justify-center relative backdrop-blur-[2px]">
-              <div className="text-[#020319] text-center font-normal text-[14px] leading-relaxed tracking-tight opacity-60">
+              <div className="text-[#020319]/60 text-center font-normal text-[14px] leading-relaxed tracking-tight">
                 Domain: {caseData.domain}
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 items-start justify-start self-stretch relative">
+            <div className="flex flex-col gap-2 items-start justify-start self-stretch relative font-['Blauer_Nue']">
               <div className="text-[#050737] text-left font-bold text-[20px] relative self-stretch leading-tight">
                 {caseData.title}
               </div>
-              <div className="text-[#050737] text-left text-[14px] font-normal relative self-stretch tracking-tight opacity-65 leading-[1.3]">
+              <div className="text-[#050737]/65 text-left text-[14px] font-normal relative self-stretch tracking-tight leading-[1.3]">
                 {caseData.goal}
               </div>
             </div>
@@ -147,7 +132,7 @@ const CaseStudies = () => {
               onClick={() => navigate("/coming-soon")}
               className="flex flex-row gap-[7px] items-center justify-start shrink-0 relative cursor-pointer active:scale-95 transition-transform"
             >
-              <div className="text-[#050737] text-left text-lg font-normal relative">Explore</div>
+              <div className="text-[#050737] text-left text-lg font-normal relative font-['Blauer_Nue']">Explore</div>
               <img className="shrink-0 w-5 h-5 relative object-contain" src="/home_section_4/explore_arrow.svg" alt="" loading="lazy" />
             </div>
           </div>
@@ -155,12 +140,12 @@ const CaseStudies = () => {
       </div>
 
       {/* Footer CTA */}
-      <div className="w-full flex justify-center mt-4">
+      <div className="w-full flex justify-center mt-4 px-4">
         <button
           onClick={() => navigate("/coming-soon")}
           className="group rounded-lg border-2 border-[rgba(91,98,191,0.37)] py-2.5 px-[25px] md:px-[35px] flex flex-row gap-4 md:gap-[22px] items-center justify-center h-12 md:h-14 relative backdrop-blur-[2px] cursor-pointer hover:bg-white/5 transition-all active:scale-95"
         >
-          <span className="text-white text-center font-medium text-sm md:text-base leading-6 tracking-[-0.31px]">
+          <span className="text-white text-center font-medium text-sm md:text-base leading-6 tracking-[-0.31px] font-['Blauer_Nue']">
             Explore all case studies
           </span>
           <img

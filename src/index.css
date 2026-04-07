@@ -2,6 +2,22 @@
 
 @font-face {
   font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Thin-iF6626350c96c3e.otf') format('opentype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Extralight-iF6626350c56af4.otf') format('opentype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/fonts/Blauer-Nue-Light-iF6626350c6db36.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Blauer Nue';
   src: url('/fonts/Blauer-Nue-Regular-iF6626350c83fdf.otf') format('opentype');
   font-weight: 400;
 }

@@ -129,7 +129,7 @@ const Navbar = () => {
                   
                   {item.dropdown && (
                     <img 
-                      src="/navbar/dropdown_arrow.svg" 
+                      src="/navbar/nav_drop_icon.svg" 
                       className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 opacity-100' : 'opacity-70'}`} 
                       alt="" 
                     />

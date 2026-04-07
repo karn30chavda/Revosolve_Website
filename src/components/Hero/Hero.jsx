@@ -38,7 +38,7 @@ const Hero = () => {
           rounded-full bg-white/5 h-10 px-5 md:px-7 gap-2 grow-0 shrink-0 md:min-w-[329px] md:w-fit md:h-[38px] backdrop-blur-md 
           border border-white/20 mb-8"
         >
-          <div className="text-[#fbfbff] text-[0.8125rem] md:text-lg font-medium tracking-[0.01em] uppercase opacity-90">
+          <div className="text-[#fbfbff] text-[0.8125rem] md:text-lg font-medium tracking-[0.01em]  opacity-90">
             Revosolve
           </div>
 
@@ -48,7 +48,7 @@ const Hero = () => {
             alt=""
           />
 
-          <div className="text-[#fbfbff] text-[0.8125rem] md:text-lg font-medium tracking-[0.01em] uppercase opacity-90">
+          <div className="text-[#fbfbff] text-[0.8125rem] md:text-lg font-medium tracking-[0.01em]  opacity-90">
             Building Future Tech
           </div>
         </div>
@@ -81,11 +81,11 @@ const Hero = () => {
         </div>
 
         {/* CTA Buttons - Mobile Stacked */}
-        <div className="flex flex-col md:flex-row gap-6 items-center justify-center shrink-0 relative w-full mt-10 md:mt-16">
+        <div className="flex flex-col md:flex-row gap-6 items-center justify-center shrink-0 relative w-full mt-6">
           {/* Main Button */}
           <button
             onClick={() => navigate("/connect")}
-            className="btn-premium-glow w-4/5 md:w-64 h-[3.4rem] md:h-[3.8rem] rounded-xl flex items-center justify-center gap-3
+            className="btn-premium-glow w-4/5 md:w-64 h-12 md:h-14 rounded-sm flex items-center justify-center gap-3
             cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
           >
             <span className="relative z-10 text-center md:text-lg font-bold tracking-tight">
@@ -101,7 +101,7 @@ const Hero = () => {
           {/* Secondary Button */}
           <button
             onClick={() => navigate("/coming-soon")}
-            className="w-4/5 md:w-64 h-[3.4rem] md:h-[3.8rem] rounded-xl border-[1.5px] border-white/20 flex items-center justify-center gap-4 
+            className="w-4/5 md:w-64 h-12 md:h-14 rounded-md border-2 border-white/20 flex items-center justify-center gap-4 
             backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent"
           >
             <span className="text-white text-center md:text-lg font-semibold tracking-tight">
@@ -116,10 +116,15 @@ const Hero = () => {
         </div>
 
         {/* Scroll Arrow - Desktop Only */}
-        <div className="hidden md:flex mt-20 justify-center w-full">
+        <div className="hidden md:flex mt-8 justify-center w-full">
           <img
+            onClick={() => {
+              document
+                .getElementById("marquee-section")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             src="/hero_section/arrow_icon.svg"
-            className="w-6 h-5 object-contain opacity-50 hover:opacity-100 transition-opacity animate-bounce cursor-pointer"
+            className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
             alt="Scroll down"
           />
         </div>
