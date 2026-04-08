@@ -1,61 +1,67 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Thin-iF6626350c96c3e.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Thin-iF6626350c96c3e.otf") format("opentype");
   font-weight: 100;
 }
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Extralight-iF6626350c56af4.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Extralight-iF6626350c56af4.otf")
+    format("opentype");
   font-weight: 200;
 }
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Light-iF6626350c6db36.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Light-iF6626350c6db36.otf") format("opentype");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Regular-iF6626350c83fdf.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Regular-iF6626350c83fdf.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Medium-iF6626350c78103.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Medium-iF6626350c78103.otf") format("opentype");
   font-weight: 500;
 }
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Semibold-iF6626350c8d55c.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Semibold-iF6626350c8d55c.otf") format("opentype");
   font-weight: 600;
 }
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Bold-iF6626350c420cc.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Bold-iF6626350c420cc.otf") format("opentype");
   font-weight: 700;
 }
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Extrabold-iF6626350c4c856.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Extrabold-iF6626350c4c856.otf") format("opentype");
   font-weight: 800;
 }
 @font-face {
-  font-family: 'Blauer Nue';
-  src: url('/fonts/Blauer-Nue-Heavy-iF6626350c62afa.otf') format('opentype');
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Heavy-iF6626350c62afa.otf") format("opentype");
   font-weight: 900;
 }
 
 @theme {
   --color-bg-primary: #010218;
-  --color-nav-bg: rgba(1, 2, 24, 0.90);
+  --color-nav-bg: rgba(1, 2, 24, 0.9);
   --color-accent: #484cff;
-  --color-lavender: #D8B4FE;
-  --color-gold: #FBBF24;
+  --color-lavender: #d8b4fe;
+  --color-gold: #fbbf24;
   --color-accent-hover: #3b5bdb;
 
   --font-sans: "Blauer Nue", "Plus Jakarta Sans", sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -63,8 +69,12 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Custom UI Tokens */

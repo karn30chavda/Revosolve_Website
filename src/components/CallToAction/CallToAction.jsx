@@ -5,10 +5,10 @@ const CallToAction = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-transparent pt-2 pb-16 md:py-32 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu">
+    <section className="bg-transparent pt-2 pb-16 md:py-16 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu">
       {/* Desktop View */}
       <div 
-        className="hidden md:flex w-[80%] mx-auto rounded-lg py-16 px-12 flex-col gap-8 items-center justify-end relative overflow-hidden drop-shadow-2xl"
+        className="hidden md:flex w-[85%] mx-auto rounded-lg py-16 px-12 flex-col gap-8 items-center justify-end relative overflow-hidden drop-shadow-2xl"
         style={{
           background: "linear-gradient(290deg, #20CEFF -65.3%, #070784 64.5%), #151618",
         }}
@@ -84,7 +84,7 @@ const CallToAction = () => {
 
         <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10">
           <h2
-            className="text-[#ffffff] text-center font-sans text-2xl font-bold relative self-stretch"
+            className="text-[#ffffff] text-center font-sans text-[28px] font-bold relative self-stretch leading-tight"
             style={{ 
               letterSpacing: "0.26px",
             }}
@@ -93,7 +93,7 @@ const CallToAction = () => {
             governance, financial operations, and enterprise intelligence
           </h2>
           <p
-            className="text-[#cacbeb] text-center font-sans text-lg font-normal relative self-stretch opacity-90"
+            className="text-[#cacbeb] text-center font-sans text-[14px] font-normal relative self-stretch opacity-90 leading-relaxed"
             style={{ 
               letterSpacing: "-0.27px",
             }}
