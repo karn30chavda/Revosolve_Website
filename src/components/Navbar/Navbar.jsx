@@ -9,10 +9,13 @@ const navData = [
       title: 'Solutions',
       gridCols: 'grid-cols-2',
       links: [
-        'OCR Solution', 'D2C & Ecom',
-        'AI Surveillance', 'Digital Twin',
-        'Manhole Survey', 'AR/VR',
-        'IVR & 3D Assistant' 
+        'Document Intelligence Systems', 
+        'Customer Interaction Systems',
+        'Commerce Operations Systems', 
+        'Digital Twin & Immersive Tech',
+        'AI Surveillance Systems', 
+        'Infrastructure Operations',
+        'Defense & Training Systems' 
       ]
     }
   },
@@ -129,7 +132,7 @@ const Navbar = () => {
                   
                   {item.dropdown && (
                     <img 
-                      src="/navbar/dropdown_arrow.svg" 
+                      src="/navbar/nav_drop_icon.svg" 
                       className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 opacity-100' : 'opacity-70'}`} 
                       alt="" 
                     />
@@ -213,12 +216,12 @@ const Navbar = () => {
                     onClick={() => item.dropdown ? toggleMobileDropdown(idx) : setIsMenuOpen(false)}
                     className={`flex flex-row items-center justify-between w-full h-[3.35988rem] pr-0 shrink-0 ${isLast ? 'border-none' : 'border-b-[0.768px] border-[rgba(91,98,191,0.37)]'} cursor-pointer hover:opacity-80 transition-opacity`}
                   >
-                    <div className="text-[#FFF] text-left font-['Blauer_Nue'] text-[1.125rem] leading-7 font-thin opacity-[0.64] tracking-[-0.02744rem]">
+                    <div className="text-[#FFF] text-left font-sans text-[17px] leading-7 font-thin opacity-[0.64] tracking-[-0.02744rem]">
                       {item.label}
                     </div>
                     {item.dropdown && (
                       <img
-                        src="/navbar/dropdown_arrow.svg"
+                        src="/navbar/nav_drop_icon.svg"
                         className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'rotate-180' : ''} opacity-70`}
                         alt=""
                       />
@@ -234,7 +237,7 @@ const Navbar = () => {
                             key={lIdx}
                             to="/coming-soon"
                             onClick={() => setIsMenuOpen(false)}
-                            className="text-white/60 text-base font-['Blauer_Nue'] hover:text-white transition-colors cursor-pointer"
+                            className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
                           >
                             {link}
                           </Link>

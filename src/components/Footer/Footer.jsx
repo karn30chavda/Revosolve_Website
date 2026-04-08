@@ -26,7 +26,7 @@ const Footer = () => {
       }}
     >
       {/* 1. MAIN CONTENT AREA - NO VERTICAL DIVIDERS */}
-      <div className="flex flex-col md:flex-row gap-12 md:gap-0 items-start justify-between w-[90%] md:w-[80%] relative z-20">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-0 items-start justify-between w-[85%] md:w-[85%] relative z-20">
         
         {/* Brand Information - Open layout */}
         <div className="flex flex-col gap-6 items-start justify-start w-full md:w-[20rem] relative">
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
           <div className="self-stretch relative z-10">
             <p
-              className="text-[#99A1AF] text-left font-normal text-[1rem] leading-[1.42188rem] w-64.5 max-w-full"
+              className="text-[#99A1AF] text-left font-normal text-[14px] leading-relaxed w-64.5 max-w-full"
               style={{ letterSpacing: "-0.00938rem", opacity: 0.6 }}
             >
               Revolutionary solutions, ethically engineered for the future of
@@ -54,7 +54,7 @@ const Footer = () => {
             {/* Services Column */}
             <div className="flex flex-col gap-6 items-start md:items-end relative">
                 <span
-                    className="text-white text-left md:text-right font-thin text-[1.125rem] leading-7"
+                    className="text-white text-left md:text-right font-thin text-[14px] leading-7"
                     style={{ letterSpacing: "-0.02744rem", opacity: 0.64 }}
                 >
                     Services
@@ -77,7 +77,7 @@ const Footer = () => {
             <div className="flex flex-col gap-10 items-start md:items-end">
                 <div className="flex flex-col gap-6 items-start md:items-end w-full">
                     <span
-                        className="text-white text-left md:text-right font-thin text-[1.125rem] leading-7"
+                        className="text-white text-left md:text-right font-thin text-[14px] leading-7"
                         style={{ letterSpacing: "-0.02744rem", opacity: 0.64 }}
                     >
                         Solutions
@@ -97,7 +97,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col gap-6 items-start md:items-end w-full">
                     <span
-                        className="text-white text-left md:text-right font-thin text-[1.125rem] leading-7"
+                        className="text-white text-left md:text-right font-thin text-[14px] leading-7"
                         style={{ letterSpacing: "-0.02744rem", opacity: 0.64 }}
                     >
                         Products
@@ -120,7 +120,7 @@ const Footer = () => {
             {/* Company Column */}
             <div className="flex flex-col gap-6 items-start md:items-end relative">
                 <span
-                    className="text-white text-left md:text-right font-thin text-[1.125rem] leading-7"
+                    className="text-white text-left md:text-right font-thin text-[14px] leading-7"
                     style={{ letterSpacing: "-0.02744rem", opacity: 0.64 }}
                 >
                     Company

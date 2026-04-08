@@ -7,7 +7,7 @@ import ComingSoon from "./pages/ComingSoon";
 
 function App() {
   return (
-    <div className="bg-bg-primary min-h-screen overflow-x-hidden flex flex-col w-full relative">
+    <div className="bg-bg-primary min-h-screen flex flex-col w-full relative">
       {/* Global Navbar */}
       <Navbar />
 

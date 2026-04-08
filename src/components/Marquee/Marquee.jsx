@@ -13,7 +13,7 @@ const Marquee = () => {
   const marqueeLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="py-10 md:py-32 flex flex-col items-center relative z-20 bg-transparent overflow-hidden transform-gpu">
+    <section id="marquee-section" className="pt-10 pb-4 md:pt-32 md:pb-8 flex flex-col items-center relative z-20 bg-transparent overflow-hidden transform-gpu">
       
       {/* Top Atmospheric Transition Bridge */}
       <div className="absolute -top-5 left-0 right-0 w-full pointer-events-none z-30 transform-gpu -translate-y-1/2">
@@ -25,7 +25,7 @@ const Marquee = () => {
       </div>
 
       {/* Heading - Responsive typography */}
-      <div className="w-full max-w-2xl mx-auto px-6 flex justify-center mt-12 md:mt-2 mb-6 md:mb-16">
+      <div className="w-full max-w-2xl mx-auto px-6 flex justify-center mt-12 md:mt-2 mb-10 md:mb-16">
         <div className="text-[#B9BAC8] font-sans text-sm md:text-lg font-normal tracking-wide text-center leading-relaxed opacity-80">
           <span className="block md:hidden whitespace-normal">
             Trusted by businesses reshaping critical industries
@@ -39,8 +39,6 @@ const Marquee = () => {
       {/* Infinite Carousel Container */}
       <div className="relative flex overflow-hidden w-full group py-4">
         {/* Left & Right Edge Fades - Desktop Only */}
-        <div className="hidden md:block absolute left-0 top-0 bottom-0 w-64 bg-linear-to-r from-[#01031c] via-[#01031c]/80 to-transparent z-10 pointer-events-none"></div>
-        <div className="hidden md:block absolute right-0 top-0 bottom-0 w-64 bg-linear-to-l from-[#01031c] via-[#01031c]/80 to-transparent z-10 pointer-events-none"></div>
 
         <Motion.div
           className="flex items-center gap-4 md:gap-8 shrink-0 py-2"
