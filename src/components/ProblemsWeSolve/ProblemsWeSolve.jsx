@@ -140,13 +140,13 @@ const ProblemsWeSolve = () => {
     <section
       id="problems-we-solve"
       ref={containerRef}
-      className="relative w-full bg-transparent overflow-visible md:h-[300vh] h-auto"
+      className="relative w-full bg-transparent overflow-visible md:h-screen h-auto"
     >
       {/* Desktop View - Sticky Scroll */}
       <div className="hidden md:flex sticky top-0 h-screen w-full overflow-hidden flex-col justify-start pt-12">
         <div className="relative z-30 w-[85%] mx-auto">
           {/* Header Section */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 w-full gap-6 md:gap-8 pt-0">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 w-full gap-6 md:gap-8 pt-0">
             <div className="flex flex-col items-start min-w-fit">
               <span className="text-white/30 uppercase mb-3 md:mb-4 block font-sans text-xs md:text-sm tracking-widest">
                 [Problems We Solve]

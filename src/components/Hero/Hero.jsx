@@ -86,7 +86,7 @@ const Hero = () => {
             className="btn-premium-glow w-[280px] md:w-64 h-12 md:h-14 rounded-sm flex items-center justify-center gap-3
             cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
           >
-            <span className="relative z-10 text-center text-[14px] md:text-lg font-bold tracking-tight">
+            <span className="relative z-10 text-center text-[14px] md:text-lg font-sans font-semibold tracking-tight">
               Start a Conversation
             </span>
             <img
