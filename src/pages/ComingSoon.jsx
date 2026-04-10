@@ -42,7 +42,7 @@ const ComingSoon = () => {
         className="relative z-10 flex flex-col items-center justify-center text-center px-6"
       >
         {/* Label */}
-        <Motion.div 
+        <Motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -56,7 +56,7 @@ const ComingSoon = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.7 }}
-          className="text-[2rem] sm:text-[3rem] md:text-[5rem] lg:text-[7.5rem] font-black leading-[1.1] md:leading-tight mb-4 font-sans uppercase"
+          className="text-[clamp(1.8rem,7vw,5.5rem)] font-black leading-[1.1] md:leading-tight mb-4 font-sans uppercase"
           style={{
             background:
               "linear-gradient(89.75deg, rgba(135, 123, 241, 1) 0%, rgba(252, 202, 113, 1) 100%)",
@@ -65,19 +65,30 @@ const ComingSoon = () => {
           }}
         >
           WE'RE PREPARING <br />
-          SOMETHING<span className="text-red-500" style={{ WebkitTextFillColor: "initial" }}>*</span> BIG
+          SOMETHING
+          <span
+            className="text-red-500"
+            style={{ WebkitTextFillColor: "initial" }}
+          >
+            *
+          </span>{" "}
+          BIG
         </Motion.h1>
 
         {/* Footnote / Description */}
-        <Motion.div 
+        <Motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.7 }}
-          className="flex items-center gap-2 md:gap-3 text-[#AAA9BE] text-base sm:text-xl md:text-3xl mb-12 md:mb-16 font-medium font-sans"
+          className="flex items-center gap-2 md:gap-3 text-[#AAA9BE] text-[clamp(0.875rem,2vw,1.5rem)] mb-10 md:mb-12 font-medium font-sans"
         >
-          <span className="text-red-500 font-bold text-xl sm:text-2xl md:text-4xl">*</span>
+          <span className="text-red-500 font-bold text-[clamp(1.2rem,3vw,2.2rem)]">
+            *
+          </span>
           <span className="tracking-wide">something</span>
-          <span className="text-[#3B82F6] font-bold uppercase tracking-wider">revolutionary</span>
+          <span className="text-[#3B82F6] font-bold uppercase tracking-wider">
+            revolutionary
+          </span>
         </Motion.div>
 
         {/* Back Button */}
@@ -88,7 +99,9 @@ const ComingSoon = () => {
           onClick={() => navigate("/")}
           className="group relative px-6 py-3 md:px-8 md:py-4 bg-[#FFB73320] border border-[#FFB73340] rounded-xl flex items-center gap-3 transition-all hover:bg-[#FFB73330] hover:border-[#FFBB1A] active:scale-95 cursor-pointer font-sans"
         >
-          <div className="text-[#FFBB1A] font-medium text-base md:text-lg">Back to Home</div>
+          <div className="text-[#FFBB1A] font-medium text-base md:text-lg">
+            Back to Home
+          </div>
           <img
             src="/connect/back_to_home_arrow.svg"
             alt="Arrow"
@@ -105,4 +118,3 @@ const ComingSoon = () => {
 };
 
 export default ComingSoon;
-

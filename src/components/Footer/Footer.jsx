@@ -11,7 +11,15 @@ const footerData = {
     "QA and Continuous Testing",
     "No Code Low Code",
   ],
-  solutions: ["KYC Verification", "Document OCR", "Smart Surveillance"],
+  solutions: [
+    "Document Intelligence Systems",
+    "Customer Interaction Systems",
+    "Commerce Operations Systems",
+    "Digital Twin & Immersive Tech",
+    "AI Surveillance Systems",
+    "Infrastructure Operations",
+    "Defense & Training Systems",
+  ],
   products: ["RevoDox", "AI Surveillance"],
   company: ["About", "Careers", "Blog", "Contact"],
 };

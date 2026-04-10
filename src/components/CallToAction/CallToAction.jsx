@@ -25,6 +25,8 @@ const CallToAction = () => {
           }}
           src="/home_section_7/bg_pattern.svg"
           alt=""
+          loading="lazy"
+          decoding="async"
         />
 
         {/* Content Group */}
@@ -51,10 +53,10 @@ const CallToAction = () => {
         {/* CTA Button */}
         <button
           onClick={() => navigate("/connect")}
-          className="bg-[#FFAA00] rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative overflow-hidden group hover:bg-[#ffb732] transition-colors duration-300 z-10 cursor-pointer"
+          className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer"
         >
           <span
-            className="text-[#070784] text-center font-sans text-[1rem] leading-6 font-medium relative"
+            className="text-[#070784] text-center font-sans text-[1rem] leading-6 font-semibold relative"
             style={{ 
                 letterSpacing: "-0.0195rem",
             }}
@@ -80,6 +82,8 @@ const CallToAction = () => {
           className="shrink-0 w-[230%] h-[315px] object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-visible pointer-events-none opacity-90 mix-blend-screen"
           src="/home_section_7/bg_pattern.svg"
           alt=""
+          loading="lazy"
+          decoding="async"
         />
 
         <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10">
@@ -104,10 +108,10 @@ const CallToAction = () => {
 
         <button
           onClick={() => navigate("/connect")}
-          className="bg-[#ffaa00] rounded pt-4 pr-8 pb-4 pl-8 flex flex-row gap-2 items-center justify-start shrink-0 relative overflow-hidden group hover:bg-[#ffb732] transition-colors duration-300 z-10 cursor-pointer active:scale-95"
+          className="btn-premium-glow rounded pt-4 pr-8 pb-4 pl-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer active:scale-95"
         >
           <span
-            className="text-[#070784] text-center font-sans text-base leading-6 font-medium relative"
+            className="text-[#070784] text-center font-sans text-base leading-6 font-semibold relative"
             style={{ 
               letterSpacing: "-0.31px",
             }}
