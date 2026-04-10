@@ -85,6 +85,8 @@ const ProjectCard = ({ card, index, total, scrollYProgress }) => {
           loop
           muted
           playsInline
+          preload="none"
+          onCanPlay={(e) => e.target.play()}
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         >
           <source src={card.video} type="video/mp4" />

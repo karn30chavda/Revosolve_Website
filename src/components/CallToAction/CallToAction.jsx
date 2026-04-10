@@ -25,6 +25,8 @@ const CallToAction = () => {
           }}
           src="/home_section_7/bg_pattern.svg"
           alt=""
+          loading="lazy"
+          decoding="async"
         />
 
         {/* Content Group */}
@@ -80,6 +82,7 @@ const CallToAction = () => {
           className="shrink-0 w-[230%] h-[315px] object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-visible pointer-events-none opacity-90 mix-blend-screen"
           src="/home_section_7/bg_pattern.svg"
           alt=""
+          loading="lazy"
         />
 
         <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10">

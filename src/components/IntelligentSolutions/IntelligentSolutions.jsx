@@ -9,7 +9,7 @@ const solutions = [
     title: "Digitizing Physical Document Workflows for Government Operations",
     description:
       "Transform offline document processing into structured, automated workflows enabling faster data extraction, validation, and decision-making across departments",
-    image: "/home_section_4/ocr_solution.svg",
+    image: "/home_section_4/ocr_solution.jpeg",
   },
   {
     id: 1,
@@ -18,7 +18,7 @@ const solutions = [
       "Automating Customer Interaction for Financial & Service Institutions",
     description:
       "Build intelligent interaction systems that handle customer queries, support workflows, and service requests across voice, chat, and AI-driven interfaces.",
-    image: "/home_section_4/operating_system.svg",
+    image: "/home_section_4/operating_system.jpg",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const solutions = [
     title: "Unifying Commerce Operations Across Channels",
     description:
       "Centralize order management, inventory, fulfillment, and communication into a single operational system across ecommerce platforms and marketplaces.",
-    image: "/home_section_4/ai_survelliance.svg",
+    image: "/home_section_4/ai_survelliance.jpg",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const solutions = [
       "Simulating Real-World Systems with Digital Twin & Immersive Technologies",
     description:
       "Create virtual environments for monitoring, training, and operational simulation enabling better planning and decision-making across complex systems.",
-    image: "/home_section_4/operating_system.svg",
+    image: "/home_section_4/operating_system.jpg",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const solutions = [
       "Intelligent Surveillance & Monitoring for Public and Enterprise Environments",
     description:
       "Deploy AI-powered systems for real-time monitoring, anomaly detection, and situational awareness across infrastructure and operational environments.",
-    image: "/home_section_4/ai_survelliance.svg",
+    image: "/home_section_4/ai_survelliance.jpg",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const solutions = [
     title: "Managing Infrastructure Projects from Tender to Execution",
     description:
       "A unified system to manage tenders, execution, workforce, assets, and financials across infrastructure and government projects.",
-    image: "/home_section_4/operating_system.svg",
+    image: "/home_section_4/operating_system.jpg",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const solutions = [
       "Immersive Training & Simulation for Defense and Public Sector Operations",
     description:
       "Enable realistic, scenario-based training environments that prepare personnel for critical operations, emergency situations, and complex system handling improving readiness, response, and decision-making without real-world risk.",
-    image: "/home_section_4/ocr_solution.svg",
+    image: "/home_section_4/ocr_solution.jpeg",
   },
 ];
 
@@ -401,6 +401,7 @@ const IntelligentSolutions = () => {
                         <img
                           src={card.image}
                           alt=""
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                       </div>
