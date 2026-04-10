@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="flex flex-col gap-6 items-start justify-start w-full md:w-[20rem] relative">
           <div className="flex items-center relative h-12">
             <img
-              src="/navbar/Revosolve_logo.svg"
+              src="/navbar/Revosolve_logo.webp"
               alt="RevoSolve"
               className="h-9 md:h-12 object-contain"
             />
