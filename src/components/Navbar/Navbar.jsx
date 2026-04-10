@@ -5,7 +5,7 @@ const navData = [
   {
     label: "Solutions",
     dropdown: {
-      image: "/navbar/solution_dropdown.svg",
+      image: "/navbar/solution_dropdown.webp",
       title: "Solutions",
       gridCols: "grid-cols-2",
       links: [
@@ -22,7 +22,7 @@ const navData = [
   {
     label: "Products",
     dropdown: {
-      image: "/navbar/products_dropdown.svg",
+      image: "/navbar/products_dropdown.webp",
       title: "Products",
       gridCols: "grid-cols-1",
       links: ["RevoDox", "AI Surveillance"],
@@ -31,7 +31,7 @@ const navData = [
   {
     label: "Services",
     dropdown: {
-      image: "/navbar/service_dropdown.svg",
+      image: "/navbar/service_dropdown.webp",
       title: "Services",
       gridCols: "grid-cols-2",
       links: [
@@ -112,7 +112,7 @@ const Navbar = () => {
           className="flex items-center shrink-0 cursor-pointer transform-gpu"
         >
           <img
-            src="/navbar/Revosolve_logo.svg"
+            src="/navbar/Revosolve_logo.webp"
             alt="RevoSolve"
             className="w-55 h-10 min-[1290px]:w-auto min-[1290px]:h-12"
           />
@@ -145,7 +145,7 @@ const Navbar = () => {
 
                   {item.dropdown && (
                     <img
-                      src="/navbar/nav_drop_icon.svg"
+                      src="/navbar/nav_drop_icon.webp"
                       className={`w-3 h-3 transition-transform duration-300 ${isOpen ? "rotate-180 opacity-100" : "opacity-70"}`}
                       alt=""
                     />
@@ -183,7 +183,7 @@ const Navbar = () => {
                                   {link}
                                 </span>
                                 <img
-                                  src="/navbar/dropdown_link_icon.svg"
+                                  src="/navbar/dropdown_link_icon.webp"
                                   className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
                                   alt=""
                                 />
@@ -206,7 +206,7 @@ const Navbar = () => {
             className="flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white font-sans font-semibold rounded-lg border border-accent hover:bg-accent/10 hover:shadow-lg transition-all duration-300 shrink-0"
           >
             Connect
-            <img src="/navbar/connect_icon.svg" className="w-4 h-4" alt="" />
+            <img src="/navbar/connect_icon.webp" className="w-4 h-4" alt="" />
           </Link>
         </div>
 
@@ -216,7 +216,7 @@ const Navbar = () => {
           className="min-[1290px]:hidden p-1 flex items-center justify-center w-[1.999375rem] h-[1.999375rem] cursor-pointer"
         >
           <img
-            src="/navbar/humburger.svg"
+            src="/navbar/humburger.webp"
             alt="Menu"
             className="h-[1.49944rem] shrink-0"
           />
@@ -253,7 +253,7 @@ const Navbar = () => {
                     </div>
                     {item.dropdown && (
                       <img
-                        src="/navbar/nav_drop_icon.svg"
+                        src="/navbar/nav_drop_icon.webp"
                         className={`w-5 h-5 transition-transform duration-300 ${isActive ? "rotate-180" : ""} opacity-70`}
                         alt=""
                       />
