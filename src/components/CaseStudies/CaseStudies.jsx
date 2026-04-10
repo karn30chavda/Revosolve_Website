@@ -83,6 +83,8 @@ const CaseStudies = () => {
                       className={`h-[45px] object-contain ${index === 2 ? "mix-blend-multiply" : ""}`}
                       src={src}
                       alt="tech logo"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 ))}
@@ -108,8 +110,9 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover"
                 src={caseData.previewImage}
                 alt="case study preview"
+                loading="lazy"
+                decoding="async"
               />
-              <div className="absolute inset-0 bg-[#1D1F4C]/50 pointer-events-none" />
             </div>
           </div>
         </div>
@@ -188,6 +191,8 @@ const CaseStudies = () => {
             className="w-3 md:w-3.5 h-auto transition-transform group-hover:translate-x-1"
             src="/home_section_5/Explore_case_study_arrow.svg"
             alt="arrow"
+            loading="lazy"
+            decoding="async"
           />
         </button>
       </div>

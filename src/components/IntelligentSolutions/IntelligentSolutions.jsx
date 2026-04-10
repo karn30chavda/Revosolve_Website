@@ -402,6 +402,7 @@ const IntelligentSolutions = () => {
                           src={card.image}
                           alt=""
                           loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                         />
                       </div>

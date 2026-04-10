@@ -83,6 +83,7 @@ const CallToAction = () => {
           src="/home_section_7/bg_pattern.svg"
           alt=""
           loading="lazy"
+          decoding="async"
         />
 
         <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10">

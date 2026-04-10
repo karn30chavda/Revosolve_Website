@@ -54,7 +54,7 @@ const WhyUs = () => {
             <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(224.72deg, rgba(15, 16, 52, 1) 0%, rgba(44, 47, 154, 1) 100%)" }} />
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-10 opacity-[0.45]">
               <div
-                className="w-[140%] h-[140%] max-w-none shrink-0 pointer-events-none select-none"
+                className="w-full h-full shrink-0 pointer-events-none select-none"
                 style={{
                   background: "linear-gradient(to right, #050737 0%, #FFF 100%)",
                   WebkitMaskImage: "url(/home_section_6/bg_pattern.svg)",
@@ -94,7 +94,7 @@ const WhyUs = () => {
             {/* Background Pattern for Mobile */}
             <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
                 <div
-                    className="w-full h-full scale-[1.5]"
+                    className="w-full h-full"
                     style={{
                         backgroundImage: "url(/home_section_6/bg_pattern.svg)",
                         backgroundSize: "cover",
