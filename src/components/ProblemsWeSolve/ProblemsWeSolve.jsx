@@ -140,13 +140,13 @@ const ProblemsWeSolve = () => {
     <section
       id="problems-we-solve"
       ref={containerRef}
-      className="relative w-full bg-transparent overflow-visible md:h-[300vh] h-auto"
+      className="relative w-full bg-transparent overflow-visible md:h-[300vh] h-auto pb-12 md:pb-16"
     >
       {/* Desktop View - Sticky Scroll */}
-      <div className="hidden md:flex sticky top-0 h-screen w-full overflow-hidden flex-col justify-start pt-12">
+      <div className="hidden md:flex sticky top-0 h-screen w-full overflow-hidden flex-col justify-start pt-16 lg:pt-30">
         <div className="relative z-30 w-[85%] mx-auto">
           {/* Header Section */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 w-full gap-6 md:gap-8 pt-0">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 w-full gap-6 md:gap-8 pt-0">
             <div className="flex flex-col items-start min-w-fit">
               <span className="text-white/30 uppercase mb-3 md:mb-4 block font-sans text-xs md:text-sm tracking-widest">
                 [Problems We Solve]
@@ -187,7 +187,7 @@ const ProblemsWeSolve = () => {
       <div className="md:hidden flex flex-col gap-10 items-center justify-start self-stretch shrink-0 relative py-12 px-4">
         {/* Header Section */}
         <div className="flex flex-col gap-3 items-start justify-start self-stretch relative">
-          <div className="text-white/30 text-left font-sans text-[10px] tracking-[0.26px] lowercase">
+          <div className="text-white/30 text-left font-sans text-[14px] tracking-[1px]">
             <span>
               <span className="opacity-50">[</span>
               <span>Problems We Solve</span>
@@ -265,4 +265,4 @@ const ProblemsWeSolve = () => {
   );
 };
 
-export default ProblemsWeSolve; 
+export default ProblemsWeSolve;

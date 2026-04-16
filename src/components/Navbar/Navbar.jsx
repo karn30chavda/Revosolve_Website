@@ -12,9 +12,9 @@ const navData = [
         "Document Intelligence Systems",
         "Customer Interaction Systems",
         "Commerce Operations Systems",
-        "Digital Twin & Immersive Tech",
+        "Simulation & Digital Twin Systems",
         "AI Surveillance Systems",
-        "Infrastructure Operations",
+        "Public Infrastructure Operations",
         "Defense & Training Systems",
       ],
     },
@@ -35,12 +35,16 @@ const navData = [
       title: "Services",
       gridCols: "grid-cols-2",
       links: [
-        "End-to-End Development Services",
-        "Technology Consulting Services",
-        "Accelerating Delivery with Cloud & DevOps",
-        "Reliable QA and Continuous Testing",
-        "AI Strategy & Implementation",
-        "Intuitive UX & Engaging UI Solutions",
+        "Enterprise Application Systems",
+        "Product & Platform Engineering",
+        "Legacy Transformation Systems",
+        "Open Source & ERP Systems",
+        "Automation & DevOps Systems",
+        "AI & Intelligent Systems",
+        "Cloud & Infrastructure Systems",
+        "Simulation & Immersive Systems",
+        "Engineering Capacity & Delivery Systems",
+        "Simulation & Spatial Technologies",
       ],
     },
   },
@@ -177,7 +181,7 @@ const Navbar = () => {
                                 key={linkIdx}
                                 to="/coming-soon"
                                 onClick={() => setOpenDropdownIdx(null)}
-                                className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-tight group/link w-fit"
+                                className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
                               >
                                 <span className="group-hover/link:underline decoration-[#070784] underline-offset-4 transition-all">
                                   {link}
