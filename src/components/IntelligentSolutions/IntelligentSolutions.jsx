@@ -30,7 +30,7 @@ const solutions = [
   },
   {
     id: 3,
-    category: "Digital Twin",
+    category: "Simulation & Digital Twin Systems",
     title:
       "Simulating Real-World Systems with Digital Twin & Immersive Technologies",
     description:
@@ -193,7 +193,7 @@ const IntelligentSolutions = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-transparent overflow-hidden pb-12 transform-gpu antialiased"
+      className="relative w-full bg-transparent overflow-hidden pb-12 transform-gpu antialiased md:-mt-[calc(100vh-700px)] lg:-mt-[calc(100vh-720px)]"
     >
       <div className="w-[85%] md:w-[85%] mx-auto">
         <div className="text-white/30 text-[10px] md:text-xs font-medium uppercase tracking-[3px] mb-6 font-sans">
@@ -266,7 +266,9 @@ const IntelligentSolutions = () => {
                   : "text-white/30 font-medium hover:text-white/60"
               }`}
             >
-              <span className={`pb-1 transition-all ${activeIndex === idx ? "border-b-2 border-white/60" : ""}`}>
+              <span
+                className={`pb-1 transition-all ${activeIndex === idx ? "border-b-2 border-white/60" : ""}`}
+              >
                 {item.category}
               </span>
             </button>
@@ -288,11 +290,13 @@ const IntelligentSolutions = () => {
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <span className={`text-[16px] font-normal tracking-[-0.3px] font-sans whitespace-nowrap leading-none transition-all ${
-                    activeIndex === idx 
-                      ? "underline underline-offset-8 decoration-white/40" 
-                      : "group-hover:underline group-hover:underline-offset-8 group-hover:decoration-white/20"
-                  }`}>
+                  <span
+                    className={`text-[16px] font-normal tracking-[-0.3px] font-sans whitespace-nowrap leading-none transition-all ${
+                      activeIndex === idx
+                        ? "underline underline-offset-8 decoration-white/40"
+                        : "group-hover:underline group-hover:underline-offset-8 group-hover:decoration-white/20"
+                    }`}
+                  >
                     {item.category}
                   </span>
                   {activeIndex === idx && (
