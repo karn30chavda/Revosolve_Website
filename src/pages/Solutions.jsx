@@ -3,6 +3,7 @@ import { motion as Motion } from "framer-motion";
 import SolutionHero from "../components/SolutionHero/SolutionHero";
 import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
+import CommerceClarity from "../components/CommerceClarity/CommerceClarity";
 import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
 
 const Solutions = () => {
@@ -16,6 +17,7 @@ const Solutions = () => {
         <CommerceProblems />
         <CommerceSystem />
         <CommerceApproach />
+        <CommerceClarity />
       </div>
     </div>
   );

@@ -74,10 +74,13 @@ const CommerceProblems = () => {
             </div>
 
             {/* Interactive Card */}
-            <div className="w-full mt-6 p-6 bg-linear-to-br from-[#12133B] to-[#0A0B26] border border-white/10 rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden relative z-10">
+            <div 
+              style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+              className="w-full mt-6 p-6 border border-black rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden relative z-10"
+            >
               
               {/* Left Column: Infographic Illustration with fade transition */}
-              <div className="w-full lg:w-[540px] h-[350px] bg-[#070822] rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center relative z-10 shrink-0">
+              <div className="w-full lg:w-[540px] h-[350px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
                 <Motion.img 
                   key={activeIdx}
                   initial={{ opacity: 0, scale: 0.98 }}
@@ -151,7 +154,10 @@ const CommerceProblems = () => {
       {/* Second Card Section (Desktop) */}
       <section className="w-full bg-[#01031c] pt-2 pb-16 hidden lg:block">
         <div className="relative z-30 w-[85%] mx-auto">
-          <div className="w-full pl-12 pr-8 py-10 bg-linear-to-br from-[#12133B] to-[#0A0B26] border border-white/10 rounded-2xl flex flex-col md:flex-row items-start justify-between gap-10 md:gap-14 overflow-hidden relative z-10">
+          <div 
+            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+            className="w-full pl-12 pr-8 py-10 border border-black rounded-2xl flex flex-col md:flex-row items-start justify-between gap-10 md:gap-14 overflow-hidden relative z-10"
+          >
             
             {/* Left Column: Text Statement */}
             <div className="text-[#CACBDB] font-sans text-[24px] font-thin leading-normal w-[368px] relative z-10 text-left pt-2">
@@ -211,10 +217,13 @@ const CommerceProblems = () => {
           </div>
 
           {/* Card 1 (Interactive Checklist) */}
-          <div className="w-full p-5 bg-linear-to-br from-[#12133B] to-[#0A0B26] border border-white/10 rounded-2xl flex flex-col gap-8 overflow-hidden relative">
+          <div 
+            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+            className="w-full p-5 border border-black rounded-2xl flex flex-col gap-8 overflow-hidden relative"
+          >
             
             {/* Infographic Illustration */}
-            <div className="w-full h-[240px] md:h-[340px] bg-[#070822] rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center relative shrink-0">
+            <div className="w-full h-[240px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
               <Motion.img 
                 key={activeIdx}
                 initial={{ opacity: 0 }}
@@ -282,7 +291,10 @@ const CommerceProblems = () => {
           </div>
 
           {/* Card 2 (Statement details block) */}
-          <div className="w-full mt-4 p-5 bg-linear-to-br from-[#12133B] to-[#0A0B26] border border-white/10 rounded-2xl flex flex-col gap-6 overflow-hidden relative">
+          <div 
+            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+            className="w-full mt-4 p-5 border border-black rounded-2xl flex flex-col gap-6 overflow-hidden relative"
+          >
             {/* Statement Text */}
             <div className="text-[#CACBDB] font-sans text-[24px] font-thin leading-normal text-left relative z-10">
               Commerce doesn’t break at the frontend, It breaks in operations.
