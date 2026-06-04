@@ -1,6 +1,7 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
 import SolutionHero from "../components/SolutionHero/SolutionHero";
+import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 
 const Solutions = () => {
   return (
@@ -9,8 +10,8 @@ const Solutions = () => {
       <SolutionHero />
 
       {/* Solutions Sections / Components will be loaded below */}
-      <div id="solutions-content" className="w-full relative z-10 py-20">
-        {/* We will build different types of components for individual solutions here */}
+      <div id="solutions-content" className="w-full relative z-10 py-10">
+        <CommerceProblems />
       </div>
     </div>
   );
