@@ -3,6 +3,7 @@ import { motion as Motion } from "framer-motion";
 import SolutionHero from "../components/SolutionHero/SolutionHero";
 import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
+import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
 
 const Solutions = () => {
   return (
@@ -14,6 +15,7 @@ const Solutions = () => {
       <div id="solutions-content" className="w-full relative z-10 pt-10">
         <CommerceProblems />
         <CommerceSystem />
+        <CommerceApproach />
       </div>
     </div>
   );
