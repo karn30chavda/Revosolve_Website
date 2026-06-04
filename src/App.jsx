@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
+import Solutions from "./pages/Solutions";
 import Connect from "./pages/Connect";
 import ComingSoon from "./pages/ComingSoon";
 
@@ -15,6 +16,7 @@ function App() {
       <main className="flex-1 w-full relative">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/solutions" element={<Solutions />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
           {/* Fallback route - optional */}

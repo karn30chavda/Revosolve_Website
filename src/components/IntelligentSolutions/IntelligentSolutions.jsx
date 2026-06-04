@@ -421,7 +421,7 @@ const IntelligentSolutions = () => {
                         </p>
                         <div className="mt-auto pt-6 flex items-center gap-1.5 cursor-pointer group/link w-fit">
                           <span
-                            onClick={() => navigate("/coming-soon")}
+                            onClick={() => navigate("/solutions")}
                             className="text-[14px] md:text-[16px] text-[#050737] font-medium relative"
                           >
                             Explore
