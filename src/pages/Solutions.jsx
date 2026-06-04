@@ -5,6 +5,7 @@ import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
 import CommerceClarity from "../components/CommerceClarity/CommerceClarity";
 import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
+import CommerceProcess from "../components/CommerceProcess/CommerceProcess";
 
 const Solutions = () => {
   return (
@@ -18,6 +19,7 @@ const Solutions = () => {
         <CommerceSystem />
         <CommerceApproach />
         <CommerceClarity />
+        <CommerceProcess />
       </div>
     </div>
   );

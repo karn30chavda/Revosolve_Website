@@ -179,7 +179,7 @@ const Navbar = () => {
                             {item.dropdown.links.map((link, linkIdx) => (
                               <Link
                                 key={linkIdx}
-                                to={item.label === "Solutions"}
+                                to={item.label === "Solutions" ? "/solutions" : "/coming-soon"}
                                 onClick={() => setOpenDropdownIdx(null)}
                                 className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
                               >
