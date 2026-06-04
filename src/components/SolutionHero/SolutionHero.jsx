@@ -6,7 +6,7 @@ const SolutionHero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full min-h-screen overflow-x-hidden flex flex-col items-center justify-center pt-20 bg-[#01031c] font-sans">
+    <section className="relative w-full min-h-screen lg:min-h-0 lg:h-screen overflow-x-hidden flex flex-col items-center justify-center pt-20 bg-[#01031c] font-sans">
       
       {/* Background Atmosphere Elements */}
       <div 
@@ -24,7 +24,7 @@ const SolutionHero = () => {
       <div className="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] bg-[#FCCA71]/5 rounded-full blur-[130px] pointer-events-none" />
 
       {/* Main Content Layout */}
-      <div className="w-[85%] md:w-[85%] max-w-[1360px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-4 xl:gap-2 relative z-10 pt-16 lg:pt-10 pb-16 lg:pb-0">
+      <div className="relative z-30 w-[85%] mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-4 xl:gap-2 pt-4 lg:pt-0 pb-16 lg:pb-0">
         
         {/* Left Column: Text & CTA */}
         <Motion.div 

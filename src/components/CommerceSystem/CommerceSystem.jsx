@@ -1,0 +1,250 @@
+import React, { useState, useRef } from "react";
+import { motion as Motion, useScroll, useMotionValueEvent } from "framer-motion";
+
+const CommerceSystem = () => {
+  const containerRef = useRef(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const systemItems = [
+    "Orders across all channels",
+    "Inventory across warehouses and marketplaces",
+    "Fulfillment and delivery workflows",
+    "Financial tracking and compliance",
+    "Customer communication systems",
+    "OCR for Quickcommerce"
+  ];
+
+  const systemImages = [
+    "/Solution_page/solution_positining_image.webp",
+    "/Solution_page/solution_positining_image_2.webp",
+    "/Solution_page/solution_positining_image_3.webp",
+    "/Solution_page/solution_positining_image_4.webp",
+    "/Solution_page/solution_positining_image_5.webp",
+    "/Solution_page/solution_positining_image_6.webp"
+  ];
+
+  // Desktop Scroll Tracking (6 stages)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const idx = Math.min(Math.floor(latest * 6), 5);
+    setActiveIdx(idx);
+  });
+
+  // Smooth scroll handler for desktop clicks
+  const handleTabClick = (idx) => {
+    if (!containerRef.current) return;
+    const element = containerRef.current;
+    const rect = element.getBoundingClientRect();
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+    // Map click index to scroll position
+    const sectionHeight = element.offsetHeight / 6;
+    const targetY = scrollTop + rect.top + (idx * sectionHeight) + 50;
+    
+    window.scrollTo({
+      top: targetY,
+      behavior: "smooth"
+    });
+  };
+
+  return (
+    <>
+      {/* Desktop Sticky Scroll Section */}
+      <section 
+        ref={containerRef} 
+        className="relative w-full bg-[#01031c] h-[400vh] hidden lg:block"
+      >
+        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden z-10">
+          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-14">
+            
+            {/* Section Tag */}
+            <div className="text-white text-xs uppercase tracking-wider opacity-30 mb-2">
+              [system positioning]
+            </div>
+
+            {/* Heading Block: Left Title and Right Description Row */}
+            <div className="w-full flex flex-col lg:flex-row lg:items-end lg:justify-start lg:gap-20 mt-1 pb-1">
+              <div className="flex flex-col items-start justify-start">
+                <h2 className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px]">
+                  A Unified Commerce
+                </h2>
+                <h3 className="text-[#CACBDB] text-xl md:text-2xl xl:text-[30px] font-light xl:font-thin leading-normal">
+                  Operations System
+                </h3>
+              </div>
+              <p className="text-[#CACBDB] text-xs xl:text-sm font-normal font-sans leading-relaxed max-w-full lg:max-w-[450px] text-left opacity-75 lg:mb-1">
+                RevoSolve builds Commerce Operations Systems that act as the central command layer for managing multi-brand, multi-channel operations.
+              </p>
+            </div>
+
+            {/* Interactive Card */}
+            <div className="w-full mt-6 p-6 bg-linear-to-br from-[#12133B] to-[#0A0B26] border border-white/10 rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden relative z-10">
+              
+              {/* Left Column: Interactive Systems List */}
+              <div className="flex-1 w-full flex flex-col justify-start items-start gap-8 self-stretch py-1 relative z-10">
+                <div className="self-stretch text-white text-[18px] font-normal font-sans leading-[24px]">
+                  This system brings everything into one place
+                </div>
+
+                <div className="w-full flex flex-col gap-3">
+                  {systemItems.map((item, idx) => {
+                    const isActive = idx === activeIdx;
+                    return (
+                      <div
+                        key={idx}
+                        onClick={() => handleTabClick(idx)}
+                        className={`w-full rounded-[8px] flex items-center gap-[12px] py-[4px] px-[10px] self-stretch cursor-pointer transition-all duration-300 ${
+                          isActive 
+                            ? "bg-[#26274A] opacity-100" 
+                            : "bg-transparent opacity-50 hover:opacity-85"
+                        }`}
+                      >
+                        {/* Checkmark Circle */}
+                        <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                          isActive 
+                            ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]" 
+                            : "border border-[#877BF1] bg-transparent"
+                        }`}>
+                          <img 
+                            src="/Solution_page/solution_problem_tick.svg" 
+                            alt="Tick" 
+                            className={`w-3.5 h-3.5 transition-all duration-300 ${
+                              isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
+                            }`} 
+                          />
+                        </div>
+
+                        {/* Text */}
+                        <span className="text-white text-[16px] font-normal font-sans leading-[24px]">
+                          {item}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Right Column: Visual Diagram Frame */}
+              <div className="w-full lg:w-[540px] h-[350px] bg-[#070822] rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center relative z-10 shrink-0">
+                <Motion.img 
+                  key={activeIdx}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  src={systemImages[activeIdx]} 
+                  alt="System Positioning Graphic" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = "/Solution_page/solution_positining_image.webp";
+                  }}
+                />
+              </div>
+
+              {/* Bottom Right Decorative Pattern */}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile / Tablet Interactive View (Click to swap tabs) */}
+      <section className="relative w-full bg-[#01031c] py-12 lg:hidden">
+        <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-8">
+          
+          <div className="w-full flex flex-col items-start justify-start border-b border-white/5 pb-4">
+            {/* Section Tag */}
+            <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
+              [system positioning]
+            </div>
+
+            {/* Heading Block */}
+            <div className="flex flex-col items-start justify-start mt-1 gap-4">
+              <div className="flex flex-col items-start justify-start">
+                <h2 className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-3xl md:text-4xl font-black leading-tight tracking-[0.264px]">
+                  A Unified Commerce
+                </h2>
+                <h3 className="text-[#CACBDB] text-2xl md:text-[34px] font-light leading-normal">
+                  Operations System
+                </h3>
+              </div>
+              <p className="text-[#CACBDB] text-sm font-normal font-sans leading-relaxed max-w-full text-left opacity-75">
+                RevoSolve builds Commerce Operations Systems that act as the central command layer for managing multi-brand, multi-channel operations.
+              </p>
+            </div>
+          </div>
+
+          {/* Interactive Card (Mobile) */}
+          <div className="w-full p-5 bg-linear-to-br from-[#12133B] to-[#0A0B26] border border-white/10 rounded-2xl flex flex-col gap-8 overflow-hidden relative">
+            
+            {/* Visual Diagram Frame */}
+            <div className="w-full h-[280px] md:h-[340px] bg-[#070822] rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center relative shrink-0">
+              <Motion.img 
+                key={activeIdx}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                src={systemImages[activeIdx]} 
+                alt="System Positioning Graphic" 
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.src = "/Solution_page/solution_positining_image.webp";
+                }}
+              />
+            </div>
+
+            {/* System list */}
+            <div className="w-full flex flex-col justify-start items-start gap-5">
+              <div className="text-white text-[18px] font-normal font-sans leading-[26px]">
+                This system brings everything into one place
+              </div>
+
+              <div className="w-full flex flex-col gap-2">
+                {systemItems.map((item, idx) => {
+                  const isActive = idx === activeIdx;
+                  return (
+                    <div
+                      key={idx}
+                      onClick={() => setActiveIdx(idx)}
+                      className={`w-full rounded-[8px] flex items-start gap-[16px] py-[8px] px-[12px] cursor-pointer transition-all duration-300 ${
+                        isActive 
+                          ? "bg-[#26274A] opacity-100" 
+                          : "bg-transparent opacity-50"
+                      }`}
+                    >
+                      {/* Checkmark Circle */}
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
+                        isActive 
+                          ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]" 
+                          : "border-2 border-[#877BF1] bg-transparent"
+                      }`}>
+                        <img 
+                          src="/Solution_page/solution_problem_tick.svg" 
+                          alt="Tick" 
+                          className={`w-4 h-4 transition-all duration-300 ${
+                            isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
+                          }`} 
+                        />
+                      </div>
+
+                      {/* Text */}
+                      <span className="text-white text-[16px] md:text-[18px] font-normal font-sans leading-[26px]">
+                        {item}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div> 
+
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default CommerceSystem;
