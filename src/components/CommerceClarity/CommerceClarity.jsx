@@ -60,7 +60,7 @@ const CommerceClarity = () => {
           <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-14">
             
             {/* Section Tag */}
-            <div className="text-white text-xs uppercase tracking-wider opacity-30 mb-2">
+            <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
               [what it enables]
             </div>
 

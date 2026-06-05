@@ -56,10 +56,10 @@ const CommerceProblems = () => {
         className="relative w-full bg-[#01031c] h-[220vh] hidden lg:block"
       >
         <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden z-10">
-          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-14">
+          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-24">
             
             {/* Section Tag */}
-            <div className="text-white text-xs uppercase tracking-wider opacity-30 mb-2">
+            <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
               [the problem]
             </div>
 
@@ -152,7 +152,7 @@ const CommerceProblems = () => {
       </section>
 
       {/* Second Card Section (Desktop) */}
-      <section className="w-full bg-[#01031c] pt-2 pb-16 hidden lg:block">
+      <section className="w-full bg-[#01031c] pt-6 pb-16 hidden lg:block">
         <div className="relative z-30 w-[85%] mx-auto">
           <div 
             style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
@@ -180,7 +180,7 @@ const CommerceProblems = () => {
               {/* Golden Gradient Line */}
               <div className="self-stretch h-px bg-linear-to-r from-amber-500 to-transparent my-1" />
 
-              <div className="self-stretch opacity-60 justify-start text-white text-base md:text-[18px] font-normal font-sans leading-normal text-left">
+              <div className="self-stretch opacity-40 justify-start text-white text-base md:text-[18px] font-normal font-sans leading-normal text-left">
                 Most businesses aren’t lacking tools. <br />They’re overloaded with them.
               </div>
             </div>

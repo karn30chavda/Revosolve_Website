@@ -9,13 +9,13 @@ const CommerceProcess = () => {
         {/* Section Header */}
         <div className="w-full flex flex-col items-center justify-center pb-2">
           {/* Section Tag */}
-          <div className="text-white text-xs uppercase tracking-wider opacity-30 mb-2">
+          <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
             [process]
           </div>
 
           {/* Heading Block */}
           <div className="flex flex-col items-center justify-center">
-            <h2 className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px] font-sans">
+            <h2 className="bg-linear-to-r from-[#877BF1] to-[#d7a54e] bg-clip-text text-transparent text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px] font-sans">
               How the System Works
             </h2>
             <h3 className="text-[#CACBDB] text-xl md:text-2xl xl:text-[30px] font-light xl:font-thin leading-normal font-sans mt-1">

@@ -1,15 +1,28 @@
-import React from "react";
-import { motion as Motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 
 const CommerceApproach = () => {
+  const words = ["Quick Commerce", "E-commerce"];
+  const [index, setIndex] = useState(0);
+
+  // Safeguard against hot module replacement (HMR) state preservation issues
+  const safeIndex = index >= words.length ? 0 : index;
+  const currentWord = words[safeIndex];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, [words.length]);
+
   return (
     <section className="relative w-full bg-[#01031c] py-16 lg:py-20">
       <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-8">
-        
         {/* Section Header */}
         <div className="w-full flex flex-col items-start justify-start  pb-6">
           {/* Section Tag */}
-          <div className="text-white text-xs uppercase tracking-wider opacity-30 mb-2">
+          <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
             [approach]
           </div>
 
@@ -19,29 +32,45 @@ const CommerceApproach = () => {
               ERPNext-An operating system
             </h2>
             <h3 className="text-[#CACBDB] text-xl md:text-2xl xl:text-[30px] font-light xl:font-thin leading-normal font-sans mt-1">
-              for your <span className="text-[#FFAA00] font-normal">Quick Commerce</span> business
+              for your{" "}
+              <AnimatePresence mode="wait">
+                <Motion.span
+                  key={currentWord}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  className="inline-block"
+                >
+                  <span className="text-[#FFAA00] font-normal">
+                    {currentWord}
+                  </span>{" "}
+                  <span className="text-[#CACBDB] font-light xl:font-thin">
+                    business
+                  </span>
+                </Motion.span>
+              </AnimatePresence>
             </h3>
           </div>
         </div>
 
         {/* Diagram Container */}
-        <Motion.div 
+        <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full flex items-center justify-center relative z-10"
         >
-          <img 
-            src="/Solution_page/solution_approach.webp" 
-            alt="ERPNext Operating System for Quick Commerce Business Diagram" 
+          <img
+            src="/Solution_page/solution_approach.webp"
+            alt="ERPNext Operating System for Quick Commerce Business Diagram"
             className="w-full h-auto object-contain"
             onError={(e) => {
               e.target.src = "/Solution_page/solution_positining_image.webp";
             }}
           />
         </Motion.div>
-
       </div>
     </section>
   );

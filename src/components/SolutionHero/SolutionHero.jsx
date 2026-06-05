@@ -84,7 +84,7 @@ const SolutionHero = () => {
           <img 
             src="/Solution_page/solution_hero_image.webp" 
             alt="Commerce Operations System Graphic"
-            className="object-contain w-full max-w-[240px] lg:max-w-none lg:w-[280px] lg:h-[280px] xl:w-[550px] xl:h-[550px] relative z-10"
+            className="object-contain w-full max-w-[220px] lg:max-w-none lg:w-[260px] lg:h-[260px] xl:w-[480px] xl:h-[480px] relative z-10"
           />
         </Motion.div>
         
