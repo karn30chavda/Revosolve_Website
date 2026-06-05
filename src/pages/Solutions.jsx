@@ -3,6 +3,7 @@ import { motion as Motion } from "framer-motion";
 import SolutionHero from "../components/SolutionHero/SolutionHero";
 import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
+import CommerceCapabilities from "../components/CommerceCapabilities/CommerceCapabilities";
 import CommerceClarity from "../components/CommerceClarity/CommerceClarity";
 import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
 import CommerceProcess from "../components/CommerceProcess/CommerceProcess";
@@ -22,6 +23,7 @@ const Solutions = () => {
         <CommerceClarity />
         <CommerceProcess />
         <CommerceCaseStudy />
+        <CommerceCapabilities />
       </div>
     </div>
   );
