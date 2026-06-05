@@ -4,6 +4,7 @@ import SolutionHero from "../components/SolutionHero/SolutionHero";
 import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
 import CommerceCapabilities from "../components/CommerceCapabilities/CommerceCapabilities";
+import CommerceDifferentiation from "../components/CommerceDifferentiation/CommerceDifferentiation";
 import CommerceClarity from "../components/CommerceClarity/CommerceClarity";
 import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
 import CommerceProcess from "../components/CommerceProcess/CommerceProcess";
@@ -24,6 +25,7 @@ const Solutions = () => {
         <CommerceProcess />
         <CommerceCaseStudy />
         <CommerceCapabilities />
+        <CommerceDifferentiation />
       </div>
     </div>
   );
