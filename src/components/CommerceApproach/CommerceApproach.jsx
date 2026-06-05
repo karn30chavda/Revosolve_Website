@@ -63,12 +63,9 @@ const CommerceApproach = () => {
           className="w-full flex items-center justify-center relative z-10"
         >
           <img
-            src="/Solution_page/solution_approach.webp"
+            src="/Solution_page/solution_approach.svg"
             alt="ERPNext Operating System for Quick Commerce Business Diagram"
             className="w-full h-auto object-contain"
-            onError={(e) => {
-              e.target.src = "/Solution_page/solution_positining_image.webp";
-            }}
           />
         </Motion.div>
       </div>
