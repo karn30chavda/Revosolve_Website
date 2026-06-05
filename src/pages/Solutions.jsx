@@ -5,6 +5,7 @@ import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
 import CommerceCapabilities from "../components/CommerceCapabilities/CommerceCapabilities";
 import CommerceDifferentiation from "../components/CommerceDifferentiation/CommerceDifferentiation";
+import CommerceIntegrations from "../components/CommerceIntegrations/CommerceIntegrations";
 import CommerceClarity from "../components/CommerceClarity/CommerceClarity";
 import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
 import CommerceProcess from "../components/CommerceProcess/CommerceProcess";
@@ -26,6 +27,7 @@ const Solutions = () => {
         <CommerceCaseStudy />
         <CommerceCapabilities />
         <CommerceDifferentiation />
+        <CommerceIntegrations />
       </div>
     </div>
   );
