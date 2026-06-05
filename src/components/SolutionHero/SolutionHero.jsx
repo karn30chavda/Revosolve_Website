@@ -82,7 +82,7 @@ const SolutionHero = () => {
           {/* Subtle surrounding glow effect to blend image */}
           <div className="absolute inset-0 bg-[#877BF1]/5 rounded-full blur-[80px] pointer-events-none scale-90" />
           <img 
-            src="/Solution_page/solution_hero_image.webp" 
+            src="/Solution_page/solution_hero_image.svg" 
             alt="Commerce Operations System Graphic"
             className="object-contain w-full max-w-[220px] lg:max-w-none lg:w-[260px] lg:h-[260px] xl:w-[480px] xl:h-[480px] relative z-10"
           />
