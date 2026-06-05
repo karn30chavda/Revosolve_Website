@@ -13,10 +13,10 @@ const CommerceProblems = () => {
   ];
 
   const problemImages = [
-    "/Solution_page/solution_problem_img.webp",
-    "/Solution_page/solution_problem_img_2.webp",
-    "/Solution_page/solution_problem_img_3.webp",
-    "/Solution_page/solution_problem_img_4.webp"
+    "/Solution_page/solution_problem_img_1.svg",
+    "/Solution_page/solution_problem_img_2.svg",
+    "/Solution_page/solution_problem_img_3.svg",
+    "/Solution_page/solution_problem_img_4.svg"
   ];
 
   // Desktop Scroll Tracking
@@ -37,10 +37,14 @@ const CommerceProblems = () => {
     const element = containerRef.current;
     const rect = element.getBoundingClientRect();
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const containerTop = scrollTop + rect.top;
     
-    // Calculate vertical offset matching the index section
-    const sectionHeight = element.offsetHeight / 4;
-    const targetY = scrollTop + rect.top + (idx * sectionHeight) + 50;
+    // Calculate the total scrollable height of the sticky container
+    const scrollableRange = element.offsetHeight - window.innerHeight;
+    
+    // Position the scroll exactly in the middle of the target section's scroll range
+    const targetProgress = (idx + 0.5) / 4;
+    const targetY = containerTop + targetProgress * Math.max(0, scrollableRange);
     
     window.scrollTo({
       top: targetY,
@@ -53,7 +57,7 @@ const CommerceProblems = () => {
       {/* Desktop Sticky Scroll Section */}
       <section 
         ref={containerRef} 
-        className="relative w-full bg-[#01031c] h-[220vh] hidden lg:block"
+        className="relative w-full bg-[#01031c] h-[340vh] hidden lg:block"
       >
         <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden z-10">
           <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-24">
@@ -81,18 +85,23 @@ const CommerceProblems = () => {
               
               {/* Left Column: Infographic Illustration with fade transition */}
               <div className="w-full lg:w-[540px] h-[350px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
-                <Motion.img 
-                  key={activeIdx}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4 }}
-                  src={problemImages[activeIdx]} 
-                  alt="Commerce Operations Infographic" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.src = "/Solution_page/solution_problem_img.webp";
-                  }}
-                />
+                {problemImages.map((src, idx) => (
+                  <Motion.img 
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ 
+                      opacity: idx === activeIdx ? 1 : 0,
+                      scale: idx === activeIdx ? 1 : 0.98
+                    }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    src={src} 
+                    alt="Commerce Operations Infographic" 
+                    className="w-full h-full object-cover absolute inset-0"
+                    onError={(e) => {
+                      e.target.src = "/Solution_page/solution_problem_img_1.svg";
+                    }}
+                  />
+                ))}
               </div>
 
               {/* Right Column: Problem list */}
@@ -101,21 +110,21 @@ const CommerceProblems = () => {
                   What starts as a few tools quickly becomes operational complexity
                 </div>
 
-                <div className="w-full flex flex-col gap-3">
+                <div className="w-full flex flex-col gap-[18px]">
                   {problemItems.map((item, idx) => {
                     const isActive = idx === activeIdx;
                     return (
                       <div
                         key={idx}
                         onClick={() => handleTabClick(idx)}
-                        className={`w-full rounded-[8px] flex items-start gap-[16px] py-[8px] px-[12px] self-stretch cursor-pointer transition-all duration-300 ${
+                        className={`w-full rounded-[8px] flex items-center gap-[16px] py-[12px] px-[16px] self-stretch cursor-pointer transition-all duration-300 ${
                           isActive 
                             ? "bg-[#26274A] opacity-100" 
                             : "bg-transparent opacity-50 hover:opacity-85"
                         }`}
                       >
                         {/* Checkmark Circle */}
-                        <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-[8px] transition-all duration-300 ${
+                        <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                           isActive 
                             ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]" 
                             : "border border-[#877BF1] bg-transparent"
@@ -224,18 +233,20 @@ const CommerceProblems = () => {
             
             {/* Infographic Illustration */}
             <div className="w-full h-[240px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
-              <Motion.img 
-                key={activeIdx}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                src={problemImages[activeIdx]} 
-                alt="Commerce Operations Infographic" 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.src = "/Solution_page/solution_problem_img.webp";
-                }}
-              />
+              {problemImages.map((src, idx) => (
+                <Motion.img 
+                  key={idx}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: idx === activeIdx ? 1 : 0 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  src={src} 
+                  alt="Commerce Operations Infographic" 
+                  className="w-full h-full object-cover absolute inset-0"
+                  onError={(e) => {
+                    e.target.src = "/Solution_page/solution_problem_img_1.svg";
+                  }}
+                />
+              ))}
             </div>
 
             {/* Problem list */}
@@ -244,21 +255,21 @@ const CommerceProblems = () => {
                 What starts as a few tools quickly becomes operational complexity
               </div>
 
-              <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col gap-3">
                 {problemItems.map((item, idx) => {
                   const isActive = idx === activeIdx;
                   return (
                     <div
                       key={idx}
                       onClick={() => setActiveIdx(idx)}
-                      className={`w-full rounded-[8px] flex items-start gap-[16px] py-[8px] px-[12px] cursor-pointer transition-all duration-300 ${
+                      className={`w-full rounded-[8px] flex items-center gap-[16px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 ${
                         isActive 
                           ? "bg-[#26274A] opacity-100" 
                           : "bg-transparent opacity-50"
                       }`}
                     >
                       {/* Checkmark Circle */}
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isActive 
                           ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]" 
                           : "border-2 border-[#877BF1] bg-transparent"
