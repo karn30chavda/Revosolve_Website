@@ -4,6 +4,7 @@ import { motion as Motion, useScroll, useMotionValueEvent } from "framer-motion"
 const CommerceSystem = () => {
   const containerRef = useRef(null);
   const [activeIdx, setActiveIdx] = useState(0);
+  const [tabKey, setTabKey] = useState(0);
 
   const systemItems = [
     "Orders across all channels",
@@ -15,12 +16,12 @@ const CommerceSystem = () => {
   ];
 
   const systemImages = [
-    "/Solution_page/solution_positining_image.webp",
-    "/Solution_page/solution_positining_image_2.webp",
-    "/Solution_page/solution_positining_image_3.webp",
-    "/Solution_page/solution_positining_image_4.webp",
-    "/Solution_page/solution_positining_image_5.webp",
-    "/Solution_page/solution_positining_image_6.webp"
+    "/Solution_page/solution_positining_image_1.svg",
+    "/Solution_page/solution_positining_image_2.svg",
+    "/Solution_page/solution_positining_image_3.svg",
+    "/Solution_page/solution_positining_image_4.svg",
+    "/Solution_page/solution_positining_image_5.svg",
+    "/Solution_page/solution_positining_image_6.svg"
   ];
 
   // Desktop Scroll Tracking (6 stages)
@@ -31,20 +32,31 @@ const CommerceSystem = () => {
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const idx = Math.min(Math.floor(latest * 6), 5);
-    setActiveIdx(idx);
+    if (idx !== activeIdx) {
+      setActiveIdx(idx);
+      setTabKey(prev => prev + 1);
+    }
   });
+
+  // Helper: get cache-busted src for animated SVGs
+  const getSrc = (src) => src.endsWith('.svg') ? `${src}?v=${tabKey}` : src;
 
   // Smooth scroll handler for desktop clicks
   const handleTabClick = (idx) => {
     if (!containerRef.current) return;
+    setTabKey(prev => prev + 1);
     const element = containerRef.current;
     const rect = element.getBoundingClientRect();
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    
-    // Map click index to scroll position
-    const sectionHeight = element.offsetHeight / 6;
-    const targetY = scrollTop + rect.top + (idx * sectionHeight) + 50;
-    
+    const elementTop = scrollTop + rect.top;
+
+    // Scrollable distance = total height minus one viewport (sticky content)
+    const scrollableHeight = element.offsetHeight - window.innerHeight;
+    const sectionScrollHeight = scrollableHeight / 6;
+
+    // Land 30% into the section to reliably trigger the correct active index
+    const targetY = elementTop + (idx * sectionScrollHeight) + (sectionScrollHeight * 0.3);
+
     window.scrollTo({
       top: targetY,
       behavior: "smooth"
@@ -134,15 +146,15 @@ const CommerceSystem = () => {
               {/* Right Column: Visual Diagram Frame */}
               <div className="w-full lg:w-[540px] h-[350px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
                 <Motion.img 
-                  key={activeIdx}
+                  key={tabKey}
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
-                  src={systemImages[activeIdx]} 
+                  src={getSrc(systemImages[activeIdx])} 
                   alt="System Positioning Graphic" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.src = "/Solution_page/solution_positining_image.webp";
+                    e.target.src = "/Solution_page/solution_positining_image_1.svg";
                   }}
                 />
               </div>
@@ -189,11 +201,11 @@ const CommerceSystem = () => {
             {/* Visual Diagram Frame */}
             <div className="w-full h-[280px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
               <Motion.img 
-                key={activeIdx}
+                key={tabKey}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                src={systemImages[activeIdx]} 
+                src={getSrc(systemImages[activeIdx])} 
                 alt="System Positioning Graphic" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
