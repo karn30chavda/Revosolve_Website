@@ -44,9 +44,8 @@ const CommerceCapabilities = () => {
       <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-12">
-        
         {/* Section Header */}
-        <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-16 pb-8">
+        <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between pb-8">
           {/* Left Block */}
           <div className="flex flex-col items-start justify-start">
             {/* Section Tag */}
@@ -56,25 +55,25 @@ const CommerceCapabilities = () => {
 
             {/* Heading Block */}
             <div className="flex flex-col items-start justify-start font-sans">
-              <h2 className="text-3xl md:text-4xl xl:text-[44px] font-black leading-tight tracking-[0.264px] flex flex-col items-start">
-                <span className="flex flex-wrap items-baseline gap-x-3">
-                  <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
-                    Core Capabilities
-                  </span>
-                  <span className="text-[#CACBDB] font-light xl:font-thin">
-                    Operational
-                  </span>
+              <h2 className="text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px] flex flex-wrap items-baseline gap-x-3">
+                <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
+                  Core Capabilities
                 </span>
-                <span className="text-[#CACBDB] font-light xl:font-thin mt-1">
-                  Friction
+                <span className="text-[#CACBDB] font-light xl:font-thin">
+                  Operational
                 </span>
               </h2>
+              <h3 className="text-[#CACBDB] text-xl md:text-2xl xl:text-[30px] font-light xl:font-thin leading-normal mt-1">
+                Friction
+              </h3>
             </div>
           </div>
 
           {/* Right Block */}
-          <div className="w-full lg:w-[360px] shrink-0 opacity-60 text-[#FBFBFF] font-sans text-[14px] font-normal leading-normal text-left lg:mb-2">
-            This service is about embedding intelligence directly into your technology infrastructure so your systems don't just execute tasks, they continuously learn, optimize, and improve.
+          <div className="w-full lg:w-[360px] shrink-0 opacity-60 text-[#FBFBFF] font-sans text-[14px] font-normal leading-normal text-left lg:mb-2 lg:mr-24">
+            This service is about embedding intelligence directly into your
+            technology infrastructure so your systems don't just execute tasks,
+            they continuously learn, optimize, and improve.
           </div>
         </div>
 
@@ -87,10 +86,10 @@ const CommerceCapabilities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
                 backgroundColor: "rgba(167, 139, 250, 0.15)",
-                borderColor: "rgba(99, 102, 241, 0.9)"
+                borderColor: "rgba(99, 102, 241, 0.9)",
               }}
               className="flex flex-col justify-start items-start p-8 h-[176px] w-full bg-violet-400/10 rounded-[5px] border border-indigo-500/60 cursor-pointer transition-all duration-300 relative group"
             >
@@ -99,10 +98,10 @@ const CommerceCapabilities = () => {
 
               {/* Icon Container */}
               <div className="w-7 h-6 flex items-center justify-center mb-8 shrink-0 relative z-10">
-                <img 
-                  src={item.icon} 
-                  alt={item.title} 
-                  className="w-full h-full object-contain" 
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="w-full h-full object-contain"
                 />
               </div>
 
@@ -115,7 +114,6 @@ const CommerceCapabilities = () => {
             </Motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
