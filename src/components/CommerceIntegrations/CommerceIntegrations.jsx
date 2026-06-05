@@ -85,7 +85,7 @@ const CommerceIntegrations = () => {
                   />
                 </div>
                 {/* Label */}
-                <span className={`text-[18px] font-medium leading-[26px] font-sans text-left select-none transition-colors duration-300 ${
+                <span className={`text-[15px] font-medium leading-[22px] font-sans text-left select-none transition-colors duration-300 ${
                   isActive ? "text-[#FAFAFA]" : "text-[#AAA9BE]"
                 }`}>
                   {tab.label}

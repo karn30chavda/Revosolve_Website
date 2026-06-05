@@ -1,6 +1,7 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
 import SolutionHero from "../components/SolutionHero/SolutionHero";
+import CommercePositioning from "../components/CommercePositioning/CommercePositioning";
 import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
 import CommerceCapabilities from "../components/CommerceCapabilities/CommerceCapabilities";
@@ -28,6 +29,7 @@ const Solutions = () => {
         <CommerceCapabilities />
         <CommerceDifferentiation />
         <CommerceIntegrations />
+      <CommercePositioning />
       </div>
     </div>
   );
