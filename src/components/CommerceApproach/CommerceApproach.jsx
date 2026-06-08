@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 
 const CommerceApproach = () => {
-  const words = ["Quick Commerce", "E-commerce"];
+  const words = ["Quick Commerce", "E-commerce", "D2C Brands", "CPG", "FMPG"];
   const [index, setIndex] = useState(0);
 
   // Safeguard against hot module replacement (HMR) state preservation issues
@@ -36,20 +36,16 @@ const CommerceApproach = () => {
               <AnimatePresence mode="wait">
                 <Motion.span
                   key={currentWord}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
-                  className="inline-block"
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
+                  className="inline-block text-[#FFAA00] font-normal"
                 >
-                  <span className="text-[#FFAA00] font-normal">
-                    {currentWord}
-                  </span>{" "}
-                  <span className="text-[#CACBDB] font-light xl:font-thin">
-                    business
-                  </span>
+                  {currentWord}
                 </Motion.span>
-              </AnimatePresence>
+              </AnimatePresence>{" "}
+              business
             </h3>
           </div>
         </div>
