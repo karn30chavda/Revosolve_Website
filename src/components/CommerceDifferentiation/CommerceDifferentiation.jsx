@@ -37,7 +37,7 @@ const differentiationData = [
 
 const CommerceDifferentiation = () => {
   return (
-    <section className="relative w-full bg-[#01031c] pt-4 pb-16 lg:pt-8 lg:pb-24 overflow-hidden">
+    <section className="relative w-full bg-[#01031c] pt-2 pb-8 lg:pt-4 lg:pb-12 overflow-hidden">
       {/* Decorative Background Glows */}
       <div className="absolute top-[30%] left-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />

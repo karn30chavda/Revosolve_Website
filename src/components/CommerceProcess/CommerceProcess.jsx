@@ -3,7 +3,7 @@ import { motion as Motion } from "framer-motion";
 
 const CommerceProcess = () => {
   return (
-    <section className="relative w-full bg-[#01031c] py-16 lg:py-20">
+    <section className="relative w-full bg-[#01031c] py-8 lg:py-10 lg:-mt-[calc(100vh-720px)]">
       <div className="relative z-30 w-[85%] mx-auto flex flex-col items-center text-center gap-8">
         
         {/* Section Header */}

@@ -28,7 +28,7 @@ const CommerceIntegrations = () => {
   const [activeTab, setActiveTab] = useState("marketplace");
 
   return (
-    <section className="relative w-full bg-[#01031c] pt-4 pb-16 lg:pt-8 lg:pb-24 overflow-hidden font-sans">
+    <section className="relative w-full bg-[#01031c] pt-2 pb-8 lg:pt-4 lg:pb-12 overflow-hidden font-sans">
       {/* Decorative Blur Background Spot */}
       <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />
@@ -73,7 +73,7 @@ const CommerceIntegrations = () => {
                 {/* Icon Wrapper */}
                 <div
                   className={`w-10 h-10 rounded-[8px] flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                    isActive ? "bg-white/[0.13]" : "bg-white/5"
+                    isActive ? "bg-white/13" : "bg-white/5"
                   }`}
                 >
                   <img

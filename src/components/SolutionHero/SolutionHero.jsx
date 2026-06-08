@@ -94,9 +94,17 @@ const SolutionHero = () => {
       <div className="absolute bottom-6 left-0 right-0 w-full flex justify-center z-20">
         <img
           onClick={() => {
-            document
-              .getElementById("solutions-content")
-              ?.scrollIntoView({ behavior: "smooth" });
+            const target = document.getElementById("solutions-content");
+            if (target) {
+              const rect = target.getBoundingClientRect();
+              const scrollTop = window.scrollY || document.documentElement.scrollTop;
+              const isDesktop = window.innerWidth >= 1024;
+              const targetY = isDesktop ? (scrollTop + rect.top - 50) : (scrollTop + rect.top);
+              window.scrollTo({
+                top: targetY,
+                behavior: "smooth",
+              });
+            }
           }}
           src="/hero_section/arrow_icon.svg"
           className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-opacity cursor-pointer animate-bounce"

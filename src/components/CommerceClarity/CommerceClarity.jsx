@@ -1,5 +1,9 @@
 import React, { useState, useRef } from "react";
-import { motion as Motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion as Motion,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 
 const CommerceClarity = () => {
   const containerRef = useRef(null);
@@ -10,7 +14,7 @@ const CommerceClarity = () => {
     "Real-time inventory synchronization",
     "Seamless fulfillment and delivery tracking",
     "Automated customer communication",
-    "Centralized dashboards for decision-makers"
+    "Centralized dashboards for decision-makers",
   ];
 
   const clarityImages = [
@@ -18,13 +22,13 @@ const CommerceClarity = () => {
     "/Solution_page/operational_clarity_img_2.webp",
     "/Solution_page/operational_clarity_img_3.webp",
     "/Solution_page/operational_clarity_img_4.webp",
-    "/Solution_page/operational_clarity_img_5.webp"
+    "/Solution_page/operational_clarity_img_5.webp",
   ];
 
   // Desktop Scroll Tracking (5 stages)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start 40px", "end end"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -38,27 +42,26 @@ const CommerceClarity = () => {
     const element = containerRef.current;
     const rect = element.getBoundingClientRect();
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    
+
     // Map click index to scroll position
     const sectionHeight = element.offsetHeight / 5;
-    const targetY = scrollTop + rect.top + (idx * sectionHeight) + 50;
-    
+    const targetY = (scrollTop + rect.top - 40) + idx * sectionHeight + 50;
+
     window.scrollTo({
       top: targetY,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   return (
     <>
       {/* Desktop Sticky Scroll Section */}
-      <section 
-        ref={containerRef} 
-        className="relative w-full bg-[#01031c] h-[300vh] hidden lg:block"
+      <section
+        ref={containerRef}
+        className="relative w-full bg-[#01031c] h-[280vh] hidden lg:block"
       >
-        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden z-10">
-          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-14">
-            
+        <div className="sticky top-[40px] h-[calc(100vh-40px)] w-full flex flex-col justify-start overflow-hidden z-10">
+          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-16">
             {/* Section Tag */}
             <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
               [what it enables]
@@ -75,23 +78,26 @@ const CommerceClarity = () => {
             </div>
 
             {/* Interactive Card (Swapped: Image Left, List Right) */}
-            <div 
-              style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+            <div
+              style={{
+                background:
+                  "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+              }}
               className="w-full mt-6 p-6 border border-black rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden relative z-10"
             >
-              
               {/* Left Column: Visual Diagram Frame */}
               <div className="w-full lg:w-[700px] h-[360px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
-                <Motion.img 
+                <Motion.img
                   key={activeIdx}
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
-                  src={clarityImages[activeIdx]} 
-                  alt="Operational Clarity Graphic" 
+                  src={clarityImages[activeIdx]}
+                  alt="Operational Clarity Graphic"
                   className="w-full h-full object-fill"
                   onError={(e) => {
-                    e.target.src = "/Solution_page/operational_clarity_img.webp";
+                    e.target.src =
+                      "/Solution_page/operational_clarity_img.webp";
                   }}
                 />
               </div>
@@ -110,23 +116,27 @@ const CommerceClarity = () => {
                         key={idx}
                         onClick={() => handleTabClick(idx)}
                         className={`w-full rounded-[4px] flex items-center gap-[12px] py-[4px] px-[10px] self-stretch cursor-pointer transition-all duration-300 ${
-                          isActive 
-                            ? "bg-[#26274A] opacity-100" 
+                          isActive
+                            ? "bg-[#26274A] opacity-100"
                             : "bg-transparent opacity-50 hover:opacity-85"
                         }`}
                       >
                         {/* Checkmark Circle */}
-                        <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isActive 
-                            ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]" 
-                            : "border border-[#877BF1] bg-transparent"
-                        }`}>
-                          <img 
-                            src="/Solution_page/solution_problem_tick.svg" 
-                            alt="Tick" 
+                        <div
+                          className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                            isActive
+                              ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]"
+                              : "border border-[#877BF1] bg-transparent"
+                          }`}
+                        >
+                          <img
+                            src="/Solution_page/solution_problem_tick.svg"
+                            alt="Tick"
                             className={`w-3.5 h-3.5 transition-all duration-300 ${
-                              isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                            }`} 
+                              isActive
+                                ? "scale-100 opacity-100"
+                                : "scale-90 opacity-40"
+                            }`}
                           />
                         </div>
 
@@ -139,17 +149,14 @@ const CommerceClarity = () => {
                   })}
                 </div>
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
 
       {/* Mobile / Tablet Interactive View (Click to swap tabs) */}
-      <section className="relative w-full bg-[#01031c] py-12 lg:hidden">
+      <section className="relative w-full bg-[#01031c] py-8 lg:hidden">
         <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-8">
-          
           <div className="w-full flex flex-col items-start justify-start border-b border-white/5 pb-4">
             {/* Section Tag */}
             <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
@@ -168,20 +175,22 @@ const CommerceClarity = () => {
           </div>
 
           {/* Interactive Card (Mobile) */}
-          <div 
-            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+          <div
+            style={{
+              background:
+                "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+            }}
             className="w-full p-5 border border-black rounded-2xl flex flex-col gap-8 overflow-hidden relative"
           >
-            
             {/* Visual Diagram Frame */}
             <div className="w-full h-[280px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
-              <Motion.img 
+              <Motion.img
                 key={activeIdx}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                src={clarityImages[activeIdx]} 
-                alt="Operational Clarity Graphic" 
+                src={clarityImages[activeIdx]}
+                alt="Operational Clarity Graphic"
                 className="w-full h-full object-fill"
                 onError={(e) => {
                   e.target.src = "/Solution_page/operational_clarity_img.webp";
@@ -203,23 +212,27 @@ const CommerceClarity = () => {
                       key={idx}
                       onClick={() => setActiveIdx(idx)}
                       className={`w-full rounded-[4px] flex items-start gap-[16px] py-[8px] px-[12px] cursor-pointer transition-all duration-300 ${
-                        isActive 
-                          ? "bg-[#26274A] opacity-100" 
+                        isActive
+                          ? "bg-[#26274A] opacity-100"
                           : "bg-transparent opacity-50"
                       }`}
                     >
                       {/* Checkmark Circle */}
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
-                        isActive 
-                          ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]" 
-                          : "border-2 border-[#877BF1] bg-transparent"
-                      }`}>
-                        <img 
-                          src="/Solution_page/solution_problem_tick.svg" 
-                          alt="Tick" 
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
+                          isActive
+                            ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]"
+                            : "border-2 border-[#877BF1] bg-transparent"
+                        }`}
+                      >
+                        <img
+                          src="/Solution_page/solution_problem_tick.svg"
+                          alt="Tick"
                           className={`w-4 h-4 transition-all duration-300 ${
-                            isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                          }`} 
+                            isActive
+                              ? "scale-100 opacity-100"
+                              : "scale-90 opacity-40"
+                          }`}
                         />
                       </div>
 
@@ -232,8 +245,7 @@ const CommerceClarity = () => {
                 })}
               </div>
             </div>
-          </div> 
-
+          </div>
         </div>
       </section>
     </>

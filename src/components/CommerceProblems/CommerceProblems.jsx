@@ -1,5 +1,9 @@
 import React, { useState, useRef } from "react";
-import { motion as Motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion as Motion,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 
 const CommerceProblems = () => {
   const containerRef = useRef(null);
@@ -9,20 +13,20 @@ const CommerceProblems = () => {
     "Inventory mismatches across channels",
     "Disconnected logistics and delivery tracking",
     "Separate tools for communication and reporting",
-    "No unified view of business performance"
+    "No unified view of business performance",
   ];
 
   const problemImages = [
     "/Solution_page/solution_problem_img_1.svg",
     "/Solution_page/solution_problem_img_2.svg",
     "/Solution_page/solution_problem_img_3.svg",
-    "/Solution_page/solution_problem_img_4.svg"
+    "/Solution_page/solution_problem_img_4.svg",
   ];
 
   // Desktop Scroll Tracking
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start 50px", "end end"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -38,30 +42,30 @@ const CommerceProblems = () => {
     const rect = element.getBoundingClientRect();
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const containerTop = scrollTop + rect.top;
-    
+
     // Calculate the total scrollable height of the sticky container
-    const scrollableRange = element.offsetHeight - window.innerHeight;
-    
+    const scrollableRange = element.offsetHeight - window.innerHeight + 50;
+
     // Position the scroll exactly in the middle of the target section's scroll range
     const targetProgress = (idx + 0.5) / 4;
-    const targetY = containerTop + targetProgress * Math.max(0, scrollableRange);
-    
+    const targetY =
+      (containerTop - 50) + targetProgress * Math.max(0, scrollableRange);
+
     window.scrollTo({
       top: targetY,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   return (
     <>
       {/* Desktop Sticky Scroll Section */}
-      <section 
-        ref={containerRef} 
-        className="relative w-full bg-[#01031c] h-[340vh] hidden lg:block"
+      <section
+        ref={containerRef}
+        className="relative w-full bg-[#01031c] h-[280vh] hidden lg:block"
       >
-        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden z-10">
-          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-24">
-            
+        <div className="sticky top-[50px] h-[calc(100vh-50px)] w-full flex flex-col justify-start overflow-hidden z-10">
+          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-16">
             {/* Section Tag */}
             <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
               [the problem]
@@ -78,27 +82,30 @@ const CommerceProblems = () => {
             </div>
 
             {/* Interactive Card */}
-            <div 
-              style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+            <div
+              style={{
+                background:
+                  "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+              }}
               className="w-full mt-6 p-6 border border-black rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden relative z-10"
             >
-              
               {/* Left Column: Infographic Illustration with fade transition */}
               <div className="w-full lg:w-[540px] h-[350px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
                 {problemImages.map((src, idx) => (
-                  <Motion.img 
+                  <Motion.img
                     key={idx}
                     initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ 
+                    animate={{
                       opacity: idx === activeIdx ? 1 : 0,
-                      scale: idx === activeIdx ? 1 : 0.98
+                      scale: idx === activeIdx ? 1 : 0.98,
                     }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    src={src} 
-                    alt="Commerce Operations Infographic" 
+                    src={src}
+                    alt="Commerce Operations Infographic"
                     className="w-full h-full object-cover absolute inset-0"
                     onError={(e) => {
-                      e.target.src = "/Solution_page/solution_problem_img_1.svg";
+                      e.target.src =
+                        "/Solution_page/solution_problem_img_1.svg";
                     }}
                   />
                 ))}
@@ -107,7 +114,8 @@ const CommerceProblems = () => {
               {/* Right Column: Problem list */}
               <div className="flex-1 w-full flex flex-col justify-start items-start gap-10 self-stretch py-1 relative z-10">
                 <div className="self-stretch text-white text-[18px] font-normal font-sans leading-[24px]">
-                  What starts as a few tools quickly becomes operational complexity
+                  What starts as a few tools quickly becomes operational
+                  complexity
                 </div>
 
                 <div className="w-full flex flex-col gap-[18px]">
@@ -118,23 +126,27 @@ const CommerceProblems = () => {
                         key={idx}
                         onClick={() => handleTabClick(idx)}
                         className={`w-full rounded-[8px] flex items-center gap-[16px] py-[12px] px-[16px] self-stretch cursor-pointer transition-all duration-300 ${
-                          isActive 
-                            ? "bg-[#26274A] opacity-100" 
+                          isActive
+                            ? "bg-[#26274A] opacity-100"
                             : "bg-transparent opacity-50 hover:opacity-85"
                         }`}
                       >
                         {/* Checkmark Circle */}
-                        <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isActive 
-                            ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]" 
-                            : "border border-[#877BF1] bg-transparent"
-                        }`}>
-                          <img 
-                            src="/Solution_page/solution_problem_tick.svg" 
-                            alt="Tick" 
+                        <div
+                          className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                            isActive
+                              ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]"
+                              : "border border-[#877BF1] bg-transparent"
+                          }`}
+                        >
+                          <img
+                            src="/Solution_page/solution_problem_tick.svg"
+                            alt="Tick"
                             className={`w-3.5 h-3.5 transition-all duration-300 ${
-                              isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                            }`} 
+                              isActive
+                                ? "scale-100 opacity-100"
+                                : "scale-90 opacity-40"
+                            }`}
                           />
                         </div>
 
@@ -149,25 +161,26 @@ const CommerceProblems = () => {
               </div>
 
               {/* Bottom Right Decorative Pattern */}
-              <img 
-                src="/Solution_page/solution_problem_bg_pattern.webp" 
-                alt="" 
+              <img
+                src="/Solution_page/solution_problem_bg_pattern.webp"
+                alt=""
                 className="absolute bottom-0 right-0 pointer-events-none z-0 mix-blend-screen opacity-40 select-none w-auto h-auto max-h-[70%] lg:max-h-full"
               />
             </div>
-
           </div>
         </div>
       </section>
 
       {/* Second Card Section (Desktop) */}
-      <section className="w-full bg-[#01031c] pt-6 pb-16 hidden lg:block">
+      <section className="w-full bg-[#01031c] pt-4 pb-8 hidden lg:block lg:-mt-[calc(100vh-720px)]">
         <div className="relative z-30 w-[85%] mx-auto">
-          <div 
-            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+          <div
+            style={{
+              background:
+                "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+            }}
             className="w-full pl-12 pr-8 py-10 border border-black rounded-2xl flex flex-col md:flex-row items-start justify-between gap-10 md:gap-14 overflow-hidden relative z-10"
           >
-            
             {/* Left Column: Text Statement */}
             <div className="text-[#CACBDB] font-sans text-[24px] font-thin leading-normal w-[368px] relative z-10 text-left pt-2">
               Commerce doesn’t break at the frontend, It breaks in operations.
@@ -185,19 +198,20 @@ const CommerceProblems = () => {
                   <li>Supply chain teams operate in silos</li>
                 </ul>
               </div>
-              
+
               {/* Golden Gradient Line */}
               <div className="self-stretch h-px bg-linear-to-r from-amber-500 to-transparent my-1" />
 
               <div className="self-stretch opacity-40 justify-start text-white text-base md:text-[18px] font-normal font-sans leading-normal text-left">
-                Most businesses aren’t lacking tools. <br />They’re overloaded with them.
+                Most businesses aren’t lacking tools. <br />
+                They’re overloaded with them.
               </div>
             </div>
 
             {/* Bottom Left Decorative Pattern 2 */}
-            <img 
-              src="/Solution_page/solution_problem_bg_pattern_2.webp" 
-              alt="" 
+            <img
+              src="/Solution_page/solution_problem_bg_pattern_2.webp"
+              alt=""
               className="absolute bottom-0 left-0 pointer-events-none z-0 mix-blend-screen opacity-40 select-none w-auto h-auto max-h-[70%] lg:max-h-full"
             />
           </div>
@@ -205,9 +219,8 @@ const CommerceProblems = () => {
       </section>
 
       {/* Mobile / Tablet Interactive View (Click to swap tabs + Card 2 stack) */}
-      <section className="relative w-full bg-[#01031c] py-12 lg:hidden">
+      <section className="relative w-full bg-[#01031c] py-8 lg:hidden">
         <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-8">
-          
           <div className="w-full flex flex-col items-start justify-start">
             {/* Section Tag */}
             <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
@@ -226,21 +239,23 @@ const CommerceProblems = () => {
           </div>
 
           {/* Card 1 (Interactive Checklist) */}
-          <div 
-            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+          <div
+            style={{
+              background:
+                "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+            }}
             className="w-full p-5 border border-black rounded-2xl flex flex-col gap-8 overflow-hidden relative"
           >
-            
             {/* Infographic Illustration */}
             <div className="w-full h-[240px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
               {problemImages.map((src, idx) => (
-                <Motion.img 
+                <Motion.img
                   key={idx}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: idx === activeIdx ? 1 : 0 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
-                  src={src} 
-                  alt="Commerce Operations Infographic" 
+                  src={src}
+                  alt="Commerce Operations Infographic"
                   className="w-full h-full object-cover absolute inset-0"
                   onError={(e) => {
                     e.target.src = "/Solution_page/solution_problem_img_1.svg";
@@ -252,7 +267,8 @@ const CommerceProblems = () => {
             {/* Problem list */}
             <div className="w-full flex flex-col justify-start items-start gap-5">
               <div className="text-white text-[18px] font-normal font-sans leading-[26px]">
-                What starts as a few tools quickly becomes operational complexity
+                What starts as a few tools quickly becomes operational
+                complexity
               </div>
 
               <div className="w-full flex flex-col gap-3">
@@ -263,23 +279,27 @@ const CommerceProblems = () => {
                       key={idx}
                       onClick={() => setActiveIdx(idx)}
                       className={`w-full rounded-[8px] flex items-center gap-[16px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 ${
-                        isActive 
-                          ? "bg-[#26274A] opacity-100" 
+                        isActive
+                          ? "bg-[#26274A] opacity-100"
                           : "bg-transparent opacity-50"
                       }`}
                     >
                       {/* Checkmark Circle */}
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                        isActive 
-                          ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]" 
-                          : "border-2 border-[#877BF1] bg-transparent"
-                      }`}>
-                        <img 
-                          src="/Solution_page/solution_problem_tick.svg" 
-                          alt="Tick" 
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                          isActive
+                            ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]"
+                            : "border-2 border-[#877BF1] bg-transparent"
+                        }`}
+                      >
+                        <img
+                          src="/Solution_page/solution_problem_tick.svg"
+                          alt="Tick"
                           className={`w-4 h-4 transition-all duration-300 ${
-                            isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                          }`} 
+                            isActive
+                              ? "scale-100 opacity-100"
+                              : "scale-90 opacity-40"
+                          }`}
                         />
                       </div>
 
@@ -294,16 +314,19 @@ const CommerceProblems = () => {
             </div>
 
             {/* Bottom Right Decorative Pattern */}
-            <img 
-              src="/Solution_page/solution_problem_bg_pattern.webp" 
-              alt="" 
+            <img
+              src="/Solution_page/solution_problem_bg_pattern.webp"
+              alt=""
               className="absolute bottom-0 right-0 pointer-events-none z-0 mix-blend-screen opacity-30 select-none w-[120px] h-auto"
             />
           </div>
 
           {/* Card 2 (Statement details block) */}
-          <div 
-            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+          <div
+            style={{
+              background:
+                "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+            }}
             className="w-full mt-4 p-5 border border-black rounded-2xl flex flex-col gap-6 overflow-hidden relative"
           >
             {/* Statement Text */}
@@ -328,18 +351,18 @@ const CommerceProblems = () => {
               <div className="self-stretch h-px bg-linear-to-r from-amber-500 to-transparent my-1" />
 
               <div className="opacity-60 text-white text-sm md:text-base font-normal font-sans leading-relaxed text-left">
-                Most businesses aren’t lacking tools. <br />They’re overloaded with them.
+                Most businesses aren’t lacking tools. <br />
+                They’re overloaded with them.
               </div>
             </div>
 
             {/* Bottom Left Decorative Pattern 2 */}
-            <img 
-              src="/Solution_page/solution_problem_bg_pattern_2.webp" 
-              alt="" 
+            <img
+              src="/Solution_page/solution_problem_bg_pattern_2.webp"
+              alt=""
               className="absolute bottom-0 left-0 pointer-events-none z-0 mix-blend-screen opacity-30 select-none w-[100px] h-auto"
             />
           </div>
-
         </div>
       </section>
     </>

@@ -1,5 +1,9 @@
 import React, { useState, useRef } from "react";
-import { motion as Motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion as Motion,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 
 const CommerceSystem = () => {
   const containerRef = useRef(null);
@@ -12,7 +16,7 @@ const CommerceSystem = () => {
     "Fulfillment and delivery workflows",
     "Financial tracking and compliance",
     "Customer communication systems",
-    "OCR for Quickcommerce"
+    "OCR for Quickcommerce",
   ];
 
   const systemImages = [
@@ -21,58 +25,58 @@ const CommerceSystem = () => {
     "/Solution_page/solution_positining_image_3.svg",
     "/Solution_page/solution_positining_image_4.svg",
     "/Solution_page/solution_positining_image_5.svg",
-    "/Solution_page/solution_positining_image_6.svg"
+    "/Solution_page/solution_positining_image_6.svg",
   ];
 
   // Desktop Scroll Tracking (6 stages)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start 50px", "end end"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const idx = Math.min(Math.floor(latest * 6), 5);
     if (idx !== activeIdx) {
       setActiveIdx(idx);
-      setTabKey(prev => prev + 1);
+      setTabKey((prev) => prev + 1);
     }
   });
 
   // Helper: get cache-busted src for animated SVGs
-  const getSrc = (src) => src.endsWith('.svg') ? `${src}?v=${tabKey}` : src;
+  const getSrc = (src) => (src.endsWith(".svg") ? `${src}?v=${tabKey}` : src);
 
   // Smooth scroll handler for desktop clicks
   const handleTabClick = (idx) => {
     if (!containerRef.current) return;
-    setTabKey(prev => prev + 1);
+    setTabKey((prev) => prev + 1);
     const element = containerRef.current;
     const rect = element.getBoundingClientRect();
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const elementTop = scrollTop + rect.top;
 
     // Scrollable distance = total height minus one viewport (sticky content)
-    const scrollableHeight = element.offsetHeight - window.innerHeight;
+    const scrollableHeight = element.offsetHeight - window.innerHeight + 50;
     const sectionScrollHeight = scrollableHeight / 6;
 
     // Land 30% into the section to reliably trigger the correct active index
-    const targetY = elementTop + (idx * sectionScrollHeight) + (sectionScrollHeight * 0.3);
+    const targetY =
+      (elementTop - 50) + idx * sectionScrollHeight + sectionScrollHeight * 0.3;
 
     window.scrollTo({
       top: targetY,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   return (
     <>
       {/* Desktop Sticky Scroll Section */}
-      <section 
-        ref={containerRef} 
-        className="relative w-full bg-[#01031c] h-[400vh] hidden lg:block"
+      <section
+        ref={containerRef}
+        className="relative w-full bg-[#01031c] h-[340vh] hidden lg:block"
       >
-        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden z-10">
-          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-24">
-            
+        <div className="sticky top-[50px] h-[calc(100vh-50px)] w-full flex flex-col justify-start overflow-hidden z-10">
+          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-16">
             {/* Section Tag */}
             <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
               [system positioning]
@@ -89,16 +93,20 @@ const CommerceSystem = () => {
                 </h3>
               </div>
               <p className="text-[#CACBDB] text-xs xl:text-sm font-normal font-sans leading-relaxed max-w-full lg:max-w-[450px] text-left opacity-75 lg:mb-1">
-                RevoSolve builds Commerce Operations Systems that act as the central command layer for managing multi-brand, multi-channel operations.
+                RevoSolve builds Commerce Operations Systems that act as the
+                central command layer for managing multi-brand, multi-channel
+                operations.
               </p>
             </div>
 
             {/* Interactive Card */}
-            <div 
-              style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+            <div
+              style={{
+                background:
+                  "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+              }}
               className="w-full mt-6 p-6 border border-black rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden relative z-10"
             >
-              
               {/* Left Column: Interactive Systems List */}
               <div className="flex-1 w-full flex flex-col justify-start items-start gap-8 self-stretch py-1 relative z-10">
                 <div className="self-stretch text-white text-[18px] font-normal font-sans leading-[24px]">
@@ -113,23 +121,27 @@ const CommerceSystem = () => {
                         key={idx}
                         onClick={() => handleTabClick(idx)}
                         className={`w-full rounded-[8px] flex items-center gap-[12px] py-[4px] px-[10px] self-stretch cursor-pointer transition-all duration-300 ${
-                          isActive 
-                            ? "bg-[#26274A] opacity-100" 
+                          isActive
+                            ? "bg-[#26274A] opacity-100"
                             : "bg-transparent opacity-50 hover:opacity-85"
                         }`}
                       >
                         {/* Checkmark Circle */}
-                        <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isActive 
-                            ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]" 
-                            : "border border-[#877BF1] bg-transparent"
-                        }`}>
-                          <img 
-                            src="/Solution_page/solution_problem_tick.svg" 
-                            alt="Tick" 
+                        <div
+                          className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                            isActive
+                              ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]"
+                              : "border border-[#877BF1] bg-transparent"
+                          }`}
+                        >
+                          <img
+                            src="/Solution_page/solution_problem_tick.svg"
+                            alt="Tick"
                             className={`w-3.5 h-3.5 transition-all duration-300 ${
-                              isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                            }`} 
+                              isActive
+                                ? "scale-100 opacity-100"
+                                : "scale-90 opacity-40"
+                            }`}
                           />
                         </div>
 
@@ -145,31 +157,30 @@ const CommerceSystem = () => {
 
               {/* Right Column: Visual Diagram Frame */}
               <div className="w-full lg:w-[540px] h-[350px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
-                <Motion.img 
+                <Motion.img
                   key={tabKey}
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
-                  src={getSrc(systemImages[activeIdx])} 
-                  alt="System Positioning Graphic" 
+                  src={getSrc(systemImages[activeIdx])}
+                  alt="System Positioning Graphic"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.src = "/Solution_page/solution_positining_image_1.svg";
+                    e.target.src =
+                      "/Solution_page/solution_positining_image_1.svg";
                   }}
                 />
               </div>
 
               {/* Bottom Right Decorative Pattern */}
             </div>
-
           </div>
         </div>
       </section>
 
       {/* Mobile / Tablet Interactive View (Click to swap tabs) */}
-      <section className="relative w-full bg-[#01031c] py-12 lg:hidden">
+      <section className="relative w-full bg-[#01031c] py-8 lg:hidden">
         <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-8">
-          
           <div className="w-full flex flex-col items-start justify-start border-b border-white/5 pb-4">
             {/* Section Tag */}
             <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
@@ -187,29 +198,34 @@ const CommerceSystem = () => {
                 </h3>
               </div>
               <p className="text-[#CACBDB] text-sm font-normal font-sans leading-relaxed max-w-full text-left opacity-75">
-                RevoSolve builds Commerce Operations Systems that act as the central command layer for managing multi-brand, multi-channel operations.
+                RevoSolve builds Commerce Operations Systems that act as the
+                central command layer for managing multi-brand, multi-channel
+                operations.
               </p>
             </div>
           </div>
 
           {/* Interactive Card (Mobile) */}
-          <div 
-            style={{ background: "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)" }}
+          <div
+            style={{
+              background:
+                "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+            }}
             className="w-full p-5 border border-black rounded-2xl flex flex-col gap-8 overflow-hidden relative"
           >
-            
             {/* Visual Diagram Frame */}
             <div className="w-full h-[280px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
-              <Motion.img 
+              <Motion.img
                 key={tabKey}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                src={getSrc(systemImages[activeIdx])} 
-                alt="System Positioning Graphic" 
+                src={getSrc(systemImages[activeIdx])}
+                alt="System Positioning Graphic"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.target.src = "/Solution_page/solution_positining_image.webp";
+                  e.target.src =
+                    "/Solution_page/solution_positining_image.webp";
                 }}
               />
             </div>
@@ -228,23 +244,27 @@ const CommerceSystem = () => {
                       key={idx}
                       onClick={() => setActiveIdx(idx)}
                       className={`w-full rounded-[8px] flex items-start gap-[16px] py-[8px] px-[12px] cursor-pointer transition-all duration-300 ${
-                        isActive 
-                          ? "bg-[#26274A] opacity-100" 
+                        isActive
+                          ? "bg-[#26274A] opacity-100"
                           : "bg-transparent opacity-50"
                       }`}
                     >
                       {/* Checkmark Circle */}
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
-                        isActive 
-                          ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]" 
-                          : "border-2 border-[#877BF1] bg-transparent"
-                      }`}>
-                        <img 
-                          src="/Solution_page/solution_problem_tick.svg" 
-                          alt="Tick" 
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
+                          isActive
+                            ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]"
+                            : "border-2 border-[#877BF1] bg-transparent"
+                        }`}
+                      >
+                        <img
+                          src="/Solution_page/solution_problem_tick.svg"
+                          alt="Tick"
                           className={`w-4 h-4 transition-all duration-300 ${
-                            isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                          }`} 
+                            isActive
+                              ? "scale-100 opacity-100"
+                              : "scale-90 opacity-40"
+                          }`}
                         />
                       </div>
 
@@ -257,8 +277,7 @@ const CommerceSystem = () => {
                 })}
               </div>
             </div>
-          </div> 
-
+          </div>
         </div>
       </section>
     </>

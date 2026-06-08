@@ -2,7 +2,7 @@ import React from "react";
 
 const CommerceCaseStudy = () => {
   return (
-    <section className="bg-transparent py-16 lg:py-20 flex flex-col gap-10 md:gap-14 items-center justify-start relative w-full overflow-hidden transform-gpu antialiased font-sans">
+    <section className="bg-transparent py-8 lg:py-10 flex flex-col gap-8 md:gap-10 items-center justify-start relative w-full overflow-hidden transform-gpu antialiased font-sans">
       
       {/* Header Section */}
       <div className="w-[85%] mx-auto flex flex-col gap-4 items-start justify-end relative">

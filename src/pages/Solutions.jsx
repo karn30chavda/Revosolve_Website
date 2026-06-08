@@ -20,7 +20,7 @@ const Solutions = () => {
       <SolutionHero />
 
       {/* Solutions Sections / Components will be loaded below */}
-      <div id="solutions-content" className="w-full relative z-10 pt-10">
+      <div id="solutions-content" className="w-full relative z-10">
         <CommerceProblems />
         <CommerceSystem />
         <CommerceApproach />
