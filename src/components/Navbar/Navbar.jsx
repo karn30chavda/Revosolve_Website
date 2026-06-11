@@ -45,6 +45,7 @@ const navData = [
         "Simulation & Immersive Systems",
         "Engineering Capacity & Delivery Systems",
         "Simulation & Spatial Technologies",
+        "Data Engineering & Data Analytics",
       ],
     },
   },
