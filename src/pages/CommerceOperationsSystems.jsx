@@ -13,7 +13,7 @@ import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
 import CommerceProcess from "../components/CommerceProcess/CommerceProcess";
 import CommerceCaseStudy from "../components/CommerceCaseStudy/CommerceCaseStudy";
 
-const Solutions = () => {
+const CommerceOperationsSystems = () => {
   return (
     <div className="w-full bg-[#01031c]">
       {/* Solutions Page Hero */}
@@ -37,4 +37,4 @@ const Solutions = () => {
   );
 };
 
-export default Solutions;
+export default CommerceOperationsSystems;
