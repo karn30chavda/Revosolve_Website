@@ -58,7 +58,14 @@ const SolutionHero = () => {
 
           {/* CTA Button */}
           <button
-            onClick={() => navigate("/connect")}
+            onClick={() =>
+              navigate("/connect", {
+                state: {
+                  category: "Services/Solution",
+                  service: "Customer Interaction Systems",
+                },
+              })
+            }
             className="h-[56px] py-[10px] px-[35px] rounded-[8px] border-2 border-[rgba(91,98,191,0.37)] backdrop-blur-[2px] flex justify-center items-center gap-[22px] bg-transparent cursor-pointer transition-all duration-300 hover:bg-white/5 active:scale-95 shrink-0"
           >
             <span className="text-white text-center font-sans text-[16px] font-medium leading-[24px] tracking-[-0.312px]">
