@@ -19,10 +19,10 @@ const CommerceClarity = () => {
 
   const clarityImages = [
     "/Solution_page/operational_clarity_img.webp",
-    "/Solution_page/operational_clarity_img_2.webp",
-    "/Solution_page/operational_clarity_img_3.webp",
-    "/Solution_page/operational_clarity_img_4.webp",
-    "/Solution_page/operational_clarity_img_5.webp",
+    "/Solution_page/operational_clarity_2.png",
+    "/Solution_page/operational_clarity_3.png",
+    "/Solution_page/operational_clarity_img.webp",
+    "/Solution_page/operational_clarity_5.png",
   ];
 
   // Desktop Scroll Tracking (5 stages)
