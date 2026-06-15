@@ -13,16 +13,16 @@
 </mask>
 <g mask="url(#mask0_4680_7346)">
 <rect x="152" y="99" width="329" height="168" fill="#5858F3"/>
-<path d="M 317 250 L 317 169 Q 317 159 307 159 L 169 159 Q 159 159 159 150 L 159 122" fill="none" stroke="#20CEFF" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
+<path d="M 317 250 L 317 169 Q 317 159 307 159 L 169 159 Q 159 159 159 150 L 159 122" fill="none" stroke="url(#flow_light_grad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
 <animate attributeName="stroke-dashoffset" values="40; -300" dur="5s" repeatCount="indefinite" />
 </path>
-<path d="M 317 250 L 317 169 Q 317 159 307 159 L 271 159 Q 261 159 261 150 L 261 122" fill="none" stroke="#20CEFF" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
+<path d="M 317 250 L 317 169 Q 317 159 307 159 L 271 159 Q 261 159 261 150 L 261 122" fill="none" stroke="url(#flow_light_grad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
 <animate attributeName="stroke-dashoffset" values="40; -300" dur="5s" repeatCount="indefinite" />
 </path>
-<path d="M 317 250 L 317 169 Q 317 159 327 159 L 363 159 Q 373 159 373 150 L 373 122" fill="none" stroke="#20CEFF" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
+<path d="M 317 250 L 317 169 Q 317 159 327 159 L 363 159 Q 373 159 373 150 L 373 122" fill="none" stroke="url(#flow_light_grad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
 <animate attributeName="stroke-dashoffset" values="40; -300" dur="5s" repeatCount="indefinite" />
 </path>
-<path d="M 317 250 L 317 169 Q 317 159 327 159 L 464 159 Q 474 159 474 150 L 474 122" fill="none" stroke="#20CEFF" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
+<path d="M 317 250 L 317 169 Q 317 159 327 159 L 464 159 Q 474 159 474 150 L 474 122" fill="none" stroke="url(#flow_light_grad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="40 300" stroke-dashoffset="40">
 <animate attributeName="stroke-dashoffset" values="40; -300" dur="5s" repeatCount="indefinite" />
 </path>
 </g>
@@ -49,13 +49,13 @@
 </pattern>
 <linearGradient id="paint0_linear_4680_7346" x1="317.011" y1="105.886" x2="317.011" y2="254" gradientUnits="userSpaceOnUse">
 <stop offset="0.0192314" stop-color="#5757F3"/>
-<stop offset="0.0565711" stop-color="#20CEFF"/>
+<stop offset="0.0565711" stop-color="#FCCA71"/>
 <stop offset="0.0927439" stop-color="#5757F3"/>
 </linearGradient>
 <linearGradient id="flow_light_grad" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0%" stop-color="#20CEFF" stop-opacity="0"/>
-<stop offset="50%" stop-color="#20CEFF" stop-opacity="1"/>
-<stop offset="100%" stop-color="#20CEFF" stop-opacity="0"/>
+<stop offset="0%" stop-color="#FCCA71" stop-opacity="0"/>
+<stop offset="50%" stop-color="#FCCA71" stop-opacity="1"/>
+<stop offset="100%" stop-color="#FCCA71" stop-opacity="0"/>
 </linearGradient>
 <clipPath id="clip0_4680_7346">
 <rect width="629" height="427" rx="16" fill="white"/>

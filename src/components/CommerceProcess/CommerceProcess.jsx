@@ -33,7 +33,7 @@ const CommerceProcess = () => {
           className="w-full flex items-center justify-center relative z-10 mt-4"
         >
           <img 
-            src="/Solution_page/solution_process.webp" 
+            src="/Solution_page/solution_process.svg" 
             alt="RevoSolve System Workflow Process Diagram" 
             className="w-full h-auto max-w-[1100px] object-contain"
             onError={(e) => {
