@@ -42,17 +42,17 @@ const integrationsByTab = {
     left: [
       { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
       { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
+      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
       { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
       { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
+      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
     ],
     right: [
       { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
+      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
       { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
       { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
+      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
       { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
     ],
   },
@@ -92,8 +92,7 @@ const IntegrationIconCard = ({ item }) => {
           alt={item.name}
           onError={() => setImgFailed(true)}
           className={
-            item.name.toLowerCase() === "flipkart" ||
-            item.name.toLowerCase().includes("urban")
+            item.name.toLowerCase() === "flipkart"
               ? "w-6 h-6 sm:w-8 sm:h-8 object-contain"
               : "w-10 h-10 sm:w-12 sm:h-12 object-contain"
           }
