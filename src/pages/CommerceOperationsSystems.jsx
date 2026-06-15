@@ -11,7 +11,7 @@ import CommerceIntegrations from "../components/CommerceIntegrations/CommerceInt
 import CommerceClarity from "../components/CommerceClarity/CommerceClarity";
 import CommerceApproach from "../components/CommerceApproach/CommerceApproach";
 import CommerceProcess from "../components/CommerceProcess/CommerceProcess";
-import CommerceCaseStudy from "../components/CommerceCaseStudy/CommerceCaseStudy";
+// import CommerceCaseStudy from "../components/CommerceCaseStudy/CommerceCaseStudy";
 
 const CommerceOperationsSystems = () => {
   return (
@@ -26,7 +26,7 @@ const CommerceOperationsSystems = () => {
         <CommerceApproach />
         <CommerceClarity />
         <CommerceProcess />
-        <CommerceCaseStudy />
+        {/* <CommerceCaseStudy /> */}
         <CommerceCapabilities />
         <CommerceDifferentiation />
         <CommerceIntegrations />

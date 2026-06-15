@@ -9,13 +9,8 @@ const tabsData = [
   },
   {
     id: "erp",
-    label: "ERP Integration",
+    label: "ERP/POS/Accounting",
     icon: "/Solution_page/erp_integration.svg",
-  },
-  {
-    id: "accounting",
-    label: "Accounting Integration",
-    icon: "/Solution_page/accounting.svg",
   },
   {
     id: "shipping",
@@ -28,72 +23,54 @@ const integrationsByTab = {
   marketplace: {
     left: [
       { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/Integration_icon2.svg", name: "Walmart", short: "WM" },
-      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/Integration_icon2.svg", name: "Walmart", short: "WM" },
-      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/Integration_icon2.svg", name: "Walmart", short: "WM" },
+      { src: "/Solution_page/Integration_amazon.svg", name: "Amazon", short: "AMZ" },
+      { src: "/Solution_page/integration_flipkart.svg", name: "Flipkart", short: "FK" },
+      { src: "/Solution_page/integration_woocommerce.svg", name: "WooCommerce", short: "WC" },
+      { src: "/Solution_page/integration_meesho.svg", name: "Meesho", short: "MS" },
+      { src: "/Solution_page/integration_myntra.svg", name: "Myntra", short: "MY" },
     ],
     right: [
+      { src: "/Solution_page/integration_flipkart.svg", name: "Flipkart", short: "FK" },
       { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/Integration_icon3.svg", name: "TikTok Shop", short: "TT" },
-      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/Integration_icon3.svg", name: "TikTok Shop", short: "TT" },
-      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/Integration_icon3.svg", name: "TikTok Shop", short: "TT" },
+      { src: "/Solution_page/integration_meesho.svg", name: "Meesho", short: "MS" },
+      { src: "/Solution_page/Integration_amazon.svg", name: "Amazon", short: "AMZ" },
+      { src: "/Solution_page/integration_myntra.svg", name: "Myntra", short: "MY" },
+      { src: "/Solution_page/integration_woocommerce.svg", name: "WooCommerce", short: "WC" },
     ],
   },
   erp: {
     left: [
-      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/netsuite_logo.svg", name: "NetSuite", short: "NS" },
-      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/netsuite_logo.svg", name: "NetSuite", short: "NS" },
-      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/netsuite_logo.svg", name: "NetSuite", short: "NS" },
+      { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
+      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
+      { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
+      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
     ],
     right: [
-      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/dynamics_logo.svg", name: "Dynamics 365", short: "MS" },
-      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/dynamics_logo.svg", name: "Dynamics 365", short: "MS" },
-      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/dynamics_logo.svg", name: "Dynamics 365", short: "MS" },
-    ],
-  },
-  accounting: {
-    left: [
-      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
-      { src: "/Solution_page/xero_logo.svg", name: "Xero", short: "XR" },
-      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
-      { src: "/Solution_page/xero_logo.svg", name: "Xero", short: "XR" },
-      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
-      { src: "/Solution_page/xero_logo.svg", name: "Xero", short: "XR" },
-    ],
-    right: [
-      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
-      { src: "/Solution_page/zoho_books_logo.svg", name: "Zoho Books", short: "ZB" },
-      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
-      { src: "/Solution_page/zoho_books_logo.svg", name: "Zoho Books", short: "ZB" },
-      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
-      { src: "/Solution_page/zoho_books_logo.svg", name: "Zoho Books", short: "ZB" },
+      { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
+      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
+      { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/Integration_tally.jpeg", name: "Tally Prime", short: "TLY" },
+      { src: "/Solution_page/Integration_urban.jpeg", name: "Urban Piper", short: "UP" },
+      { src: "/Solution_page/Integration_sap.jpeg", name: "SAP ERP", short: "SAP" },
     ],
   },
   shipping: {
     left: [
       { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
       { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
-      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
-      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
-      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
-      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
+      { src: "/Solution_page/Integration_ups.jpeg", name: "UPS", short: "UPS" },
+      { src: "/Solution_page/Integration_delhivery.svg", name: "Delhivery", short: "DLV" },
+      { src: "/Solution_page/Integration_ekart.svg", name: "Ekart", short: "EKT" },
+      { src: "/Solution_page/Integration_eshipz.png", name: "Eshipz", short: "ESZ" },
     ],
     right: [
+      { src: "/Solution_page/Integration_delhivery.svg", name: "Delhivery", short: "DLV" },
       { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
-      { src: "/Solution_page/Integration_ups.jpeg", name: "UPS", short: "UPS" },
-      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
-      { src: "/Solution_page/Integration_ups.jpeg", name: "UPS", short: "UPS" },
-      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
+      { src: "/Solution_page/Integration_ekart.svg", name: "Ekart", short: "EKT" },
+      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
+      { src: "/Solution_page/Integration_eshipz.png", name: "Eshipz", short: "ESZ" },
       { src: "/Solution_page/Integration_ups.jpeg", name: "UPS", short: "UPS" },
     ],
   },
@@ -114,7 +91,12 @@ const IntegrationIconCard = ({ item }) => {
           src={item.src}
           alt={item.name}
           onError={() => setImgFailed(true)}
-          className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+          className={
+            item.name.toLowerCase() === "flipkart" ||
+            item.name.toLowerCase().includes("urban")
+              ? "w-6 h-6 sm:w-8 sm:h-8 object-contain"
+              : "w-10 h-10 sm:w-12 sm:h-12 object-contain"
+          }
         />
       ) : (
         <div className="w-full h-full flex flex-col items-center justify-center bg-linear-to-tr from-[#161858] to-[#4446D8] text-white font-bold text-xs sm:text-xs select-none p-1 text-center leading-tight">
@@ -161,7 +143,7 @@ const CommerceIntegrations = () => {
         </div>
 
         {/* Tabs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
           {tabsData.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
