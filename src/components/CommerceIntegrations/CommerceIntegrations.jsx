@@ -24,8 +24,112 @@ const tabsData = [
   },
 ];
 
+const integrationsByTab = {
+  marketplace: {
+    left: [
+      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
+      { src: "/Solution_page/Integration_icon2.svg", name: "Walmart", short: "WM" },
+      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
+      { src: "/Solution_page/Integration_icon2.svg", name: "Walmart", short: "WM" },
+      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
+      { src: "/Solution_page/Integration_icon2.svg", name: "Walmart", short: "WM" },
+    ],
+    right: [
+      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
+      { src: "/Solution_page/Integration_icon3.svg", name: "TikTok Shop", short: "TT" },
+      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
+      { src: "/Solution_page/Integration_icon3.svg", name: "TikTok Shop", short: "TT" },
+      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
+      { src: "/Solution_page/Integration_icon3.svg", name: "TikTok Shop", short: "TT" },
+    ],
+  },
+  erp: {
+    left: [
+      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/netsuite_logo.svg", name: "NetSuite", short: "NS" },
+      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/netsuite_logo.svg", name: "NetSuite", short: "NS" },
+      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/netsuite_logo.svg", name: "NetSuite", short: "NS" },
+    ],
+    right: [
+      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/dynamics_logo.svg", name: "Dynamics 365", short: "MS" },
+      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/dynamics_logo.svg", name: "Dynamics 365", short: "MS" },
+      { src: "/Solution_page/sap_logo.svg", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/dynamics_logo.svg", name: "Dynamics 365", short: "MS" },
+    ],
+  },
+  accounting: {
+    left: [
+      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
+      { src: "/Solution_page/xero_logo.svg", name: "Xero", short: "XR" },
+      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
+      { src: "/Solution_page/xero_logo.svg", name: "Xero", short: "XR" },
+      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
+      { src: "/Solution_page/xero_logo.svg", name: "Xero", short: "XR" },
+    ],
+    right: [
+      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
+      { src: "/Solution_page/zoho_books_logo.svg", name: "Zoho Books", short: "ZB" },
+      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
+      { src: "/Solution_page/zoho_books_logo.svg", name: "Zoho Books", short: "ZB" },
+      { src: "/Solution_page/quickbooks_logo.svg", name: "QuickBooks", short: "QB" },
+      { src: "/Solution_page/zoho_books_logo.svg", name: "Zoho Books", short: "ZB" },
+    ],
+  },
+  shipping: {
+    left: [
+      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
+      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
+      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
+      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
+      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
+      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
+    ],
+    right: [
+      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
+      { src: "/Solution_page/Integration_ups.jpeg", name: "UPS", short: "UPS" },
+      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
+      { src: "/Solution_page/Integration_ups.jpeg", name: "UPS", short: "UPS" },
+      { src: "/Solution_page/integration_shiprocket.png", name: "Shiprocket", short: "SR" },
+      { src: "/Solution_page/Integration_ups.jpeg", name: "UPS", short: "UPS" },
+    ],
+  },
+};
+
+const IntegrationIconCard = ({ item }) => {
+  const [imgFailed, setImgFailed] = useState(false);
+
+  // Reset fail state when item source changes (on tab switch)
+  React.useEffect(() => {
+    setImgFailed(false);
+  }, [item.src]);
+
+  return (
+    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white flex items-center justify-center relative transition-all duration-300 hover:scale-110 shadow-lg overflow-hidden group">
+      {!imgFailed ? (
+        <img
+          src={item.src}
+          alt={item.name}
+          onError={() => setImgFailed(true)}
+          className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+        />
+      ) : (
+        <div className="w-full h-full flex flex-col items-center justify-center bg-linear-to-tr from-[#161858] to-[#4446D8] text-white font-bold text-xs sm:text-xs select-none p-1 text-center leading-tight">
+          {item.short}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const CommerceIntegrations = () => {
   const [activeTab, setActiveTab] = useState("marketplace");
+
+  const currentLeftIcons = integrationsByTab[activeTab]?.left || [];
+  const currentRightIcons = integrationsByTab[activeTab]?.right || [];
 
   return (
     <section className="relative w-full bg-[#01031c] pt-2 pb-8 lg:pt-4 lg:pb-12 overflow-hidden font-sans">
@@ -104,13 +208,43 @@ const CommerceIntegrations = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.3 }}
-              className="w-full flex items-center justify-center z-10"
+              className="w-full min-h-[256px] flex flex-col lg:flex-row items-center justify-center gap-y-8 lg:gap-x-12 xl:gap-x-20 z-10 py-12 px-6 sm:px-12 rounded-[20px] relative overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(225deg, #0F1034 24.88%, #161858 187.87%)",
+              }}
             >
-              <img
-                src="/Solution_page/solution_integration.webp"
-                alt="Integrations Diagram"
-                className="w-full h-auto object-contain pointer-events-none select-none"
-              />
+              {/* Background Blue Glow from design */}
+              <div className="w-[685px] h-60 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 opacity-20 bg-blue-700 rounded-full blur-[87px] pointer-events-none" />
+
+              {/* Left Grid */}
+              <div className="grid grid-cols-3 gap-x-4 sm:gap-x-8 lg:gap-x-12 xl:gap-x-24 gap-y-4 lg:gap-y-8 xl:gap-y-12 justify-items-center items-center">
+                {currentLeftIcons.map((item, idx) => (
+                  <IntegrationIconCard key={idx} item={item} />
+                ))}
+              </div>
+
+              {/* Center ERP Circle */}
+              <div className="relative flex items-center justify-center shrink-0 my-6 lg:my-0">
+                <div
+                  className={`w-28 h-28 sm:w-32 sm:h-32 rounded-full flex items-center justify-center relative z-10 transition-all duration-500 ring-2 ring-[#877BF1]/30 shadow-[0_0_20px_rgba(135,123,241,0.2)] ${
+                    activeTab === "erp" ? "scale-105" : "hover:scale-105"
+                  }`}
+                >
+                  <img
+                    src="/Solution_page/Integration_ERP.svg"
+                    alt="ERPNext Center Logo"
+                    className="w-full h-full object-contain pointer-events-none select-none"
+                  />
+                </div>
+              </div>
+
+              {/* Right Grid */}
+              <div className="grid grid-cols-3 gap-x-4 sm:gap-x-8 lg:gap-x-12 xl:gap-x-24 gap-y-4 lg:gap-y-8 xl:gap-y-12 justify-items-center items-center">
+                {currentRightIcons.map((item, idx) => (
+                  <IntegrationIconCard key={idx} item={item} />
+                ))}
+              </div>
             </Motion.div>
           </AnimatePresence>
         </div>
