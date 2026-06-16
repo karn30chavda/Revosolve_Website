@@ -6,7 +6,7 @@ const SolutionHero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full min-h-screen lg:min-h-0 lg:h-screen overflow-x-hidden flex flex-col items-center justify-center pt-20 bg-[#01031c] font-sans">
+    <section className="relative w-full h-dvh lg:min-h-0 lg:h-screen overflow-x-hidden flex flex-col items-center justify-center pt-0 lg:pt-20 bg-[#01031c] font-sans">
       
       {/* Background Atmosphere Elements */}
       <div 
@@ -24,35 +24,44 @@ const SolutionHero = () => {
       <div className="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] bg-[#FCCA71]/5 rounded-full blur-[130px] pointer-events-none" />
 
       {/* Main Content Layout */}
-      <div className="relative z-30 w-[85%] mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-4 xl:gap-2 pt-4 lg:pt-0 pb-16 lg:pb-0">
+      <div className="relative z-30 w-[85%] mx-auto flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-4 xl:gap-2 pt-0 lg:pt-0 pb-0 lg:pb-0">
         
         {/* Left Column: Text & CTA */}
         <Motion.div 
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col justify-start items-start gap-6 w-full lg:max-w-[540px] xl:max-w-[700px] lg:flex-1"
+          className="flex flex-col items-center lg:justify-start lg:items-start text-center lg:text-left gap-4 lg:gap-6 w-full lg:max-w-[540px] xl:max-w-[700px] lg:flex-1"
         >
-          <div className="inline-flex flex-col justify-start items-start gap-2 w-full">
-            <div className="opacity-30 justify-start">
+          <div className="inline-flex flex-col items-center lg:justify-start lg:items-start gap-3 lg:gap-2 w-full">
+            {/* Desktop Original Pill */}
+            <div className="hidden lg:block opacity-30 justify-start">
               <span className="text-white text-lg font-normal font-sans tracking-tight">[</span>
               <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">solutions</span>
               <span className="text-white text-lg font-normal font-sans tracking-tight">]</span>
             </div>
+
+            {/* Mobile Styled Glassmorphic Solutions Badge */}
+            <div className="flex lg:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
+              <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
+                solutions
+              </span>
+            </div>
             
-            <div className="flex flex-col justify-start items-start gap-6 w-full">
-              <div className="flex flex-col justify-start items-start w-full">
-                <div className="max-w-full lg:w-auto lg:whitespace-nowrap justify-start bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
+            <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3 lg:gap-6 w-full">
+              <div className="flex flex-col items-center lg:justify-start lg:items-start w-full">
+                <div className="max-w-full lg:w-auto lg:whitespace-nowrap justify-start bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[26px] sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
                   Unified Commerce Operations
                 </div>
-                <div className="max-w-full lg:w-auto justify-start text-white text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
-                  Across Brands, Channels, <br />& Markets
+                <div className="max-w-full lg:w-auto justify-start text-white text-[26px] sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
+                  Across Brands, Channels, <br className="hidden sm:inline" />& Markets
                 </div>
               </div>
               
-              <div className="max-w-full lg:max-w-[480px] xl:max-w-[553px] opacity-60 justify-start text-[#FBFBFF] text-base xl:text-[18px] font-normal font-sans leading-normal">
+              <p className="max-w-full lg:max-w-[480px] xl:max-w-[553px] opacity-60 justify-start text-[#FBFBFF] text-sm sm:text-base xl:text-[18px] font-normal font-sans leading-relaxed lg:leading-normal">
                 Build a centralised system to manage orders, inventory, fulfilment, financials, and customer communication across multiple brands, e-commerce platforms, and marketplaces — with real-time visibility, operational control, and built-in compliance
-              </div>
+              </p>
             </div>
           </div>
 
@@ -66,15 +75,15 @@ const SolutionHero = () => {
                 },
               })
             }
-            className="h-[56px] py-[10px] px-[35px] rounded-[8px] border-2 border-[rgba(91,98,191,0.37)] backdrop-blur-[2px] flex justify-center items-center gap-[22px] bg-transparent cursor-pointer transition-all duration-300 hover:bg-white/5 active:scale-95 shrink-0"
+            className="h-[46px] lg:h-[56px] py-[8px] lg:py-[10px] px-[24px] lg:px-[35px] rounded-[8px] border-2 border-[rgba(91,98,191,0.37)] backdrop-blur-[2px] flex justify-center items-center gap-[12px] lg:gap-[22px] bg-transparent cursor-pointer transition-all duration-300 hover:bg-white/5 active:scale-95 shrink-0"
           >
-            <span className="text-white text-center font-sans text-[16px] font-medium leading-[24px] tracking-[-0.312px]">
+            <span className="text-white text-center font-sans text-[14px] lg:text-[16px] font-medium leading-[20px] lg:leading-[24px] tracking-[-0.312px]">
               Build Your Commerce System
             </span>
             <img 
               src="/Solution_page/solution_hero_arrow.svg" 
               alt="Arrow" 
-              className="w-[14px] h-[10px] shrink-0"
+              className="w-[12px] lg:w-[14px] h-[8px] lg:h-[10px] shrink-0"
             />
           </button>
         </Motion.div>
@@ -84,21 +93,21 @@ const SolutionHero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
-          className="flex items-center justify-center shrink-0 w-full lg:w-auto relative lg:-translate-y-8"
+          className="flex items-center justify-center shrink-0 w-full lg:w-auto relative lg:-translate-y-8 mt-2 lg:mt-0"
         >
           {/* Subtle surrounding glow effect to blend image */}
-          <div className="absolute inset-0 bg-[#877BF1]/5 rounded-full blur-[80px] pointer-events-none scale-90" />
+          <div className="absolute inset-0 bg-[#877BF1]/10 rounded-full blur-[60px] pointer-events-none scale-100 lg:scale-90" />
           <img 
             src="/Solution_page/solution_hero_image.svg" 
             alt="Commerce Operations System Graphic"
-            className="object-contain w-full max-w-[220px] lg:max-w-none lg:w-[260px] lg:h-[260px] xl:w-[480px] xl:h-[480px] relative z-10"
+            className="object-contain w-[60%] min-w-[190px] max-w-[240px] sm:w-auto sm:max-w-[280px] md:max-w-[340px] lg:max-w-none lg:w-[260px] lg:h-[260px] xl:w-[480px] xl:h-[480px] relative z-10"
           />
         </Motion.div>
         
       </div>
 
       {/* Scroll Down Arrow - Desktop & Mobile */}
-      <div className="absolute bottom-6 left-0 right-0 w-full flex justify-center z-20">
+      <div className="absolute bottom-8 lg:bottom-12 left-0 right-0 w-full flex justify-center z-40">
         <img
           onClick={() => {
             const target = document.getElementById("solutions-content");

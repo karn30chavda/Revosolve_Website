@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 
 const CommerceApproach = () => {
-  const words = ["Quick Commerce", "E-commerce", "D2C Brands", "CPG", "FMPG"];
+  const words = ["Quick Commerce", "E-commerce", "D2C Brands", "CPG", "FMCG"];
   const [index, setIndex] = useState(0);
 
   // Safeguard against hot module replacement (HMR) state preservation issues
@@ -45,7 +45,7 @@ const CommerceApproach = () => {
                   {currentWord}
                 </Motion.span>
               </AnimatePresence>{" "}
-              business
+              Business
             </h3>
           </div>
         </div>
