@@ -124,9 +124,38 @@ const CommerceVideoAnimation = () => {
   const [activeFrame, setActiveFrame] = useState(1);
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
+  const [isInView, setIsInView] = useState(false);
 
-  // Auto-play loop sequence for all 10 frames
+  // Viewport observer to trigger animation start
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+          setActiveFrame(1); // Safely reset inside event handler
+        }
+      },
+      { threshold: 0.15 } // Trigger when 15% of the card container is visible
+    );
+
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  // Auto-play loop sequence for all 10 frames - starts when isInView is true
+  useEffect(() => {
+    if (!isInView) return;
+
     const sequence = [
       { frame: 1, duration: 2000 }, // Fanned Out initial (settles and stays)
       { frame: 2, duration: 1400 }, // Stacked
@@ -149,7 +178,7 @@ const CommerceVideoAnimation = () => {
     }, sequence[currentIndex].duration);
 
     return () => clearTimeout(nextFrameTimeout);
-  }, [activeFrame]);
+  }, [activeFrame, isInView]);
 
   // Responsive scale handler
   useEffect(() => {

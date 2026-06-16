@@ -63,9 +63,15 @@ const CommerceCTA = () => {
           </p>
         </div>
 
-        {/* CTA Button */}
         <button
-          onClick={() => navigate("/connect")}
+          onClick={() =>
+            navigate("/connect", {
+              state: {
+                category: "Services/Solution",
+                service: "Customer Interaction Systems",
+              },
+            })
+          }
           className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer mt-4"
         >
           <span
@@ -122,7 +128,14 @@ const CommerceCTA = () => {
         </div>
 
         <button
-          onClick={() => navigate("/connect")}
+          onClick={() =>
+            navigate("/connect", {
+              state: {
+                category: "Services/Solution",
+                service: "Customer Interaction Systems",
+              },
+            })
+          }
           className="btn-premium-glow rounded pt-4 pr-8 pb-4 pl-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer active:scale-95 mt-2"
         >
           <span

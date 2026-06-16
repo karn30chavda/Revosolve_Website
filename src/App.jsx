@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
@@ -30,6 +31,9 @@ function App() {
 
       {/* Global Footer */}
       <Footer />
+
+      {/* Global Back to Top Button */}
+      <ScrollToTopButton />
     </div>
   );
 }

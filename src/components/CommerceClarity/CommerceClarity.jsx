@@ -13,7 +13,6 @@ const CommerceClarity = () => {
     "Single source of truth for all orders",
     "Real-time inventory synchronization",
     "Seamless fulfillment and delivery tracking",
-    "Automated customer communication",
     "Centralized dashboards for decision-makers",
   ];
 
@@ -21,18 +20,17 @@ const CommerceClarity = () => {
     "/Solution_page/operational_clarity_img.webp",
     "/Solution_page/operational_clarity_2.webp",
     "/Solution_page/operational_clarity_3.webp",
-    "/Solution_page/operational_clarity_img.webp",
     "/Solution_page/operational_clarity_5.webp",
   ];
 
-  // Desktop Scroll Tracking (5 stages)
+  // Desktop Scroll Tracking (4 stages)
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start 40px", "end end"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const idx = Math.min(Math.floor(latest * 5), 4);
+    const idx = Math.min(Math.floor(latest * 4), 3);
     setActiveIdx(idx);
   });
 
@@ -44,7 +42,7 @@ const CommerceClarity = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
     // Map click index to scroll position
-    const sectionHeight = element.offsetHeight / 5;
+    const sectionHeight = element.offsetHeight / 4;
     const targetY = (scrollTop + rect.top - 40) + idx * sectionHeight + 50;
 
     window.scrollTo({

@@ -25,35 +25,21 @@ const integrationsByTab = {
       { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
       { src: "/Solution_page/Integration_amazon.svg", name: "Amazon", short: "AMZ" },
       { src: "/Solution_page/integration_flipkart.svg", name: "Flipkart", short: "FK" },
-      { src: "/Solution_page/integration_woocommerce.svg", name: "WooCommerce", short: "WC" },
-      { src: "/Solution_page/integration_meesho.svg", name: "Meesho", short: "MS" },
-      { src: "/Solution_page/integration_myntra.svg", name: "Myntra", short: "MY" },
     ],
     right: [
-      { src: "/Solution_page/integration_flipkart.svg", name: "Flipkart", short: "FK" },
-      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/integration_meesho.svg", name: "Meesho", short: "MS" },
-      { src: "/Solution_page/Integration_amazon.svg", name: "Amazon", short: "AMZ" },
-      { src: "/Solution_page/integration_myntra.svg", name: "Myntra", short: "MY" },
       { src: "/Solution_page/integration_woocommerce.svg", name: "WooCommerce", short: "WC" },
+      { src: "/Solution_page/integration_meesho.svg", name: "Meesho", short: "MS" },
+      { src: "/Solution_page/integration_myntra.svg", name: "Myntra", short: "MY" },
     ],
   },
   erp: {
     left: [
       { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
       { src: "/Solution_page/Integration_sap.webp", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/Integration_tally.webp", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_tally.webp", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
-      { src: "/Solution_page/Integration_sap.webp", name: "SAP ERP", short: "SAP" },
     ],
     right: [
-      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
-      { src: "/Solution_page/Integration_sap.webp", name: "SAP ERP", short: "SAP" },
-      { src: "/Solution_page/Integration_tally.webp", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_tally.webp", name: "Tally Prime", short: "TLY" },
-      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
-      { src: "/Solution_page/Integration_sap.webp", name: "SAP ERP", short: "SAP" },
+      { src: "/Solution_page/TallyPrime_Logo.jpg", name: "Tally Prime", short: "TLY", isLarge: true },
+      { src: "/Solution_page/Integration_tally.webp", name: "Tally ERP", short: "TLY" },
     ],
   },
   shipping: {
@@ -61,17 +47,11 @@ const integrationsByTab = {
       { src: "/Solution_page/integration_shiprocket.webp", name: "Shiprocket", short: "SR" },
       { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
       { src: "/Solution_page/Integration_ups.webp", name: "UPS", short: "UPS" },
-      { src: "/Solution_page/Integration_delhivery.svg", name: "Delhivery", short: "DLV" },
-      { src: "/Solution_page/Integration_ekart.svg", name: "Ekart", short: "EKT" },
-      { src: "/Solution_page/Integration_eshipz.png", name: "Eshipz", short: "ESZ" },
     ],
     right: [
       { src: "/Solution_page/Integration_delhivery.svg", name: "Delhivery", short: "DLV" },
-      { src: "/Solution_page/integration_shiprocket.webp", name: "Shiprocket", short: "SR" },
       { src: "/Solution_page/Integration_ekart.svg", name: "Ekart", short: "EKT" },
-      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
       { src: "/Solution_page/Integration_eshipz.png", name: "Eshipz", short: "ESZ" },
-      { src: "/Solution_page/Integration_ups.webp", name: "UPS", short: "UPS" },
     ],
   },
 };
@@ -92,7 +72,9 @@ const IntegrationIconCard = ({ item }) => {
           alt={item.name}
           onError={() => setImgFailed(true)}
           className={
-            item.name.toLowerCase() === "flipkart"
+            item.isLarge
+              ? "w-[50px] h-[50px] sm:w-[58px] sm:h-[58px] object-contain"
+              : item.name.toLowerCase() === "flipkart"
               ? "w-6 h-6 sm:w-8 sm:h-8 object-contain"
               : "w-10 h-10 sm:w-12 sm:h-12 object-contain"
           }
@@ -189,7 +171,7 @@ const CommerceIntegrations = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.3 }}
-              className="w-full min-h-[256px] z-10 py-12 rounded-[20px] relative overflow-hidden"
+              className="w-full min-h-[256px] z-10 py-12 rounded-[20px] relative overflow-hidden flex items-center justify-center"
               style={{
                 background:
                   "linear-gradient(225deg, #0F1034 24.88%, #161858 187.87%)",
@@ -198,23 +180,11 @@ const CommerceIntegrations = () => {
               {/* Background Blue Glow from design */}
               <div className="w-[685px] h-60 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 opacity-20 bg-blue-700 rounded-full blur-[87px] pointer-events-none" />
 
-              {/* Desktop View (7 equally spaced columns) */}
+              {/* Desktop View (Single centered row of 7 items with equal spacing) */}
               <div className="hidden lg:flex flex-row items-center justify-between px-16 xl:px-24 w-full relative z-10">
-                {/* Column 1 */}
-                <div className="flex flex-col gap-8 items-center justify-center">
-                  {currentLeftIcons[0] && <IntegrationIconCard item={currentLeftIcons[0]} />}
-                  {currentLeftIcons[3] && <IntegrationIconCard item={currentLeftIcons[3]} />}
-                </div>
-                {/* Column 2 */}
-                <div className="flex flex-col gap-8 items-center justify-center">
-                  {currentLeftIcons[1] && <IntegrationIconCard item={currentLeftIcons[1]} />}
-                  {currentLeftIcons[4] && <IntegrationIconCard item={currentLeftIcons[4]} />}
-                </div>
-                {/* Column 3 */}
-                <div className="flex flex-col gap-8 items-center justify-center">
-                  {currentLeftIcons[2] && <IntegrationIconCard item={currentLeftIcons[2]} />}
-                  {currentLeftIcons[5] && <IntegrationIconCard item={currentLeftIcons[5]} />}
-                </div>
+                {currentLeftIcons[0] && <IntegrationIconCard item={currentLeftIcons[0]} />}
+                {currentLeftIcons[1] && <IntegrationIconCard item={currentLeftIcons[1]} />}
+                {currentLeftIcons[2] && <IntegrationIconCard item={currentLeftIcons[2]} />}
 
                 {/* Center ERP Circle */}
                 <div className="relative flex items-center justify-center shrink-0">
@@ -231,35 +201,23 @@ const CommerceIntegrations = () => {
                   </div>
                 </div>
 
-                {/* Column 5 */}
-                <div className="flex flex-col gap-8 items-center justify-center">
-                  {currentRightIcons[0] && <IntegrationIconCard item={currentRightIcons[0]} />}
-                  {currentRightIcons[3] && <IntegrationIconCard item={currentRightIcons[3]} />}
-                </div>
-                {/* Column 6 */}
-                <div className="flex flex-col gap-8 items-center justify-center">
-                  {currentRightIcons[1] && <IntegrationIconCard item={currentRightIcons[1]} />}
-                  {currentRightIcons[4] && <IntegrationIconCard item={currentRightIcons[4]} />}
-                </div>
-                {/* Column 7 */}
-                <div className="flex flex-col gap-8 items-center justify-center">
-                  {currentRightIcons[2] && <IntegrationIconCard item={currentRightIcons[2]} />}
-                  {currentRightIcons[5] && <IntegrationIconCard item={currentRightIcons[5]} />}
-                </div>
+                {currentRightIcons[0] && <IntegrationIconCard item={currentRightIcons[0]} />}
+                {currentRightIcons[1] && <IntegrationIconCard item={currentRightIcons[1]} />}
+                {currentRightIcons[2] && <IntegrationIconCard item={currentRightIcons[2]} />}
               </div>
 
               {/* Mobile / Tablet View */}
-              <div className="flex lg:hidden flex-col items-center justify-center gap-y-8 px-6 sm:px-12 w-full relative z-10">
-                {/* Left Grid */}
-                <div className="grid grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-4 justify-items-center items-center">
+              <div className="flex lg:hidden flex-col items-center justify-center gap-y-6 px-6 sm:px-12 w-full relative z-10">
+                {/* Left Row */}
+                <div className="flex flex-row justify-center gap-4 sm:gap-6 items-center">
                   {currentLeftIcons.map((item, idx) => (
                     <IntegrationIconCard key={idx} item={item} />
                   ))}
                 </div>
 
                 {/* Center ERP Circle */}
-                <div className="relative flex items-center justify-center shrink-0 my-6">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full flex items-center justify-center relative z-10 ring-2 ring-[#877BF1]/30 shadow-[0_0_20px_rgba(135,123,241,0.2)]">
+                <div className="relative flex items-center justify-center shrink-0 my-2">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center relative z-10 ring-2 ring-[#877BF1]/30 shadow-[0_0_20px_rgba(135,123,241,0.2)]">
                     <img
                       src="/Solution_page/Integration_ERP.svg"
                       alt="ERPNext Center Logo"
@@ -268,8 +226,8 @@ const CommerceIntegrations = () => {
                   </div>
                 </div>
 
-                {/* Right Grid */}
-                <div className="grid grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-4 justify-items-center items-center">
+                {/* Right Row */}
+                <div className="flex flex-row justify-center gap-4 sm:gap-6 items-center">
                   {currentRightIcons.map((item, idx) => (
                     <IntegrationIconCard key={idx} item={item} />
                   ))}
