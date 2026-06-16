@@ -52,7 +52,7 @@ const CommerceCTA = () => {
         {/* Content Group */}
         <div className="flex flex-col gap-3 items-center justify-start shrink-0 relative z-10 text-center">
           <h2
-            className="text-white text-center font-sans text-[2.125rem] font-black relative md:w-[236] max-w-full leading-normal tracking-[0.0165rem]"
+            className="text-white text-center font-sans text-[2.125rem] font-black relative leading-normal tracking-[0.0165rem]"
           >
             Others are using ERPNext, "You Could be next"
           </h2>

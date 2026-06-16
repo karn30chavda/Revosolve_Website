@@ -156,7 +156,7 @@ const CommerceSystem = () => {
               </div>
 
               {/* Right Column: Visual Diagram Frame */}
-              <div className="w-full lg:w-[540px] h-[350px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
+              <div className="w-full lg:w-[590px] h-[350px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative z-10 shrink-0">
                 <Motion.img
                   key={tabKey}
                   initial={{ opacity: 0, scale: 0.98 }}
@@ -164,7 +164,7 @@ const CommerceSystem = () => {
                   transition={{ duration: 0.4 }}
                   src={getSrc(systemImages[activeIdx])}
                   alt="System Positioning Graphic"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   onError={(e) => {
                     e.target.src =
                       "/Solution_page/solution_positining_image_1.svg";
@@ -222,7 +222,7 @@ const CommerceSystem = () => {
                 transition={{ duration: 0.3 }}
                 src={getSrc(systemImages[activeIdx])}
                 alt="System Positioning Graphic"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.src =
                     "/Solution_page/solution_positining_image.webp";
