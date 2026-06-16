@@ -1,3 +1,4 @@
+import { solutionApproachSvg } from "./solution_approach_svg";
 import React, { useState, useEffect } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 
@@ -58,11 +59,101 @@ const CommerceApproach = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full flex items-center justify-center relative z-10"
         >
-          <img
-            src="/Solution_page/solution_approach.svg"
-            alt="ERPNext Operating System for Quick Commerce Business Diagram"
-            className="w-full h-auto object-contain"
-          />
+          <div className="w-full h-auto relative aspect-[1280/600]">
+            {/* Background SVG */}
+            <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: solutionApproachSvg }} />
+
+            {/* Shopify (Circle 1 - Center 16.29%, 10.67%) */}
+            <img
+              src="/Solution_page/SHOPIFY.gif"
+              alt="Shopify Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "16.29%",
+                top: "10.67%",
+                width: "9.80%",
+                height: "6.50%"
+              }}
+            />
+
+            {/* Amazon (Circle 2 - Center 9.80%, 27.25%) */}
+            <img
+              src="/Solution_page/amazon.gif"
+              alt="Amazon Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "9.80%",
+                top: "27.25%",
+                width: "8.80%",
+                height: "5.60%"
+              }}
+            />
+
+            {/* EasyEcom (Circle 3 - Center 9.65%, 57.50%) */}
+            <img
+              src="/Solution_page/easyecom.gif"
+              alt="EasyEcom Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "9.65%",
+                top: "57.50%",
+                width: "11.50%",
+                height: "5.40%"
+              }}
+            />
+
+            {/* Zepto (Circle 4 - Center 10.31%, 88.08%) */}
+            <img
+              src="/Solution_page/zepto.gif"
+              alt="Zepto Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "10.31%",
+                top: "88.08%",
+                width: "10.80%",
+                height: "6.30%"
+              }}
+            />
+
+            {/* Gupshup (Circle 5 - Center 78.09%, 10.83%) */}
+            <img
+              src="/Solution_page/ghupshup.gif"
+              alt="Gupshup Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "78.09%",
+                top: "10.83%",
+                width: "10.20%",
+                height: "5.50%"
+              }}
+            />
+
+            {/* eShipz (Circle 6 - Center 65.98%, 89.25%) */}
+            <img
+              src="/Solution_page/eshipz.gif"
+              alt="eShipz Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "65.98%",
+                top: "89.25%",
+                width: "9.20%",
+                height: "6.70%"
+              }}
+            />
+
+            {/* UPS (Circle 7 - Center 83.59%, 89.00%) */}
+            <img
+              src="/Solution_page/ups.gif"
+              alt="UPS Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "83.59%",
+                top: "89.00%",
+                width: "12.34%",
+                height: "8.33%"
+              }}
+            />
+          </div>
         </Motion.div>
       </div>
     </section>
