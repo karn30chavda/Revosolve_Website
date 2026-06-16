@@ -4,6 +4,7 @@ import SolutionHero from "../components/SolutionHero/SolutionHero";
 import CommercePositioning from "../components/CommercePositioning/CommercePositioning";
 import CommerceCTA from "../components/CommerceCTA/CommerceCTA";
 import CommerceProblems from "../components/CommerceProblems/CommerceProblems";
+import CommerceVideoAnimation from "../components/CommerceVideoAnimation/CommerceVideoAnimation";
 import CommerceSystem from "../components/CommerceSystem/CommerceSystem";
 import CommerceCapabilities from "../components/CommerceCapabilities/CommerceCapabilities";
 import CommerceDifferentiation from "../components/CommerceDifferentiation/CommerceDifferentiation";
@@ -22,6 +23,7 @@ const CommerceOperationsSystems = () => {
       {/* Solutions Sections / Components will be loaded below */}
       <div id="solutions-content" className="w-full relative z-10">
         <CommerceProblems />
+        <CommerceVideoAnimation />
         <CommerceSystem />
         <CommerceApproach />
         <CommerceClarity />
