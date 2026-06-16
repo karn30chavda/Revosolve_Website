@@ -1,4 +1,4 @@
-<svg width="623" height="623" viewBox="0 0 623 623" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+export const solutionHeroSvg = `<svg width="100%" height="100%" viewBox="0 0 623 623" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <circle cx="318.5" cy="303.5" r="258.5" fill="url(#paint0_linear_1_2236)" stroke="#897DF0" stroke-width="2"/>
 <g filter="url(#filter0_f_1_2236)">
 <path d="M318.723 31C468.942 31 590.723 153.001 590.723 303.5C590.723 453.999 468.942 576 318.723 576C168.503 576 46.7227 453.999 46.7227 303.5C46.7227 153.001 168.503 31 318.723 31Z" stroke="#897DF0" stroke-width="2"/>
@@ -333,3 +333,4 @@
 <image id="image2_1_2236" width="36" height="36" preserveAspectRatio="none" xlink:href="/Solution_page/third_gif.gif"/>
 </defs>
 </svg>
+`;

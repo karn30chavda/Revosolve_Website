@@ -1,3 +1,4 @@
+import { solutionHeroSvg } from "./solution_hero_svg";
 import React from "react";
 import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -97,11 +98,49 @@ const SolutionHero = () => {
         >
           {/* Subtle surrounding glow effect to blend image */}
           <div className="absolute inset-0 bg-[#877BF1]/10 rounded-full blur-[60px] pointer-events-none scale-100 lg:scale-90" />
-          <img 
-            src="/Solution_page/solution_hero_image.svg" 
-            alt="Commerce Operations System Graphic"
-            className="object-contain w-[60%] min-w-[190px] max-w-[240px] sm:w-auto sm:max-w-[280px] md:max-w-[340px] lg:max-w-none lg:w-[260px] lg:h-[260px] xl:w-[480px] xl:h-[480px] relative z-10"
-          />
+          <div className="aspect-square w-[60%] min-w-[190px] max-w-[240px] sm:w-auto sm:max-w-[280px] md:max-w-[340px] lg:max-w-none lg:w-[260px] lg:h-[260px] xl:w-[480px] xl:h-[480px] relative z-10">
+            {/* Background SVG Graphic */}
+            <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: solutionHeroSvg }} />
+            
+            {/* Shopify GIF (Circle 1 - Center 204, 568) */}
+            <img 
+              src="/Solution_page/first_gif.gif" 
+              alt="Shopify Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "32.74%",
+                top: "91.17%",
+                width: "6.26%",
+                height: "6.26%"
+              }}
+            />
+            
+            {/* Amazon GIF (Circle 2 - Center 112, 507) */}
+            <img 
+              src="/Solution_page/second_gif.gif" 
+              alt="Amazon Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "17.98%",
+                top: "81.38%",
+                width: "6.26%",
+                height: "6.26%"
+              }}
+            />
+            
+            {/* Flipkart GIF (Circle 3 - Center 154, 544) */}
+            <img 
+              src="/Solution_page/third_gif.gif" 
+              alt="Flipkart Logo Animation"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{
+                left: "24.72%",
+                top: "87.32%",
+                width: "6.26%",
+                height: "6.26%"
+              }}
+            />
+          </div>
         </Motion.div>
         
       </div>
