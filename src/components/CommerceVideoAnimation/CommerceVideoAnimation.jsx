@@ -186,7 +186,7 @@ const CommerceVideoAnimation = () => {
       if (containerRef.current) {
         const parentWidth =
           containerRef.current.parentElement.getBoundingClientRect().width;
-        setScale(Math.min(1, parentWidth / 1280));
+        setScale(parentWidth / 1280);
       }
     };
 
@@ -245,12 +245,12 @@ const CommerceVideoAnimation = () => {
       {/* Centered Scaled Canvas */}
       <div
         ref={containerRef}
-        className="absolute top-0 left-0 overflow-hidden rounded-2xl bg-[#0F1034] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5"
+        className="absolute top-0 left-1/2 overflow-hidden rounded-2xl bg-[#0F1034] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5"
         style={{
           width: 1280,
           height: 483,
-          transform: `scale(${scale})`,
-          transformOrigin: "top left",
+          transform: `translateX(-50%) scale(${scale})`,
+          transformOrigin: "top center",
         }}
       >
         {/* Background Wing 1 (Left Wing) */}
