@@ -124,6 +124,7 @@ const CommerceVideoAnimation = () => {
   const [activeFrame, setActiveFrame] = useState(1);
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
+  const [baseHeight, setBaseHeight] = useState(483);
   const [isInView, setIsInView] = useState(false);
 
   // Viewport observer to trigger animation start
@@ -137,7 +138,7 @@ const CommerceVideoAnimation = () => {
           setActiveFrame(1); // Safely reset inside event handler
         }
       },
-      { threshold: 0.15 } // Trigger when 15% of the card container is visible
+      { threshold: 0.15 }, // Trigger when 15% of the card container is visible
     );
 
     const currentRef = containerRef.current;
@@ -187,6 +188,9 @@ const CommerceVideoAnimation = () => {
         const parentWidth =
           containerRef.current.parentElement.getBoundingClientRect().width;
         setScale(parentWidth / 1280);
+
+        const isMobile = window.innerWidth < 1024;
+        setBaseHeight(isMobile ? 650 : 483);
       }
     };
 
@@ -240,7 +244,7 @@ const CommerceVideoAnimation = () => {
   return (
     <div
       className="relative z-10 w-[85%] mx-auto my-8 lg:my-8 overflow-hidden pointer-events-none"
-      style={{ height: 483 * scale }}
+      style={{ height: baseHeight * scale }}
     >
       {/* Centered Scaled Canvas */}
       <div
@@ -248,7 +252,7 @@ const CommerceVideoAnimation = () => {
         className="absolute top-0 left-1/2 overflow-hidden rounded-2xl bg-[#0F1034] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5"
         style={{
           width: 1280,
-          height: 483,
+          height: baseHeight,
           transform: `translateX(-50%) scale(${scale})`,
           transformOrigin: "top center",
         }}
@@ -308,13 +312,7 @@ const CommerceVideoAnimation = () => {
         {/* Connector SVG lines with animated yellow glow pulse */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
           <defs>
-            <filter
-              id="gold-glow"
-              x="-20%"
-              y="-20%"
-              width="140%"
-              height="140%"
-            >
+            <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur stdDeviation="3.5" result="blur" />
               <feMerge>
                 <feMergeNode in="blur" />
@@ -459,7 +457,12 @@ const CommerceVideoAnimation = () => {
               transition={{
                 x: { type: "spring", stiffness: 65, damping: 18, mass: 1.0 },
                 y: { type: "spring", stiffness: 65, damping: 18, mass: 1.0 },
-                rotate: { type: "spring", stiffness: 65, damping: 18, mass: 1.0 },
+                rotate: {
+                  type: "spring",
+                  stiffness: 65,
+                  damping: 18,
+                  mass: 1.0,
+                },
                 scale: { type: "tween", ease: "easeOut", duration: 0.5 },
                 opacity: { type: "tween", ease: "easeOut", duration: 0.4 },
               }}

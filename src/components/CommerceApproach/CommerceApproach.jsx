@@ -59,7 +59,7 @@ const CommerceApproach = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full flex items-center justify-center relative z-10"
         >
-          <div className="w-full h-auto relative aspect-[1280/600]">
+          <div className="w-full h-auto relative aspect-1280/600">
             {/* Background SVG */}
             <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: solutionApproachSvg }} />
 

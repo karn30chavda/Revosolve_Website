@@ -209,7 +209,7 @@ const CommerceIntegrations = () => {
               {/* Mobile / Tablet View */}
               <div className="flex lg:hidden flex-col items-center justify-center gap-y-6 px-6 sm:px-12 w-full relative z-10">
                 {/* Left Row */}
-                <div className="flex flex-row justify-center gap-4 sm:gap-6 items-center">
+                <div className="flex flex-row justify-around items-center w-full max-w-[280px] sm:max-w-[340px] mx-auto">
                   {currentLeftIcons.map((item, idx) => (
                     <IntegrationIconCard key={idx} item={item} />
                   ))}
@@ -227,7 +227,7 @@ const CommerceIntegrations = () => {
                 </div>
 
                 {/* Right Row */}
-                <div className="flex flex-row justify-center gap-4 sm:gap-6 items-center">
+                <div className="flex flex-row justify-around items-center w-full max-w-[280px] sm:max-w-[340px] mx-auto">
                   {currentRightIcons.map((item, idx) => (
                     <IntegrationIconCard key={idx} item={item} />
                   ))}
