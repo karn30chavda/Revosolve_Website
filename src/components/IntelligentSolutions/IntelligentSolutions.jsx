@@ -419,9 +419,17 @@ const IntelligentSolutions = () => {
                         <p className="text-[#050737]/70 text-[13px] md:text-[15px] leading-relaxed font-sans line-clamp-3">
                           {card.description}
                         </p>
-                        <div className="mt-auto pt-6 flex items-center gap-1.5 cursor-pointer group/link w-fit">
+                        <div
+                          onClick={() => {
+                            if (card.category === "Commerce Operations Systems") {
+                              navigate("/solutions/commerce-operations-systems");
+                            } else {
+                              navigate("/coming-soon");
+                            }
+                          }}
+                          className="mt-auto pt-6 flex items-center gap-1.5 cursor-pointer group/link w-fit"
+                        >
                           <span
-                            onClick={() => navigate("/coming-soon")}
                             className="text-[14px] md:text-[16px] text-[#050737] font-medium relative"
                           >
                             Explore

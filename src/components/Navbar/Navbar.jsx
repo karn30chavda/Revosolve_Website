@@ -180,7 +180,13 @@ const Navbar = () => {
                             {item.dropdown.links.map((link, linkIdx) => (
                               <Link
                                 key={linkIdx}
-                                to="/coming-soon"
+                                to={
+                                  item.label === "Solutions"
+                                    ? (link === "Commerce Operations Systems"
+                                      ? "/solutions/commerce-operations-systems"
+                                      : "/coming-soon")
+                                    : "/coming-soon"
+                                }
                                 onClick={() => setOpenDropdownIdx(null)}
                                 className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
                               >
@@ -274,7 +280,13 @@ const Navbar = () => {
                         {item.dropdown.links.map((link, lIdx) => (
                           <Link
                             key={lIdx}
-                            to="/coming-soon"
+                            to={
+                              item.label === "Solutions"
+                                ? (link === "Commerce Operations Systems"
+                                  ? "/solutions/commerce-operations-systems"
+                                  : "/coming-soon")
+                                : "/coming-soon"
+                            }
                             onClick={() => setIsMenuOpen(false)}
                             className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
                           >

@@ -20,6 +20,7 @@ const Connect = () => {
   const navigate = useNavigate();
   const selectRef = useRef(null);
   const location = useLocation();
+  const stateApplied = useRef(false);
 
   const ERP_BASE_URL = import.meta.env.VITE_ERP_BASE_URL
 
@@ -27,6 +28,34 @@ const Connect = () => {
     // Force reset scroll to top on every navigation event
     window.scrollTo(0, 0);
   }, [location.key]);
+
+  // Automatically select category and service if passed in navigation state
+  useEffect(() => {
+    if (location.state?.category) {
+      setActiveCategory(location.state.category);
+    }
+  }, [location.state]);
+
+  // Set the selected service once options are loaded from ERP
+  useEffect(() => {
+    if (interestOptions.length > 0 && location.state && !stateApplied.current) {
+      const { category, service } = location.state;
+      if (service) {
+        const matched = interestOptions.find(
+          (item) =>
+            item.reason === category &&
+            (item.sub_reason === service ||
+              item.sub_reason.toLowerCase().includes(service.toLowerCase()) ||
+              service.toLowerCase().includes(item.sub_reason.toLowerCase()))
+        );
+        if (matched) {
+          setSelectedService(matched.sub_reason);
+          setSelectedServiceName(matched.name);
+          stateApplied.current = true;
+        }
+      }
+    }
+  }, [interestOptions, location.state]);
 
   // Fetch Interest Options from API
   useEffect(() => {
@@ -71,9 +100,12 @@ const Connect = () => {
 
   // Handle Category Change (reset selection when switching Product/Services)
   useEffect(() => {
+    if (location.state?.category === activeCategory && !stateApplied.current) {
+      return;
+    }
     setSelectedService("");
     setSelectedServiceName("");
-  }, [activeCategory]);
+  }, [activeCategory, location.state?.category]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
