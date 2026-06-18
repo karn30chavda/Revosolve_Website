@@ -4,6 +4,7 @@ import CareerHero from "../components/CareerHero/CareerHero";
 import WhyJoin from "../components/WhyJoin/WhyJoin";
 import SupportingYou from "../components/SupportingYou/SupportingYou";
 import Openings from "../components/Openings/Openings";
+import CareerCTA from "../components/CareerCTA/CareerCTA";
 
 const Careers = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const Careers = () => {
       <WhyJoin />
       <SupportingYou />
       <Openings />
+      <CareerCTA />
 
     </div>
   );

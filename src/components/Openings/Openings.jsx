@@ -35,7 +35,7 @@ const Openings = () => {
   ];
 
   return (
-    <section id="openings-section" className="relative w-full bg-[#01031c] pt-12 pb-24 scroll-mt-24">
+    <section id="openings-section" className="relative w-full bg-[#01031c] pt-12 pb-8 scroll-mt-24">
       {/* Light Blue/Indigo Glow behind heading content (top right) */}
       <div className="absolute top-[-5%] right-[-5%] w-[450px] h-[450px] bg-[#38bdf8]/10 rounded-full blur-[120px] pointer-events-none z-0" />
       {/* Decorative Glow Spots */}

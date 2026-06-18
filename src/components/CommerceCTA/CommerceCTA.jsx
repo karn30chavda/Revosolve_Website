@@ -89,7 +89,7 @@ const CommerceCTA = () => {
 
       {/* Mobile View */}
       <div 
-        className="md:hidden w-[90%] mx-auto rounded-lg pt-16 pr-[22px] pb-16 pl-[22px] flex flex-col gap-6 items-center justify-end relative overflow-hidden shadow-2xl"
+        className="md:hidden w-[85%] mx-auto rounded-lg pt-16 pr-[22px] pb-16 pl-[22px] flex flex-col gap-6 items-center justify-end relative overflow-hidden shadow-2xl"
         style={{
           background: "linear-gradient(-70.26deg, rgba(32, 206, 255, 1) 0%, rgba(7, 7, 132, 1) 100%), linear-gradient(to left, #151618, #151618)",
         }}

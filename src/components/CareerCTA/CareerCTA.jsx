@@ -1,14 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const CallToAction = () => {
+const CareerCTA = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-transparent pt-2 pb-16 md:py-16 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu">
+    <section className="bg-transparent pt-2 pb-16 md:py-16 flex flex-col items-center justify-start relative w-full transform-gpu">
+      {/* Light Blue Gradient Glow in top left between this and openings component */}
+      <div className="absolute top-[-10%] left-[5%] w-[400px] h-[400px] bg-[#38bdf8]/10 rounded-full blur-[110px] pointer-events-none z-0" />
+
       {/* Desktop View */}
-      <div 
-        className="hidden md:flex w-[85%] mx-auto rounded-lg py-16 px-12 flex-col gap-8 items-center justify-end relative overflow-hidden drop-shadow-2xl"
+      <div
+        className="hidden md:flex w-[85%] mx-auto rounded-lg py-16 px-12 flex-col gap-8 items-center justify-end relative overflow-hidden drop-shadow-2xl z-10"
         style={{
           background: "linear-gradient(290deg, #20CEFF -65.3%, #070784 64.5%), #151618",
         }}
@@ -32,18 +35,17 @@ const CallToAction = () => {
         {/* Content Group */}
         <div className="flex flex-col gap-2 items-center justify-start shrink-0 relative z-10 text-center">
           <h2
-            className="text-white text-center font-sans text-[2.125rem] font-black relative md:w-236 max-w-full leading-normal"
-            style={{ 
-                letterSpacing: "0.0165rem",
+            className="text-white text-center font-sans text-2xl md:text-[32px] font-bold relative md:w-236 max-w-full leading-normal"
+            style={{
+              letterSpacing: "0.0165rem",
             }}
           >
-            Work with us to design and deploy technology systems that power
-            governance, financial operations, and enterprise intelligence
+            Don't see your role? Apply anyway
           </h2>
           <p
-            className="text-[#CACBEB] text-center font-sans text-[1.25rem] leading-12 font-normal relative"
-            style={{ 
-                letterSpacing: "-0.017rem",
+            className="text-[#CACBEB] text-center font-sans text-sm md:text-base font-normal relative mt-2 opacity-90"
+            style={{
+              letterSpacing: "-0.017rem",
             }}
           >
             Partner with Revosolve to build scalable and intelligent digital solutions.
@@ -57,23 +59,23 @@ const CallToAction = () => {
         >
           <span
             className="text-[#070784] text-center font-sans text-[1rem] leading-6 font-semibold relative"
-            style={{ 
-                letterSpacing: "-0.0195rem",
+            style={{
+              letterSpacing: "-0.0195rem",
             }}
           >
-            Start a Conversation
+            General Application
           </span>
-          <img 
+          <img
             src="/home_section_7/conversation_arrow.svg"
-            className="shrink-0 w-5 h-5 relative overflow-visible group-hover:translate-x-1 transition-transform duration-300 "
+            className="shrink-0 w-5 h-5 relative overflow-visible group-hover:translate-x-1 transition-transform duration-300"
             alt=""
           />
         </button>
       </div>
 
       {/* Mobile View */}
-      <div 
-        className="md:hidden w-[85%] mx-auto rounded-lg pt-16 pr-[22px] pb-16 pl-[22px] flex flex-col gap-8 items-center justify-end relative overflow-hidden shadow-2xl"
+      <div
+        className="md:hidden w-[85%] mx-auto rounded-lg pt-16 pr-[22px] pb-16 pl-[22px] flex flex-col gap-8 items-center justify-end relative overflow-hidden shadow-2xl z-10"
         style={{
           background: "linear-gradient(-70.26deg, rgba(32, 206, 255, 1) 0%, rgba(7, 7, 132, 1) 100%), linear-gradient(to left, #151618, #151618)",
         }}
@@ -89,16 +91,15 @@ const CallToAction = () => {
         <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10">
           <h2
             className="text-[#ffffff] text-center font-sans text-[28px] font-bold relative self-stretch leading-tight"
-            style={{ 
+            style={{
               letterSpacing: "0.26px",
             }}
           >
-            Work with us to design and deploy technology systems that power
-            governance, financial operations, and enterprise intelligence
+            Don't see your role? Apply anyway
           </h2>
           <p
             className="text-[#cacbeb] text-center font-sans text-[14px] font-normal relative self-stretch opacity-90 leading-relaxed"
-            style={{ 
+            style={{
               letterSpacing: "-0.27px",
             }}
           >
@@ -112,15 +113,15 @@ const CallToAction = () => {
         >
           <span
             className="text-[#070784] text-center font-sans text-base leading-6 font-semibold relative"
-            style={{ 
+            style={{
               letterSpacing: "-0.31px",
             }}
           >
-            Start a Conversation
+            General Application
           </span>
-          <img 
-            className="shrink-0 w-5 h-5 relative overflow-visible transition-transform group-hover:translate-x-1" 
-            src="/home_section_7/conversation_arrow.svg" 
+          <img
+            className="shrink-0 w-5 h-5 relative overflow-visible transition-transform group-hover:translate-x-1"
+            src="/home_section_7/conversation_arrow.svg"
             alt="arrow"
           />
         </button>
@@ -129,4 +130,4 @@ const CallToAction = () => {
   );
 };
 
-export default CallToAction;
+export default CareerCTA;
