@@ -7,10 +7,14 @@ import Home from "./pages/Home";
 import CommerceOperationsSystems from "./pages/CommerceOperationsSystems";
 import Connect from "./pages/Connect";
 import ComingSoon from "./pages/ComingSoon";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 function App() {
   return (
     <div className="bg-bg-primary min-h-screen flex flex-col w-full relative">
+      {/* Dynamic Analytics Tracking */}
+      <GoogleAnalytics />
+
       {/* Scroll Reset Component */}
       <ScrollToTop />
 
