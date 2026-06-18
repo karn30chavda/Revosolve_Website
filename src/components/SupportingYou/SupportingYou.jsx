@@ -41,7 +41,7 @@ const SupportingYou = () => {
   ];
 
   return (
-    <section className="relative w-full bg-[#01031c] pt-8 pb-16 lg:pt-12 lg:pb-16 overflow-hidden">
+    <section className="relative w-full bg-[#01031c] pt-8 pb-16 lg:pt-12 lg:pb-16">
       {/* Decorative Glow Spots */}
       <div className="absolute top-[30%] left-[-10%] w-[40%] h-[40%] bg-[#877BF1]/3 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[45%] h-[45%] bg-[#FCCA71]/2 rounded-full blur-[120px] pointer-events-none" />
@@ -65,7 +65,10 @@ const SupportingYou = () => {
           </h2>
 
           <p className="text-[#CACBDB] text-xs xl:text-sm font-normal font-sans leading-relaxed max-w-full lg:max-w-[400px] text-left opacity-75 lg:mb-1 mt-4 lg:mt-0">
-          We believe great work starts with a great work environment. That’s why we offer more than just competitive salaries—think flexible schedules, learning support, wellness initiatives, team outings, and more.
+            We believe great work starts with a great work environment. That’s
+            why we offer more than just competitive salaries—think flexible
+            schedules, learning support, wellness initiatives, team outings, and
+            more.
           </p>
         </div>
 
@@ -87,7 +90,7 @@ const SupportingYou = () => {
 
               {/* Text Content */}
               <div className="w-full flex flex-col justify-start items-start gap-2">
-                <h4 className="text-white text-base font-bold font-sans leading-6">
+                <h4 className="text-white text-base font-medium font-sans leading-6">
                   {card.title}
                 </h4>
                 <p className="text-slate-400 text-sm font-normal font-sans leading-6">

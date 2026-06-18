@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import CareerHero from "../components/CareerHero/CareerHero";
 import WhyJoin from "../components/WhyJoin/WhyJoin";
 import SupportingYou from "../components/SupportingYou/SupportingYou";
+import Openings from "../components/Openings/Openings";
 
 const Careers = () => {
   const location = useLocation();
@@ -14,7 +15,7 @@ const Careers = () => {
 
   const scrollToOpenings = () => {
     document
-      .getElementById("why-join-section")
+      .getElementById("openings-section")
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -32,6 +33,7 @@ const Careers = () => {
       <CareerHero scrollToOpenings={scrollToOpenings} />
       <WhyJoin />
       <SupportingYou />
+      <Openings />
 
     </div>
   );
