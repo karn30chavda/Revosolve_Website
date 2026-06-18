@@ -6,7 +6,7 @@ const CareerHero = ({ scrollToOpenings }) => {
       {/* Mobile Background Image & Tint Wash (Visible only on mobile/tablet below 1290px) */}
       <div className="absolute top-[3.74938rem] bottom-0 left-0 right-0 min-[1290px]:hidden z-0 pointer-events-none">
         <img
-          src="/careers/career_hero.png"
+          src="/careers/career_hero.webp"
           alt=""
           className="w-full h-full object-cover object-center"
         />
@@ -89,13 +89,13 @@ const CareerHero = ({ scrollToOpenings }) => {
         <div className="hidden min-[1290px]:flex min-[1290px]:w-[42vw] min-[1290px]:absolute min-[1290px]:right-0 min-[1290px]:top-12 min-[1290px]:bottom-12 z-10 items-stretch relative">
           {/* Sibling Gradient Image - unclipped, overlapping and spilling to the left */}
           <img
-            src="/careers/career_hero_gradient.png"
+            src="/careers/career_hero_gradient.webp"
             className="hidden min-[1290px]:block absolute top-1/2 -translate-y-1/2 left-0 h-full w-auto object-cover z-20 pointer-events-none"
             alt="Gradient Transition"
           />
           {/* Flipped/Reverted Gradient Image overlay */}
           <img
-            src="/careers/career_hero_gradient.png"
+            src="/careers/career_hero_gradient.webp"
             className="hidden min-[1290px]:block absolute top-1/2 -translate-y-1/2 right-full h-full w-auto object-cover z-10 pointer-events-none scale-x-[-1]"
             alt="Gradient Transition Reversed"
           />
@@ -106,7 +106,7 @@ const CareerHero = ({ scrollToOpenings }) => {
             <div className="absolute inset-0 bg-[#01031c]/15 z-10 pointer-events-none" />
 
             <img
-              src="/careers/career_hero.png"
+              src="/careers/career_hero.webp"
               alt="RevoSolve Careers Team"
               className="w-full h-full object-cover object-center relative z-0"
             />

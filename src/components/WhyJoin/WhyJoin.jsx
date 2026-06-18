@@ -103,7 +103,7 @@ const WhyJoin = () => {
           <div className="w-full lg:w-[65%] min-h-[350px] sm:min-h-[450px] lg:min-h-0 flex-1 self-stretch rounded-2xl overflow-hidden relative">
             <img
               className="absolute inset-0 w-full h-full object-cover"
-              src="/careers/career_join_image.jpg"
+              src="/careers/career_join_image.webp"
               alt="RevoSolve Careers Team Interaction"
             />
           </div>
