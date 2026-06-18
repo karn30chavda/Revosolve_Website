@@ -97,7 +97,13 @@ const Footer = () => {
                     {footerData.solutions.map((item, idx) => (
                         <Link
                             key={idx}
-                            to={item === "Commerce Operations Systems" ? "/solutions/commerce-operations-systems" : "/coming-soon"}
+                            to={
+                               item === "Commerce Operations Systems"
+                                 ? "/solutions/commerce-operations-systems"
+                                 : item === "Document Intelligence Systems"
+                                 ? "/solutions/document-intelligence-systems"
+                                 : "/coming-soon"
+                             }
                             className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
                             style={{ letterSpacing: "-0.00938rem" }}
                         >

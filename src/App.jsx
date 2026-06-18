@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import CommerceOperationsSystems from "./pages/CommerceOperationsSystems";
+import DocumentIntelligenceSystems from "./pages/DocumentIntelligenceSystems";
 import Connect from "./pages/Connect";
 import Careers from "./pages/Careers";
 import ComingSoon from "./pages/ComingSoon";
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/solutions/commerce-operations-systems" element={<CommerceOperationsSystems />} />
+          <Route path="/solutions/document-intelligence-systems" element={<DocumentIntelligenceSystems />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />

@@ -183,6 +183,8 @@ const Navbar = () => {
                                   item.label === "Solutions"
                                     ? (link === "Commerce Operations Systems"
                                       ? "/solutions/commerce-operations-systems"
+                                      : link === "Document Intelligence Systems"
+                                      ? "/solutions/document-intelligence-systems"
                                       : "/coming-soon")
                                     : "/coming-soon"
                                 }
@@ -283,6 +285,8 @@ const Navbar = () => {
                               item.label === "Solutions"
                                 ? (link === "Commerce Operations Systems"
                                   ? "/solutions/commerce-operations-systems"
+                                  : link === "Document Intelligence Systems"
+                                  ? "/solutions/document-intelligence-systems"
                                   : "/coming-soon")
                                 : (link === "Careers" ? "/careers" : "/coming-soon")
                             }
