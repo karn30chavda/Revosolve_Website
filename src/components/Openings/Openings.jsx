@@ -44,7 +44,7 @@ const Openings = () => {
       <div className="relative z-10 w-[85%] mx-auto flex flex-col items-start justify-start">
         {/* Section Tag */}
         <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
-          [PROBLEMS WE SOLVE]
+          [OPENINGS ]
         </div>
 
         {/* Heading Block */}
