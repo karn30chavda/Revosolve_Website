@@ -5,8 +5,17 @@ const DocChallenge = () => {
   return (
     <section 
       id="solutions-content" 
-      className="relative w-full bg-[#01031c] pt-16 pb-12 md:pt-24 md:pb-12 px-[5%] lg:px-[7.5%] overflow-hidden z-20"
+      className="relative w-full bg-[#01031c] pt-20 pb-12 md:pt-32 md:pb-12 px-[5%] lg:px-[7.5%] overflow-hidden z-20"
     >
+      {/* Atmospheric Transition Gradient (The Bridge) Reversed at top */}
+      <div className="absolute top-0 left-0 right-0 w-full pointer-events-none z-30 transform-gpu -translate-y-1/2 scale-y-[-1]">
+        <img
+          src="/hero_section/gradient.png"
+          className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
+          alt=""
+        />
+      </div>
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none z-0" />
 
       <div className="w-full mx-auto flex flex-col items-start relative z-10">
