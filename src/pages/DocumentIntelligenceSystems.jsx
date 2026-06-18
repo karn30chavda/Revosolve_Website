@@ -3,6 +3,7 @@ import DocHero from "../components/DocHero/DocHero";
 import DocChallenge from "../components/DocChallenge/DocChallenge";
 import DocApproach from "../components/DocApproach/DocApproach";
 import DocCapabilities from "../components/DocCapabilities/DocCapabilities";
+import DocCTA from "../components/DocCTA/DocCTA";
 
 const DocumentIntelligenceSystems = () => {
   return (
@@ -11,6 +12,7 @@ const DocumentIntelligenceSystems = () => {
       <DocChallenge />
       <DocApproach />
       <DocCapabilities />
+      <DocCTA />
     </div>
   );
 };
