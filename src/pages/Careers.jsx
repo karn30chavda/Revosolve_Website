@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import CareerHero from "../components/CareerHero/CareerHero";
 import WhyJoin from "../components/WhyJoin/WhyJoin";
+import SupportingYou from "../components/SupportingYou/SupportingYou";
 
 const Careers = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const Careers = () => {
       {/* Careers Hero Section */}
       <CareerHero scrollToOpenings={scrollToOpenings} />
       <WhyJoin />
+      <SupportingYou />
 
     </div>
   );
