@@ -14,7 +14,7 @@ const DocCTA = () => {
   };
 
   return (
-    <section className="bg-transparent pt-2 pb-16 md:py-16 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu font-sans">
+    <section className="bg-transparent pt-2 pb-16 md:pt-4 md:pb-16 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu font-sans">
       {/* Desktop View */}
       <div 
         className="hidden md:flex w-[85%] mx-auto rounded-lg py-16 px-12 flex-col gap-8 items-center justify-end relative overflow-hidden drop-shadow-2xl"

@@ -26,12 +26,12 @@ const capabilitiesData = [
 
 const DocCapabilities = () => {
   return (
-    <section className="relative w-full bg-[#01031c] pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden z-20">
+    <section className="relative w-full bg-[#01031c] pt-12 pb-10 lg:pt-16 lg:pb-12 overflow-hidden z-20">
       {/* Decorative Blur Background Spot */}
       <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none z-0" />
       <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none z-0" />
 
-      <div className="relative z-10 w-[90%] lg:w-[85%] mx-auto flex flex-col items-start justify-start gap-12">
+      <div className="relative z-10 w-[85%] mx-auto flex flex-col items-start justify-start gap-12">
         {/* Section Header */}
         <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between  pb-8 gap-6">
           {/* Left Block */}
