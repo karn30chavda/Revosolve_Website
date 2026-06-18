@@ -138,8 +138,8 @@ const Footer = () => {
                 </span>
                 <div className="flex flex-col gap-3 items-start md:items-end justify-start self-stretch relative">
                     {footerData.company.map((item, idx) => {
-                      // Special case for Contact page which exists
-                      const to = item === "Contact" ? "/connect" : "/coming-soon";
+                      // Special cases for existing pages
+                      const to = item === "Contact" ? "/connect" : (item === "Careers" ? "/careers" : "/coming-soon");
                       return (
                         <Link
                             key={idx}

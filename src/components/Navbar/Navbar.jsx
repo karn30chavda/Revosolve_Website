@@ -138,7 +138,7 @@ const Navbar = () => {
                 >
                   {!item.dropdown ? (
                     <Link
-                      to="/coming-soon"
+                      to={item.label === "Careers" ? "/careers" : "/coming-soon"}
                       onClick={() => setOpenDropdownIdx(null)}
                     >
                       {item.label}
@@ -284,7 +284,7 @@ const Navbar = () => {
                                 ? (link === "Commerce Operations Systems"
                                   ? "/solutions/commerce-operations-systems"
                                   : "/coming-soon")
-                                : "/coming-soon"
+                                : (link === "Careers" ? "/careers" : "/coming-soon")
                             }
                             onClick={() => setIsMenuOpen(false)}
                             className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"

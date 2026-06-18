@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import CommerceOperationsSystems from "./pages/CommerceOperationsSystems";
 import Connect from "./pages/Connect";
+import Careers from "./pages/Careers";
 import ComingSoon from "./pages/ComingSoon";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/solutions/commerce-operations-systems" element={<CommerceOperationsSystems />} />
           <Route path="/connect" element={<Connect />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
           {/* Fallback route - optional */}
           <Route path="*" element={<Home />} />
