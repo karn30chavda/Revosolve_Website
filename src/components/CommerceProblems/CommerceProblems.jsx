@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   motion as Motion,
   useScroll,
@@ -49,7 +49,7 @@ const CommerceProblems = () => {
     // Position the scroll exactly in the middle of the target section's scroll range
     const targetProgress = (idx + 0.5) / 4;
     const targetY =
-      (containerTop - 50) + targetProgress * Math.max(0, scrollableRange);
+      containerTop - 50 + targetProgress * Math.max(0, scrollableRange);
 
     window.scrollTo({
       top: targetY,
@@ -57,8 +57,28 @@ const CommerceProblems = () => {
     });
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.innerWidth < 1024) {
+        setActiveIdx((prev) => (prev + 1) % problemItems.length);
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [problemItems.length]);
+
   return (
     <>
+      <style>{`
+        @keyframes progressRing {
+          from {
+            stroke-dashoffset: 62.83;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      `}</style>
       {/* Desktop Sticky Scroll Section */}
       <section
         ref={containerRef}
@@ -244,10 +264,10 @@ const CommerceProblems = () => {
               background:
                 "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
             }}
-            className="w-full p-5 border border-black rounded-2xl flex flex-col gap-8 overflow-hidden relative"
+            className="w-full p-5 border border-black rounded-2xl flex flex-col gap-4 overflow-hidden relative"
           >
             {/* Infographic Illustration */}
-            <div className="w-full h-[240px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
+            <div className="w-full h-[260px] md:h-[360px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
               {problemImages.map((src, idx) => (
                 <Motion.img
                   key={idx}
@@ -256,7 +276,7 @@ const CommerceProblems = () => {
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                   src={src}
                   alt="Commerce Operations Infographic"
-                  className="w-full h-full object-cover absolute inset-0"
+                  className="w-full h-full object-contain absolute inset-0"
                   onError={(e) => {
                     e.target.src = "/Solution_page/solution_problem_img_1.svg";
                   }}
@@ -265,10 +285,9 @@ const CommerceProblems = () => {
             </div>
 
             {/* Problem list */}
-            <div className="w-full flex flex-col justify-start items-start gap-5">
-              <div className="text-white text-[18px] font-normal font-sans leading-[26px]">
-                What starts as a few tools quickly becomes operational
-                complexity
+            <div className="w-full flex flex-col justify-start items-start gap-4">
+              <div className="text-white text-[16px] md:text-[18px] font-normal font-sans leading-[24px]">
+                What starts as a few tools quickly becomes operational complexity
               </div>
 
               <div className="w-full flex flex-col gap-3">
@@ -281,21 +300,37 @@ const CommerceProblems = () => {
                       className={`w-full rounded-[8px] flex items-center gap-[16px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 ${
                         isActive
                           ? "bg-[#26274A] opacity-100"
-                          : "bg-transparent opacity-50"
+                          : "bg-transparent opacity-50 hover:opacity-85"
                       }`}
                     >
-                      {/* Checkmark Circle */}
-                      <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isActive
-                            ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]"
-                            : "border-2 border-[#877BF1] bg-transparent"
-                        }`}
-                      >
+                      {/* Progress Ring Checkmark Container (Mobile) */}
+                      <div className="relative w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 24 24">
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            className="fill-none stroke-[#877BF1]/30"
+                            strokeWidth="1.5"
+                          />
+                          {isActive && (
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              className="fill-[#FCCA71]/5 stroke-[#FCCA71]"
+                              strokeWidth="2"
+                              strokeDasharray="62.83"
+                              style={{
+                                animation: "progressRing 4s linear forwards",
+                              }}
+                            />
+                          )}
+                        </svg>
                         <img
                           src="/Solution_page/solution_problem_tick.svg"
                           alt="Tick"
-                          className={`w-4 h-4 transition-all duration-300 ${
+                          className={`w-3 h-3 relative z-10 transition-all duration-300 ${
                             isActive
                               ? "scale-100 opacity-100"
                               : "scale-90 opacity-40"
@@ -304,7 +339,7 @@ const CommerceProblems = () => {
                       </div>
 
                       {/* Text */}
-                      <span className="text-white text-[16px] md:text-[18px] font-normal font-sans leading-[26px]">
+                      <span className="text-white text-[14px] md:text-[16px] font-normal font-sans leading-[22px]">
                         {item}
                       </span>
                     </div>

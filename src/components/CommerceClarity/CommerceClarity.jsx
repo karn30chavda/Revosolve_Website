@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   motion as Motion,
   useScroll,
@@ -51,8 +51,28 @@ const CommerceClarity = () => {
     });
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.innerWidth < 1024) {
+        setActiveIdx((prev) => (prev + 1) % clarityItems.length);
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [clarityItems.length]);
+
   return (
     <>
+      <style>{`
+        @keyframes progressRing {
+          from {
+            stroke-dashoffset: 62.83;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      `}</style>
       {/* Desktop Sticky Scroll Section */}
       <section
         ref={containerRef}
@@ -178,10 +198,10 @@ const CommerceClarity = () => {
               background:
                 "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
             }}
-            className="w-full p-5 border border-black rounded-2xl flex flex-col gap-8 overflow-hidden relative"
+            className="w-full p-5 border border-black rounded-2xl flex flex-col gap-4 overflow-hidden relative"
           >
             {/* Visual Diagram Frame */}
-            <div className="w-full h-[280px] md:h-[340px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
+            <div className="w-full h-[260px] md:h-[360px] bg-transparent rounded-2xl overflow-hidden flex items-center justify-center relative shrink-0">
               <Motion.img
                 key={activeIdx}
                 initial={{ opacity: 0 }}
@@ -189,7 +209,7 @@ const CommerceClarity = () => {
                 transition={{ duration: 0.3 }}
                 src={clarityImages[activeIdx]}
                 alt="Operational Clarity Graphic"
-                className="w-full h-full object-fill"
+                className="w-full h-full object-contain absolute inset-0"
                 onError={(e) => {
                   e.target.src = "/Solution_page/operational_clarity_img.webp";
                 }}
@@ -197,8 +217,8 @@ const CommerceClarity = () => {
             </div>
 
             {/* System list */}
-            <div className="w-full flex flex-col justify-start items-start gap-5">
-              <div className="text-white text-[18px] font-normal font-sans leading-[26px]">
+            <div className="w-full flex flex-col justify-start items-start gap-4">
+              <div className="text-white text-[16px] md:text-[18px] font-normal font-sans leading-[24px]">
                 This system brings everything into one place
               </div>
 
@@ -212,21 +232,37 @@ const CommerceClarity = () => {
                       className={`w-full rounded-[4px] flex items-start gap-[16px] py-[8px] px-[12px] cursor-pointer transition-all duration-300 ${
                         isActive
                           ? "bg-[#26274A] opacity-100"
-                          : "bg-transparent opacity-50"
+                          : "bg-transparent opacity-50 hover:opacity-85"
                       }`}
                     >
-                      {/* Checkmark Circle */}
-                      <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
-                          isActive
-                            ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]"
-                            : "border-2 border-[#877BF1] bg-transparent"
-                        }`}
-                      >
+                      {/* Progress Ring Checkmark Container (Mobile) */}
+                      <div className="relative w-6 h-6 flex items-center justify-center shrink-0 mt-[2px]">
+                        <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 24 24">
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            className="fill-none stroke-[#877BF1]/30"
+                            strokeWidth="1.5"
+                          />
+                          {isActive && (
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              className="fill-[#FCCA71]/5 stroke-[#FCCA71]"
+                              strokeWidth="2"
+                              strokeDasharray="62.83"
+                              style={{
+                                animation: "progressRing 4s linear forwards",
+                              }}
+                            />
+                          )}
+                        </svg>
                         <img
                           src="/Solution_page/solution_problem_tick.svg"
                           alt="Tick"
-                          className={`w-4 h-4 transition-all duration-300 ${
+                          className={`w-3 h-3 relative z-10 transition-all duration-300 ${
                             isActive
                               ? "scale-100 opacity-100"
                               : "scale-90 opacity-40"
@@ -235,7 +271,7 @@ const CommerceClarity = () => {
                       </div>
 
                       {/* Text */}
-                      <span className="text-white text-[16px] md:text-[18px] font-normal font-sans leading-[26px]">
+                      <span className="text-white text-[14px] md:text-[16px] font-normal font-sans leading-[22px]">
                         {item}
                       </span>
                     </div>

@@ -1,32 +1,46 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   motion as Motion,
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
 
+const systemItems = [
+  "Orders across all channels",
+  "Inventory across warehouses and marketplaces",
+  "Fulfillment and delivery workflows",
+  "Financial tracking and compliance",
+  "Customer communication systems",
+  "OCR for Quickcommerce",
+];
+
+const systemImages = [
+  "/Solution_page/solution_positining_image_1.svg",
+  "/Solution_page/solution_positining_image_2.svg",
+  "/Solution_page/solution_positining_image_3.svg",
+  "/Solution_page/solution_positining_image_4.svg",
+  "/Solution_page/solution_positining_image_5.svg",
+  "/Solution_page/solution_positining_image_6.svg",
+];
+
 const CommerceSystem = () => {
   const containerRef = useRef(null);
   const [activeIdx, setActiveIdx] = useState(0);
   const [tabKey, setTabKey] = useState(0);
 
-  const systemItems = [
-    "Orders across all channels",
-    "Inventory across warehouses and marketplaces",
-    "Fulfillment and delivery workflows",
-    "Financial tracking and compliance",
-    "Customer communication systems",
-    "OCR for Quickcommerce",
-  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.innerWidth < 1024) {
+        setActiveIdx((prev) => {
+          const next = (prev + 1) % systemItems.length;
+          setTabKey((k) => k + 1);
+          return next;
+        });
+      }
+    }, 4000);
 
-  const systemImages = [
-    "/Solution_page/solution_positining_image_1.svg",
-    "/Solution_page/solution_positining_image_2.svg",
-    "/Solution_page/solution_positining_image_3.svg",
-    "/Solution_page/solution_positining_image_4.svg",
-    "/Solution_page/solution_positining_image_5.svg",
-    "/Solution_page/solution_positining_image_6.svg",
-  ];
+    return () => clearInterval(interval);
+  }, []);
 
   // Desktop Scroll Tracking (6 stages)
   const { scrollYProgress } = useScroll({
@@ -70,6 +84,16 @@ const CommerceSystem = () => {
 
   return (
     <>
+      <style>{`
+        @keyframes progressRing {
+          from {
+            stroke-dashoffset: 62.83;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      `}</style>
       {/* Desktop Sticky Scroll Section */}
       <section
         ref={containerRef}
@@ -249,18 +273,34 @@ const CommerceSystem = () => {
                           : "bg-transparent opacity-50"
                       }`}
                     >
-                      {/* Checkmark Circle */}
-                      <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-[2px] transition-all duration-300 ${
-                          isActive
-                            ? "border-2 border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_8px_rgba(252,202,113,0.2)]"
-                            : "border-2 border-[#877BF1] bg-transparent"
-                        }`}
-                      >
+                      {/* Progress Ring Checkmark Container (Mobile) */}
+                      <div className="relative w-8 h-8 flex items-center justify-center shrink-0 mt-[2px]">
+                        <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 24 24">
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            className="fill-none stroke-[#877BF1]/30"
+                            strokeWidth="1.5"
+                          />
+                          {isActive && (
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              className="fill-[#FCCA71]/5 stroke-[#FCCA71]"
+                              strokeWidth="2"
+                              strokeDasharray="62.83"
+                              style={{
+                                animation: "progressRing 4s linear forwards",
+                              }}
+                            />
+                          )}
+                        </svg>
                         <img
                           src="/Solution_page/solution_problem_tick.svg"
                           alt="Tick"
-                          className={`w-4 h-4 transition-all duration-300 ${
+                          className={`w-4 h-4 relative z-10 transition-all duration-300 ${
                             isActive
                               ? "scale-100 opacity-100"
                               : "scale-90 opacity-40"

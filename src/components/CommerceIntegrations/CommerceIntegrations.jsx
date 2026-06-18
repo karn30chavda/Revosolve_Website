@@ -209,14 +209,14 @@ const CommerceIntegrations = () => {
               {/* Mobile / Tablet View */}
               <div className="flex lg:hidden flex-col items-center justify-center gap-y-6 px-6 sm:px-12 w-full relative z-10">
                 {/* Left Row */}
-                <div className="flex flex-row justify-around items-center w-full max-w-[280px] sm:max-w-[340px] mx-auto">
+                <div className="flex flex-row justify-evenly items-center w-full">
                   {currentLeftIcons.map((item, idx) => (
                     <IntegrationIconCard key={idx} item={item} />
                   ))}
                 </div>
 
                 {/* Center ERP Circle */}
-                <div className="relative flex items-center justify-center shrink-0 my-2">
+                <div className="relative flex items-center justify-center shrink-0">
                   <div className="w-24 h-24 rounded-full flex items-center justify-center relative z-10 ring-2 ring-[#877BF1]/30 shadow-[0_0_20px_rgba(135,123,241,0.2)]">
                     <img
                       src="/Solution_page/Integration_ERP.svg"
@@ -227,7 +227,7 @@ const CommerceIntegrations = () => {
                 </div>
 
                 {/* Right Row */}
-                <div className="flex flex-row justify-around items-center w-full max-w-[280px] sm:max-w-[340px] mx-auto">
+                <div className="flex flex-row justify-evenly items-center w-full">
                   {currentRightIcons.map((item, idx) => (
                     <IntegrationIconCard key={idx} item={item} />
                   ))}
