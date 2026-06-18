@@ -2,6 +2,7 @@ import React from "react";
 import DocHero from "../components/DocHero/DocHero";
 import DocChallenge from "../components/DocChallenge/DocChallenge";
 import DocApproach from "../components/DocApproach/DocApproach";
+import DocCapabilities from "../components/DocCapabilities/DocCapabilities";
 
 const DocumentIntelligenceSystems = () => {
   return (
@@ -9,6 +10,7 @@ const DocumentIntelligenceSystems = () => {
       <DocHero />
       <DocChallenge />
       <DocApproach />
+      <DocCapabilities />
     </div>
   );
 };
