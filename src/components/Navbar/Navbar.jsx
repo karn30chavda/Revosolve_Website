@@ -186,7 +186,9 @@ const Navbar = () => {
                                       : link === "Document Intelligence Systems"
                                       ? "/solutions/document-intelligence-systems"
                                       : "/coming-soon")
-                                    : "/coming-soon"
+                                    : (item.label === "Services" && link === "Enterprise Application Systems"
+                                      ? "/services/enterprise-application-systems"
+                                      : "/coming-soon")
                                 }
                                 onClick={() => setOpenDropdownIdx(null)}
                                 className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
@@ -288,7 +290,9 @@ const Navbar = () => {
                                   : link === "Document Intelligence Systems"
                                   ? "/solutions/document-intelligence-systems"
                                   : "/coming-soon")
-                                : (link === "Careers" ? "/careers" : "/coming-soon")
+                                : (item.label === "Services" && link === "Enterprise Application Systems"
+                                  ? "/services/enterprise-application-systems"
+                                  : (link === "Careers" ? "/careers" : "/coming-soon"))
                             }
                             onClick={() => setIsMenuOpen(false)}
                             className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
