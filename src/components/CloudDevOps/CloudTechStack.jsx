@@ -3,78 +3,80 @@ import { motion as Motion } from "framer-motion";
 
 const techItems = [
   {
-    name: ".NET",
-    logoSrc: "/EnterpriceApplication_System/Microsoft_.NET_logo.svg",
+    name: "AWS",
+    logoSrc: "/EnterpriceApplication_System/Amazon_Web_Services_Logo.svg",
     lighten: true,
-  },
-  {
-    name: "Java",
-    logoSrc: "/EnterpriceApplication_System/java.svg",
-    zoom: true,
-    lighten: true,
-  },
-  {
-    name: "Python",
-    logoSrc: "/EnterpriceApplication_System/python.svg",
-    zoom: true,
-    lighten: true,
-  },
-  {
-    name: "Node.js",
-    logoSrc: "/EnterpriceApplication_System/nodejs.svg",
-    zoom: true,
-    lighten: true,
-  },
-  {
-    name: "React",
-    logoSrc: "/EnterpriceApplication_System/reactjs.svg",
     zoom: true,
   },
   {
-    name: "Next.js",
-    logoSrc: "/EnterpriceApplication_System/nextjs.svg",
-    zoom: true,
+    name: "Azure",
+    logoSrc: "/EnterpriceApplication_System/microsoft_azure.svg",
     lighten: true,
-  },
-  {
-    name: "Angular",
-    logoSrc: "/EnterpriceApplication_System/angular.svg",
     zoom: true,
   },
   {
-    name: "PostgreSQL",
-    logoSrc: "/EnterpriceApplication_System/postgresql.svg",
+    name: "GCP",
+    logoSrc: "/EnterpriceApplication_System/Google_Cloud_logo.svg",
     lighten: true,
-  },
-  {
-    name: "MySQL",
-    logoSrc: "/EnterpriceApplication_System/mysql.svg",
-  },
-  {
-    name: "FastAPI",
-    logoSrc: "/EnterpriceApplication_System/fastapi.svg",
     shrink: true,
   },
   {
-    name: "REST APIs",
-    logoSrc: "/EnterpriceApplication_System/rest-api-icon.svg",
+    name: "Kubernetes",
+    logoSrc: "/EnterpriceApplication_System/kubernetes.svg",
     lighten: true,
+    zoom: true,
   },
   {
-    name: "Microservices",
-    logoSrc: "/EnterpriceApplication_System/microservices.png",
+    name: "Docker",
+    logoSrc: "/EnterpriceApplication_System/docker.svg",
     lighten: true,
+    zoom: true,
+  },
+  {
+    name: "Terraform",
+    logoSrc: "/EnterpriceApplication_System/terraform.svg",
+    lighten: true,
+    zoom: true,
+  },
+  {
+    name: "Ansible",
+    logoSrc: "/EnterpriceApplication_System/ansible.svg",
+    lighten: true,
+    zoom: true,
+  },
+  {
+    name: "Jenkins",
+    logoSrc: "/EnterpriceApplication_System/jenkins.svg",
+    lighten: true,
+    zoom: true,
+  },
+  {
+    name: "GitHub Actions",
+    logoSrc: "/EnterpriceApplication_System/GitHub.svg",
+    lighten: true,
+    zoom: true,
+  },
+  {
+    name: "Prometheus",
+    logoSrc: "/EnterpriceApplication_System/prometheus.svg",
+    zoom: true,
+  },
+  {
+    name: "Grafana",
+    logoSrc: "/EnterpriceApplication_System/grafana.svg",
+    lighten: true,
+    zoom: true,
   },
 ];
 
-const EntTechStack = () => {
+const CloudTechStack = () => {
   return (
-    <section className="relative w-full bg-[#01031c] pt-4 pb-12 md:pt-8 md:pb-16 overflow-hidden z-20">
+    <section className="relative w-full bg-[#01031c] pt-4 pb-12 md:pt-8 md:pb-16 overflow-hidden z-20 font-sans">
       {/* Dynamic Background Glows */}
       <div className="absolute top-[30%] left-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none z-0" />
       <div className="absolute bottom-[30%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none z-0" />
 
-      <div className="relative z-10 w-[85%] mx-auto flex flex-col items-center justify-start font-sans">
+      <div className="relative z-10 w-[85%] mx-auto flex flex-col items-center justify-start">
         
         {/* Centered Header Content */}
         <div className="w-full max-w-4xl flex flex-col items-center justify-center text-center mb-12 md:mb-16">
@@ -86,18 +88,18 @@ const EntTechStack = () => {
           {/* Heading Block */}
           <h2 className="text-2xl md:text-4xl xl:text-[40px] font-black leading-tight tracking-[0.264px]">
             <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black">
-                The Intelligent Stack
+              The Cloud & DevOps Stack
             </span>
           </h2>
           <h3 className="text-[#CACBDB] text-lg md:text-xl xl:text-[22px] font-light mt-3 opacity-70 max-w-2xl leading-normal">
-            The Infrastructure Behind Intelligent Performance
+            Modern technologies powering automated, secure, and resilient platforms
           </h3>
         </div>
 
-        {/* Grid of Tech Cards (sitting directly on the section background) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5 w-full relative z-10">
+        {/* Grid of Tech Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4 sm:gap-5 w-full relative z-10">
           {techItems.map((item, idx) => {
-            const isMicroservices = item.name === "Microservices";
+            const isGitHubActions = item.name === "GitHub Actions";
             return (
               <Motion.div
                 key={idx}
@@ -112,8 +114,8 @@ const EntTechStack = () => {
                 }}
                 style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
                 className={`flex items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] ${
-                  isMicroservices 
-                    ? "flex-row gap-2 sm:gap-2.5 p-2 sm:p-3" 
+                  isGitHubActions 
+                    ? "flex-row gap-4 sm:gap-5 p-3 sm:p-4" 
                     : "flex-col p-2.5 sm:p-3"
                 }`}
               >
@@ -121,19 +123,23 @@ const EntTechStack = () => {
                   src={item.logoSrc} 
                   alt={item.name} 
                   style={{ 
-                    transform: item.shrink ? "scale(0.65)" : (item.zoom ? "scale(1.35)" : "none"),
+                    transform: item.shrink ? "scale(0.7)" : (item.zoom ? "scale(1.2)" : "none"),
                     filter: item.lighten ? "invert(1) hue-rotate(180deg)" : "none"
                   }}
                   className={`w-auto h-7 sm:h-8 md:h-9 object-contain transition-transform duration-300 ${
-                    isMicroservices ? "shrink-0" : "mx-auto"
+                    isGitHubActions ? "shrink-0" : "mx-auto"
                   }`} 
                 />
 
-                {/* Microservices Text Label */}
-                {isMicroservices && (
-                  <span className="text-[#E7E6FC] text-[11px] sm:text-xs md:text-sm font-semibold leading-none select-none whitespace-nowrap">
-                    Microservices
-                  </span>
+                {isGitHubActions && (
+                  <div className="flex flex-col items-start justify-center gap-0.5 leading-tight">
+                    <span className="text-[#E7E6FC] text-[10px] sm:text-[11px] md:text-xs font-semibold select-none whitespace-nowrap">
+                      GitHub
+                    </span>
+                    <span className="text-[#E7E6FC] text-[10px] sm:text-[11px] md:text-xs font-semibold select-none whitespace-nowrap">
+                      Actions
+                    </span>
+                  </div>
                 )}
               </Motion.div>
             );
@@ -145,4 +151,4 @@ const EntTechStack = () => {
   );
 };
 
-export default EntTechStack;
+export default CloudTechStack;

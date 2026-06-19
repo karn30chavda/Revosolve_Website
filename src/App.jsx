@@ -10,6 +10,7 @@ import Connect from "./pages/Connect";
 import Careers from "./pages/Careers";
 import ComingSoon from "./pages/ComingSoon";
 import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
+import CloudDevOps from "./pages/CloudDevOps";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/solutions/commerce-operations-systems" element={<CommerceOperationsSystems />} />
           <Route path="/solutions/document-intelligence-systems" element={<DocumentIntelligenceSystems />} />
           <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
+          <Route path="/services/cloud-and-devops" element={<CloudDevOps />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />

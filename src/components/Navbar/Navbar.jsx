@@ -185,8 +185,12 @@ const Navbar = () => {
                                       : link === "Document Intelligence Systems"
                                       ? "/solutions/document-intelligence-systems"
                                       : "/coming-soon")
-                                    : (item.label === "Services" && link === "Enterprise Application Systems"
-                                      ? "/services/enterprise-application-systems"
+                                    : (item.label === "Services"
+                                      ? (link === "Enterprise Application Systems"
+                                        ? "/services/enterprise-application-systems"
+                                        : link === "Cloud and Devops"
+                                        ? "/services/cloud-and-devops"
+                                        : "/coming-soon")
                                       : "/coming-soon")
                                 }
                                 onClick={() => setOpenDropdownIdx(null)}
@@ -289,8 +293,12 @@ const Navbar = () => {
                                   : link === "Document Intelligence Systems"
                                   ? "/solutions/document-intelligence-systems"
                                   : "/coming-soon")
-                                : (item.label === "Services" && link === "Enterprise Application Systems"
-                                  ? "/services/enterprise-application-systems"
+                                : (item.label === "Services"
+                                  ? (link === "Enterprise Application Systems"
+                                    ? "/services/enterprise-application-systems"
+                                    : link === "Cloud and Devops"
+                                    ? "/services/cloud-and-devops"
+                                    : "/coming-soon")
                                   : (link === "Careers" ? "/careers" : "/coming-soon"))
                             }
                             onClick={() => setIsMenuOpen(false)}

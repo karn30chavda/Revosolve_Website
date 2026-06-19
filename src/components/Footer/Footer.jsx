@@ -76,6 +76,8 @@ const Footer = () => {
                         to={
                             item === "Enterprise Application Systems"
                               ? "/services/enterprise-application-systems"
+                              : item === "Cloud and Devops"
+                              ? "/services/cloud-and-devops"
                               : "/coming-soon"
                         }
                         className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
