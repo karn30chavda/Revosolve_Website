@@ -1,14 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const EntHero = () => {
+const EntHero = ({ scrollToWhatWeDo }) => {
   const navigate = useNavigate();
 
   const handleScrollDown = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth"
-    });
+    if (scrollToWhatWeDo) {
+      scrollToWhatWeDo();
+    } else {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
@@ -55,7 +59,7 @@ const EntHero = () => {
           {/* Heading */}
           <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full">
             <div className="max-w-full min-[1290px]:max-w-none min-[1290px]:w-max min-[1290px]:whitespace-nowrap justify-start bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[24px] sm:text-[32px] md:text-4xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px] pb-1">
-              Enterprise Applications & System Engineering
+              Enterprise Applications <br />& System Engineering
             </div>
             <div className="max-w-full min-[1290px]:w-auto justify-start text-white/90 text-[15px] sm:text-[20px] md:text-[24px] min-[1290px]:text-[22px] xl:text-[28px] font-semibold min-[1290px]:font-bold font-sans leading-snug tracking-[0.2px] mt-1.5">
               Building Business-Critical Systems That Power Enterprise Operations
