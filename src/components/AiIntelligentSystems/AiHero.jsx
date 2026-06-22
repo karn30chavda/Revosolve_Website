@@ -1,18 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const CloudDevOpsHero = ({ scrollToNextSection }) => {
+const AiHero = () => {
   const navigate = useNavigate();
 
   const handleScrollDown = () => {
-    if (scrollToNextSection) {
-      scrollToNextSection();
-    } else {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth"
-      });
-    }
+    document
+      .getElementById("ai-why-revosolve")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -59,16 +54,16 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
           {/* Heading */}
           <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full">
             <div className="max-w-full min-[1290px]:max-w-none min-[1290px]:w-max min-[1290px]:whitespace-nowrap justify-start bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[24px] sm:text-[32px] md:text-4xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px] pb-1">
-              Cloud and DevOps
+              Generative AI Systems
             </div>
             <div className="max-w-full min-[1290px]:w-auto justify-start text-white/90 text-[15px] sm:text-[20px] md:text-[24px] min-[1290px]:text-[22px] xl:text-[28px] font-semibold min-[1290px]:font-bold font-sans leading-snug tracking-[0.2px] mt-1.5">
-              Building Scalable, Secure, and Resilient Digital Foundations
+              Embedding AI Into Operational Workflows
             </div>
           </div>
 
           {/* Description */}
           <p className="max-w-full min-[1290px]:max-w-[480px] xl:max-w-[553px] opacity-75 justify-start text-[#FBFBFF] text-[13px] sm:text-[15px] xl:text-[18px] font-normal font-sans leading-relaxed min-[1290px]:leading-normal mt-2 mb-3">
-            Design, automate, and optimize cloud environments that improve reliability, accelerate delivery, and support enterprise-scale growth.
+            Design and deploy AI-powered systems that automate processes, enhance decision-making, and improve operational efficiency across enterprise and government environments.
           </p>
 
           {/* CTA Button */}
@@ -77,7 +72,7 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
               navigate("/connect", {
                 state: {
                   category: "Services/Solution",
-                  service: "Cloud and Devops",
+                  service: "AI & Intelligent Systems",
                 },
               })
             }
@@ -126,7 +121,7 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
 
             <img
               src="/EnterpriceApplication_System/EnterPriceHeroImage.png"
-              alt="Cloud Infrastructure & DevOps"
+              alt="AI & Intelligent Systems"
               className="w-full h-full object-cover object-center relative z-0"
             />
           </div>
@@ -155,4 +150,4 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
   );
 };
 
-export default CloudDevOpsHero;
+export default AiHero;

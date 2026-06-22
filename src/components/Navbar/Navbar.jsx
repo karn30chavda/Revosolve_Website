@@ -190,6 +190,8 @@ const Navbar = () => {
                                         ? "/services/enterprise-application-systems"
                                         : link === "Cloud and Devops"
                                         ? "/services/cloud-and-devops"
+                                        : link === "AI & Intelligent Systems"
+                                        ? "/services/ai-intelligent-systems"
                                         : "/coming-soon")
                                       : "/coming-soon")
                                 }
@@ -298,6 +300,8 @@ const Navbar = () => {
                                     ? "/services/enterprise-application-systems"
                                     : link === "Cloud and Devops"
                                     ? "/services/cloud-and-devops"
+                                    : link === "AI & Intelligent Systems"
+                                    ? "/services/ai-intelligent-systems"
                                     : "/coming-soon")
                                   : (link === "Careers" ? "/careers" : "/coming-soon"))
                             }

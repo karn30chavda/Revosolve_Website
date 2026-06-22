@@ -96,8 +96,8 @@ const CloudTechStack = () => {
           </h3>
         </div>
 
-        {/* Grid of Tech Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4 sm:gap-5 w-full relative z-10">
+        {/* Centered Flex Layout of Tech Cards */}
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 w-full relative z-10">
           {techItems.map((item, idx) => {
             const isGitHubActions = item.name === "GitHub Actions";
             return (
@@ -113,7 +113,7 @@ const CloudTechStack = () => {
                   borderColor: "rgba(95, 95, 255, 1)"
                 }}
                 style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
-                className={`flex items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] ${
+                className={`flex items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none ${
                   isGitHubActions 
                     ? "flex-row gap-4 sm:gap-5 p-3 sm:p-4" 
                     : "flex-col p-2.5 sm:p-3"
