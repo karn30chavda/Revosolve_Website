@@ -16,7 +16,7 @@ const CloudWhatWeDo = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           style={{ backgroundColor: "rgba(29, 30, 50, 1)" }}
-          className="w-full flex flex-col lg:flex-row justify-between items-stretch overflow-hidden relative rounded-xl"
+          className="w-full flex flex-col lg:flex-row justify-between items-stretch overflow-hidden relative"
         >
           {/* Left Column: Heading and Tag */}
           <div className="w-full lg:w-[45%] px-6 pt-8 pb-4 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-center items-start text-left relative z-10">
