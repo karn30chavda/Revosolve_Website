@@ -7,14 +7,14 @@ const modelItems = [
   { name: "Anthropic Claude", logoSrc: "/AI_Intelligence/Claude_AI_logo.svg", lighten: true },
   { name: "Google Gemini", logoSrc: "/AI_Intelligence/Google_Gemini_logo.svg", lighten: true },
   { name: "Meta Llama", logoSrc: "/AI_Intelligence/Meta_Platforms.svg", lighten: true },
-  { name: "Mistral AI", logoSrc: "/AI_Intelligence/mistral-ai.svg", lighten: true }
+  { name: "Mistral AI", logoSrc: "/AI_Intelligence/mistral-ai.svg", lighten: true, zoomLarge: true }
 ];
 
 const orchestrationItems = [
   { name: "LangChain", logoSrc: "/AI_Intelligence/LangChain_Logo.svg", lighten: true },
   { name: "LlamaIndex", logoSrc: "/AI_Intelligence/llamaindex.svg", lighten: true },
-  { name: "CrewAI", logoSrc: "/AI_Intelligence/crewai.svg", lighten: true, zoomMax: true }, 
-  { name: "AutoGen", logoSrc: "/AI_Intelligence/autogen.svg", lighten: true, zoomMax: true }
+  { name: "CrewAI", logoSrc: "/AI_Intelligence/crewai.svg", lighten: true }, 
+  { name: "AutoGen", logoSrc: "/AI_Intelligence/autogen.svg", lighten: true, zoomLarge: true }
 ];
 
 const retrievalItems = [
@@ -137,7 +137,9 @@ const AiTechStack = () => {
                             src={item.logoSrc} 
                             alt={item.name} 
                             style={{ 
-                              transform: item.zoomMax ? "scale(1.45)" : (item.zoomLarge ? "scale(1.5)" : (item.shrink ? "scale(0.55)" : "scale(0.75)")),
+                              transform: item.name === "Mistral AI" 
+                                ? "scale(1.15)" 
+                                : (item.zoomMax ? "scale(1.1)" : (item.zoomLarge ? "scale(1.5)" : (item.shrink ? "scale(0.55)" : "scale(0.75)"))),
                               filter: item.lighten ? "invert(1) hue-rotate(180deg)" : "none"
                             }}
                             className={`w-full object-contain transition-transform duration-300 mx-auto ${

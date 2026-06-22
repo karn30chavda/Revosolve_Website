@@ -12,43 +12,42 @@ const techItems = [
     name: "Azure",
     logoSrc: "/EnterpriceApplication_System/microsoft_azure.svg",
     lighten: true,
-    zoom: true,
+    zoomLarge: true,
   },
   {
     name: "GCP",
     logoSrc: "/EnterpriceApplication_System/Google_Cloud_logo.svg",
     lighten: true,
-    shrink: true,
   },
   {
     name: "Kubernetes",
     logoSrc: "/EnterpriceApplication_System/kubernetes.svg",
     lighten: true,
-    zoom: true,
+    zoomLarge: true,
   },
   {
     name: "Docker",
     logoSrc: "/EnterpriceApplication_System/docker.svg",
     lighten: true,
-    zoom: true,
+    zoomLarge: true,
   },
   {
     name: "Terraform",
     logoSrc: "/EnterpriceApplication_System/terraform.svg",
     lighten: true,
-    zoom: true,
+    zoomLarge: true,
   },
   {
     name: "Ansible",
     logoSrc: "/EnterpriceApplication_System/ansible.svg",
     lighten: true,
-    zoom: true,
+    zoomLarge: true,
   },
   {
     name: "Jenkins",
     logoSrc: "/EnterpriceApplication_System/jenkins.svg",
     lighten: true,
-    zoom: true,
+    zoomLarge: true,
   },
   {
     name: "GitHub Actions",
@@ -59,13 +58,13 @@ const techItems = [
   {
     name: "Prometheus",
     logoSrc: "/EnterpriceApplication_System/prometheus.svg",
-    zoom: true,
+    zoomLarge: true,
   },
   {
     name: "Grafana",
     logoSrc: "/EnterpriceApplication_System/grafana.svg",
     lighten: true,
-    zoom: true,
+    zoomLarge: true,
   },
 ];
 
@@ -123,7 +122,7 @@ const CloudTechStack = () => {
                   src={item.logoSrc} 
                   alt={item.name} 
                   style={{ 
-                    transform: item.shrink ? "scale(0.7)" : (item.zoom ? "scale(1.2)" : "none"),
+                    transform: item.shrink ? "scale(0.7)" : (item.zoomLarge ? "scale(1.55)" : (item.zoom ? "scale(1.2)" : "none")),
                     filter: item.lighten ? "invert(1) hue-rotate(180deg)" : "none"
                   }}
                   className={`w-auto h-7 sm:h-8 md:h-9 object-contain transition-transform duration-300 ${

@@ -16,7 +16,7 @@ const techItems = [
   {
     name: "Python",
     logoSrc: "/EnterpriceApplication_System/python.svg",
-    zoom: true,
+    zoomLarge: true,
     lighten: true,
   },
   {
@@ -121,7 +121,7 @@ const EntTechStack = () => {
                   src={item.logoSrc} 
                   alt={item.name} 
                   style={{ 
-                    transform: item.shrink ? "scale(0.65)" : (item.zoom ? "scale(1.35)" : "none"),
+                    transform: item.shrink ? "scale(0.65)" : (item.zoomLarge ? "scale(1.65)" : (item.zoom ? "scale(1.35)" : "none")),
                     filter: item.lighten ? "invert(1) hue-rotate(180deg)" : "none"
                   }}
                   className={`w-auto h-7 sm:h-8 md:h-9 object-contain transition-transform duration-300 ${
