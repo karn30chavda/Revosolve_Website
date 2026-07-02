@@ -109,9 +109,9 @@ const CloudWhatWeBuild = () => {
           {/* Description Paragraph */}
           <div className="max-w-xl lg:pb-1">
             <p className="text-[#CACBDB] text-sm font-normal leading-relaxed opacity-70 text-left">
-              Modern cloud infrastructure requires more than hosting applications. Organizations need scalable platforms, automated delivery pipelines, resilient architectures, and operational visibility that support continuous innovation.
+              Modern enterprises demand scalable platforms, resilient architectures, and complete operational visibility.
               <br />
-              RevoSolve designs and implements cloud-native platforms that improve reliability, accelerate delivery, and provide the foundation for enterprise-scale digital operations.
+              RevoSolve engineers cloud-native solutions that accelerate delivery, enhance reliability, and power enterprise-scale digital operations.
             </p>
           </div>
         </div>

@@ -95,8 +95,8 @@ const CloudProblemsWeSolve = () => {
           </div>
           <div className="max-w-xl lg:pb-1">
             <p className="text-[#CACBDB] text-sm font-normal leading-relaxed opacity-70 text-left">
-              Building and operating modern digital infrastructure is increasingly complex. As organizations scale, infrastructure, deployment processes, security requirements, and operational workloads become harder to manage. Many teams struggle with slow release cycles, inconsistent environments, rising cloud costs, and limited visibility across their technology landscape.
-              <br />RevoSolve helps organizations modernize cloud operations, automate delivery pipelines, improve reliability, and build scalable infrastructure that supports long-term growth.
+              Rapid scaling often leads to complex infrastructure, rising cloud costs, and delayed software releases.
+              <br />RevoSolve modernizes your cloud operations and automates pipelines, delivering a reliable, scalable foundation for future growth.
             </p>
           </div>
         </div>
