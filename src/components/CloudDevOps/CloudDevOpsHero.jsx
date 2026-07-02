@@ -10,7 +10,7 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
     } else {
       window.scrollTo({
         top: window.innerHeight,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -20,14 +20,14 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
       {/* Mobile Background Image & Tint Wash (Visible only on mobile/tablet below 1290px) */}
       <div className="absolute top-[3.74938rem] bottom-0 left-0 right-0 min-[1290px]:hidden z-0 pointer-events-none">
         <img
-          src="/EnterpriceApplication_System/EnterPriceHeroImage.png"
+          src="/EnterpriceApplication_System/CloudHeroImage4.webp"
           alt=""
           className="w-full h-full object-cover object-center"
-        />
+        />  
         {/* Dark tint overlay for reading contrast */}
         <div className="absolute inset-0 bg-[#01031c]/75" />
       </div>
-      
+
       {/* Soft Blue/Indigo Glow behind the button */}
       <div className="hidden min-[1290px]:block w-[500px] h-[500px] absolute left-[-10%] bottom-[-20%] opacity-40 bg-linear-to-br from-[#191b57]/60 to-[#0e1038]/60 rounded-full blur-[110px] pointer-events-none z-0" />
 
@@ -62,13 +62,13 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
               Cloud and DevOps
             </div>
             <div className="max-w-full min-[1290px]:w-auto justify-start text-white/90 text-[15px] sm:text-[20px] md:text-[24px] min-[1290px]:text-[22px] xl:text-[28px] font-semibold min-[1290px]:font-bold font-sans leading-snug tracking-[0.2px] mt-1.5">
-              Building Scalable, Secure, and Resilient Digital Foundations
+              Building the Infrastructure Behind Modern Digital Operations
             </div>
           </div>
 
           {/* Description */}
           <p className="max-w-full min-[1290px]:max-w-[480px] xl:max-w-[553px] opacity-75 justify-start text-[#FBFBFF] text-[13px] sm:text-[15px] xl:text-[18px] font-normal font-sans leading-relaxed min-[1290px]:leading-normal mt-2 mb-3">
-            Design, automate, and optimize cloud environments that improve reliability, accelerate delivery, and support enterprise-scale growth.
+            Design, automate, and optimize cloud infrastructure that enables organizations to deploy faster, operate securely, and scale confidently across evolving business environments.
           </p>
 
           {/* CTA Button */}
@@ -92,16 +92,6 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
               className="w-[12px] min-[1290px]:w-[14px] h-[8px] min-[1290px]:h-[10px] shrink-0"
             />
           </button>
-
-          {/* Mobile Inline Scroll Arrow */}
-          <div className="min-[1290px]:hidden mt-8 flex flex-col items-center justify-center">
-            <img
-              onClick={handleScrollDown}
-              src="/hero_section/arrow_icon.svg"
-              className="w-5 h-4 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
-              alt="Scroll down"
-            />
-          </div>
         </div>
 
         {/* Right Column: Hero Image Container (Matches the left text content column height exactly) */}
@@ -125,7 +115,7 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
             <div className="absolute inset-0 bg-[#01031c]/15 z-10 pointer-events-none" />
 
             <img
-              src="/EnterpriceApplication_System/EnterPriceHeroImage.png"
+              src="/EnterpriceApplication_System/CloudHeroImage4.webp"
               alt="Cloud Infrastructure & DevOps"
               className="w-full h-full object-cover object-center relative z-0"
             />
@@ -133,12 +123,12 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
         </div>
       </div>
 
-      {/* Scroll Arrow - Bottom Center (Desktop Only) */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40 hidden min-[1290px]:flex flex-col items-center justify-center">
+      {/* Scroll Arrow - Bottom Center (Desktop & Mobile) */}
+      <div className="absolute bottom-24 sm:bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
         <img
           onClick={handleScrollDown}
           src="/hero_section/arrow_icon.svg"
-          className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
+          className="w-5.5 h-4.5 sm:w-6.5 sm:h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
           alt="Scroll down"
         />
       </div>

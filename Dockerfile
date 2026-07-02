@@ -4,6 +4,13 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm install --frozen-lockfile
 COPY . .
+
+ARG VITE_GTAG_ID
+ARG VITE_ERP_BASE_URL
+
+ENV VITE_GTAG_ID=$VITE_GTAG_ID
+ENV VITE_ERP_BASE_URL=$VITE_ERP_BASE_URL
+
 RUN npm run build
 
 # Production image

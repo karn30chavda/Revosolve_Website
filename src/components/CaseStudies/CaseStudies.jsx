@@ -119,7 +119,7 @@ const CaseStudies = () => {
       </div>
 
       {/* Cards section - Mobile View */}
-      <div className="md:hidden w-[90%] mx-auto">
+      <div className="md:hidden w-[85%] mx-auto">
         <div className="rounded-lg p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden w-full bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           <img
             src="/home_section_5/right_img_mobile.svg"

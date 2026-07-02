@@ -5,6 +5,7 @@ import CloudProblemsWeSolve from "../components/CloudDevOps/CloudProblemsWeSolve
 import CloudWhatWeBuild from "../components/CloudDevOps/CloudWhatWeBuild";
 import CloudTechStack from "../components/CloudDevOps/CloudTechStack";
 import CloudIndustries from "../components/CloudDevOps/CloudIndustries";
+import CloudCTA from "../components/CloudDevOps/CloudCTA";
 
 const CloudDevOps = () => {
   const scrollToWhatWeDo = () => {
@@ -21,6 +22,7 @@ const CloudDevOps = () => {
       <CloudWhatWeBuild />
       <CloudTechStack />
       <CloudIndustries />
+      <CloudCTA />
     </div>
   );
 };

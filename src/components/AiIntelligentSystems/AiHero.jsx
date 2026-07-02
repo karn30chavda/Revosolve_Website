@@ -15,12 +15,12 @@ const AiHero = () => {
       {/* Mobile Background Image & Tint Wash (Visible only on mobile/tablet below 1290px) */}
       <div className="absolute top-[3.74938rem] bottom-0 left-0 right-0 min-[1290px]:hidden z-0 pointer-events-none">
         <img
-          src="/EnterpriceApplication_System/EnterPriceHeroImage.png"
+          src="/AI_Intelligence/aiHeroImage1.webp"
           alt=""
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover"
         />
         {/* Dark tint overlay for reading contrast */}
-        <div className="absolute inset-0 bg-[#01031c]/75" />
+        <div className="absolute inset-0 bg-[#01031c]/85" />
       </div>
       
       {/* Soft Blue/Indigo Glow behind the button */}
@@ -88,15 +88,6 @@ const AiHero = () => {
             />
           </button>
 
-          {/* Mobile Inline Scroll Arrow */}
-          <div className="min-[1290px]:hidden mt-8 flex flex-col items-center justify-center">
-            <img
-              onClick={handleScrollDown}
-              src="/hero_section/arrow_icon.svg"
-              className="w-5 h-4 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
-              alt="Scroll down"
-            />
-          </div>
         </div>
 
         {/* Right Column: Hero Image Container (Matches the left text content column height exactly) */}
@@ -120,7 +111,7 @@ const AiHero = () => {
             <div className="absolute inset-0 bg-[#01031c]/15 z-10 pointer-events-none" />
 
             <img
-              src="/EnterpriceApplication_System/EnterPriceHeroImage.png"
+              src="/AI_Intelligence/aiHeroImage1.webp"
               alt="AI & Intelligent Systems"
               className="w-full h-full object-cover object-center relative z-0"
             />
@@ -128,12 +119,12 @@ const AiHero = () => {
         </div>
       </div>
 
-      {/* Scroll Arrow - Bottom Center (Desktop Only) */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40 hidden min-[1290px]:flex flex-col items-center justify-center">
+      {/* Scroll Arrow - Bottom Center (Desktop & Mobile) */}
+      <div className="absolute bottom-24 sm:bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
         <img
           onClick={handleScrollDown}
           src="/hero_section/arrow_icon.svg"
-          className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
+          className="w-5.5 h-4.5 sm:w-6.5 sm:h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
           alt="Scroll down"
         />
       </div>

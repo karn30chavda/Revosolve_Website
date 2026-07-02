@@ -25,7 +25,7 @@ const WhyJoin = () => {
   ];
 
   return (
-    <section id="why-join-section" className="relative w-full bg-[#01031c] pt-6 pb-8 lg:pt-10 lg:pb-12 scroll-mt-20">
+    <section id="why-join-section" className="relative w-full bg-[#01031c] pt-8 pb-8 lg:pt-10 lg:pb-12 scroll-mt-20">
       {/* Decorative Blur Background Spot */}
       <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />

@@ -184,7 +184,7 @@ const ProblemsWeSolve = () => {
       </div>
 
       {/* Mobile View - Static Vertical Stack */}
-      <div className="md:hidden flex flex-col gap-10 items-center justify-start self-stretch shrink-0 relative py-12 px-4">
+      <div className="md:hidden w-[85%] mx-auto flex flex-col gap-10 items-center justify-start relative py-12">
         {/* Header Section */}
         <div className="flex flex-col gap-3 items-start justify-start self-stretch relative">
           <div className="text-white/30 text-left font-sans text-[14px] tracking-[1px]">
@@ -196,7 +196,7 @@ const ProblemsWeSolve = () => {
           </div>
           <div className="flex flex-col gap-0 items-start justify-start relative">
             <div className="text-left font-black text-[28px] leading-tight bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
-              Solving Complex
+              Solving Complex 
             </div>
             <div className="text-[#CACBDB] text-left font-sans font-thin text-[28px] leading-tight">
               Institutional Challenges
