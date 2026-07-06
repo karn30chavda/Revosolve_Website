@@ -8,6 +8,8 @@ import CommerceOperationsSystems from "./pages/CommerceOperationsSystems";
 import Connect from "./pages/Connect";
 import ComingSoon from "./pages/ComingSoon";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import GenerativeAISystems from "./pages/GenerativeAISystems";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/solutions/commerce-operations-systems" element={<CommerceOperationsSystems />} />
+          <Route path="/services/generative-ai-systems" element={<GenerativeAISystems />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
           {/* Fallback route - optional */}
