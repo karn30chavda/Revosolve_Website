@@ -186,6 +186,8 @@ const Navbar = () => {
                                       ? "/solutions/commerce-operations-systems"
                                       : link === "Document Intelligence Systems"
                                       ? "/solutions/document-intelligence-systems"
+                                      : link === "AI Surveillance Systems"
+                                      ? "/services/ai-intelligent-systems"
                                       : "/coming-soon")
                                     : (item.label === "Services"
                                       ? (link === "Enterprise Application Systems"
@@ -296,6 +298,8 @@ const Navbar = () => {
                                   ? "/solutions/commerce-operations-systems"
                                   : link === "Document Intelligence Systems"
                                   ? "/solutions/document-intelligence-systems"
+                                  : link === "AI Surveillance Systems"
+                                  ? "/services/ai-intelligent-systems"
                                   : "/coming-soon")
                                 : (item.label === "Services"
                                   ? (link === "Enterprise Application Systems"

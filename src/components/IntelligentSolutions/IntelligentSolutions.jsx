@@ -423,6 +423,10 @@ const IntelligentSolutions = () => {
                           onClick={() => {
                             if (card.category === "Commerce Operations Systems") {
                               navigate("/solutions/commerce-operations-systems");
+                            } else if (card.category === "Document Intelligence Systems") {
+                              navigate("/solutions/document-intelligence-systems");
+                            } else if (card.category === "AI Surveillance Systems") {
+                              navigate("/services/ai-intelligent-systems");
                             } else {
                               navigate("/coming-soon");
                             }

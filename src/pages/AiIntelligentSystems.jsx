@@ -1,22 +1,31 @@
 import React from "react";
-import AiHero from "../components/AiIntelligentSystems/AiHero";
-import AiWhyRevoSolve from "../components/AiIntelligentSystems/AiWhyRevoSolve";
-import AiWhatWeBuild from "../components/AiIntelligentSystems/AiWhatWeBuild";
-import AiDifferentiators from "../components/AiIntelligentSystems/AiDifferentiators";
-import AiTechStack from "../components/AiIntelligentSystems/AiTechStack";
-import AiIndustries from "../components/AiIntelligentSystems/AiIndustries";
-import AiCTA from "../components/AiIntelligentSystems/AiCTA";
+import GenAIHero from "../components/GenAIHero/GenAIHero";
+import GenAIProblems from "../components/GenAIProblems/GenAIProblems";
+import GenAISystems from "../components/GenAISystems/GenAISystems";
+import GenAIMethod from "../components/GenAIMethod/GenAIMethod";
+import GenAITech from "../components/GenAITech/GenAITech";
+import GenAIIndustries from "../components/GenAIIndustries/GenAIIndustries";
+import GenAIDifferentiation from "../components/GenAIDifferentiation/GenAIDifferentiation";
+import GenAIFAQ from "../components/GenAIFAQ/GenAIFAQ";
+import GenAICTA from "../components/GenAICTA/GenAICTA";
 
 const AiIntelligentSystems = () => {
   return (
-    <div className="w-full bg-[#01031c] relative overflow-x-hidden">
-      <AiHero />
-      <AiWhyRevoSolve />
-      <AiWhatWeBuild />
-      <AiDifferentiators />
-      <AiTechStack />
-      <AiIndustries />
-      <AiCTA />
+    <div className="w-full bg-[#01031c]">
+      {/* Services Page Hero */}
+      <GenAIHero />
+
+      {/* Page Sections */}
+      <div id="genai-content" className="w-full relative z-10">
+        <GenAIProblems />
+        <GenAISystems />
+        <GenAIMethod />
+        <GenAITech />
+        <GenAIIndustries />
+        <GenAIDifferentiation />
+        <GenAIFAQ />
+        <GenAICTA />
+      </div>
     </div>
   );
 };

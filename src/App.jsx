@@ -13,7 +13,6 @@ import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
 import CloudDevOps from "./pages/CloudDevOps";
 import AiIntelligentSystems from "./pages/AiIntelligentSystems";
 import GoogleAnalytics from "./components/GoogleAnalytics";
-import GenerativeAISystems from "./pages/GenerativeAISystems";
 
 
 function App() {
@@ -37,7 +36,6 @@ function App() {
           <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
           <Route path="/services/cloud-and-devops" element={<CloudDevOps />} />
           <Route path="/services/ai-intelligent-systems" element={<AiIntelligentSystems />} />
-          <Route path="/services/generative-ai-systems" element={<GenerativeAISystems />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
