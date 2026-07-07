@@ -62,7 +62,7 @@ const CloudFAQ = () => {
                   onClick={() => setOpenIdx(isOpen ? -1 : idx)}
                   className="w-full flex items-center gap-5 py-6 text-left cursor-pointer bg-transparent border-none group focus:outline-none"
                 >
-                  <span className="text-white/25 text-xs md:text-sm font-medium font-sans tracking-widest shrink-0 font-mono">
+                  <span className="text-white/25 text-xs md:text-sm font-medium font-sans tracking-widest shrink-0">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                   <span
