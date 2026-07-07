@@ -1,291 +1,131 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion as Motion, useScroll, useMotionValueEvent } from "framer-motion";
+import React from "react";
+import { motion as Motion } from "framer-motion";
+import {
+  Target,
+  Books,
+  HandTap,
+  Headset,
+  ArrowsClockwise,
+  Scales,
+} from "@phosphor-icons/react";
 
-const problemItems = [
+const problemsList = [
   {
     title: "AI Without Business Context",
     desc: "Many AI initiatives focus on technology rather than solving real operational challenges.",
+    icon: <Target size={28} className="text-[#877BF1]" weight="light" />,
   },
   {
     title: "Disconnected Enterprise Knowledge",
     desc: "Business information exists across multiple systems, making it hard for employees and customers to access accurate information.",
+    icon: <Books size={28} className="text-[#877BF1]" weight="light" />,
   },
   {
     title: "Manual Decision-Making",
     desc: "Employees spend significant time gathering information and performing repetitive decision-support activities.",
+    icon: <HandTap size={28} className="text-[#877BF1]" weight="light" />,
   },
   {
     title: "High Customer Support Volumes",
     desc: "Support teams face increasing workloads while customers expect faster, more personalized interactions.",
+    icon: <Headset size={28} className="text-[#877BF1]" weight="light" />,
   },
   {
     title: "Repetitive Business Processes",
     desc: "Manual document processing, approvals, and administrative tasks reduce operational efficiency.",
+    icon: <ArrowsClockwise size={28} className="text-[#877BF1]" weight="light" />,
   },
   {
-    title: "Stuck at Proof of Concept",
-    desc: "Many organizations successfully demonstrate AI but struggle to deploy and manage production-ready systems.",
-  },
+    title: "AI Governance Challenges",
+    desc: "Organizations require secure, explainable, and compliant AI systems suitable for enterprise environments.",
+    icon: <Scales size={28} className="text-[#877BF1]" weight="light" />,
+  }
 ];
 
 const GenAIProblems = () => {
-  const containerRef = useRef(null);
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  // Desktop Scroll Tracking
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 60px", "end end"],
-  });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Map scroll progress (0 to 1) into 6 active indexes (0 to 5)
-    const idx = Math.min(Math.floor(latest * 6), 5);
-    setActiveIdx(idx);
-  });
-
-  // Handle click on tab to scroll to the corresponding section height
-  const handleTabClick = (idx) => {
-    if (!containerRef.current) return;
-    const element = containerRef.current;
-    const rect = element.getBoundingClientRect();
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const containerTop = scrollTop + rect.top;
-
-    // Calculate the total scrollable height of the sticky container
-    const scrollableRange = element.offsetHeight - window.innerHeight + 60;
-
-    // Position the scroll exactly in the middle of the target section's scroll range
-    const targetProgress = (idx + 0.5) / 6;
-    const targetY =
-      containerTop - 60 + targetProgress * Math.max(0, scrollableRange);
-
-    window.scrollTo({
-      top: targetY,
-      behavior: "smooth",
-    });
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (window.innerWidth < 1024) {
-        setActiveIdx((prev) => (prev + 1) % problemItems.length);
-      }
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <>
-      {/* Desktop Sticky Scroll Section */}
-      <section
-        ref={containerRef}
-        className="relative w-full bg-[#01031c] h-[320vh] hidden lg:block pb-12"
-      >
-        <div className="sticky top-[60px] w-full flex flex-col justify-start z-10 pb-12">
-          <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start pt-16">
-            {/* Section Tag */}
-            <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
-              [the problem]
-            </div>
+    <section className="relative w-full bg-[#01031c] pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden z-20">
+      {/* Background Decorative Pattern */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-0 opacity-10 mix-blend-screen"
+        style={{
+          backgroundImage: "url(/home_section_6/bg_pattern.svg)",
+          backgroundSize: "180px",
+          backgroundRepeat: "repeat",
+        }}
+      />
 
-            {/* Heading Block */}
-            <div className="flex flex-col items-start justify-start">
-              <h2 className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px]">
-                AI Demos Are Easy
-              </h2>
-              <h3 className="text-[#CACBDB] text-xl md:text-2xl xl:text-[30px] font-light xl:font-thin leading-normal">
-                Production AI Is Not
-              </h3>
-            </div>
+      {/* Decorative Glows */}
+      <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-[20%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none z-0" />
 
-            {/* Interactive Card */}
-            <div
-              style={{
-                background:
-                  "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
+      <div className="relative z-10 w-[85%] mx-auto flex flex-col gap-12 font-sans">
+        
+        {/* Header Block */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end w-full gap-6 lg:gap-12">
+          <div className="flex flex-col items-start min-w-fit">
+            <span className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4">
+              [problems we solve]
+            </span>
+            <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight text-left font-sans">
+              <span className="font-black block">
+                <span className="text-[#877BF1]">Enterprise </span>
+                <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">AI</span>
+              </span>
+              <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
+                requires more than large language models
+              </span>
+            </h2>
+          </div>
+          <div className="max-w-xl lg:pb-1">
+            <p className="text-[#CACBDB] text-sm font-normal leading-relaxed opacity-70 text-left">
+              Organizations invest heavily in AI but struggle to reach business value – disconnected pilots, poor data quality, and missing operational integration.
+            </p>
+          </div>
+        </div>
+
+        {/* Problems Grid - 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {problemsList.map((item, idx) => (
+            <Motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              whileHover={{ 
+                scale: 1.015
               }}
-              className="w-full mt-6 p-5 lg:p-6 border border-black rounded-2xl flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 overflow-hidden relative z-10"
+              style={{ 
+                backgroundColor: "rgba(2, 3, 25, 1)",
+                borderColor: "rgba(95, 95, 255, 1)"
+              }}
+              className={`flex flex-col justify-between items-start p-8 min-h-[220px] w-full rounded-[8px] border-2 cursor-pointer transition-all duration-300 relative group overflow-hidden ${
+                idx === 6 ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""
+              }`}
             >
-              {/* Left Column: Active problem detail */}
-              <div className="w-full lg:w-[440px] shrink-0 flex flex-col justify-center gap-4 self-stretch relative z-10">
-                <Motion.div
-                  key={activeIdx}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="flex flex-col gap-4"
-                >
-                  <div className="text-[#E7E6FC] text-[22px] lg:text-[26px] font-extrabold font-sans leading-snug">
-                    {problemItems[activeIdx].title}
-                  </div>
-                  <div className="self-stretch h-px bg-linear-to-r from-amber-500 to-transparent" />
-                  <p className="text-[#CACBDB] text-[16px] lg:text-[18px] font-normal font-sans leading-relaxed opacity-80">
-                    {problemItems[activeIdx].desc}
-                  </p>
-                </Motion.div>
+              {/* Card Glow Effect */}
+              <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
+
+              {/* Top part: Icon */}
+              <div className="w-10 h-10 flex items-center justify-center shrink-0 relative z-10 p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-all duration-300 mb-4">
+                {item.icon}
               </div>
 
-              {/* Right Column: Problem list */}
-              <div className="flex-1 w-full flex flex-col justify-start items-start gap-6 relative z-10">
-                <div className="self-stretch text-white text-[18px] font-normal font-sans leading-[24px]">
-                  The challenges we see inside most organizations
-                </div>
-
-                <div className="w-full flex flex-col gap-[6px]">
-                  {problemItems.map((item, idx) => {
-                    const isActive = idx === activeIdx;
-                    return (
-                      <div
-                        key={idx}
-                        onClick={() => handleTabClick(idx)}
-                        className={`w-full rounded-[8px] flex items-center gap-[16px] py-[8px] px-[14px] self-stretch cursor-pointer transition-all duration-300 ${
-                          isActive
-                            ? "bg-[#26274A] opacity-100"
-                            : "bg-transparent opacity-50 hover:opacity-85"
-                        }`}
-                      >
-                        {/* Checkmark Circle */}
-                        <div
-                          className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                            isActive
-                              ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]"
-                              : "border border-[#877BF1] bg-transparent"
-                          }`}
-                        >
-                          <img
-                            src="/Solution_page/solution_problem_tick.svg"
-                            alt="Tick"
-                            className={`w-3.5 h-3.5 transition-all duration-300 ${
-                              isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                            }`}
-                          />
-                        </div>
-
-                        <span className="text-white text-[15px] xl:text-[17px] font-normal font-sans leading-[24px] xl:leading-[26px]">
-                          {item.title}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Bottom Right Decorative Pattern */}
-              <img
-                src="/Solution_page/solution_problem_bg_pattern.webp"
-                alt=""
-                className="absolute bottom-0 right-0 pointer-events-none z-0 mix-blend-screen opacity-40 select-none w-auto h-auto max-h-[70%]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mobile / Tablet Interactive View (Click/autoplay to swap tabs) */}
-      <section className="relative w-full bg-[#01031c] py-8 lg:hidden">
-        <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-8">
-          <div className="w-full flex flex-col items-start justify-start">
-            {/* Section Tag */}
-            <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
-              [the problem]
-            </div>
-
-            {/* Heading Block */}
-            <div className="flex flex-col items-start justify-start mt-1">
-              <h2 className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-3xl md:text-4xl font-black leading-tight tracking-[0.264px]">
-                AI Demos Are Easy
-              </h2>
-              <h3 className="text-[#CACBDB] text-2xl md:text-[34px] font-light leading-normal">
-                Production AI Is Not
-              </h3>
-            </div>
-          </div>
-
-          {/* Interactive Card */}
-          <div
-            style={{
-              background:
-                "linear-gradient(225deg, #0F1034 24.88%, #2C2F9A 187.87%)",
-            }}
-            className="w-full p-5 border border-black rounded-2xl flex flex-col gap-6 overflow-hidden relative"
-          >
-            {/* Problem Details */}
-            <div className="w-full flex flex-col justify-center gap-4 relative z-10">
-              <Motion.div
-                key={activeIdx}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="flex flex-col gap-4"
-              >
-                <div className="text-[#E7E6FC] text-[20px] font-extrabold font-sans leading-snug">
-                  {problemItems[activeIdx].title}
-                </div>
-                <div className="self-stretch h-px bg-linear-to-r from-amber-500 to-transparent" />
-                <p className="text-[#CACBDB] text-[15px] font-normal font-sans leading-relaxed opacity-85">
-                  {problemItems[activeIdx].desc}
+              {/* Bottom part: Text stack */}
+              <div className="flex flex-col gap-3 relative z-10 w-full text-left mt-auto">
+                <h4 className="text-white text-[18px] font-bold leading-tight">
+                  {item.title}
+                </h4>
+                <p className="text-[#CACBDB] text-[13.5px] font-normal leading-relaxed opacity-60 group-hover:opacity-85 transition-opacity duration-300">
+                  {item.desc}
                 </p>
-              </Motion.div>
-            </div>
-
-            {/* Problem list */}
-            <div className="w-full flex flex-col justify-start items-start gap-4 relative z-10">
-              <div className="text-white text-[16px] md:text-[18px] font-normal font-sans leading-[24px]">
-                The challenges we see inside most organizations
               </div>
-
-              <div className="w-full flex flex-col gap-3">
-                {problemItems.map((item, idx) => {
-                  const isActive = idx === activeIdx;
-                  return (
-                    <div
-                      key={idx}
-                      onClick={() => setActiveIdx(idx)}
-                      className={`w-full rounded-[8px] flex items-center gap-[16px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 ${
-                        isActive
-                          ? "bg-[#26274A] opacity-100"
-                          : "bg-transparent opacity-50 hover:opacity-85"
-                      }`}
-                    >
-                      {/* Checkmark Circle */}
-                      <div
-                        className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isActive
-                            ? "border border-[#FCCA71] bg-[#FCCA71]/5 shadow-[0_0_6px_rgba(252,202,113,0.2)]"
-                            : "border border-[#877BF1] bg-transparent"
-                        }`}
-                      >
-                        <img
-                          src="/Solution_page/solution_problem_tick.svg"
-                          alt="Tick"
-                          className={`w-3.5 h-3.5 transition-all duration-300 ${
-                            isActive ? "scale-100 opacity-100" : "scale-90 opacity-40"
-                          }`}
-                        />
-                      </div>
-
-                      {/* Text */}
-                      <span className="text-white text-[14px] md:text-[16px] font-normal font-sans leading-[22px]">
-                        {item.title}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Bottom Right Decorative Pattern */}
-            <img
-              src="/Solution_page/solution_problem_bg_pattern.webp"
-              alt=""
-              className="absolute bottom-0 right-0 pointer-events-none z-0 mix-blend-screen opacity-30 select-none w-[120px] h-auto"
-            />
-          </div>
+            </Motion.div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

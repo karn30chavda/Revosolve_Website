@@ -29,7 +29,7 @@ const faqData = [
 ];
 
 const GenAIFAQ = () => {
-  const [openIdx, setOpenIdx] = useState(0);
+  const [openIdx, setOpenIdx] = useState(-1);
 
   return (
     <section className="relative w-full bg-[#01031c] pt-2 pb-8 lg:pt-4 lg:pb-12 overflow-hidden">

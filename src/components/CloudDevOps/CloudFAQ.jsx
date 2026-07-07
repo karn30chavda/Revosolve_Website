@@ -29,7 +29,7 @@ const faqData = [
 ];
 
 const CloudFAQ = () => {
-  const [openIdx, setOpenIdx] = useState(0);
+  const [openIdx, setOpenIdx] = useState(-1);
 
   return (
     <section className="relative w-full bg-[#01031c] pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden z-20">

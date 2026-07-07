@@ -1,54 +1,80 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
+import {
+  Bank,
+  CurrencyCircleDollar,
+  Umbrella,
+  Heartbeat,
+  ShoppingCart,
+  Briefcase,
+} from "@phosphor-icons/react";
 
 const industriesData = [
   {
     title: "Government & Public Sector",
     desc: "Citizen services, document processing, workflow automation, digital governance, and AI-assisted decision support.",
+    icon: <Bank size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Banking & Financial Institutions",
     desc: "AI-powered support, KYC/KYB automation, fraud detection support, document processing, and compliance workflows.",
+    icon: <CurrencyCircleDollar size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Insurance",
     desc: "Claims processing, customer service automation, document intelligence, underwriting assistance, and policy management.",
+    icon: <Umbrella size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Healthcare",
     desc: "Clinical documentation, healthcare operations, knowledge management, patient communication, and workflow automation.",
+    icon: <Heartbeat size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Retail, D2C & Commerce",
     desc: "Customer support automation, product discovery, inventory assistance, sales intelligence, and commerce operations.",
+    icon: <ShoppingCart size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Enterprise Organizations",
     desc: "Knowledge management, employee assistants, workflow automation, and AI-powered operational intelligence.",
+    icon: <Briefcase size={26} className="text-[#FCCA71]" weight="light" />,
   },
 ];
 
 const GenAIIndustries = () => {
   return (
-    <section className="relative w-full bg-[#01031c] pt-2 pb-8 lg:pt-4 lg:pb-12 overflow-hidden">
-      <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />
+    <section 
+      style={{ backgroundColor: "rgba(29, 30, 50, 1)" }}
+      className="relative w-full pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden z-20 font-sans"
+    >
+      {/* Background Glows */}
+      <div className="absolute top-[40%] right-[-10%] w-[50%] h-[50%] bg-[#877BF1]/3 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/2 rounded-full blur-[120px] pointer-events-none z-0" />
 
-      <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-12">
+      <div className="relative z-10 w-[85%] mx-auto flex flex-col items-start justify-start gap-12">
+        
         {/* Section Header */}
-        <div className="w-full flex flex-col items-start justify-start pb-2">
-          <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
-            [industries]
+        <div className="w-full flex flex-col items-start justify-start pb-4">
+          {/* Section Tag */}
+          <div className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4">
+            [industries we serve]
           </div>
 
-          <div className="flex flex-col items-start justify-start font-sans">
-            <h2 className="text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px] flex flex-wrap items-baseline gap-x-3">
-              <span className="text-[#CACBDB] font-light xl:font-thin">Where</span>
+          {/* Heading Block */}
+          <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight text-left font-sans">
+            <span className="block font-black">
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
-                Enterprise AI
+                Applied AI
+              </span>{" "}
+              <span className="text-[#CACBDB] font-light xl:font-thin">
+                across regulated,
               </span>
-              <span className="text-[#CACBDB] font-light xl:font-thin">Delivers</span>
-            </h2>
-          </div>
+            </span>
+            <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
+              complex sectors
+            </span>
+          </h2>
         </div>
 
         {/* Industries Grid */}
@@ -59,27 +85,36 @@ const GenAIIndustries = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              whileHover={{
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              whileHover={{ 
                 scale: 1.015,
-                backgroundColor: "rgba(167, 139, 250, 0.12)",
-                borderColor: "rgba(99, 102, 241, 0.7)",
+                backgroundColor: "rgba(38, 40, 66, 1)",
+                borderColor: "rgba(95, 95, 255, 1)"
               }}
-              className="flex flex-col justify-start items-start p-8 min-h-[190px] w-full bg-violet-400/10 rounded-[8px] border border-indigo-500/30 hover:border-indigo-500/60 cursor-pointer transition-all duration-300 relative group overflow-hidden"
+              style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
+              className="flex flex-row justify-start items-start p-6 min-h-[160px] w-full rounded-[8px] border-2 cursor-pointer transition-all duration-300 relative group overflow-hidden gap-5"
             >
-              <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none" />
+              {/* Radial Glow on Hover */}
+              <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
 
-              <div className="flex-1 flex flex-col justify-start items-start w-full gap-3 relative z-10">
-                <h4 className="text-[#E7E6FC] text-[20px] font-semibold font-sans leading-[28px] text-left group-hover:text-white transition-colors duration-300">
+              {/* Icon Container */}
+              <div className="w-8 h-8 flex items-center justify-start shrink-0 relative z-10">
+                {item.icon}
+              </div>
+
+              {/* Text Block */}
+              <div className="flex-1 flex flex-col justify-start items-start w-full gap-2 relative z-10">
+                <h4 className="text-[#E7E6FC] text-base md:text-[18px] font-semibold font-sans leading-snug text-left group-hover:text-white transition-colors duration-300">
                   {item.title}
                 </h4>
-                <p className="text-[#AAA9BE] text-[14px] font-normal font-sans leading-[22px] text-left">
+                <p className="text-[#AAA9BE] text-[13px] md:text-[14px] font-normal font-sans leading-relaxed text-left opacity-80">
                   {item.desc}
                 </p>
               </div>
             </Motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

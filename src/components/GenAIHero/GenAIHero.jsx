@@ -1,174 +1,301 @@
-import React from "react";
-import { motion as Motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-const orbitItems = [
-  { label: "AI Agents", angle: 0 },
-  { label: "RAG", angle: 60 },
-  { label: "Voice AI", angle: 120 },
-  { label: "LLM Apps", angle: 180 },
-  { label: "Workflows", angle: 240 },
-  { label: "Doc Intelligence", angle: 300 },
-];
+import { motion as Motion } from "framer-motion";
+import { Cpu, Sparkle, ShieldCheck, Database, UserCheck } from "@phosphor-icons/react";
 
 const GenAIHero = () => {
   const navigate = useNavigate();
+  const [step, setStep] = useState(0);
+
+  // Animation cycle for the agent terminal simulation
+  useEffect(() => {
+    let timer;
+    if (step === 0) {
+      timer = setTimeout(() => setStep(1), 1200); // User bubble appears
+    } else if (step === 1) {
+      timer = setTimeout(() => setStep(2), 1400); // Query status appears
+    } else if (step === 2) {
+      timer = setTimeout(() => setStep(3), 1000); // Thinking dots appear
+    } else if (step === 3) {
+      timer = setTimeout(() => setStep(4), 1200); // Agent response appears
+    } else if (step === 4) {
+      timer = setTimeout(() => setStep(5), 6000); // Complete rest state (with loader dots)
+    } else if (step === 5) {
+      timer = setTimeout(() => setStep(0), 1500); // Reset
+    }
+    return () => clearTimeout(timer);
+  }, [step]);
+
+  const handleScrollDown = () => {
+    const target = document.getElementById("genai-what-we-do");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
-    <section className="relative w-full h-dvh lg:min-h-0 lg:h-screen overflow-x-hidden flex flex-col items-center justify-center pt-0 lg:pt-20 bg-[#01031c] font-sans">
-      {/* Background Atmosphere Elements */}
-      <div
+    <section className="relative w-full min-h-[90vh] min-[1290px]:h-screen flex flex-col min-[1290px]:flex-row items-center justify-center min-[1290px]:justify-start pt-24 min-[1290px]:pt-10 z-10 bg-[#01031c] overflow-hidden">
+      
+      {/* Background Atmosphere Gradients */}
+      <div 
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           background: `
-            radial-gradient(circle at 10% 20%, rgba(29, 31, 76, 0.9) 0%, transparent 50%),
-            radial-gradient(circle at 85% 50%, rgba(25, 26, 62, 0.9) 0%, transparent 50%)
-          `,
+            radial-gradient(circle at 10% 80%, rgba(29, 31, 76, 0.8) 0%, transparent 60%),
+            radial-gradient(circle at 90% 20%, rgba(135, 123, 241, 0.1) 0%, transparent 50%)
+          `
         }}
       />
-
-      {/* Decorative Glow Spots */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#877BF1]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] bg-[#FCCA71]/5 rounded-full blur-[130px] pointer-events-none" />
+      
+      {/* Subtle Glow Spots */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Main Content Layout */}
-      <div className="relative z-30 w-[85%] mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4 xl:gap-2">
-        {/* Left Column: Text & CTA */}
-        <Motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center lg:justify-start lg:items-start text-center lg:text-left gap-4 lg:gap-6 w-full lg:max-w-[540px] xl:max-w-[700px] lg:flex-1"
-        >
-          <div className="inline-flex flex-col items-center lg:justify-start lg:items-start gap-3 lg:gap-2 w-full">
-            {/* Desktop Original Pill */}
-            <div className="hidden lg:block opacity-30 justify-start">
-              <span className="text-white text-lg font-normal font-sans tracking-tight">[</span>
-              <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">services</span>
-              <span className="text-white text-lg font-normal font-sans tracking-tight">]</span>
-            </div>
-
-            {/* Mobile Styled Glassmorphic Badge */}
-            <div className="flex lg:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-              <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-                services
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3 lg:gap-6 w-full">
-              <div className="flex flex-col items-center lg:justify-start lg:items-start w-full">
-                <div className="max-w-full lg:w-auto lg:whitespace-nowrap justify-start bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[26px] sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
-                  Generative AI Systems
-                </div>
-                <div className="max-w-full lg:w-auto justify-start text-white text-[26px] sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
-                  Engineered for Real <br className="hidden sm:inline" />
-                  Business Operations
-                </div>
-              </div>
-
-              <p className="max-w-full lg:max-w-[480px] xl:max-w-[553px] opacity-60 justify-start text-[#FBFBFF] text-sm sm:text-base xl:text-[18px] font-normal font-sans leading-relaxed lg:leading-normal">
-                We build production-ready AI agents, conversational platforms,
-                document intelligence, and knowledge systems that integrate
-                with your enterprise workflows — secure, governed, and designed
-                to move beyond proof of concept into daily operations
-              </p>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <button
-            onClick={() =>
-              navigate("/connect", {
-                state: {
-                  category: "Services/Solution",
-                  service: "Generative AI Systems",
-                },
-              })
-            }
-            className="h-[46px] lg:h-[56px] py-[8px] lg:py-[10px] px-[24px] lg:px-[35px] rounded-[8px] border-2 border-[rgba(91,98,191,0.37)] backdrop-blur-[2px] flex justify-center items-center gap-[12px] lg:gap-[22px] bg-transparent cursor-pointer transition-all duration-300 hover:bg-white/5 active:scale-95 shrink-0"
-          >
-            <span className="text-white text-center font-sans text-[14px] lg:text-[16px] font-medium leading-[20px] lg:leading-[24px] tracking-[-0.312px]">
-              Build Your AI System
+      <div className="w-full flex flex-col min-[1290px]:flex-row items-center justify-start pl-[5%] md:pl-[7.5%] pr-[5%] min-[1290px]:pr-[44vw] py-6 min-[1290px]:py-12 z-20 relative bg-transparent gap-10 min-[1290px]:gap-0">
+        
+        {/* Left Column: Copy & Actions */}
+        <div className="flex flex-col items-center min-[1290px]:items-start text-center min-[1290px]:text-left gap-3 min-[1290px]:gap-4 w-full min-[1290px]:max-w-[680px] xl:max-w-[800px] min-[1290px]:flex-1 z-30 relative min-[1290px]:min-h-[380px] xl:min-h-[440px] justify-center">
+          
+          {/* Desktop Original Pill */}
+          <div className="hidden min-[1290px]:block opacity-30 justify-start mb-1">
+            <span className="text-white text-lg font-normal font-sans tracking-tight">
+              [
             </span>
-            <img
-              src="/Solution_page/solution_hero_arrow.svg"
-              alt="Arrow"
-              className="w-[12px] lg:w-[14px] h-[8px] lg:h-[10px] shrink-0"
-            />
-          </button>
-        </Motion.div>
+            <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
+              services
+            </span>
+            <span className="text-white text-lg font-normal font-sans tracking-tight">
+              ]
+            </span>
+          </div>
 
-        {/* Right Column: Orbiting AI Capability Visual (pure CSS, no assets) */}
-        <Motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
-          className="hidden md:flex items-center justify-center shrink-0 relative lg:-translate-y-4"
-        >
-          <div className="absolute inset-0 bg-[#877BF1]/10 rounded-full blur-[60px] pointer-events-none" />
-          <div className="relative w-[300px] h-[300px] lg:w-[340px] lg:h-[340px] xl:w-[440px] xl:h-[440px]">
-            {/* Orbit rings */}
-            <div className="absolute inset-0 rounded-full border border-[#877BF1]/20" />
-            <div className="absolute inset-[18%] rounded-full border border-[#877BF1]/15" />
-            <div className="absolute inset-[36%] rounded-full border border-[#FCCA71]/15" />
+          {/* Mobile Styled Glassmorphic Services Badge */}
+          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1 w-fit mx-auto">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
+            <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
+              services
+            </span>
+          </div>
 
-            {/* Center core */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-[120px] h-[120px] xl:w-[150px] xl:h-[150px] rounded-full border border-[rgba(91,98,191,0.5)] bg-[#0F1034] shadow-[0_0_60px_rgba(135,123,241,0.35)]">
-              <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[20px] xl:text-[26px] font-black font-sans">
-                AI
+          {/* Heading */}
+          <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full">
+            <h1 className="max-w-full justify-start text-white text-[24px] sm:text-[32px] md:text-4xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px] pb-1">
+              Transforming institutional workflows through{" "}
+              <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
+                applied AI
               </span>
-              <span className="text-white/50 text-[9px] xl:text-[10px] font-sans uppercase tracking-widest mt-1">
-                Core System
+            </h1>
+          </div>
+
+          {/* Description Paragraphs */}
+          <div className="flex flex-col gap-3 max-w-full min-[1290px]:max-w-[620px] xl:max-w-[720px] opacity-75 text-[#FBFBFF] text-[13px] sm:text-[15px] xl:text-[17px] font-normal font-sans leading-relaxed min-[1290px]:leading-normal mt-2 mb-3">
+            <p className="font-semibold text-white/95 text-[14px] sm:text-[16px] xl:text-[18px]">
+              Artificial Intelligence delivers measurable value only when it becomes part of how an organization operates.
+              From AI Agents and Document Intelligence to Conversational AI and Enterprise Knowledge Systems – we engineer AI that moves beyond experimentation into production-ready operational systems.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 min-[1290px]:gap-6 items-center justify-center min-[1290px]:justify-start shrink-0 relative w-full mt-6 mb-4">
+            
+            {/* Primary Button (Standard Website Theme Style) */}
+            <button
+              onClick={() =>
+                navigate("/connect", {
+                  state: {
+                    category: "Services/Solution",
+                    service: "Generative AI Systems",
+                  },
+                })
+              }
+              className="btn-premium-glow min-w-[280px] max-w-full px-6 h-12 min-[1290px]:h-14 rounded-sm flex items-center justify-center gap-3 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+            >
+              <span className="relative z-10 text-center text-[14px] min-[1290px]:text-lg font-sans font-semibold tracking-tight whitespace-nowrap">
+                Build Your AI System
               </span>
+              <img
+                className="relative z-10 shrink-0 w-4 h-4 min-[1290px]:w-5 min-[1290px]:h-5 group-hover:translate-x-1.5 transition-transform duration-300"
+                src="/hero_section/icon_2.svg"
+                alt=""
+              />
+            </button>
+
+            {/* Secondary Button (Standard Website Theme Style) */}
+            <button
+              onClick={() =>
+                navigate("/connect", {
+                  state: {
+                    category: "Services/Solution",
+                    service: "Generative AI Systems",
+                  },
+                })
+              }
+              className="min-w-[280px] max-w-full px-6 h-12 min-[1290px]:h-14 rounded-md border-2 border-white/20 flex items-center justify-center gap-4 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+            >
+              <span className="text-white text-center text-[14px] min-[1290px]:text-lg font-semibold tracking-tight whitespace-nowrap">
+                Talk to an AI Solutions Architect
+              </span>
+              <img
+                className="shrink-0 w-3 h-3 min-[1290px]:w-3.5 min-[1290px]:h-3.5 group-hover:translate-x-1 transition-transform"
+                src="/hero_section/icon_3.svg"
+                alt=""
+              />
+            </button>
+          </div>
+
+          {/* Sub-features / Chips (Standard Website Theme Separators) */}
+          <div className="flex flex-row flex-wrap justify-center min-[1290px]:justify-start items-center gap-x-6 gap-y-2 opacity-60 text-[#fbfbff] text-[11px] min-[1290px]:text-[13px] font-semibold font-sans uppercase tracking-widest mt-2">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
+              Production-Ready
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
+              Governed & Explainable
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
+              RAG
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
+              Agents
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
+              Voice
+            </span>
+          </div>
+
+        </div>
+
+        {/* Right Column: Animated RevoSolve Agent Chat Simulation (Themed) */}
+        <div className="flex flex-col justify-center items-center pointer-events-auto w-full mt-8 min-[1290px]:mt-0 min-[1290px]:w-[38vw] min-[1290px]:absolute min-[1290px]:right-[4%] min-[1290px]:top-1/2 min-[1290px]:-translate-y-1/2 z-20 mb-16 min-[1290px]:mb-0">
+          
+          <Motion.div 
+            initial={{ opacity: 0, y: 25, scale: 0.98 }} 
+            animate={{ opacity: 1, y: 0, scale: 1 }} 
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[500px] xl:max-w-[540px] rounded-xl border border-[rgba(135,123,241,0.25)] bg-[#0A0B28] shadow-[0_24px_60px_rgba(0,0,0,0.55)] overflow-hidden"
+          >
+            {/* Terminal Header */}
+            <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-[rgba(135,123,241,0.18)] bg-[#0A0B28]">
+              <div className="flex items-center gap-2.5">
+                <Cpu size={18} className="text-[#877BF1]" />
+                <span className="font-mono text-[10px] sm:text-[11px] tracking-wider text-[#CACBDB] font-semibold">
+                  REVOSOLVE_AGENT
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#39ff14] animate-pulse shadow-[0_0_8px_#39ff14]" />
+                <span className="font-mono text-[9px] sm:text-[10px] tracking-widest text-[#5C5F85] uppercase font-bold">
+                  ONLINE
+                </span>
+              </div>
             </div>
 
-            {/* Rotating orbit layer */}
-            <Motion.div
-              className="absolute inset-0"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-            >
-              {orbitItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="absolute top-1/2 left-1/2"
-                  style={{
-                    transform: `rotate(${item.angle}deg) translateX(min(150px, 34vw)) rotate(-${item.angle}deg)`,
-                  }}
+            {/* Chat Body Container */}
+            <div className="p-4 sm:p-6 flex flex-col gap-5 min-h-[260px] sm:min-h-[290px] justify-start font-sans">
+              
+              {/* User Bubble (State >= 1) */}
+              {step >= 1 && (
+                <Motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="self-end max-w-[85%] bg-[rgba(135,123,241,0.16)] border border-[rgba(135,123,241,0.45)] rounded-2xl rounded-tr-sm px-4 py-3 text-right"
                 >
-                  <Motion.div
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                    className="-translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-[#0F1034]/90 border border-[#877BF1]/40 px-3 py-1.5 backdrop-blur-sm"
-                  >
-                    <span className="text-[#E7E6FC] text-[10px] xl:text-[11px] font-medium font-sans tracking-wide">
-                      {item.label}
-                    </span>
-                  </Motion.div>
+                  <p className="text-[#E7E8F4] text-[13px] sm:text-[14px] leading-relaxed">
+                    Summarize today's claims backlog and flag anything urgent.
+                  </p>
+                </Motion.div>
+              )}
+
+              {/* Status Query Log (State >= 2) */}
+              {step >= 2 && (
+                <Motion.div
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="flex items-center gap-2 text-[#A9A0F5] font-mono text-[10px] sm:text-[11px] px-3.5 py-1.5 rounded-full border border-[rgba(135,123,241,0.2)] bg-[#0A0B28] w-fit shadow-inner"
+                >
+                  <Sparkle size={13} className="animate-spin-slow text-[#877BF1]" />
+                  <span>querying claims system · 214 records</span>
+                </Motion.div>
+              )}
+
+              {/* Loader pulsing dots (State == 3 or 5) */}
+              {(step === 3 || step === 5) && (
+                <div className="flex gap-1 pl-4 items-center h-6">
+                  <span className="w-1.5 h-1.5 bg-[#877BF1] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="w-1.5 h-1.5 bg-[#877BF1] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="w-1.5 h-1.5 bg-[#877BF1] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </div>
-              ))}
-            </Motion.div>
-          </div>
-        </Motion.div>
+              )}
+
+              {/* Agent Response Bubble (State >= 4) */}
+              {step >= 4 && (
+                <Motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="self-start max-w-[90%] bg-white/5 border border-white/10 rounded-2xl rounded-tl-sm px-4 py-3"
+                >
+                  <p className="text-[#E2E4E9] text-[13px] sm:text-[14px] leading-relaxed text-left">
+                    <strong className="text-[#FCCA71] font-semibold">214 open claims</strong> — <span className="text-[#A9A0F5]">12 flagged urgent</span> (SLA &lt; 4h). Drafted responses for 38 routine cases, routed 6 to underwriting review.
+                  </p>
+                </Motion.div>
+              )}
+
+            </div>
+
+            {/* Terminal Footer Info */}
+            <div className="border-t border-[rgba(135,123,241,0.18)] px-4 sm:px-6 py-3 bg-[#0A0B28]/60 flex items-center justify-between text-[#8F92B8] font-mono text-[9px] sm:text-[10px] tracking-wider uppercase font-semibold">
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck size={14} className="text-[#A9A0F5]" />
+                <span>Governed</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Database size={14} className="text-[#A9A0F5]" />
+                <span>RAG-Grounded</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <UserCheck size={14} className="text-[#A9A0F5]" />
+                <span>Human-In-Loop</span>
+              </div>
+            </div>
+
+          </Motion.div>
+          
+        </div>
+
       </div>
 
-      {/* Scroll Down Arrow */}
-      <div className="absolute bottom-8 lg:bottom-12 left-0 right-0 w-full flex justify-center z-40">
+      {/* Scroll Arrow - Bottom Center (Desktop & Mobile) */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
         <img
-          onClick={() => {
-            const target = document.getElementById("genai-content");
-            if (target) {
-              const rect = target.getBoundingClientRect();
-              const scrollTop = window.scrollY || document.documentElement.scrollTop;
-              window.scrollTo({ top: scrollTop + rect.top - 50, behavior: "smooth" });
-            }
-          }}
+          onClick={handleScrollDown}
           src="/hero_section/arrow_icon.svg"
-          className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-opacity cursor-pointer animate-bounce"
+          className="w-5.5 h-4.5 sm:w-6.5 sm:h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
           alt="Scroll down"
         />
       </div>
+
+      {/* Atmospheric Transition Gradient */}
+      <div className="absolute -bottom-2 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-1/2">
+        <img
+          src="/hero_section/gradient.png"
+          className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
+          alt=""
+        />
+      </div>
+      
     </section>
   );
 };

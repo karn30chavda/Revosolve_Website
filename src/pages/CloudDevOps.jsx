@@ -7,7 +7,7 @@ import CloudMethod from "../components/CloudDevOps/CloudMethod";
 import CloudTechStack from "../components/CloudDevOps/CloudTechStack";
 import CloudIndustries from "../components/CloudDevOps/CloudIndustries";
 import CloudWhyRevoSolve from "../components/CloudDevOps/CloudWhyRevoSolve";
-import CloudRelatedSolutions from "../components/CloudDevOps/CloudRelatedSolutions";
+// import CloudRelatedSolutions from "../components/CloudDevOps/CloudRelatedSolutions";
 import CloudFAQ from "../components/CloudDevOps/CloudFAQ";
 import CloudCTA from "../components/CloudDevOps/CloudCTA";
 
@@ -28,7 +28,7 @@ const CloudDevOps = () => {
       <CloudTechStack />
       <CloudIndustries />
       <CloudWhyRevoSolve />
-      <CloudRelatedSolutions />
+      {/* <CloudRelatedSolutions /> */}
       <CloudFAQ />
       <CloudCTA />
     </div>

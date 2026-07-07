@@ -1,5 +1,6 @@
 import React from "react";
 import GenAIHero from "../components/GenAIHero/GenAIHero";
+import GenAIWhatWeDo from "../components/GenAIWhatWeDo/GenAIWhatWeDo";
 import GenAIProblems from "../components/GenAIProblems/GenAIProblems";
 import GenAISystems from "../components/GenAISystems/GenAISystems";
 import GenAIMethod from "../components/GenAIMethod/GenAIMethod";
@@ -17,6 +18,7 @@ const AiIntelligentSystems = () => {
 
       {/* Page Sections */}
       <div id="genai-content" className="w-full relative z-10">
+        <GenAIWhatWeDo />
         <GenAIProblems />
         <GenAISystems />
         <GenAIMethod />

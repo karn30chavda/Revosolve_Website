@@ -6,8 +6,7 @@ import {
   TreeStructure,
   ArrowsOut,
   ShieldWarning,
-  EyeSlash,
-  TrendUp,
+  EyeSlash  
 } from "@phosphor-icons/react";
 
 const problemsList = [
@@ -40,12 +39,7 @@ const problemsList = [
     title: "Limited Operational Visibility",
     desc: "Lack of centralized monitoring makes identifying and resolving issues time-consuming.",
     icon: <EyeSlash size={28} className="text-[#877BF1]" weight="light" />,
-  },
-  {
-    title: "Rising Cloud Costs",
-    desc: "Unoptimized cloud resources result in unnecessary infrastructure spending.",
-    icon: <TrendUp size={28} className="text-[#877BF1]" weight="light" />,
-  },
+  }
 ];
 
 const CloudProblemsWeSolve = () => {
