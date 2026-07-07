@@ -11,6 +11,7 @@ import Careers from "./pages/Careers";
 import ComingSoon from "./pages/ComingSoon";
 import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
 import CloudDevOps from "./pages/CloudDevOps";
+import CloudInfrastructureDevOps from "./pages/cloudInfradevops";
 import AiIntelligentSystems from "./pages/AiIntelligentSystems";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/solutions/document-intelligence-systems" element={<DocumentIntelligenceSystems />} />
           <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
           <Route path="/services/cloud-and-devops" element={<CloudDevOps />} />
+          <Route path="/services/cloud-infrastructure-devops" element={<CloudInfrastructureDevOps />} />
           <Route path="/services/ai-intelligent-systems" element={<AiIntelligentSystems />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />

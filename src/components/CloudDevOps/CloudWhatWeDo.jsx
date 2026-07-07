@@ -23,22 +23,25 @@ const CloudWhatWeDo = () => {
             <span className="text-white/30 text-[10px] sm:text-xs uppercase tracking-[3px] mb-5 font-sans select-none font-semibold">
               [WHAT]
             </span>
-            <h3 className="text-3xl md:text-[38px] xl:text-[44px] font-black leading-tight tracking-[0.264px] mb-2 font-sans">
-              <span className="text-[#877BF1]">The </span>
-              <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">Future</span>
+            <h3 className="text-3xl md:text-[38px] xl:text-[44px] leading-tight tracking-[0.264px] mb-2 font-sans">
+              <span className="font-black text-[#877BF1]">Engineering </span>
+              <span className="font-black bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">Cloud Platforms </span>
+              <span className="font-thin text-[#E7E6FC] opacity-70">
+                that enable business growth
+              </span>
             </h3>
-            <h4 className="text-2xl md:text-3xl xl:text-[36px] font-thin text-[#E7E6FC] font-sans opacity-70">
-              Digital Foundations
-            </h4>
           </div>
 
           {/* Right Column: Paragraph Description Blocks */}
           <div className="w-full lg:w-[55%] px-6 pb-8 pt-4 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-center items-start gap-4 md:gap-6 lg:gap-8 text-left relative z-10">
             {/* Top paragraph: Bold white */}
             <p className="text-white text-sm md:text-lg xl:text-[20px] font-medium leading-relaxed font-sans">
-              We help organizations modernize infrastructure, automate deployments, improve operational resilience, and accelerate software delivery through cloud engineering and DevOps practices.
+              Cloud adoption is no longer simply about migration. Organizations need secure, scalable, automated environments that accelerate innovation, simplify operations, and improve business continuity.
             </p>
-
+            {/* Bottom paragraph: slightly muted */}
+            <p className="text-[#E7E6FC]/70 text-sm md:text-base leading-relaxed font-sans">
+              We combine cloud engineering, DevOps automation, infrastructure as code, observability, security, and continuous delivery – so you focus on business outcomes instead of infrastructure complexity.
+            </p>
           </div>
 
           {/* Subtle Background pattern overlay on the right column */}
