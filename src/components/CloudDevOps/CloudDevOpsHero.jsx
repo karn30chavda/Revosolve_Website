@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import { Hammer, Flask, RocketLaunch, Pulse } from "@phosphor-icons/react";
@@ -22,21 +22,30 @@ const PipeStage = (props) => {
   );
 };
 
-const PipeFlow = ({ delay = 0 }) => (
-  <div className="relative w-[12px] sm:w-[34px] h-px shrink-0 bg-[rgba(135,123,241,0.25)]">
-    <span 
-      className="absolute -top-[2px] sm:-top-[3px] w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-[#877BF1]"
-      style={{
-        boxShadow: "0 0 8px #877BF1",
-        animation: "cidFlowX 2.4s linear infinite",
-        animationDelay: `${delay}s`
-      }} 
-    />
+const PipeFlow = ({ active }) => (
+  <div className="relative w-[12px] sm:w-[34px] h-[1.5px] shrink-0 bg-[rgba(135,123,241,0.5)]">
+    {active && (
+      <span 
+        className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#FCCA71]"
+        style={{
+          boxShadow: "0 0 8px #FCCA71",
+          animation: "cidFlowX 3s linear forwards"
+        }} 
+      />
+    )}
   </div>
 );
 
 const CloudDevOpsHero = ({ scrollToNextSection }) => {
   const navigate = useNavigate();
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % 4);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleScrollDown = () => {
     if (scrollToNextSection) {
@@ -221,13 +230,13 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
             className="flex items-center justify-center w-full overflow-x-auto no-scrollbar py-2"
           >
             <div className="flex items-center mx-auto">
-              <PipeStage icon={Hammer} label="Build" />
-              <PipeFlow />
-              <PipeStage icon={Flask} label="Test" />
-              <PipeFlow delay={0.6} />
-              <PipeStage icon={RocketLaunch} label="Deploy" active />
-              <PipeFlow delay={1.2} />
-              <PipeStage icon={Pulse} label="Monitor" />
+              <PipeStage icon={Hammer} label="Build" active={activeIdx === 0} />
+              <PipeFlow active={activeIdx === 0} />
+              <PipeStage icon={Flask} label="Test" active={activeIdx === 1} />
+              <PipeFlow active={activeIdx === 1} />
+              <PipeStage icon={RocketLaunch} label="Deploy" active={activeIdx === 2} />
+              <PipeFlow active={activeIdx === 2} />
+              <PipeStage icon={Pulse} label="Monitor" active={activeIdx === 3} />
             </div>
           </Motion.div>
 
