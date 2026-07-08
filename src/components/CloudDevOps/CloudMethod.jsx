@@ -86,7 +86,6 @@ const CloudMethod = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              onMouseEnter={() => setActiveStep(idx)}
               className="flex flex-col justify-start items-start gap-4 relative cursor-pointer group"
             >
               {/* Step number + connector line */}

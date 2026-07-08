@@ -77,8 +77,10 @@ const Footer = () => {
                       ? "/services/enterprise-application-systems"
                       : item === "Cloud and Devops"
                         ? "/services/cloud-and-devops"
-                        : item === "AI & Intelligent Systems"
-                          ? "/services/ai-intelligent-systems"
+                      : item === "AI & Intelligent Systems"
+                        ? "/services/ai-intelligent-systems"
+                        : item === "Data Engineering & Analytics"
+                          ? "/services/data-engineering-analytics"
                           : "/coming-soon"
                   }
                   className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"

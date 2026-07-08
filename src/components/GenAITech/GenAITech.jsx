@@ -189,8 +189,8 @@ const GenAITech = () => {
                 onClick={() => setActiveTab(idx)}
                 className={`px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 border cursor-pointer ${
                   isActive
-                    ? "bg-[#877BF1] border-[#877BF1] text-white shadow-lg shadow-[#877BF1]/25"
-                    : "bg-transparent border-white/10 text-[#AAA9BE] hover:border-white/20 hover:text-white"
+                    ? "bg-[#FCCA71] border-[#FCCA71] text-[#01031c] shadow-lg shadow-[#FCCA71]/25 font-bold"
+                    : "bg-white/5 border-white/10 text-[#AAA9BE] hover:bg-white/10 hover:border-white/20 hover:text-white"
                 }`}
               >
                 {cat.cat}

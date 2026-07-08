@@ -196,6 +196,8 @@ const Navbar = () => {
                                         ? "/services/cloud-and-devops"
                                         : link === "AI & Intelligent Systems"
                                         ? "/services/ai-intelligent-systems"
+                                        : link === "Data Engineering & Data Analytics"
+                                        ? "/services/data-engineering-analytics"
                                         : "/coming-soon")
                                       : "/coming-soon")
                                 }

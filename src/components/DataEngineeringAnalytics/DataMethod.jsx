@@ -2,41 +2,41 @@ import React, { useState, useEffect } from "react";
 import { motion as Motion } from "framer-motion";
 import {
   MagnifyingGlass,
-  PencilRuler,
-  Cpu,
-  Plugs,
+  CompassTool,
+  Code,
+  GitMerge,
   ChartLineUp,
 } from "@phosphor-icons/react";
 
 const methodSteps = [
   {
     title: "Discover",
-    desc: "Understand business objectives, workflows, users, and operational challenges before selecting AI technologies.",
+    desc: "Understand business objectives, workflows, data sources, reporting needs, and governance requirements.",
     icon: MagnifyingGlass,
   },
   {
-    title: "Design",
-    desc: "Define AI architecture, knowledge sources, governance, user experiences, and integration strategy.",
-    icon: PencilRuler,
+    title: "Architect",
+    desc: "Design scalable data architectures, integration frameworks, storage models, and analytics strategies.",
+    icon: CompassTool,
   },
   {
     title: "Engineer",
-    desc: "Develop AI systems using enterprise-grade engineering practices — scalable, secure, maintainable.",
-    icon: Cpu,
+    desc: "Build modern data platforms, pipelines, warehouses, and governance using proven engineering practices.",
+    icon: Code,
   },
   {
     title: "Integrate",
-    desc: "Connect AI with enterprise platforms, business workflows, databases, APIs, and operational systems.",
-    icon: Plugs,
+    desc: "Connect ERP, CRM, finance, IoT, cloud services, and third-party platforms into a unified ecosystem.",
+    icon: GitMerge,
   },
   {
     title: "Optimize",
-    desc: "Continuously improve AI performance through monitoring, evaluation, feedback, retraining, and governance.",
+    desc: "Continuously improve quality, performance, governance, scalability, and analytics as needs evolve.",
     icon: ChartLineUp,
   },
 ];
 
-const GenAIMethod = () => {
+const DataMethod = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
@@ -47,24 +47,23 @@ const GenAIMethod = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#01031c] pt-2 pb-8 lg:pt-4 lg:pb-12 overflow-hidden">
+    <section className="relative w-full bg-[#01031c] pt-8 pb-8 lg:pt-16 lg:pb-20 overflow-hidden z-20">
       <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-10">
         {/* Section Header */}
         <div className="w-full flex flex-col items-start justify-start pb-2">
-          <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
+          <div className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4 select-none">
             [our method]
           </div>
 
           <div className="flex flex-col items-start justify-start font-sans">
-            <h2 className="text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px] flex flex-wrap items-baseline gap-x-3">
-              <span className="text-[#CACBDB] font-light xl:font-thin">From</span>
-              <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
-                Objective to Operation
+            <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight text-left font-sans">
+              <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black inline-block">
+                Engineering data ecosystems
+              </span>
+              <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
+                that scale with your business
               </span>
             </h2>
-            <h3 className="text-[#CACBDB] text-xl md:text-2xl xl:text-[30px] font-light xl:font-thin leading-normal mt-1">
-              A Five-Stage Engineering Discipline
-            </h3>
           </div>
         </div>
 
@@ -77,7 +76,7 @@ const GenAIMethod = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="flex flex-col justify-start items-start gap-4 relative cursor-pointer group"
+              className="flex flex-col justify-start items-start gap-4 relative cursor-pointer group text-left"
             >
               {/* Step number + connector line */}
               <div className="w-full flex items-center gap-3">
@@ -130,4 +129,4 @@ const GenAIMethod = () => {
   );
 };
 
-export default GenAIMethod;
+export default DataMethod;
