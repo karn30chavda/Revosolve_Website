@@ -62,26 +62,7 @@ const GenAIHero = () => {
         {/* Left Column: Copy & Actions */}
         <div className="flex flex-col items-center min-[1290px]:items-start text-center min-[1290px]:text-left gap-3 min-[1290px]:gap-4 w-full min-[1290px]:max-w-[680px] xl:max-w-[800px] min-[1290px]:flex-1 z-30 relative min-[1290px]:min-h-[380px] xl:min-h-[440px] justify-center">
           
-          {/* Desktop Original Pill */}
-          <div className="hidden min-[1290px]:block opacity-30 justify-start mb-1">
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              [
-            </span>
-            <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-              services
-            </span>
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              ]
-            </span>
-          </div>
 
-          {/* Mobile Styled Glassmorphic Services Badge */}
-          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1 w-fit mx-auto">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-            <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-              services
-            </span>
-          </div>
 
           {/* Heading */}
           <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full">
@@ -114,13 +95,13 @@ const GenAIHero = () => {
                   },
                 })
               }
-              className="btn-premium-glow min-w-[280px] max-w-full px-6 h-12 min-[1290px]:h-14 rounded-sm flex items-center justify-center gap-3 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+              className="btn-premium-glow min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
             >
-              <span className="relative z-10 text-center text-[14px] min-[1290px]:text-lg font-sans font-semibold tracking-tight whitespace-nowrap">
+              <span className="relative z-10 text-center text-[13px] min-[1290px]:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                 Build Your AI System
               </span>
               <img
-                className="relative z-10 shrink-0 w-4 h-4 min-[1290px]:w-5 min-[1290px]:h-5 group-hover:translate-x-1.5 transition-transform duration-300"
+                className="relative z-10 shrink-0 w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-300"
                 src="/hero_section/icon_2.svg"
                 alt=""
               />
@@ -136,42 +117,20 @@ const GenAIHero = () => {
                   },
                 })
               }
-              className="min-w-[280px] max-w-full px-6 h-12 min-[1290px]:h-14 rounded-md border-2 border-white/20 flex items-center justify-center gap-4 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+              className="min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
             >
-              <span className="text-white text-center text-[14px] min-[1290px]:text-lg font-semibold tracking-tight whitespace-nowrap">
+              <span className="text-white text-center text-[13px] min-[1290px]:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                 Talk to an AI Solutions Architect
               </span>
               <img
-                className="shrink-0 w-3 h-3 min-[1290px]:w-3.5 min-[1290px]:h-3.5 group-hover:translate-x-1 transition-transform"
+                className="shrink-0 w-3 h-3 group-hover:translate-x-1 transition-transform"
                 src="/hero_section/icon_3.svg"
                 alt=""
               />
             </button>
           </div>
 
-          {/* Sub-features / Chips (Standard Website Theme Separators) */}
-          <div className="flex flex-row flex-wrap justify-center min-[1290px]:justify-start items-center gap-x-6 gap-y-2 opacity-60 text-[#fbfbff] text-[11px] min-[1290px]:text-[13px] font-semibold font-sans uppercase tracking-widest mt-2">
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
-              Production-Ready
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
-              Governed & Explainable
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
-              RAG
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
-              Agents
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1]" />
-              Voice
-            </span>
-          </div>
+
 
         </div>
 

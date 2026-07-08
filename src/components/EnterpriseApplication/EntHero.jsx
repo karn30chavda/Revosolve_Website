@@ -35,26 +35,7 @@ const EntHero = ({ scrollToWhatWeDo }) => {
       <div className="w-full min-[1290px]:w-full flex flex-col min-[1290px]:flex-row items-center justify-start pl-[5%] md:pl-[7.5%] min-[1290px]:pl-[7.5%] pr-[5%] min-[1290px]:pr-12 py-6 min-[1290px]:py-12 z-20 relative bg-transparent">
         {/* Left Column: Copy & Actions */}
         <div className="flex flex-col items-center min-[1290px]:items-start text-center min-[1290px]:text-left gap-3 min-[1290px]:gap-4 w-full min-[1290px]:max-w-[540px] xl:max-w-[700px] min-[1290px]:flex-1 z-30 relative">
-          {/* Desktop Original Pill */}
-          <div className="hidden min-[1290px]:block opacity-30 justify-start mb-1">
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              [
-            </span>
-            <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-              services
-            </span>
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              ]
-            </span>
-          </div>
 
-          {/* Mobile Styled Glassmorphic Services Badge */}
-          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1 w-fit mx-auto">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-            <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-              services
-            </span>
-          </div>
 
           {/* Heading */}
           <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full">

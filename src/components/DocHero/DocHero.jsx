@@ -72,26 +72,7 @@ const DocHero = () => {
           className="flex flex-col items-center min-[1290px]:items-start text-center min-[1290px]:text-left gap-4 min-[1290px]:gap-6 w-full min-[1290px]:max-w-[540px] xl:max-w-[700px] min-[1290px]:flex-1"
         >
           <div className="flex flex-col items-center min-[1290px]:items-start gap-4 w-full">
-            {/* Desktop Original Pill */}
-            <div className="hidden min-[1290px]:block opacity-30 justify-start mb-2">
-              <span className="text-white text-lg font-normal font-sans tracking-tight">
-                [
-              </span>
-              <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-                solutions
-              </span>
-              <span className="text-white text-lg font-normal font-sans tracking-tight">
-                ]
-              </span>
-            </div>
 
-            {/* Mobile Styled Glassmorphic Solutions Badge */}
-            <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1 w-fit mx-auto">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-              <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-                solutions
-              </span>
-            </div>
 
             {/* Main Headline Stack */}
             <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full gap-1">

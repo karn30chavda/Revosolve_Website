@@ -108,9 +108,11 @@ const Footer = () => {
                         ? "/solutions/commerce-operations-systems"
                         : item === "Document Intelligence Systems"
                           ? "/solutions/document-intelligence-systems"
-                          : item === "AI Surveillance Systems"
-                            ? "/services/ai-intelligent-systems"
-                            : "/coming-soon"
+                          : item === "Customer Interaction Systems"
+                            ? "/solutions/customer-interaction-systems"
+                            : item === "AI Surveillance Systems"
+                              ? "/services/ai-intelligent-systems"
+                              : "/coming-soon"
                     }
                     className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
                     style={{ letterSpacing: "-0.00938rem" }}

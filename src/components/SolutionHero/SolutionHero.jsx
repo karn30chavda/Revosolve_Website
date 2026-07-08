@@ -35,20 +35,7 @@ const SolutionHero = () => {
           className="flex flex-col items-center lg:justify-start lg:items-start text-center lg:text-left gap-4 lg:gap-6 w-full lg:max-w-[540px] xl:max-w-[700px] lg:flex-1"
         >
           <div className="inline-flex flex-col items-center lg:justify-start lg:items-start gap-3 lg:gap-2 w-full">
-            {/* Desktop Original Pill */}
-            <div className="hidden lg:block opacity-30 justify-start">
-              <span className="text-white text-lg font-normal font-sans tracking-tight">[</span>
-              <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">solutions</span>
-              <span className="text-white text-lg font-normal font-sans tracking-tight">]</span>
-            </div>
 
-            {/* Mobile Styled Glassmorphic Solutions Badge */}
-            <div className="flex lg:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-              <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-                solutions
-              </span>
-            </div>
             
             <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3 lg:gap-6 w-full">
               <div className="flex flex-col items-center lg:justify-start lg:items-start w-full">

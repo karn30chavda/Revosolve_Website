@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import CommerceOperationsSystems from "./pages/CommerceOperationsSystems";
 import DocumentIntelligenceSystems from "./pages/DocumentIntelligenceSystems";
+import CustomerInteractionSystems from "./pages/CustomerInteractionSystems";
 import Connect from "./pages/Connect";
 import Careers from "./pages/Careers";
 import ComingSoon from "./pages/ComingSoon";
@@ -13,6 +14,7 @@ import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
 import CloudDevOps from "./pages/CloudDevOps";
 import AiIntelligentSystems from "./pages/AiIntelligentSystems";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/solutions/commerce-operations-systems" element={<CommerceOperationsSystems />} />
           <Route path="/solutions/document-intelligence-systems" element={<DocumentIntelligenceSystems />} />
+          <Route path="/solutions/customer-interaction-systems" element={<CustomerInteractionSystems />} />
           <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
           <Route path="/services/cloud-and-devops" element={<CloudDevOps />} />
           <Route path="/services/ai-intelligent-systems" element={<AiIntelligentSystems />} />
