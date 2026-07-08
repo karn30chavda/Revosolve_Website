@@ -1,30 +1,44 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
+import {
+  Strategy,
+  Robot,
+  ShieldCheck,
+  Stack,
+  Infinity as InfinityIcon,
+  Gauge,
+} from "@phosphor-icons/react";
 
 const whyData = [
   {
     title: "Infrastructure Designed Around Business Operations",
     desc: "We engineer cloud platforms that support how organizations actually operate — not generic infrastructure deployments.",
+    icon: Strategy,
   },
   {
     title: "Automation-First Engineering",
     desc: "Infrastructure automation reduces operational overhead while improving consistency and deployment reliability.",
+    icon: Robot,
   },
   {
     title: "Security Embedded by Design",
     desc: "Security is integrated throughout architecture, engineering, and operations rather than added later.",
+    icon: ShieldCheck,
   },
   {
     title: "Enterprise-Ready Architecture",
     desc: "Every cloud platform is designed for scalability, governance, resilience, and long-term operational success.",
+    icon: Stack,
   },
   {
     title: "Long-Term Infrastructure Partnership",
     desc: "We continue optimizing infrastructure long after deployment to support changing business needs.",
+    icon: InfinityIcon,
   },
   {
     title: "Cost & Performance Optimization",
     desc: "Continuous right-sizing, monitoring, and FinOps practices keep cloud spend efficient without sacrificing performance.",
+    icon: Gauge,
   },
 ];
 
@@ -40,7 +54,7 @@ const CloudWhyRevoSolve = () => {
         <div className="w-full flex flex-col items-start justify-start pb-4">
           {/* Eyebrow */}
           <div className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4">
-            [differentiation]
+            [Why RevoSolve]
           </div>
 
           {/* Heading Block */}
@@ -77,11 +91,14 @@ const CloudWhyRevoSolve = () => {
               {/* Card Glow Effect */}
               <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none" />
 
-              {/* Number */}
-              <div className="mb-6 shrink-0 relative z-10">
-                <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[15px] font-black font-sans tracking-widest">
-                  {String(idx + 1).padStart(2, "0")}
-                </span>
+              {/* Icon */}
+              <div className="mb-6 shrink-0 relative z-10 text-[#FCCA71] group-hover:text-white transition-colors duration-300">
+                {item.icon && (
+                  <item.icon
+                    size={28}
+                    weight="light"
+                  />
+                )}
               </div>
 
               {/* Text Content Block */}

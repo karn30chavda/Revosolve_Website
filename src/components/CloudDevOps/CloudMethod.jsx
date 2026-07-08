@@ -1,30 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion as Motion } from "framer-motion";
+import {
+  MagnifyingGlass,
+  CompassTool,
+  Cpu,
+  Plugs,
+  ArrowsClockwise,
+} from "@phosphor-icons/react";
 
 const methodSteps = [
   {
     title: "Discover",
     desc: "Assess existing infrastructure, workloads, business objectives, and operational challenges.",
+    icon: MagnifyingGlass,
   },
   {
     title: "Architect",
     desc: "Design cloud-native architectures optimized for scalability, security, and resilience.",
+    icon: CompassTool,
   },
   {
     title: "Engineer",
     desc: "Implement cloud infrastructure, automation, and DevOps practices using modern engineering standards.",
+    icon: Cpu,
   },
   {
     title: "Integrate",
     desc: "Connect infrastructure with enterprise applications, monitoring systems, identity platforms, and security frameworks.",
+    icon: Plugs,
   },
   {
     title: "Operate & Optimize",
     desc: "Continuously monitor, optimize, secure, and evolve cloud environments to support business growth.",
+    icon: ArrowsClockwise,
   },
 ];
 
 const CloudMethod = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % methodSteps.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative w-full bg-[#01031c] pt-12 pb-8 lg:pt-20 lg:pb-12 overflow-hidden z-20">
       <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-10">
@@ -65,17 +86,40 @@ const CloudMethod = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="flex flex-col justify-start items-start gap-4 relative group"
+              onMouseEnter={() => setActiveStep(idx)}
+              className="flex flex-col justify-start items-start gap-4 relative cursor-pointer group"
             >
               {/* Step number + connector line */}
               <div className="w-full flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border border-[#877BF1] bg-[#877BF1]/5 flex items-center justify-center shrink-0 group-hover:border-[#FCCA71] group-hover:bg-[#FCCA71]/5 group-hover:shadow-[0_0_10px_rgba(252,202,113,0.25)] transition-all duration-300">
-                  <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[15px] font-black font-sans">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
+                <div className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+                  activeStep === idx
+                    ? "border-[#FCCA71] bg-[#FCCA71]/10 shadow-[0_0_10px_rgba(252,202,113,0.25)]"
+                    : "border-[#877BF1]/40 bg-[#877BF1]/5"
+                }`}>
+                  {step.icon && (
+                    <step.icon
+                      size={20}
+                      weight="light"
+                      className={`transition-colors duration-300 ${
+                        activeStep === idx ? "text-[#FCCA71]" : "text-[#877BF1]/60"
+                      }`}
+                    />
+                  )}
                 </div>
                 {idx < methodSteps.length - 1 && (
-                  <div className="hidden lg:block flex-1 h-px bg-linear-to-r from-[#877BF1]/40 to-transparent" />
+                  <div className="hidden lg:block flex-1 h-px bg-[#877BF1]/20 relative overflow-hidden">
+                    {activeStep === idx && (
+                      <Motion.div
+                        initial={{ left: "-100%" }}
+                        animate={{ left: "100%" }}
+                        transition={{
+                          duration: 3,
+                          ease: "linear",
+                        }}
+                        className="absolute top-0 bottom-0 w-[50%] bg-linear-to-r from-transparent via-[#FCCA71]/80 to-transparent"
+                      />
+                    )}
+                  </div>
                 )}
               </div>
 
