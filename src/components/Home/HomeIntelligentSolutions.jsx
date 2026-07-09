@@ -404,7 +404,7 @@ const HomeIntelligentSolutions = () => {
                         } else if (card.category === "Defense & Public Training Systems") {
                           navigate("/solutions/defense-simulation-training-systems");
                         } else if (card.category === "AI Surveillance Systems") {
-                          navigate("/services/ai-intelligent-systems");
+                          navigate("/solutions/ai-surveillance-systems");
                         } else {
                           navigate("/coming-soon");
                         }

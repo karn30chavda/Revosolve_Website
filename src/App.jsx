@@ -15,6 +15,7 @@ import AiIntelligentSystems from "./pages/AiIntelligentSystems";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import DataEngineeringAnalytics from "./pages/DataEngineeringAnalytics";
 import DefenseSimulationTrainingSystems from "./pages/DefenseSimulationTrainingSystems";
+import AiSurveillanceSystems from "./pages/AiSurveillanceSystems";
 
 function App() {
   return (
@@ -47,6 +48,10 @@ function App() {
           <Route
             path="/solutions/defense-simulation-training-systems"
             element={<DefenseSimulationTrainingSystems />}
+          />
+          <Route
+            path="/solutions/ai-surveillance-systems"
+            element={<AiSurveillanceSystems />}
           />
           <Route
             path="/services/enterprise-application-systems"
