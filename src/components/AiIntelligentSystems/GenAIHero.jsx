@@ -102,7 +102,7 @@ const GenAIHero = () => {
               </span>
               <img
                 className="relative z-10 shrink-0 w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-300"
-                src="/hero_section/icon_2.svg"
+                src="/AiIntelligentSystems/hero_btn_icon_1.svg"
                 alt=""
               />
             </button>
@@ -124,7 +124,7 @@ const GenAIHero = () => {
               </span>
               <img
                 className="shrink-0 w-3 h-3 group-hover:translate-x-1 transition-transform"
-                src="/hero_section/icon_3.svg"
+                src="/AiIntelligentSystems/hero_btn_icon_2.svg"
                 alt=""
               />
             </button>
@@ -240,7 +240,7 @@ const GenAIHero = () => {
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
         <img
           onClick={handleScrollDown}
-          src="/hero_section/arrow_icon.svg"
+          src="/AiIntelligentSystems/hero_scroll_arrow.svg"
           className="w-5.5 h-4.5 sm:w-6.5 sm:h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
           alt="Scroll down"
         />
@@ -249,7 +249,7 @@ const GenAIHero = () => {
       {/* Atmospheric Transition Gradient */}
       <div className="absolute -bottom-2 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-1/2">
         <img
-          src="/hero_section/gradient.png"
+          src="/AiIntelligentSystems/hero_bg_gradient.png"
           className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
           alt=""
         />

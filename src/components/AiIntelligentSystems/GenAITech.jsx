@@ -5,28 +5,28 @@ const techCats = [
   {
     cat: "Foundation Models",
     items: [
-      { name: "OpenAI GPT", logoSrc: "/AI_Intelligence/openai.svg", lighten: true },
-      { name: "Anthropic Claude", logoSrc: "/AI_Intelligence/Claude_AI_logo.svg" },
-      { name: "Google Gemini", logoSrc: "/AI_Intelligence/Google_Gemini_logo.svg" },
-      { name: "Meta Llama", logoSrc: "/AI_Intelligence/Meta_Platforms.svg" },
-      { name: "Mistral", logoSrc: "/AI_Intelligence/mistral-ai.svg", lighten: true },
+      { name: "OpenAI GPT", logoSrc: "/AiIntelligentSystems/tech_openai.svg", lighten: true },
+      { name: "Anthropic Claude", logoSrc: "/AiIntelligentSystems/tech_claude.svg" },
+      { name: "Google Gemini", logoSrc: "/AiIntelligentSystems/tech_gemini.svg" },
+      { name: "Meta Llama", logoSrc: "/AiIntelligentSystems/tech_meta.svg" },
+      { name: "Mistral", logoSrc: "/AiIntelligentSystems/tech_mistral.svg", lighten: true },
     ],
   },
   {
     cat: "AI Frameworks",
     items: [
-      { name: "LangChain", logoSrc: "/AI_Intelligence/LangChain_Logo.svg", lighten: true },
-      { name: "LlamaIndex", logoSrc: "/AI_Intelligence/llamaindex.svg", lighten: true },
-      { name: "CrewAI", logoSrc: "/AI_Intelligence/crewai.svg", lighten: true },
-      { name: "AutoGen", logoSrc: "/AI_Intelligence/autogen.svg", lighten: true, zoomLarge: true },
+      { name: "LangChain", logoSrc: "/AiIntelligentSystems/tech_langchain.svg", lighten: true },
+      { name: "LlamaIndex", logoSrc: "/AiIntelligentSystems/tech_llamaindex.svg", lighten: true },
+      { name: "CrewAI", logoSrc: "/AiIntelligentSystems/tech_crewai.svg", lighten: true },
+      { name: "AutoGen", logoSrc: "/AiIntelligentSystems/tech_autogen.svg", lighten: true, zoomLarge: true },
     ],
   },
   {
     cat: "Vector Databases",
     items: [
-      { name: "Pinecone", logoSrc: "/AI_Intelligence/pinecone.svg", lighten: true },
-      { name: "Weaviate", logoSrc: "/AI_Intelligence/weaviate.svg", zoomLarge: true },
-      { name: "ChromaDB", logoSrc: "/AI_Intelligence/Chromadb.svg", lighten: true, zoomLarge: true, showTextBelow: true },
+      { name: "Pinecone", logoSrc: "/AiIntelligentSystems/tech_pinecone.svg", lighten: true },
+      { name: "Weaviate", logoSrc: "/AiIntelligentSystems/tech_weaviate.svg", zoomLarge: true },
+      { name: "ChromaDB", logoSrc: "/AiIntelligentSystems/tech_chromadb.svg", lighten: true, zoomLarge: true, showTextBelow: true },
       { name: "FAISS", logoSrc: "" },
     ],
   },
@@ -35,13 +35,13 @@ const techCats = [
     items: [
       {
         name: "Python",
-        logoSrc: "/EnterpriceApplication_System/python.svg",
+        logoSrc: "/AiIntelligentSystems/tech_python.svg",
         lighten: true,
         zoomXLarge: true,
       },
       {
         name: "FastAPI",
-        logoSrc: "/EnterpriceApplication_System/fastapi.svg",
+        logoSrc: "/AiIntelligentSystems/tech_fastapi.svg",
       },
       {
         name: "Flask",
@@ -50,7 +50,7 @@ const techCats = [
       },
       {
         name: "Node.js",
-        logoSrc: "/EnterpriceApplication_System/nodejs.svg",
+        logoSrc: "/AiIntelligentSystems/tech_nodejs.svg",
         lighten: true,
         zoomXLarge: true,
       },
@@ -61,7 +61,7 @@ const techCats = [
     items: [
       {
         name: "PostgreSQL",
-        logoSrc: "/EnterpriceApplication_System/postgresql.svg",
+        logoSrc: "/AiIntelligentSystems/tech_postgresql.svg",
       },
       { name: "MongoDB", logoSrc: "" },
       { name: "Redis", logoSrc: "" },
@@ -73,19 +73,19 @@ const techCats = [
     items: [
       {
         name: "Microsoft Azure",
-        logoSrc: "/EnterpriceApplication_System/microsoft_azure.svg",
+        logoSrc: "/AiIntelligentSystems/tech_azure.svg",
         lighten: true,
         zoomXLarge: true,
       },
       {
         name: "AWS",
-        logoSrc: "/EnterpriceApplication_System/Amazon_Web_Services_Logo.svg",
+        logoSrc: "/AiIntelligentSystems/tech_aws.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "Google Cloud",
-        logoSrc: "/EnterpriceApplication_System/Google_Cloud_logo.svg",
+        logoSrc: "/AiIntelligentSystems/tech_gcp.svg",
         lighten: true,
       },
     ],
