@@ -99,7 +99,7 @@ const CareerOpenings = () => {
               <button className="h-10 px-4 rounded-lg border border-[#877BF1]/40 backdrop-blur-[2px] flex items-center justify-center gap-2 text-white font-sans text-xs md:text-sm font-medium hover:bg-[#877BF1]/10 active:scale-95 transition-all duration-300 cursor-pointer self-start">
                 <span>Apply</span>
                 <img
-                  src="/hero_section/icon_3.svg"
+                  src="/Careers/career_hero_icon.svg"
                   alt="Arrow"
                   className="w-[16px] h-[8px] group-hover:translate-x-1 transition-transform shrink-0"
                 />

@@ -6,7 +6,7 @@ const CareerHero = ({ scrollToOpenings }) => {
       {/* Mobile Background Image & Tint Wash (Visible only on mobile/tablet below 1290px) */}
       <div className="absolute top-[3.74938rem] bottom-0 left-0 right-0 min-[1290px]:hidden z-0 pointer-events-none">
         <img
-          src="/careers/career_hero.webp"
+          src="/Careers/career_hero.webp"
           alt=""
           className="w-full h-full object-cover object-center"
         />
@@ -68,7 +68,7 @@ const CareerHero = ({ scrollToOpenings }) => {
               View Open Roles
             </span>
             <img
-              src="/hero_section/icon_3.svg"
+              src="/Careers/career_hero_icon.svg"
               alt="Arrow"
               className="w-[12px] min-[1290px]:w-[14px] h-[8px] min-[1290px]:h-[10px] shrink-0"
             />
@@ -78,7 +78,7 @@ const CareerHero = ({ scrollToOpenings }) => {
           <div className="min-[1290px]:hidden mt-8 flex flex-col items-center justify-center">
             <img
               onClick={scrollToOpenings}
-              src="/hero_section/arrow_icon.svg"
+              src="/Careers/career_hero_arrow.svg"
               className="w-5 h-4 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
               alt="Scroll down"
             />
@@ -89,13 +89,13 @@ const CareerHero = ({ scrollToOpenings }) => {
         <div className="hidden min-[1290px]:flex min-[1290px]:w-[42vw] min-[1290px]:absolute min-[1290px]:right-0 min-[1290px]:top-12 min-[1290px]:bottom-12 z-10 items-stretch relative">
           {/* Sibling Gradient Image - unclipped, overlapping and spilling to the left */}
           <img
-            src="/careers/career_hero_gradient.webp"
+            src="/Careers/career_hero_gradient.webp"
             className="hidden min-[1290px]:block absolute top-1/2 -translate-y-1/2 left-0 h-full w-auto object-cover z-20 pointer-events-none"
             alt="Gradient Transition"
           />
           {/* Flipped/Reverted Gradient Image overlay */}
           <img
-            src="/careers/career_hero_gradient.webp"
+            src="/Careers/career_hero_gradient.webp"
             className="hidden min-[1290px]:block absolute top-1/2 -translate-y-1/2 right-full h-full w-auto object-cover z-10 pointer-events-none scale-x-[-1]"
             alt="Gradient Transition Reversed"
           />
@@ -106,7 +106,7 @@ const CareerHero = ({ scrollToOpenings }) => {
             <div className="absolute inset-0 bg-[#01031c]/15 z-10 pointer-events-none" />
 
             <img
-              src="/careers/career_hero.webp"
+              src="/Careers/career_hero.webp"
               alt="RevoSolve Careers Team"
               className="w-full h-full object-cover object-center relative z-0"
             />
@@ -118,7 +118,7 @@ const CareerHero = ({ scrollToOpenings }) => {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40 hidden min-[1290px]:flex flex-col items-center justify-center">
         <img
           onClick={scrollToOpenings}
-          src="/hero_section/arrow_icon.svg"
+          src="/Careers/career_hero_arrow.svg"
           className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
           alt="Scroll down"
         />
@@ -127,7 +127,7 @@ const CareerHero = ({ scrollToOpenings }) => {
       {/* Atmospheric Transition Gradient (The Bridge) */}
       <div className="absolute -bottom-2 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-1/2">
         <img
-          src="/hero_section/gradient.png"
+          src="/Careers/career_hero_bg_gradient.png"
           className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
           alt=""
         />

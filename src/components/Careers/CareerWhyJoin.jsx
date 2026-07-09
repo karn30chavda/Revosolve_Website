@@ -8,19 +8,19 @@ const CareerWhyJoin = () => {
       title: "Growth Circles",
       description:
         "Collaborative forums where team members explore new skills, share experiences, and grow together, because personal and professional growth go hand in hand.",
-      icon: "/careers/career_join_1.svg",
+      icon: "/Careers/career_join_1.svg",
     },
     {
       title: "Corporate Social Responsibility",
       description:
         "Through meaningful initiatives, we give back to communities and support a sustainable future. Because real success includes responsibility.",
-      icon: "/careers/career_join_2.svg",
+      icon: "/Careers/career_join_2.svg",
     },
     {
       title: "Learning Opportunities",
       description:
         "From hands-on projects to expert-led sessions, our team is always learning. Because evolving skills means evolving solutions.",
-      icon: "/careers/career_join_3.svg",
+      icon: "/Careers/career_join_3.svg",
     },
   ];
 
@@ -103,7 +103,7 @@ const CareerWhyJoin = () => {
           <div className="w-full lg:w-[65%] min-h-[350px] sm:min-h-[450px] lg:min-h-0 flex-1 self-stretch rounded-2xl overflow-hidden relative">
             <img
               className="absolute inset-0 w-full h-full object-cover"
-              src="/careers/career_join_image.webp"
+              src="/Careers/career_join_image.webp"
               alt="RevoSolve Careers Team Interaction"
             />
           </div>

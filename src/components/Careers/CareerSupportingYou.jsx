@@ -6,37 +6,37 @@ const CareerSupportingYou = () => {
       title: "Professional Development",
       description:
         "Grow your expertise with continuous learning, upskilling programs, and mentorship.",
-      icon: "/careers/career_problem_1.svg",
+      icon: "/Careers/career_problem_1.svg",
     },
     {
       title: "Work-Life Harmony",
       description:
         "Flexible schedules and supportive policies to help you balance work and life with ease.",
-      icon: "/careers/career_problem_2.svg",
+      icon: "/Careers/career_problem_2.svg",
     },
     {
       title: "Financial Wellness",
       description:
         "Smart compensation, financial planning support, and long-term stability.",
-      icon: "/careers/career_problem_3.svg",
+      icon: "/Careers/career_problem_3.svg",
     },
     {
       title: "Soft Skills Training",
       description:
         "Sharpen communication, leadership, and collaboration skills to thrive in any role.",
-      icon: "/careers/career_problem_4.svg",
+      icon: "/Careers/career_problem_4.svg",
     },
     {
       title: "Health & Wellness",
       description:
         "Access to physical and mental wellness resources that keep you feeling your best.",
-      icon: "/careers/career_problem_5.svg",
+      icon: "/Careers/career_problem_5.svg",
     },
     {
       title: "Fun & Engagement",
       description:
         "From team outings to cultural events—we make work enjoyable, every step of the way.",
-      icon: "/careers/career_problem_6.svg",
+      icon: "/Careers/career_problem_6.svg",
     },
   ];
 
