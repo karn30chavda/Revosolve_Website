@@ -78,7 +78,7 @@ const buildItems = [
   },
 ];
 
-const EntWhatWeBuild = () => {
+const ERPWhatWeBuild = () => {
   return (
     <section className="relative w-full pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden z-20">
       {/* Decorative Background Glows */}
@@ -140,13 +140,13 @@ const EntWhatWeBuild = () => {
               {/* Bottom Pattern (Right bottom corner) */}
               {idx === 0 ? (
                 <img 
-                  src="/EnterpriseApplicationSystems/build_bg_pattern.svg" 
+                  src="/OpenSourceERPSystems/build_bg_pattern.svg" 
                   alt="" 
                   className="absolute bottom-0 right-0 w-[215px] h-[71px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0 scale-x-[-1]" 
                 />
               ) : (
                 <img 
-                  src="/EnterpriseApplicationSystems/build_bg_pattern.svg" 
+                  src="/OpenSourceERPSystems/build_bg_pattern.svg" 
                   alt="" 
                   className="absolute bottom-0 right-0 w-[215px] h-[71px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0 lg:hidden scale-x-[-1]" 
                 />
@@ -176,4 +176,4 @@ const EntWhatWeBuild = () => {
   );
 };
 
-export default EntWhatWeBuild;
+export default ERPWhatWeBuild;

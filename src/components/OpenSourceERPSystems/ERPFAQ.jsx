@@ -24,7 +24,7 @@ const faqData = [
   },
 ];
 
-const EntFAQ = () => {
+const ERPFAQ = () => {
   const [openIdx, setOpenIdx] = useState(-1);
 
   return (
@@ -103,4 +103,4 @@ const EntFAQ = () => {
   );
 };
 
-export default EntFAQ;
+export default ERPFAQ;

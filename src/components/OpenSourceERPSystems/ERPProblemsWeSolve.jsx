@@ -15,14 +15,14 @@ const problems = [
   { n: "06", Icon: Copy,                 t: "Poor Data Consistency",            d: "Business data exists in multiple locations, reducing trust in reporting and decision-making." },
 ];
 
-const EntProblemsWeSolve = () => {
+const ERPProblemsWeSolve = () => {
   return (
     <section className="relative w-full pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden z-20">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 pointer-events-none z-0 opacity-[0.03] mix-blend-screen"
         style={{
-          backgroundImage: "url(/EnterpriseApplicationSystems/card_bg_pattern.svg)",
+          backgroundImage: "url(/OpenSourceERPSystems/card_bg_pattern.svg)",
           backgroundSize: "180px",
           backgroundRepeat: "repeat",
         }}
@@ -94,4 +94,4 @@ const EntProblemsWeSolve = () => {
   );
 };
 
-export default EntProblemsWeSolve;
+export default ERPProblemsWeSolve;

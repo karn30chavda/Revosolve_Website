@@ -36,7 +36,7 @@ const methodSteps = [
   },
 ];
 
-const EntApproach = () => {
+const ERPApproach = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const EntApproach = () => {
               <span className="font-black block">
                 <span className="text-[#877BF1]">Engineering </span>
                 <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
-                  enterprise platforms
+                  enterprise operating systems
                 </span>
               </span>
               <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
@@ -132,4 +132,4 @@ const EntApproach = () => {
   );
 };
 
-export default EntApproach;
+export default ERPApproach;

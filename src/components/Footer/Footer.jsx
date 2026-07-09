@@ -73,8 +73,8 @@ const Footer = () => {
                 <Link
                   key={idx}
                   to={
-                    item === "Enterprise Application Systems"
-                      ? "/services/enterprise-application-systems"
+                    item === "Open Source & ERP Systems"
+                      ? "/services/open-source-erp-systems"
                       : item === "Cloud and Devops"
                         ? "/services/cloud-and-devops"
                       : item === "AI & Intelligent Systems"

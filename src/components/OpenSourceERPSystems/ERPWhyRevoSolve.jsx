@@ -42,7 +42,7 @@ const whyData = [
   },
 ];
 
-const EntWhyRevoSolve = () => {
+const ERPWhyRevoSolve = () => {
   return (
     <section className="relative w-full pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden z-20">
       {/* Decorative Background Glows */}
@@ -129,4 +129,4 @@ const EntWhyRevoSolve = () => {
   );
 };
 
-export default EntWhyRevoSolve;
+export default ERPWhyRevoSolve;

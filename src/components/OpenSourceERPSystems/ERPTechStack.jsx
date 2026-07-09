@@ -119,7 +119,7 @@ const TechCard = ({ item }) => {
   );
 };
 
-const EntTechStack = () => {
+const ERPTechStack = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -194,4 +194,4 @@ const EntTechStack = () => {
   );
 };
 
-export default EntTechStack;
+export default ERPTechStack;

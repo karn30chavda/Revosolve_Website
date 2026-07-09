@@ -194,8 +194,8 @@ const Navbar = () => {
                                       ? "/solutions/ai-surveillance-systems"
                                       : "/coming-soon")
                                     : (item.label === "Services"
-                                      ? (link === "Enterprise Application Systems"
-                                        ? "/services/enterprise-application-systems"
+                                      ? (link === "Open Source & ERP Systems"
+                                        ? "/services/open-source-erp-systems"
                                         : link === "Cloud and Devops"
                                         ? "/services/cloud-and-devops"
                                         : link === "AI & Intelligent Systems"
@@ -312,12 +312,14 @@ const Navbar = () => {
                                   ? "/solutions/ai-surveillance-systems"
                                   : "/coming-soon")
                                 : (item.label === "Services"
-                                  ? (link === "Enterprise Application Systems"
-                                    ? "/services/enterprise-application-systems"
+                                  ? (link === "Open Source & ERP Systems"
+                                    ? "/services/open-source-erp-systems"
                                     : link === "Cloud and Devops"
                                     ? "/services/cloud-and-devops"
                                     : link === "AI & Intelligent Systems"
                                     ? "/services/ai-intelligent-systems"
+                                    : link === "Data Engineering & Data Analytics"
+                                    ? "/services/data-engineering-analytics"
                                     : "/coming-soon")
                                   : (link === "Careers" ? "/careers" : "/coming-soon"))
                             }

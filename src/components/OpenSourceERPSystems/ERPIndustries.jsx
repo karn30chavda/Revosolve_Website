@@ -42,7 +42,7 @@ const industriesData = [
   },
 ];
 
-const EntIndustries = () => {
+const ERPIndustries = () => {
   return (
     <section 
       style={{ backgroundColor: "rgba(29, 30, 50, 1)" }}
@@ -117,4 +117,4 @@ const EntIndustries = () => {
   );
 };
 
-export default EntIndustries;
+export default ERPIndustries;

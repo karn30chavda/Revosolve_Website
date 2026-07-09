@@ -10,7 +10,7 @@ const RESET_MS = 700; // brief pause after Issued before restarting
 // Phases: 0 = seg0 flowing, 1 = seg1 flowing (DeptHead lit), 2 = seg2 flowing (Finance lit), 3 = Issued lit (no dot)
 const PHASE_DURATIONS = [SEG_MS, SEG_MS, SEG_MS, RESET_MS];
 
-const EntWhatWeDo = () => {
+const ERPWhatWeDo = () => {
   const [phase, setPhase] = useState(0);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const EntWhatWeDo = () => {
       <div className="absolute bottom-[20%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none z-0" />
       <div
         className="absolute inset-0 pointer-events-none z-0 opacity-[0.03] mix-blend-screen"
-        style={{ backgroundImage: "url(/EnterpriseApplicationSystems/card_bg_pattern.svg)", backgroundSize: "180px", backgroundRepeat: "repeat" }}
+        style={{ backgroundImage: "url(/OpenSourceERPSystems/card_bg_pattern.svg)", backgroundSize: "180px", backgroundRepeat: "repeat" }}
       />
 
       <div className="relative z-10 w-[85%] mx-auto flex flex-col gap-12 lg:gap-16">
@@ -210,4 +210,4 @@ const EntWhatWeDo = () => {
   );
 };
 
-export default EntWhatWeDo;
+export default ERPWhatWeDo;

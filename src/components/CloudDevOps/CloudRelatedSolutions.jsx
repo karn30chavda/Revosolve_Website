@@ -5,7 +5,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 const relatedSolutions = [
   { name: "Commerce Operations Systems", path: "/solutions/commerce-operations-systems" },
   { name: "Document Intelligence Systems", path: "/solutions/document-intelligence-systems" },
-  { name: "Enterprise Application Systems", path: "/services/enterprise-application-systems" },
+  { name: "Open Source & ERP Systems", path: "/services/open-source-erp-systems" },
   { name: "AI Intelligent Systems", path: "/services/ai-intelligent-systems" },
 ];
 

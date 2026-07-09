@@ -9,13 +9,14 @@ import CustomerInteractionSystems from "./pages/CustomerInteractionSystems";
 import Connect from "./pages/Connect";
 import Careers from "./pages/Careers";
 import ComingSoon from "./pages/ComingSoon";
-import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
+import OpenSourceERPSystems from "./pages/OpenSourceERPSystems";
 import CloudDevOps from "./pages/CloudDevOps";
 import AiIntelligentSystems from "./pages/AiIntelligentSystems";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import DataEngineeringAnalytics from "./pages/DataEngineeringAnalytics";
 import DefenseSimulationTrainingSystems from "./pages/DefenseSimulationTrainingSystems";
 import AiSurveillanceSystems from "./pages/AiSurveillanceSystems";
+import Testing from "./pages/Testing";
 
 function App() {
   return (
@@ -54,8 +55,8 @@ function App() {
             element={<AiSurveillanceSystems />}
           />
           <Route
-            path="/services/enterprise-application-systems"
-            element={<EnterpriseApplicationSystems />}
+            path="/services/open-source-erp-systems"
+            element={<OpenSourceERPSystems />}
           />
           <Route path="/services/cloud-and-devops" element={<CloudDevOps />} />
           <Route
@@ -66,6 +67,7 @@ function App() {
             path="/services/data-engineering-analytics"
             element={<DataEngineeringAnalytics />}
           />
+          <Route path="/testing" element={<Testing />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
