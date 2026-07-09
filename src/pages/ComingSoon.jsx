@@ -103,7 +103,7 @@ const ComingSoon = () => {
             Back to Home
           </div>
           <img
-            src="/connect/back_to_home_arrow.svg"
+            src="/ComingSoon/coming_soon_back_arrow.svg"
             alt="Arrow"
             className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:-translate-x-1"
             style={{

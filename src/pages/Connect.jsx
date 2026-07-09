@@ -226,7 +226,7 @@ const Connect = () => {
               className="flex flex-row gap-4 items-center justify-start w-full group"
             >
               <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-9 h-9 md:w-14 md:h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
-                <img src="/connect/mail_icon.svg" alt="Email" className="w-4 h-4 md:w-6 md:h-6" />
+                <img src="/Connect/mail_icon.svg" alt="Email" className="w-4 h-4 md:w-6 md:h-6" />
               </div>
               <div className="flex flex-col gap-0.5 items-start">
                 <span className="text-[#AAA9BE] text-[0.7rem] md:text-sm leading-tight font-normal">Email Us</span>
@@ -240,7 +240,7 @@ const Connect = () => {
               className="flex flex-row gap-4 items-center justify-start w-full group"
             >
               <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-9 h-9 md:w-14 md:h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
-                <img src="/connect/call_icon.svg" alt="Call" className="w-4 h-4 md:w-6 md:h-6" />
+                <img src="/Connect/call_icon.svg" alt="Call" className="w-4 h-4 md:w-6 md:h-6" />
               </div>
               <div className="flex flex-col gap-0.5 items-start">
                 <span className="text-[#AAA9BE] text-[0.7rem] md:text-sm leading-tight font-normal">Call us</span>
@@ -256,7 +256,7 @@ const Connect = () => {
               className="flex flex-row gap-4 items-center justify-start w-full group"
             >
               <div className="bg-[#1D1E32] rounded-lg flex items-center justify-center w-9 h-9 md:w-14 md:h-14 shadow-lg group-hover:bg-[#2A2B45] transition-all shrink-0">
-                <img src="/connect/pin_icon.svg" alt="Visit" className="w-4 h-4 md:w-6 md:h-6" />
+                <img src="/Connect/pin_icon.svg" alt="Visit" className="w-4 h-4 md:w-6 md:h-6" />
               </div>
               <div className="flex flex-col gap-0.5 items-start">
                 <span className="text-[#AAA9BE] text-[0.7rem] md:text-sm leading-tight font-normal">Visit Us</span>
@@ -345,7 +345,7 @@ const Connect = () => {
                         {isLoadingInterests ? "Loading..." : (selectedService || `Select ${activeCategory === "Product Inquiry" ? "Product" : "Service"}`)}
                       </span>
                       <img 
-                        src="/connect/select_drop_icon.svg" 
+                        src="/Connect/select_drop_icon.svg" 
                         alt="" 
                         className={`w-5 h-5 opacity-40 ml-auto transition-transform ${isSelectOpen ? "rotate-180" : ""}`} 
                       />
@@ -413,7 +413,7 @@ const Connect = () => {
                   <span className="text-[#070784] text-center font-medium text-base md:text-lg leading-6" style={{ letterSpacing: "-0.31px" }}>
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </span>
-                  {!isSubmitting && <img src="/connect/submit_icon.svg" alt="" className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
+                  {!isSubmitting && <img src="/Connect/submit_icon.svg" alt="" className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
                 </button>
               </form>
             </>
@@ -422,7 +422,7 @@ const Connect = () => {
               <div className="bg-[#ffaa00] rounded-full shrink-0 w-16 h-16 md:w-30 md:h-30 relative flex items-center justify-center">
                 <img
                   className="w-9 h-9 md:w-17.5 md:h-17.5 overflow-visible"
-                  src="/connect/tick_icon.svg"
+                  src="/Connect/tick_icon.svg"
                   alt="Success"
                 />
                 <div
@@ -455,7 +455,7 @@ const Connect = () => {
                 </div>
                 <img
                   className="shrink-0 w-4.5 h-4.5 relative overflow-visible"
-                  src="/connect/back_to_home_arrow.svg"
+                  src="/Connect/back_to_home_arrow.svg"
                   alt="Arrow"
                 />
               </button>
