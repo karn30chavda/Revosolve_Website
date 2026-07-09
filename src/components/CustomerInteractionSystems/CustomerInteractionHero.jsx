@@ -5,12 +5,15 @@ import {
   Phone, ChatCircle, WhatsappLogo, EnvelopeSimple, Fingerprint, FlowArrow, ChartLineUp, User
 } from "@phosphor-icons/react";
 
-const ChannelChip = ({ icon: Icon, label, active }) => (
-  <span className={`inline-flex items-center gap-[7px] border py-[8px] px-[13px] text-[10.5px] uppercase tracking-[0.08em] transition-all duration-300 font-mono ${active ? "border-[#877BF1] bg-[#877BF1]/15 text-white shadow-[0_0_14px_2px_rgba(135,123,241,0.25)]" : "border-[#877BF1]/25 bg-[#0f1034] text-[#E7E8F4]"}`}>
-    <Icon size={15} className={active ? "text-white" : "text-[#A9A0F5]"} />
-    {label}
-  </span>
-);
+const ChannelChip = ({ icon, label, active }) => {
+  const Icon = icon;
+  return (
+    <span className={`inline-flex items-center gap-[7px] border py-[8px] px-[13px] text-[10.5px] uppercase tracking-[0.08em] transition-all duration-300 font-mono ${active ? "border-[#877BF1] bg-[#877BF1]/15 text-white shadow-[0_0_14px_2px_rgba(135,123,241,0.25)]" : "border-[#877BF1]/25 bg-[#0f1034] text-[#E7E8F4]"}`}>
+      <Icon size={15} className={active ? "text-white" : "text-[#A9A0F5]"} />
+      {label}
+    </span>
+  );
+};
 
 const CustomerInteractionHero = () => {
   const navigate = useNavigate();
