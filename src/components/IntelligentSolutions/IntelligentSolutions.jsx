@@ -394,7 +394,22 @@ const IntelligentSolutions = () => {
                     className="w-[320px] md:w-[424px] h-[400px] md:h-[470px] shrink-0"
                   >
                     <div
-                      className="w-full h-full rounded-xl overflow-hidden relative flex flex-col p-6 md:p-[22px] pb-6 shadow-2xl bg-white transition-all duration-700 ease-out group hover:-translate-y-2"
+                      onClick={() => {
+                        if (card.category === "Commerce Operations Systems") {
+                          navigate("/solutions/commerce-operations-systems");
+                        } else if (card.category === "Document Intelligence Systems") {
+                          navigate("/solutions/document-intelligence-systems");
+                        } else if (card.category === "Customer Interaction Systems for Institutions") {
+                          navigate("/solutions/customer-interaction-systems");
+                        } else if (card.category === "Defense & Public Training Systems") {
+                          navigate("/solutions/defense-simulation-training-systems");
+                        } else if (card.category === "AI Surveillance Systems") {
+                          navigate("/services/ai-intelligent-systems");
+                        } else {
+                          navigate("/coming-soon");
+                        }
+                      }}
+                      className="w-full h-full rounded-xl overflow-hidden relative flex flex-col p-6 md:p-[22px] pb-6 shadow-2xl bg-white transition-all duration-700 ease-out group hover:-translate-y-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(180deg, #FFFFFF 0%, #D8D9F2 35%, #A6A9F7 100%)",
@@ -420,18 +435,7 @@ const IntelligentSolutions = () => {
                           {card.description}
                         </p>
                         <div
-                          onClick={() => {
-                            if (card.category === "Commerce Operations Systems") {
-                              navigate("/solutions/commerce-operations-systems");
-                            } else if (card.category === "Document Intelligence Systems") {
-                              navigate("/solutions/document-intelligence-systems");
-                            } else if (card.category === "AI Surveillance Systems") {
-                              navigate("/services/ai-intelligent-systems");
-                            } else {
-                              navigate("/coming-soon");
-                            }
-                          }}
-                          className="mt-auto pt-6 flex items-center gap-1.5 cursor-pointer group/link w-fit"
+                          className="mt-auto pt-6 flex items-center gap-1.5 group/link w-fit"
                         >
                           <span
                             className="text-[14px] md:text-[16px] text-[#050737] font-medium relative"

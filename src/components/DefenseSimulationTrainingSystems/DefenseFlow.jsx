@@ -1,89 +1,75 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion as Motion } from "framer-motion";
 import {
-  User,
-  ArrowsInCardinal,
-  Robot,
-  Fingerprint,
-  TreeStructure,
-  FlowArrow,
-  PlugsConnected,
-  UsersThree,
-  CheckCircle,
-  BellRinging,
-  ChartLineUp,
+  Crosshair,
+  Blueprint,
+  CubeTransparent,
+  VirtualReality,
+  Brain,
+  HandTap,
+  Monitor,
+  Exam,
+  ProjectorScreenChart,
 } from "@phosphor-icons/react";
 
 const flowStages = [
   {
     n: "01",
-    icon: User,
-    title: "Customer",
-    desc: "A request arrives — any audience, any time.",
+    icon: Crosshair,
+    title: "Training Objectives",
+    desc: "Define the competencies, procedures, and missions that matter.",
   },
   {
     n: "02",
-    icon: ArrowsInCardinal,
-    title: "Channel",
-    desc: "Voice, chat, WhatsApp, or email — captured identically.",
+    icon: Blueprint,
+    title: "Scenario Design",
+    desc: "Objectives become custom operational scenarios — no rebuild required.",
   },
   {
     n: "03",
-    icon: Robot,
-    title: "AI Agent",
-    desc: "Understands intent, answers instantly, or routes intelligently.",
+    icon: CubeTransparent,
+    title: "3D Environment",
+    desc: "Facilities, terrain, and equipment modeled in realistic detail.",
   },
   {
     n: "04",
-    icon: Fingerprint,
-    title: "Identity Verification",
-    desc: "OTP, KYC, document or facial verification — security first.",
+    icon: VirtualReality,
+    title: "AR / VR / MR Simulation",
+    desc: "Trainees enter the environment — immersive, safe, repeatable.",
   },
   {
     n: "05",
-    icon: TreeStructure,
-    title: "Business Rules",
-    desc: "Eligibility, routing, and escalation logic applied automatically.",
+    icon: Brain,
+    title: "AI Scenario Engine",
+    desc: "Difficulty adapts; unexpected events inject realistic pressure.",
   },
   {
     n: "06",
-    icon: FlowArrow,
-    title: "Workflow Automation",
-    desc: "The right internal process triggers without manual handoffs.",
+    icon: HandTap,
+    title: "Participant Interaction",
+    desc: "Teams execute procedures, communicate, and make decisions.",
   },
   {
     n: "07",
-    icon: PlugsConnected,
-    title: "ERP / CRM",
-    desc: "Business systems update automatically — no re-keying.",
+    icon: Monitor,
+    title: "Instructor Monitoring",
+    desc: "Live oversight — launch events, adjust conditions, observe responses.",
   },
   {
     n: "08",
-    icon: UsersThree,
-    title: "Operations Team",
-    desc: "Humans handle only what genuinely needs human judgment.",
+    icon: Exam,
+    title: "Performance Evaluation",
+    desc: "Every action scored: reaction time, accuracy, compliance.",
   },
   {
     n: "09",
-    icon: CheckCircle,
-    title: "Resolution",
-    desc: "The request is closed — traceably, measurably.",
-  },
-  {
-    n: "10",
-    icon: BellRinging,
-    title: "Customer Notification",
-    desc: "The customer is informed proactively, on their channel.",
-  },
-  {
-    n: "11",
-    icon: ChartLineUp,
-    title: "Analytics Dashboard",
-    desc: "Every interaction feeds operational intelligence.",
+    icon: ProjectorScreenChart,
+    title: "Operational Readiness Dashboard",
+    desc: "Leadership sees measured readiness — by team, skill, and scenario.",
   },
 ];
 
-const CustomerInteractionApproach = () => {
+const DefenseFlow = () => {
   const [activeStep, setActiveStep] = useState(0);
   const autoPlayRef = useRef(null);
   const STEP_DURATION = 3500; // ms
@@ -121,7 +107,7 @@ const CustomerInteractionApproach = () => {
               [
             </span>
             <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-              system flow
+              How The System Works
             </span>
             <span className="text-white text-lg font-normal font-sans tracking-tight">
               ]
@@ -132,7 +118,7 @@ const CustomerInteractionApproach = () => {
           <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-4 w-fit">
             <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
             <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-              system flow
+              How The System Works
             </span>
           </div>
 
@@ -140,16 +126,16 @@ const CustomerInteractionApproach = () => {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end w-full gap-6 lg:gap-12">
             <h2 className="text-[24px] md:text-[32px] xl:text-[36px] leading-tight font-bold tracking-tight text-left max-w-xl">
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold">
-                From Customer Request
+                From training objectives
               </span>{" "}
               <span className="text-[#CACBDB] font-light">
-                to Operational Resolution
+                to operational readiness
               </span>
             </h2>
 
             <div className="max-w-xl lg:pb-1 shrink-0 lg:w-[45%]">
               <p className="text-[#CACBDB] text-[13.5px] md:text-[14px] font-normal leading-relaxed opacity-70 text-left">
-                Watch a single request travel through the system — verified, routed, automated, resolved, and measured. No manual handoffs. No lost context.
+                Follow a training cycle end-to-end: objectives become scenarios, scenarios become immersive exercises, and every exercise feeds a measurable readiness picture.
               </p>
             </div>
           </div>
@@ -167,8 +153,8 @@ const CustomerInteractionApproach = () => {
                 key={step.n}
                 className={`flex items-center gap-4 p-4 rounded-[6px] border transition-all duration-300 relative group overflow-hidden ${
                   isActive
-                    ? "border-[#877BF1] bg-[#121344] shadow-[0_0_12px_rgba(135,123,241,0.12)]"
-                    : "border-[#877BF1]/18 bg-[#0F1034]/40"
+                    ? "border-[#877BF1] bg-[rgba(135,123,241,0.09)] shadow-[0_0_12px_rgba(135,123,241,0.12)]"
+                    : "border-[#877BF1]/18 bg-[#0A0B28]/40"
                 } ${isLast ? "md:col-span-2 md:max-w-[70%] md:mx-auto md:w-full" : ""}`}
               >
                 {/* Accent Highlight Left Edge */}
@@ -226,7 +212,7 @@ const CustomerInteractionApproach = () => {
                     </h3>
                     {isActive && (
                       <span className="text-[8.5px] font-mono font-bold tracking-widest text-[#01031c] bg-[#FCCA71] px-1.5 py-0.5 rounded-[1.5px] uppercase">
-                        active
+                        ● in progress
                       </span>
                     )}
                   </div>
@@ -253,4 +239,4 @@ const CustomerInteractionApproach = () => {
   );
 };
 
-export default CustomerInteractionApproach;
+export default DefenseFlow;

@@ -188,6 +188,8 @@ const Navbar = () => {
                                       ? "/solutions/document-intelligence-systems"
                                       : link === "Customer Interaction Systems"
                                       ? "/solutions/customer-interaction-systems"
+                                      : link === "Defense & Training Systems"
+                                      ? "/solutions/defense-simulation-training-systems"
                                       : "/coming-soon")
                                     : (item.label === "Services"
                                       ? (link === "Enterprise Application Systems"
@@ -302,6 +304,8 @@ const Navbar = () => {
                                   ? "/solutions/document-intelligence-systems"
                                   : link === "Customer Interaction Systems"
                                   ? "/solutions/customer-interaction-systems"
+                                  : link === "Defense & Training Systems"
+                                  ? "/solutions/defense-simulation-training-systems"
                                   : link === "AI Surveillance Systems"
                                   ? "/services/ai-intelligent-systems"
                                   : "/coming-soon")

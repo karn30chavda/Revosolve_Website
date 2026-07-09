@@ -112,6 +112,8 @@ const Footer = () => {
                           ? "/solutions/document-intelligence-systems"
                           : item === "Customer Interaction Systems"
                             ? "/solutions/customer-interaction-systems"
+                            : item === "Defense & Training Systems"
+                              ? "/solutions/defense-simulation-training-systems"
                             : item === "AI Surveillance Systems"
                               ? "/services/ai-intelligent-systems"
                               : "/coming-soon"
