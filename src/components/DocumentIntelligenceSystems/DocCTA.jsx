@@ -4,20 +4,21 @@ import { useNavigate } from "react-router-dom";
 const DocCTA = () => {
   const navigate = useNavigate();
 
-  const handleStartConversation = () => {
+  const handleNavigate = (serviceName) => {
     navigate("/connect", {
       state: {
-        category: "Services/Solution",
-        service: "Document Intelligence Systems",
+        category: "Product",
+        service: "RevoDox Document Intelligence",
+        notes: serviceName ? `Interested in: ${serviceName}` : "",
       },
     });
   };
 
   return (
-    <section className="bg-transparent pt-2 pb-16 md:pt-4 md:pb-16 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu font-sans">
+    <section className="bg-transparent pt-2 pb-10 md:py-12 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu font-sans z-20">
       {/* Desktop View */}
-      <div 
-        className="hidden md:flex w-[85%] mx-auto rounded-lg py-16 px-12 flex-col gap-8 items-center justify-end relative overflow-hidden drop-shadow-2xl"
+      <div
+        className="hidden md:flex w-[85%] mx-auto rounded-lg py-10 px-8 flex-col gap-6 items-center justify-end relative overflow-hidden drop-shadow-2xl"
         style={{
           background: "linear-gradient(290deg, #20CEFF -65.3%, #070784 64.5%), #151618",
         }}
@@ -38,50 +39,64 @@ const DocCTA = () => {
           decoding="async"
         />
 
-        {/* Content Group */}
-        <div className="flex flex-col gap-2 items-center justify-start shrink-0 relative z-10 text-center">
+        {/* Content */}
+        <div className="flex flex-col gap-4 items-center justify-start shrink-0 relative z-10 text-center max-w-4xl">
           <h2
-            className="text-white text-center font-sans text-[2.125rem] font-black relative md:w-236 max-w-full leading-normal"
-            style={{ 
-                letterSpacing: "0.0165rem",
-            }}
+            className="text-white text-center font-sans text-[2.25rem] md:text-[2.5rem] font-black relative leading-tight"
+            style={{ letterSpacing: "0.0165rem" }}
           >
-            Build Your Document Intelligence System
+            Transform documents into{" "}
+            <span className="bg-linear-to-r from-[#20CEFF] to-[#FCCA71] bg-clip-text text-transparent font-black">
+              intelligent business workflows
+            </span>
           </h2>
+
           <p
-            className="text-[#CACBEB] text-center font-sans text-[1.25rem] leading-12 font-normal relative mt-2"
-            style={{ 
-                letterSpacing: "-0.017rem",
-            }}
+            className="text-[#CACBEB] text-center font-sans text-[1.15rem] leading-relaxed font-normal relative mt-2 max-w-3xl"
+            style={{ letterSpacing: "-0.017rem" }}
           >
-            Automate document-driven workflows with intelligent, scalable systems.
+            Whether it's government applications, banking KYC, insurance claims, or enterprise procurement — RevoDox automates the full document lifecycle, reducing costs, eliminating errors, and accelerating operations.
           </p>
         </div>
 
-        {/* CTA Button */}
-        <button
-          onClick={handleStartConversation}
-          className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer"
-        >
-          <span
-            className="text-[#070784] text-center font-sans text-[1rem] leading-6 font-semibold relative"
-            style={{ 
-                letterSpacing: "-0.0195rem",
-            }}
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-4 items-center justify-center z-10 relative mt-4">
+          <button
+            onClick={() => handleNavigate("Book a Product Demo")}
+            className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 cursor-pointer active:scale-95"
           >
-            Start a Conversation
-          </span>
-          <img 
-            src="/DocumentIntelligenceSystems/cta_conversation_arrow.svg"
-            className="shrink-0 w-5 h-5 relative overflow-visible group-hover:translate-x-1 transition-transform duration-300"
-            alt=""
-          />
-        </button>
+            <span
+              className="text-[#070784] text-center font-sans text-[1rem] leading-6 font-semibold relative"
+              style={{ letterSpacing: "-0.0195rem" }}
+            >
+              Book a Live Demo
+            </span>
+            <img
+              src="/DocumentIntelligenceSystems/cta_conversation_arrow.svg"
+              className="shrink-0 w-5 h-5 relative overflow-visible group-hover:translate-x-1 transition-transform duration-300"
+              alt=""
+            />
+          </button>
+
+          <button
+            onClick={() => handleNavigate("Talk to a Document Intelligence Specialist")}
+            className="border border-white/20 hover:border-white/40 text-white font-semibold rounded-sm py-4 px-8 flex flex-row gap-3 items-center justify-center transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 backdrop-blur-xs active:scale-95 group"
+          >
+            <span className="font-sans text-[1rem] leading-6 tracking-tight">
+              Talk to a Product Specialist
+            </span>
+            <img
+              className="shrink-0 w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
+              src="/DocumentIntelligenceSystems/hero_icon_3.svg"
+              alt=""
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile View */}
-      <div 
-        className="md:hidden w-[85%] mx-auto rounded-lg pt-16 pr-[22px] pb-16 pl-[22px] flex flex-col gap-8 items-center justify-end relative overflow-hidden shadow-2xl"
+      <div
+        className="md:hidden w-[90%] mx-auto rounded-lg py-10 px-6 flex flex-col gap-6 items-center justify-end relative overflow-hidden shadow-2xl"
         style={{
           background: "linear-gradient(-70.26deg, rgba(32, 206, 255, 1) 0%, rgba(7, 7, 132, 1) 100%), linear-gradient(to left, #151618, #151618)",
         }}
@@ -94,43 +109,53 @@ const DocCTA = () => {
           decoding="async"
         />
 
-        <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10">
+        <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10 text-center pt-4">
           <h2
-            className="text-[#ffffff] text-center font-sans text-[28px] font-bold relative self-stretch leading-tight"
-            style={{ 
-              letterSpacing: "0.26px",
-            }}
+            className="text-[#ffffff] text-center font-sans text-[26px] font-bold relative self-stretch leading-tight"
+            style={{ letterSpacing: "0.26px" }}
           >
-            Build Your Document Intelligence System
+            Transform documents into intelligent business workflows
           </h2>
           <p
             className="text-[#cacbeb] text-center font-sans text-[14px] font-normal relative self-stretch opacity-90 leading-relaxed"
-            style={{ 
-              letterSpacing: "-0.27px",
-            }}
+            style={{ letterSpacing: "-0.27px" }}
           >
-            Automate document-driven workflows with intelligent, scalable systems.
+            RevoDox automates the full document lifecycle — from capture to decision.
           </p>
         </div>
 
-        <button
-          onClick={handleStartConversation}
-          className="btn-premium-glow rounded pt-4 pr-8 pb-4 pl-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer active:scale-95"
-        >
-          <span
-            className="text-[#070784] text-center font-sans text-base leading-6 font-semibold relative"
-            style={{ 
-              letterSpacing: "-0.31px",
-            }}
+        <div className="flex flex-col gap-3 w-full z-10 relative">
+          <button
+            onClick={() => handleNavigate("Book a Product Demo")}
+            className="btn-premium-glow rounded py-4 px-6 flex flex-row gap-2 items-center justify-center w-full transition-all duration-300 cursor-pointer active:scale-95 group"
           >
-            Start a Conversation
-          </span>
-          <img 
-            className="shrink-0 w-5 h-5 relative overflow-visible transition-transform group-hover:translate-x-1" 
-            src="/DocumentIntelligenceSystems/cta_conversation_arrow.svg" 
-            alt="arrow"
-          />
-        </button>
+            <span
+              className="text-[#070784] text-center font-sans text-base leading-6 font-semibold relative"
+              style={{ letterSpacing: "-0.31px" }}
+            >
+              Book a Product Demo
+            </span>
+            <img
+              className="shrink-0 w-5 h-5 relative overflow-visible transition-transform group-hover:translate-x-1"
+              src="/DocumentIntelligenceSystems/cta_conversation_arrow.svg"
+              alt="arrow"
+            />
+          </button>
+
+          <button
+            onClick={() => handleNavigate("Talk to a Document Intelligence Specialist")}
+            className="border border-white/20 text-white font-semibold rounded py-4 px-6 flex flex-row gap-3 items-center justify-center w-full transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 backdrop-blur-xs active:scale-95 group"
+          >
+            <span className="font-sans text-base leading-6">
+              Talk to a Specialist
+            </span>
+            <img
+              className="shrink-0 w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
+              src="/DocumentIntelligenceSystems/hero_icon_3.svg"
+              alt=""
+            />
+          </button>
+        </div>
       </div>
     </section>
   );
