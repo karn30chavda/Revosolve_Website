@@ -32,14 +32,35 @@ function App() {
       <main className="flex-1 w-full relative">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/solutions/commerce-operations-systems" element={<CommerceOperationsSystems />} />
-          <Route path="/solutions/document-intelligence-systems" element={<DocumentIntelligenceSystems />} />
-          <Route path="/solutions/customer-interaction-systems" element={<CustomerInteractionSystems />} />
-          <Route path="/solutions/defense-simulation-training-systems" element={<DefenseSimulationTrainingSystems />} />
-          <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
+          <Route
+            path="/solutions/commerce-operations-systems"
+            element={<CommerceOperationsSystems />}
+          />
+          <Route
+            path="/solutions/document-intelligence-systems"
+            element={<DocumentIntelligenceSystems />}
+          />
+          <Route
+            path="/solutions/customer-interaction-systems"
+            element={<CustomerInteractionSystems />}
+          />
+          <Route
+            path="/solutions/defense-simulation-training-systems"
+            element={<DefenseSimulationTrainingSystems />}
+          />
+          <Route
+            path="/services/enterprise-application-systems"
+            element={<EnterpriseApplicationSystems />}
+          />
           <Route path="/services/cloud-and-devops" element={<CloudDevOps />} />
-          <Route path="/services/ai-intelligent-systems" element={<AiIntelligentSystems />} />
-          <Route path="/services/data-engineering-analytics" element={<DataEngineeringAnalytics />} />
+          <Route
+            path="/services/ai-intelligent-systems"
+            element={<AiIntelligentSystems />}
+          />
+          <Route
+            path="/services/data-engineering-analytics"
+            element={<DataEngineeringAnalytics />}
+          />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />

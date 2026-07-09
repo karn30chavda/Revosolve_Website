@@ -1,177 +1,132 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion as Motion } from "framer-motion";
+import {
+  MagnifyingGlass,
+  CompassTool,
+  Code,
+  GitMerge,
+  ChartLineUp,
+} from "@phosphor-icons/react";
 
-const approachSteps = [
+const methodSteps = [
   {
-    num: "01",
     title: "Discover",
-    desc: "Understand business goals and operational workflows.",
+    desc: "Understand organizational structure, departments, workflows, governance, compliance, and objectives.",
+    icon: MagnifyingGlass,
   },
   {
-    num: "02",
-    title: "Design",
-    desc: "Create scalable architecture and user experiences.",
+    title: "Architect",
+    desc: "Design operating models, process flows, integration architecture, master data strategy, and governance.",
+    icon: CompassTool,
   },
   {
-    num: "03",
-    title: "Build",
-    desc: "Develop applications using modern engineering practices.",
+    title: "Engineer",
+    desc: "Configure, customize, develop, and integrate enterprise platforms using modern engineering practices.",
+    icon: Code,
   },
   {
-    num: "04",
-    title: "Deploy",
-    desc: "Launch securely with governance and monitoring.",
+    title: "Integrate",
+    desc: "Connect ERP with enterprise applications, third-party services, government systems, and banking platforms.",
+    icon: GitMerge,
   },
   {
-    num: "05",
-    title: "Evolve",
-    desc: "Continuously improve systems based on business needs.",
+    title: "Operate & Improve",
+    desc: "Ongoing optimization, workflow enhancements, new modules, analytics, and evolving requirements.",
+    icon: ChartLineUp,
   },
 ];
 
 const EntApproach = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % approachSteps.length);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % methodSteps.length);
     }, 3000);
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section 
-      id="execution-approach" 
-      className="relative w-full bg-[#01031c] pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden z-20 scroll-mt-24 md:scroll-mt-28"
-    >
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none z-0" />
-
-      <div className="relative z-10 w-[85%] mx-auto flex flex-col items-start justify-start gap-12 font-sans">
-        
+    <section className="relative w-full pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden z-20">
+      <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-10">
         {/* Section Header */}
-        <div className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
-          <div className="flex flex-col items-start justify-start font-sans">
-            {/* Section Tag */}
-            <div className="text-white text-[14px] md:text-[18px] font-normal uppercase tracking-[0.264px] opacity-30 mb-2">
-              [how it works]
-            </div>
+        <div className="w-full flex flex-col items-start justify-start pb-2">
+          <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30 text-left">
+            [the revosolve engineering method]
+          </div>
 
-            {/* Heading Block */}
-            <h2 className="text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px]">
-              <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black">
-                Our Approach
+          <div className="flex flex-col items-start justify-start font-sans">
+            <h2 className="text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px] text-left">
+              <span className="font-black block">
+                <span className="text-[#877BF1]">Engineering </span>
+                <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
+                  enterprise platforms
+                </span>
               </span>
-              <br />
-              <span className="text-[#E7E6FC] font-light xl:font-thin">
-                to Intelligent Systems
+              <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
+                around operational excellence
               </span>
             </h2>
           </div>
         </div>
 
-        {/* Steps Layout - Horizontal on Desktop/Tablet */}
-        <div className="relative w-full mt-8 hidden md:block">
-          {/* Horizontal Connecting Line */}
-          <div className="absolute left-[9%] right-[9%] top-[31px] h-px bg-white/10 z-0" />
-          
-          {/* Dynamic Active Step Progress Line */}
-          <div 
-            className="absolute left-[9%] top-[31px] h-[1.5px] bg-[#20CEFF] shadow-[0_0_8px_rgba(32,206,255,0.7)] transition-all duration-500 z-0"
-            style={{ width: `${(activeStep / (approachSteps.length - 1)) * 82}%` }}
-          />
-
-          <div className="flex justify-between items-start w-full relative z-10">
-            {approachSteps.map((step, idx) => {
-              const isActive = idx === activeStep;
-              return (
-                <div 
-                  key={idx} 
-                  className="flex flex-col items-center text-center w-[18%] select-none"
-                >
-                  {/* Step Bubble */}
-                  <div 
-                    style={isActive ? { 
-                      backgroundImage: "linear-gradient(135deg, rgba(32, 206, 255, 1), rgba(10, 14, 143, 1))", 
-                      borderColor: "rgba(32, 206, 255, 1)" 
-                    } : { 
-                      backgroundColor: "rgba(13, 16, 64, 1)" 
-                    }}
-                    className={`w-16 h-16 rounded-full flex items-center justify-center text-[18px] font-bold transition-all duration-300 z-10 border ${
-                      isActive 
-                        ? "text-white shadow-[0_0_18px_rgba(32,206,255,0.6)] scale-110" 
-                        : "border-white/20 text-[#CACBDB]"
-                    }`}
-                  >
-                    {step.num}
+        {/* Method Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 w-full">
+          {methodSteps.map((step, idx) => (
+            <Motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="flex flex-col justify-start items-start gap-4 relative cursor-pointer group"
+            >
+              {/* Step number + connector line */}
+              <div className="w-full flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+                  activeStep === idx
+                    ? "border-[#FCCA71] bg-[#FCCA71]/10 shadow-[0_0_10px_rgba(252,202,113,0.25)]"
+                    : "border-[#877BF1]/40 bg-[#877BF1]/5"
+                }`}>
+                  {step.icon && (
+                    <step.icon
+                      size={20}
+                      weight="light"
+                      className={`transition-colors duration-300 ${
+                        activeStep === idx ? "text-[#FCCA71]" : "text-[#877BF1]/60"
+                      }`}
+                    />
+                  )}
+                </div>
+                {idx < methodSteps.length - 1 && (
+                  <div className="hidden lg:block flex-1 h-px bg-[#877BF1]/20 relative overflow-hidden">
+                    {activeStep === idx && (
+                      <Motion.div
+                        initial={{ left: "-100%" }}
+                        animate={{ left: "100%" }}
+                        transition={{
+                          duration: 3,
+                          ease: "linear",
+                        }}
+                        className="absolute top-0 bottom-0 w-[50%] bg-linear-to-r from-transparent via-[#FCCA71]/80 to-transparent"
+                      />
+                    )}
                   </div>
+                )}
+              </div>
 
-                  {/* Title */}
-                  <h4 
-                    className={`text-sm lg:text-base font-bold font-sans mt-6 transition-colors duration-300 ${
-                      isActive ? "text-[#20CEFF]" : "text-[#E7E6FC]"
-                    }`}
-                  >
-                    {step.title}
-                  </h4>
-
-                  {/* Description */}
-                  <p className="text-[12px] lg:text-[13.5px] text-[#CACBDB] font-light font-sans opacity-60 mt-2 max-w-[160px] leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Steps Layout - Vertical Stack on Mobile */}
-        <div className="relative w-full flex flex-col gap-10 pl-16 md:hidden text-left mt-4">
-          {/* Vertical Connecting Line */}
-          <div className="absolute left-[34px] top-[34px] bottom-[34px] w-px bg-white/10 z-0" />
-
-          {approachSteps.map((step, idx) => {
-            const isActive = idx === activeStep;
-            return (
-              <div 
-                key={idx} 
-                className="relative flex flex-col items-start pt-2.5 select-none"
-              >
-                {/* Step Bubble Absolute Left */}
-                <div 
-                  style={isActive ? { 
-                    backgroundImage: "linear-gradient(135deg, rgba(32, 206, 255, 1), rgba(10, 14, 143, 1))", 
-                    borderColor: "rgba(32, 206, 255, 1)" 
-                  } : { 
-                    backgroundColor: "rgba(13, 16, 64, 1)" 
-                  }}
-                  className={`absolute left-[-54px] top-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 z-10 border ${
-                    isActive 
-                      ? "text-white shadow-[0_0_12px_rgba(32,206,255,0.4)]" 
-                      : "border-white/20 text-[#CACBDB]"
-                  }`}
-                >
-                  {step.num}
-                </div>
-
-                {/* Title */}
-                <h4 
-                  className={`text-base font-bold font-sans transition-colors duration-300 ${
-                    isActive ? "text-[#20CEFF]" : "text-[#E7E6FC]"
-                  }`}
-                >
+              {/* Text */}
+              <div className="flex flex-col gap-2 text-left">
+                <div className="text-[#E7E6FC] text-[20px] font-semibold font-sans leading-[26px]">
                   {step.title}
-                </h4>
-
-                {/* Description */}
-                <p className="text-[13px] text-[#CACBDB] font-light font-sans opacity-70 mt-1.5 leading-relaxed">
+                </div>
+                <p className="text-[#AAA9BE] text-[14px] font-normal font-sans leading-[22px] pr-2">
                   {step.desc}
                 </p>
               </div>
-            );
-          })}
+            </Motion.div>
+          ))}
         </div>
-
       </div>
     </section>
   );

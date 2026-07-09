@@ -1,67 +1,86 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
+import {
+  Cpu,
+  Package,
+  Code,
+  MagicWand,
+  FlowArrow,
+  UsersThree,
+  Kanban,
+  Truck,
+  Wrench,
+  Calculator,
+  ChartBar,
+  PlugsConnected,
+} from "@phosphor-icons/react";
 
 const buildItems = [
   {
-    title: "Enterprise Applications",
-    desc: "Mission-critical applications designed for business operations.",
-    pattern: "/EnterpriseApplicationSystems/build_bg_pattern.svg",
-    icon: (
-      <svg className="w-full h-full object-contain text-[#877BF1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.004 9.004 0 018.716 2.253M12 3a9.004 9.004 0 00-8.716 2.253" />
-      </svg>
-    ),
+    title: "Enterprise Operating Systems",
+    desc: "Integrated platforms connecting finance, procurement, HR, CRM, inventory, projects, assets, and reporting.",
+    icon: <Cpu size={26} className="text-[#877BF1]" weight="light" />,
   },
   {
-    title: "Business Workflow Systems",
-    desc: "Automated workflows that improve operational efficiency.",
-    icon: (
-      <svg className="w-full h-full object-contain text-[#877BF1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125H5.625a1.125 1.125 0 01-1.125-1.125v-3.75c0-.621.504-1.125 1.125-1.125z" />
-      </svg>
-    ),
+    title: "ERPNext Implementations",
+    desc: "End-to-end implementation, configuration, customization, integration, and optimization of ERPNext.",
+    icon: <Package size={26} className="text-[#877BF1]" weight="light" />,
   },
   {
-    title: "Product Engineering",
-    desc: "End-to-end product development from concept to deployment.",
-    icon: (
-      <svg className="w-full h-full object-contain text-[#877BF1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-      </svg>
-    ),
+    title: "Frappe Framework Development",
+    desc: "Custom enterprise applications built on Frappe for organization-specific operational requirements.",
+    icon: <Code size={26} className="text-[#877BF1]" weight="light" />,
   },
   {
-    title: "Legacy Modernization",
-    desc: "Modernizing outdated systems while preserving business continuity.",
-    icon: (
-      <svg className="w-full h-full object-contain text-[#877BF1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-      </svg>
-    ),
+    title: "Low-Code Business Applications",
+    desc: "Rapidly digitize approvals, inspections, compliance, operations, and internal processes.",
+    icon: <MagicWand size={26} className="text-[#877BF1]" weight="light" />,
   },
   {
-    title: "Legacy Migration",
-    desc: "Migration to cloud-native and modern architectures.",
-    icon: (
-      <svg className="w-full h-full object-contain text-[#877BF1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
-      </svg>
-    ),
+    title: "Workflow Automation Platforms",
+    desc: "Configurable approvals, notifications, SLAs, escalations, and business rules for complex workflows.",
+    icon: <FlowArrow size={26} className="text-[#877BF1]" weight="light" />,
   },
   {
-    title: "System Integration",
-    desc: "Connecting applications, APIs, and business processes.",
-    icon: (
-      <svg className="w-full h-full object-contain text-[#877BF1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-      </svg>
-    ),
+    title: "HRMS & Workforce Management",
+    desc: "Employee lifecycle, attendance, payroll integration, leave, onboarding, and field workforce tracking.",
+    icon: <UsersThree size={26} className="text-[#877BF1]" weight="light" />,
+  },
+  {
+    title: "Project & Portfolio Management",
+    desc: "Planning, milestones, budgets, procurement, billing, profitability, and execution in one platform.",
+    icon: <Kanban size={26} className="text-[#877BF1]" weight="light" />,
+  },
+  {
+    title: "Procurement & Supply Chain",
+    desc: "Automated procurement workflows, vendor management, approvals, inventory planning, and visibility.",
+    icon: <Truck size={26} className="text-[#877BF1]" weight="light" />,
+  },
+  {
+    title: "Asset Management",
+    desc: "Track assets, maintenance schedules, utilization, depreciation, and lifecycle performance.",
+    icon: <Wrench size={26} className="text-[#877BF1]" weight="light" />,
+  },
+  {
+    title: "Finance & Accounting",
+    desc: "Integrated accounting, budgeting, cost centers, GST compliance, reporting, and audit readiness.",
+    icon: <Calculator size={26} className="text-[#877BF1]" weight="light" />,
+  },
+  {
+    title: "Business Intelligence & Reporting",
+    desc: "Executive dashboards, operational KPIs, project analytics, and organization-wide reporting.",
+    icon: <ChartBar size={26} className="text-[#877BF1]" weight="light" />,
+  },
+  {
+    title: "Enterprise Integrations",
+    desc: "Banking systems, GST portal, payment gateways, biometrics, CRM, eCommerce, logistics, and APIs.",
+    icon: <PlugsConnected size={26} className="text-[#877BF1]" weight="light" />,
   },
 ];
 
 const EntWhatWeBuild = () => {
   return (
-    <section className="relative w-full bg-[#01031c] pt-2 pb-8 lg:pt-4 lg:pb-12 overflow-hidden z-20">
+    <section className="relative w-full pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden z-20">
       {/* Decorative Background Glows */}
       <div className="absolute top-[30%] left-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />
@@ -69,20 +88,32 @@ const EntWhatWeBuild = () => {
       <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start gap-12 font-sans">
         
         {/* Section Header */}
-        <div className="w-full flex flex-col items-start justify-start pb-6">
-          {/* Section Tag */}
-          <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
-            [what]
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end w-full gap-6 lg:gap-12 pb-6">
+          <div className="flex flex-col items-start min-w-fit text-left">
+            {/* Section Tag */}
+            <span className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4">
+              [what we engineer]
+            </span>
+
+            {/* Heading Block */}
+            <div className="flex flex-col items-start justify-start font-sans">
+              <h2 className="text-2xl md:text-3xl xl:text-[36px] leading-tight tracking-tight text-left">
+                <span className="font-black block">
+                  <span className="text-[#877BF1]">Enterprise platforms </span>
+                  <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">built around</span>
+                </span>
+                <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
+                  your operations
+                </span>
+              </h2>
+            </div>
           </div>
 
-          {/* Heading Block */}
-          <div className="flex flex-col items-start justify-start font-sans">
-            <h2 className="text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px] bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
-              What We Build
-            </h2>
-            <h3 className="text-[#CACBDB] text-xl md:text-2xl xl:text-[30px] font-light xl:font-thin leading-normal mt-1">
-              Where Innovation takes Shape
-            </h3>
+          {/* Description Paragraph */}
+          <div className="max-w-xl lg:pb-1">
+            <p className="text-[#CACBDB] text-sm font-normal leading-relaxed opacity-70 text-left">
+              Instead of forcing your teams to adapt to software, we engineer platforms that support how your organization actually works.
+            </p>
           </div>
         </div>
 
@@ -101,7 +132,7 @@ const EntWhatWeBuild = () => {
                 borderColor: "rgba(99, 102, 241, 0.7)"
               }}
               style={{ backgroundColor: "rgba(29, 30, 50, 1)" }}
-              className="flex flex-col justify-start items-start p-8 min-h-[210px] w-full rounded-[8px] border border-indigo-500/30 hover:border-indigo-500/60 cursor-pointer transition-all duration-300 relative group overflow-hidden"
+              className="flex flex-col justify-start items-start p-8 min-h-[220px] w-full rounded-[8px] border border-indigo-500/30 hover:border-indigo-500/60 cursor-pointer transition-all duration-300 relative group overflow-hidden"
             >
               {/* Card Glow Effect */}
               <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
@@ -129,11 +160,11 @@ const EntWhatWeBuild = () => {
               {/* Text Content Block */}
               <div className="flex-1 flex flex-col justify-start items-start w-full gap-4 relative z-10">
                 {/* Title */}
-                <h4 className="text-[#E7E6FC] text-[24px] font-semibold font-sans leading-[32px] text-left group-hover:text-white transition-colors duration-300">
+                <h4 className="text-[#E7E6FC] text-[20px] font-semibold font-sans leading-[28px] text-left group-hover:text-white transition-colors duration-300">
                   {item.title}
                 </h4>
                 {/* Description */}
-                <p className="text-[#AAA9BE] text-[16px] font-normal font-sans leading-[24px] text-left max-w-full lg:max-w-[520px]">
+                <p className="text-[#AAA9BE] text-[14px] font-normal font-sans leading-[20px] text-left max-w-full">
                   {item.desc}
                 </p>
               </div>

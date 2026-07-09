@@ -6,6 +6,8 @@ import EntProblemsWeSolve from "../components/EnterpriseApplicationSystems/EntPr
 import EntApproach from "../components/EnterpriseApplicationSystems/EntApproach";
 import EntIndustries from "../components/EnterpriseApplicationSystems/EntIndustries";
 import EntTechStack from "../components/EnterpriseApplicationSystems/EntTechStack";
+import EntWhyRevoSolve from "../components/EnterpriseApplicationSystems/EntWhyRevoSolve";
+import EntFAQ from "../components/EnterpriseApplicationSystems/EntFAQ";
 import EntCTA from "../components/EnterpriseApplicationSystems/EntCTA";
 
 const EnterpriseApplicationSystems = () => {
@@ -24,6 +26,8 @@ const EnterpriseApplicationSystems = () => {
       <EntApproach />
       <EntTechStack />
       <EntIndustries />
+      <EntWhyRevoSolve />
+      <EntFAQ />
       <EntCTA />
     </div>
   );
