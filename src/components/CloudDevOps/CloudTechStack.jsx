@@ -7,19 +7,19 @@ const techCats = [
     items: [
       {
         name: "Azure",
-        logoSrc: "/EnterpriceApplication_System/microsoft_azure.svg",
+        logoSrc: "/CloudDevOps/tech_azure.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "AWS",
-        logoSrc: "/EnterpriceApplication_System/Amazon_Web_Services_Logo.svg",
+        logoSrc: "/CloudDevOps/tech_aws.svg",
         lighten: true,
         zoom: true,
       },
       {
         name: "GCP",
-        logoSrc: "/EnterpriceApplication_System/Google_Cloud_logo.svg",
+        logoSrc: "/CloudDevOps/tech_gcp.svg",
         lighten: true,
       },
     ],
@@ -29,19 +29,19 @@ const techCats = [
     items: [
       {
         name: "Docker",
-        logoSrc: "/EnterpriceApplication_System/docker.svg",
+        logoSrc: "/CloudDevOps/tech_docker.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "Kubernetes",
-        logoSrc: "/EnterpriceApplication_System/kubernetes.svg",
+        logoSrc: "/CloudDevOps/tech_kubernetes.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "OpenShift",
-        logoSrc: "/EnterpriceApplication_System/openshift.svg",
+        logoSrc: "/CloudDevOps/tech_openshift.svg",
         lighten: true,
         zoomLarge: true,
       },
@@ -52,24 +52,24 @@ const techCats = [
     items: [
       {
         name: "Terraform",
-        logoSrc: "/EnterpriceApplication_System/terraform.svg",
+        logoSrc: "/CloudDevOps/tech_terraform.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "Ansible",
-        logoSrc: "/EnterpriceApplication_System/ansible.svg",
+        logoSrc: "/CloudDevOps/tech_ansible.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "ARM Templates",
-        logoSrc: "/EnterpriceApplication_System/arm_templates.svg",
+        logoSrc: "/CloudDevOps/tech_arm_templates.svg",
         lighten: true,
       },
       {
         name: "CloudFormation",
-        logoSrc: "/EnterpriceApplication_System/cloudformation.svg",
+        logoSrc: "/CloudDevOps/tech_cloudformation.svg",
         lighten: true,
       },
     ],
@@ -79,24 +79,24 @@ const techCats = [
     items: [
       {
         name: "Azure DevOps",
-        logoSrc: "/EnterpriceApplication_System/azure_devops.svg",
+        logoSrc: "/CloudDevOps/tech_azure_devops.svg",
         lighten: true,
       },
       {
         name: "GitHub Actions",
-        logoSrc: "/EnterpriceApplication_System/GitHub.svg",
+        logoSrc: "/CloudDevOps/tech_github.svg",
         lighten: true,
         zoom: true,
       },
       {
         name: "Jenkins",
-        logoSrc: "/EnterpriceApplication_System/jenkins.svg",
+        logoSrc: "/CloudDevOps/tech_jenkins.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "GitLab CI/CD",
-        logoSrc: "/EnterpriceApplication_System/gitlab.svg",
+        logoSrc: "/CloudDevOps/tech_gitlab.svg",
         lighten: true,
         zoom: true,
       },
@@ -107,23 +107,23 @@ const techCats = [
     items: [
       {
         name: "Prometheus",
-        logoSrc: "/EnterpriceApplication_System/prometheus.svg",
+        logoSrc: "/CloudDevOps/tech_prometheus.svg",
         zoomLarge: true,
       },
       {
         name: "Grafana",
-        logoSrc: "/EnterpriceApplication_System/grafana.svg",
+        logoSrc: "/CloudDevOps/tech_grafana.svg",
         lighten: true,
         zoomLarge: true,
       },
       {
         name: "ELK Stack",
-        logoSrc: "/EnterpriceApplication_System/elk_stack.svg",
+        logoSrc: "/CloudDevOps/tech_elk_stack.svg",
         lighten: true,
       },
       {
         name: "Datadog",
-        logoSrc: "/EnterpriceApplication_System/datadog.svg",
+        logoSrc: "/CloudDevOps/tech_datadog.svg",
         lighten: true,
       },
     ],
@@ -133,22 +133,22 @@ const techCats = [
     items: [
       {
         name: "Microsoft Defender",
-        logoSrc: "/EnterpriceApplication_System/microsoft_defender.svg",
+        logoSrc: "/CloudDevOps/tech_microsoft_defender.svg",
         lighten: true,
       },
       {
         name: "Azure Security Center",
-        logoSrc: "/EnterpriceApplication_System/azure_security_center.svg",
+        logoSrc: "/CloudDevOps/tech_azure_security_center.svg",
         lighten: true,
       },
       {
         name: "AWS Security Hub",
-        logoSrc: "/EnterpriceApplication_System/aws_security_hub.svg",
+        logoSrc: "/CloudDevOps/tech_aws_security_hub.svg",
         lighten: true,
       },
       {
         name: "HashiCorp Vault",
-        logoSrc: "/EnterpriceApplication_System/hashicorp_vault.svg",
+        logoSrc: "/CloudDevOps/tech_hashicorp_vault.svg",
         lighten: true,
         zoomLarge: true,
       },

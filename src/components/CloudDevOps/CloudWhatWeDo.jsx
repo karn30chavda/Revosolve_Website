@@ -161,7 +161,7 @@ const CloudWhatWeDo = () => {
       <div 
         className="absolute inset-0 pointer-events-none z-0 opacity-[0.03] mix-blend-screen"
         style={{
-          backgroundImage: "url(/home_section_6/bg_pattern.svg)",
+          backgroundImage: "url(/CloudDevOps/card_bg_pattern.svg)",
           backgroundSize: "180px",
           backgroundRepeat: "repeat",
         }}
