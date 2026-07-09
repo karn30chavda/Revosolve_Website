@@ -50,7 +50,7 @@ const EntWhatWeDo = () => {
           <div 
             className="absolute right-0 bottom-0 top-0 w-full lg:w-[55%] pointer-events-none z-0 opacity-[0.04] mix-blend-screen"
             style={{
-              backgroundImage: "url(/home_section_6/bg_pattern.svg)",
+              backgroundImage: "url(/EnterpriseApplicationSystems/card_bg_pattern.svg)",
               backgroundSize: "180px",
               backgroundRepeat: "repeat",
             }}

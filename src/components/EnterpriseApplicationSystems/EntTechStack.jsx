@@ -4,65 +4,65 @@ import { motion as Motion } from "framer-motion";
 const techItems = [
   {
     name: ".NET",
-    logoSrc: "/EnterpriceApplication_System/Microsoft_.NET_logo.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_net.svg",
     lighten: true,
   },
   {
     name: "Java",
-    logoSrc: "/EnterpriceApplication_System/java.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_java.svg",
     zoom: true,
     lighten: true,
   },
   {
     name: "Python",
-    logoSrc: "/EnterpriceApplication_System/python.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_python.svg",
     zoomLarge: true,
     lighten: true,
   },
   {
     name: "Node.js",
-    logoSrc: "/EnterpriceApplication_System/nodejs.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_nodejs.svg",
     zoom: true,
     lighten: true,
   },
   {
     name: "React",
-    logoSrc: "/EnterpriceApplication_System/reactjs.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_react.svg",
     zoom: true,
   },
   {
     name: "Next.js",
-    logoSrc: "/EnterpriceApplication_System/nextjs.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_next.svg",
     zoom: true,
     lighten: true,
   },
   {
     name: "Angular",
-    logoSrc: "/EnterpriceApplication_System/angular.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_angular.svg",
     zoom: true,
   },
   {
     name: "PostgreSQL",
-    logoSrc: "/EnterpriceApplication_System/postgresql.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_postgresql.svg",
     lighten: true,
   },
   {
     name: "MySQL",
-    logoSrc: "/EnterpriceApplication_System/mysql.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_mysql.svg",
   },
   {
     name: "FastAPI",
-    logoSrc: "/EnterpriceApplication_System/fastapi.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_fastapi.svg",
     shrink: true,
   },
   {
     name: "REST APIs",
-    logoSrc: "/EnterpriceApplication_System/rest-api-icon.svg",
+    logoSrc: "/EnterpriseApplicationSystems/tech_rest_api.svg",
     lighten: true,
   },
   {
     name: "Microservices",
-    logoSrc: "/EnterpriceApplication_System/microservices.png",
+    logoSrc: "/EnterpriseApplicationSystems/tech_microservices.png",
     lighten: true,
   },
 ];

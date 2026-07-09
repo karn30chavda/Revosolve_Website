@@ -5,7 +5,7 @@ const buildItems = [
   {
     title: "Enterprise Applications",
     desc: "Mission-critical applications designed for business operations.",
-    pattern: "/Solution_page/DIFFERENTIATION_1._patternsvg.svg",
+    pattern: "/EnterpriseApplicationSystems/build_bg_pattern.svg",
     icon: (
       <svg className="w-full h-full object-contain text-[#877BF1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.004 9.004 0 018.716 2.253M12 3a9.004 9.004 0 00-8.716 2.253" />
@@ -109,13 +109,13 @@ const EntWhatWeBuild = () => {
               {/* Bottom Pattern (Right bottom corner) */}
               {idx === 0 ? (
                 <img 
-                  src="/Solution_page/DIFFERENTIATION_1._patternsvg.svg" 
+                  src="/EnterpriseApplicationSystems/build_bg_pattern.svg" 
                   alt="" 
                   className="absolute bottom-0 right-0 w-[215px] h-[71px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0 scale-x-[-1]" 
                 />
               ) : (
                 <img 
-                  src="/Solution_page/DIFFERENTIATION_1._patternsvg.svg" 
+                  src="/EnterpriseApplicationSystems/build_bg_pattern.svg" 
                   alt="" 
                   className="absolute bottom-0 right-0 w-[215px] h-[71px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0 lg:hidden scale-x-[-1]" 
                 />
