@@ -1,9 +1,9 @@
-import { solutionHeroSvg } from "./solution_hero_svg";
+import { solutionHeroSvg } from "./commerce_hero_svg";
 import React from "react";
 import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const SolutionHero = () => {
+const CommerceHero = () => {
   const navigate = useNavigate();
 
   return (
@@ -158,4 +158,4 @@ const SolutionHero = () => {
   );
 };
 
-export default SolutionHero;
+export default CommerceHero;
