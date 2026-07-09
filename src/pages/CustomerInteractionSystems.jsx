@@ -1,14 +1,14 @@
 import React from "react";
-import CustomerInteractionHero from "../components/CustomerInteractionHero/CustomerInteractionHero";
-import CustomerInteractionChallenge from "../components/CustomerInteractionChallenge/CustomerInteractionChallenge";
-import CustomerInteractionSystem from "../components/CustomerInteractionSystem/CustomerInteractionSystem";
-import CustomerInteractionCapabilities from "../components/CustomerInteractionCapabilities/CustomerInteractionCapabilities";
-import CustomerInteractionApproach from "../components/CustomerInteractionApproach/CustomerInteractionApproach";
-import CustomerInteractionOutcomes from "../components/CustomerInteractionOutcomes/CustomerInteractionOutcomes";
-import CustomerInteractionIndustries from "../components/CustomerInteractionIndustries/CustomerInteractionIndustries";
-import CustomerInteractionIntegrations from "../components/CustomerInteractionIntegrations/CustomerInteractionIntegrations";
-import CustomerInteractionWhy from "../components/CustomerInteractionWhy/CustomerInteractionWhy";
-import CustomerInteractionFAQ from "../components/CustomerInteractionFAQ/CustomerInteractionFAQ";
+import CustomerInteractionHero from "../components/CustomerInteractionSystems/CustomerInteractionHero";
+import CustomerInteractionChallenge from "../components/CustomerInteractionSystems/CustomerInteractionChallenge";
+import CustomerInteractionSystem from "../components/CustomerInteractionSystems/CustomerInteractionSystem";
+import CustomerInteractionCapabilities from "../components/CustomerInteractionSystems/CustomerInteractionCapabilities";
+import CustomerInteractionApproach from "../components/CustomerInteractionSystems/CustomerInteractionApproach";
+import CustomerInteractionOutcomes from "../components/CustomerInteractionSystems/CustomerInteractionOutcomes";
+import CustomerInteractionIndustries from "../components/CustomerInteractionSystems/CustomerInteractionIndustries";
+import CustomerInteractionIntegrations from "../components/CustomerInteractionSystems/CustomerInteractionIntegrations";
+import CustomerInteractionWhy from "../components/CustomerInteractionSystems/CustomerInteractionWhy";
+import CustomerInteractionFAQ from "../components/CustomerInteractionSystems/CustomerInteractionFAQ";
 
 const CustomerInteractionSystems = () => {
   return (
