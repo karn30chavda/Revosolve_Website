@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 
-const ScrollToTopButton = () => {
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
 
+  // 1. Instant scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  // 2. Show button when scrolling down
   useEffect(() => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 400);
@@ -51,4 +59,4 @@ const ScrollToTopButton = () => {
   );
 };
 
-export default ScrollToTopButton;
+export default ScrollToTop;
