@@ -1,12 +1,12 @@
 import React from "react";
-import EntHero from "../components/EnterpriseApplication/EntHero";
-import EntWhatWeDo from "../components/EnterpriseApplication/EntWhatWeDo";
-import EntWhatWeBuild from "../components/EnterpriseApplication/EntWhatWeBuild";
-import EntProblemsWeSolve from "../components/EnterpriseApplication/EntProblemsWeSolve";
-import EntApproach from "../components/EnterpriseApplication/EntApproach";
-import EntIndustries from "../components/EnterpriseApplication/EntIndustries";
-import EntTechStack from "../components/EnterpriseApplication/EntTechStack";
-import EntCTA from "../components/EnterpriseApplication/EntCTA";
+import EntHero from "../components/EnterpriseApplicationSystems/EntHero";
+import EntWhatWeDo from "../components/EnterpriseApplicationSystems/EntWhatWeDo";
+import EntWhatWeBuild from "../components/EnterpriseApplicationSystems/EntWhatWeBuild";
+import EntProblemsWeSolve from "../components/EnterpriseApplicationSystems/EntProblemsWeSolve";
+import EntApproach from "../components/EnterpriseApplicationSystems/EntApproach";
+import EntIndustries from "../components/EnterpriseApplicationSystems/EntIndustries";
+import EntTechStack from "../components/EnterpriseApplicationSystems/EntTechStack";
+import EntCTA from "../components/EnterpriseApplicationSystems/EntCTA";
 
 const EnterpriseApplicationSystems = () => {
   const scrollToWhatWeDo = () => {
