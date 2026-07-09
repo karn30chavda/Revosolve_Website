@@ -33,7 +33,7 @@ const Home = () => {
           <div className="absolute top-0 left-0 w-full h-full z-1 overflow-hidden pointer-events-none opacity-40">
             <div className="absolute top-0 left-0 w-full h-[869px]">
               <img
-                src="/home_section_3/bg_pattern.png"
+                src="/Home/problems_bg_pattern.png"
                 alt=""
                 className="w-full h-full object-contain"
               />

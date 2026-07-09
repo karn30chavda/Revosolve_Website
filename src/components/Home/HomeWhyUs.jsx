@@ -57,8 +57,8 @@ const HomeWhyUs = () => {
                 className="w-full h-full shrink-0 pointer-events-none select-none"
                 style={{
                   background: "linear-gradient(to right, #050737 0%, #FFF 100%)",
-                  WebkitMaskImage: "url(/home_section_6/bg_pattern.svg)",
-                  maskImage: "url(/home_section_6/bg_pattern.svg)",
+                  WebkitMaskImage: "url(/Home/why_bg_pattern.svg)",
+                  maskImage: "url(/Home/why_bg_pattern.svg)",
                   WebkitMaskRepeat: "no-repeat",
                   maskRepeat: "no-repeat",
                   WebkitMaskPosition: "center",
@@ -96,7 +96,7 @@ const HomeWhyUs = () => {
                 <div
                     className="w-full h-full"
                     style={{
-                        backgroundImage: "url(/home_section_6/bg_pattern.svg)",
+                        backgroundImage: "url(/Home/why_bg_pattern.svg)",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         mixBlendMode: "overlay"

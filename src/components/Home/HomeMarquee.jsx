@@ -3,10 +3,10 @@ import { motion as Motion } from "framer-motion";
 
 const HomeMarquee = () => {
   const logos = [
-    "/marquee_icons/1.svg",
-    "/marquee_icons/2.svg",
-    "/marquee_icons/3.svg",
-    "/marquee_icons/4.svg",
+    "/Home/marquee_icon_1.svg",
+    "/Home/marquee_icon_2.svg",
+    "/Home/marquee_icon_3.svg",
+    "/Home/marquee_icon_4.svg",
   ];
 
   // Multiple sets for a truly infinite feel
@@ -18,7 +18,7 @@ const HomeMarquee = () => {
       {/* Top Atmospheric Transition Bridge */}
       <div className="absolute -top-5 left-0 right-0 w-full pointer-events-none z-30 transform-gpu -translate-y-1/2">
         <img 
-          src="/hero_section/gradient.png" 
+          src="/Home/hero_gradient.png" 
           className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100" 
           alt="" 
         />

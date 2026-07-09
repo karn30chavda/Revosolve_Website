@@ -13,7 +13,7 @@ const HomeHero = () => {
           playsInline
           className="w-full h-full object-cover md:scale-105 scale-100"
         >
-          <source src="/hero_section/hero_video.webm" type="video/webm" />
+          <source src="/Home/hero_video.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
 
@@ -23,7 +23,7 @@ const HomeHero = () => {
         {/* Atmospheric Transition Gradient (The Bridge) */}
         <div className="absolute bottom-3 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-1/2">
           <img
-            src="/hero_section/gradient.png"
+            src="/Home/hero_gradient.png"
             className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
             alt=""
           />
@@ -44,7 +44,7 @@ const HomeHero = () => {
 
           <img
             className="shrink-0 w-3 h-3 md:w-3.5 md:h-3.5 object-contain"
-            src="/hero_section/icon_1.svg"
+            src="/Home/hero_icon_1.svg"
             alt=""
           />
 
@@ -91,7 +91,7 @@ const HomeHero = () => {
             </span>
             <img
               className="relative z-10 shrink-0 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1.5 transition-transform duration-300"
-              src="/hero_section/icon_2.svg"
+              src="/Home/hero_icon_2.svg"
               alt=""
             />
           </button>
@@ -107,7 +107,7 @@ const HomeHero = () => {
             </span>
             <img
               className="shrink-0 w-3 h-3 md:w-3.5 md:h-3.5 group-hover:translate-x-1 transition-transform"
-              src="/hero_section/icon_3.svg"
+              src="/Home/hero_icon_3.svg"
               alt=""
             />
           </button>
@@ -121,7 +121,7 @@ const HomeHero = () => {
                 .getElementById("marquee-section")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            src="/hero_section/arrow_icon.svg"
+            src="/Home/hero_arrow_icon.svg"
             className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
             alt="Scroll down"
           />

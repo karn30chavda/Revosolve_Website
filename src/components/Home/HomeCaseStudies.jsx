@@ -9,12 +9,12 @@ const HomeCaseStudies = () => {
     title: "UPI Fraud Business Rule Engine Development",
     goal: "Goal: Create a UPI fraud rule engine to detect and prevent fraudulent transactions in",
     techLogos: [
-      "/home_section_5/fast_api_icon.svg",
-      "/home_section_5/azure_icon.svg",
-      "/home_section_5/sql_.svg",
-      "/home_section_5/react_icon.svg",
+      "/Home/case_fast_api.svg",
+      "/Home/case_azure.svg",
+      "/Home/case_sql.svg",
+      "/Home/case_react.svg",
     ],
-    previewImage: "/home_section_5/right_photo.jpg",
+    previewImage: "/Home/case_photo.jpg",
   };
 
   return (
@@ -50,7 +50,7 @@ const HomeCaseStudies = () => {
       <div className="hidden md:flex w-[85%] mx-auto px-4 flex-row gap-[22px] items-start justify-start relative">
         <div className="rounded-lg border-2 border-transparent p-[25px] flex flex-col gap-4 items-start justify-start flex-1 h-[441px] relative overflow-hidden bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           <img
-            src="/home_section_5/right_top_pattern.svg"
+            src="/Home/case_top_pattern.svg"
             alt=""
             loading="lazy"
             className="absolute top-0 right-0 pointer-events-none select-none"
@@ -99,7 +99,7 @@ const HomeCaseStudies = () => {
                 </button>
                 <img
                   className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                  src="/home_section_4/explore_arrow.svg"
+                  src="/Home/solutions_explore_arrow.svg"
                   alt="explore"
                 />
               </div>
@@ -122,7 +122,7 @@ const HomeCaseStudies = () => {
       <div className="md:hidden w-[85%] mx-auto">
         <div className="rounded-lg p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden w-full bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           <img
-            src="/home_section_5/right_img_mobile.svg"
+            src="/Home/case_img_mobile.svg"
             className="rounded-lg self-stretch h-[185px] object-cover relative border border-black/5"
             alt=""
             loading="lazy"
@@ -169,7 +169,7 @@ const HomeCaseStudies = () => {
               </div>
               <img
                 className="shrink-0 w-5 h-5 relative object-contain"
-                src="/home_section_4/explore_arrow.svg"
+                src="/Home/solutions_explore_arrow.svg"
                 alt=""
                 loading="lazy"
               />
@@ -189,7 +189,7 @@ const HomeCaseStudies = () => {
           </span>
           <img
             className="w-3 md:w-3.5 h-auto transition-transform group-hover:translate-x-1"
-            src="/home_section_5/Explore_case_study_arrow.svg"
+            src="/Home/case_explore_arrow.svg"
             alt="arrow"
             loading="lazy"
             decoding="async"

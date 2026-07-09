@@ -114,24 +114,24 @@ const HomeProblemsWeSolve = () => {
       title: "Government & Public Sector",
       description:
         "Digital governance platforms, citizen service automation, and workflow systems for public operations.",
-      icon: "/home_section_3/government.svg",
-      video: "/home_section_3/government.mp4",
+      icon: "/Home/problems_government.svg",
+      video: "/Home/problems_government.mp4",
       reverse: false,
     },
     {
       title: "Banking & Financial Institutions",
       description:
         "Technology systems for customer interaction, identity verification, and financial operations enabling automated onboarding.",
-      icon: "/home_section_3/accounts.svg",
-      video: "/home_section_3/accounts.mp4",
+      icon: "/Home/problems_accounts.svg",
+      video: "/Home/problems_accounts.mp4",
       reverse: true,
     },
     {
       title: "Enterprise Organizations",
       description:
         "AI-driven workflow automation, decision intelligence, and operational systems.",
-      icon: "/home_section_3/enterprice.svg",
-      video: "/home_section_3/enterprice.mp4",
+      icon: "/Home/problems_enterprise.svg",
+      video: "/Home/problems_enterprise.mp4",
       reverse: false,
     },
   ];

@@ -9,7 +9,7 @@ const solutions = [
     title: "Digitizing Physical Document Workflows for Government Operations",
     description:
       "Transform offline document processing into structured, automated workflows enabling faster data extraction, validation, and decision-making across departments",
-    image: "/home_section_4/ocr_solution.jpeg",
+    image: "/Home/solutions_ocr.jpeg",
   },
   {
     id: 1,
@@ -18,7 +18,7 @@ const solutions = [
       "Automating Customer Interaction for Financial & Service Institutions",
     description:
       "Build intelligent interaction systems that handle customer queries, support workflows, and service requests across voice, chat, and AI-driven interfaces.",
-    image: "/home_section_4/operating_system.jpg",
+    image: "/Home/solutions_os.jpg",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const solutions = [
     title: "Unifying Commerce Operations Across Channels",
     description:
       "Centralize order management, inventory, fulfillment, and communication into a single operational system across ecommerce platforms and marketplaces.",
-    image: "/home_section_4/ai_survelliance.jpg",
+    image: "/Home/solutions_surveillance.jpg",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const solutions = [
       "Simulating Real-World Systems with Digital Twin & Immersive Technologies",
     description:
       "Create virtual environments for monitoring, training, and operational simulation enabling better planning and decision-making across complex systems.",
-    image: "/home_section_4/operating_system.jpg",
+    image: "/Home/solutions_os.jpg",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const solutions = [
       "Intelligent Surveillance & Monitoring for Public and Enterprise Environments",
     description:
       "Deploy AI-powered systems for real-time monitoring, anomaly detection, and situational awareness across infrastructure and operational environments.",
-    image: "/home_section_4/ai_survelliance.jpg",
+    image: "/Home/solutions_surveillance.jpg",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const solutions = [
     title: "Managing Infrastructure Projects from Tender to Execution",
     description:
       "A unified system to manage tenders, execution, workforce, assets, and financials across infrastructure and government projects.",
-    image: "/home_section_4/operating_system.jpg",
+    image: "/Home/solutions_os.jpg",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const solutions = [
       "Immersive Training & Simulation for Defense and Public Sector Operations",
     description:
       "Enable realistic, scenario-based training environments that prepare personnel for critical operations, emergency situations, and complex system handling improving readiness, response, and decision-making without real-world risk.",
-    image: "/home_section_4/ocr_solution.jpeg",
+    image: "/Home/solutions_ocr.jpeg",
   },
 ];
 
@@ -231,7 +231,7 @@ const HomeIntelligentSolutions = () => {
               className="p-1 transition-transform hover:scale-110 active:scale-95 cursor-pointer"
             >
               <img
-                src="/home_section_4/left_arrow.svg"
+                src="/Home/solutions_left_arrow.svg"
                 alt="Prev"
                 className="w-8 h-8 opacity-60 hover:opacity-100 transition-opacity"
               />
@@ -243,7 +243,7 @@ const HomeIntelligentSolutions = () => {
               className="p-1 transition-transform hover:scale-110 active:scale-95 cursor-pointer"
             >
               <img
-                src="/home_section_4/right_arrow.svg"
+                src="/Home/solutions_right_arrow.svg"
                 alt="Next"
                 className="w-8 h-8 opacity-60 hover:opacity-100 transition-opacity"
               />
@@ -444,14 +444,14 @@ const HomeIntelligentSolutions = () => {
                             <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#050737] group-hover/link:w-full transition-all duration-300" />
                           </span>
                           <img
-                            src="/home_section_4/explore_arrow.svg"
+                            src="/Home/solutions_explore_arrow.svg"
                             alt=""
                             className="w-4 h-4 md:w-4.5 md:h-4.5 transition-transform duration-300 group-hover/link:translate-x-1.5"
                           />
                         </div>
                       </div>
                       <img
-                        src="/home_section_4/card_bottom_pattern.svg"
+                        src="/Home/solutions_card_pattern.svg"
                         alt=""
                         className="absolute bottom-0 right-0 opacity-40 z-0 group-hover:scale-125 transition-transform duration-700"
                       />
