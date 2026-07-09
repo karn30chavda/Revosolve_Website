@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const WhyJoin = () => {
+const CareerWhyJoin = () => {
   const [activeCard, setActiveCard] = useState(0);
 
   const joinCards = [
@@ -113,4 +113,4 @@ const WhyJoin = () => {
   );
 };
 
-export default WhyJoin;
+export default CareerWhyJoin;

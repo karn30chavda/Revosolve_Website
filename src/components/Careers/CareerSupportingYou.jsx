@@ -1,6 +1,6 @@
 import React from "react";
 
-const SupportingYou = () => {
+const CareerSupportingYou = () => {
   const problemCards = [
     {
       title: "Professional Development",
@@ -105,4 +105,4 @@ const SupportingYou = () => {
   );
 };
 
-export default SupportingYou;
+export default CareerSupportingYou;

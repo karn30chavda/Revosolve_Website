@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import CareerHero from "../components/CareerHero/CareerHero";
-import WhyJoin from "../components/WhyJoin/WhyJoin";
-import SupportingYou from "../components/SupportingYou/SupportingYou";
-// import Openings from "../components/Openings/Openings";
-import CareerCTA from "../components/CareerCTA/CareerCTA";
+import CareerHero from "../components/Careers/CareerHero";
+import CareerWhyJoin from "../components/Careers/CareerWhyJoin";
+import CareerSupportingYou from "../components/Careers/CareerSupportingYou";
+// import CareerOpenings from "../components/Careers/CareerOpenings";
+import CareerCTA from "../components/Careers/CareerCTA";
 
 const Careers = () => {
   const location = useLocation();
@@ -32,9 +32,9 @@ const Careers = () => {
 
       {/* Careers Hero Section */}
       <CareerHero scrollToOpenings={scrollToOpenings} />
-      <WhyJoin />
-      <SupportingYou />
-      {/* <Openings /> */}
+      <CareerWhyJoin />
+      <CareerSupportingYou />
+      {/* <CareerOpenings /> */}
       <CareerCTA />
 
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Openings = () => {
+const CareerOpenings = () => {
   const jobs = [
     {
       title: "AI Solution Consultant",
@@ -112,4 +112,4 @@ const Openings = () => {
   );
 };
 
-export default Openings;
+export default CareerOpenings;
