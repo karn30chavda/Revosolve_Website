@@ -49,7 +49,7 @@ const DataProblemsWeSolve = () => {
       <div 
         className="absolute inset-0 pointer-events-none z-0 opacity-10 mix-blend-screen"
         style={{
-          backgroundImage: "url(/home_section_6/bg_pattern.svg)",
+          backgroundImage: "url(/DataEngineeringAnalytics/problems_bg_pattern.svg)",
           backgroundSize: "180px",
           backgroundRepeat: "repeat",
         }}

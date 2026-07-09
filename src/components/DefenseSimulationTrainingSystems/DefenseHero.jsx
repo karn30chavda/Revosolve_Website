@@ -133,7 +133,7 @@ const DefenseHero = () => {
               </span>
               <img
                 className="relative z-10 shrink-0 w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-300"
-                src="/hero_section/icon_2.svg"
+                src="/DefenseSimulationTrainingSystems/hero_icon_2.svg"
                 alt=""
               />
             </button>
@@ -147,7 +147,7 @@ const DefenseHero = () => {
               </span>
               <img
                 className="shrink-0 w-3 h-3 group-hover:translate-x-1 transition-transform"
-                src="/hero_section/icon_3.svg"
+                src="/DefenseSimulationTrainingSystems/hero_icon_3.svg"
                 alt=""
               />
             </button>
@@ -276,7 +276,7 @@ const DefenseHero = () => {
       <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
         <img
           onClick={handleScrollDown}
-          src="/hero_section/arrow_icon.svg"
+          src="/DefenseSimulationTrainingSystems/hero_arrow_icon.svg"
           className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
           alt="Scroll down"
         />
@@ -285,7 +285,7 @@ const DefenseHero = () => {
       {/* Atmospheric Transition Gradient (The Bridge) at bottom */}
       <div className="absolute -bottom-16 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-[60%]">
         <img
-          src="/hero_section/gradient.png"
+          src="/DefenseSimulationTrainingSystems/hero_gradient.png"
           className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
           alt=""
         />

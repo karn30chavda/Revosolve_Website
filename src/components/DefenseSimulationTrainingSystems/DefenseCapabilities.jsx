@@ -144,13 +144,13 @@ const DefenseCapabilities = () => {
               {/* Bottom Pattern */}
               {i === 0 ? (
                 <img 
-                  src="/Solution_page/DIFFERENTIATION_1._patternsvg.svg" 
+                  src="/DefenseSimulationTrainingSystems/differentiation_pattern.svg" 
                   alt="" 
                   className="absolute bottom-0 right-0 w-[215px] h-[71px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0 scale-x-[-1]" 
                 />
               ) : (
                 <img 
-                  src="/Solution_page/DIFFERENTIATION_1._patternsvg.svg" 
+                  src="/DefenseSimulationTrainingSystems/differentiation_pattern.svg" 
                   alt="" 
                   className="absolute bottom-0 right-0 w-[215px] h-[71px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-0 lg:hidden scale-x-[-1]" 
                 />
