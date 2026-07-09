@@ -328,9 +328,9 @@ export const solutionHeroSvg = `<svg width="100%" height="100%" viewBox="0 0 623
 <clipPath id="clip2_1_2236">
 <rect width="37" height="38" fill="white" transform="translate(133.5 226)"/>
 </clipPath>
-<image id="image0_1_2236" width="36" height="36" preserveAspectRatio="none" xlink:href="/Solution_page/first_gif.gif"/>
-<image id="image1_1_2236" width="36" height="36" preserveAspectRatio="none" xlink:href="/Solution_page/second_gif.gif"/>
-<image id="image2_1_2236" width="36" height="36" preserveAspectRatio="none" xlink:href="/Solution_page/third_gif.gif"/>
+<image id="image0_1_2236" width="36" height="36" preserveAspectRatio="none" xlink:href="/CommerceOperationsSystems/hero_gif_1.gif"/>
+<image id="image1_1_2236" width="36" height="36" preserveAspectRatio="none" xlink:href="/CommerceOperationsSystems/hero_gif_2.gif"/>
+<image id="image2_1_2236" width="36" height="36" preserveAspectRatio="none" xlink:href="/CommerceOperationsSystems/hero_gif_3.gif"/>
 </defs>
 </svg>
 `;

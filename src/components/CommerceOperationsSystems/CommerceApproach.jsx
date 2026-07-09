@@ -65,7 +65,7 @@ const CommerceApproach = () => {
 
             {/* Shopify (Circle 1 - Center 16.29%, 10.67%) */}
             <img
-              src="/Solution_page/SHOPIFY.gif"
+              src="/CommerceOperationsSystems/appr_gif_shopify.gif"
               alt="Shopify Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -78,7 +78,7 @@ const CommerceApproach = () => {
 
             {/* Amazon (Circle 2 - Center 9.80%, 27.25%) */}
             <img
-              src="/Solution_page/amazon.gif"
+              src="/CommerceOperationsSystems/appr_gif_amazon.gif"
               alt="Amazon Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -91,7 +91,7 @@ const CommerceApproach = () => {
 
             {/* EasyEcom (Circle 3 - Center 9.65%, 57.50%) */}
             <img
-              src="/Solution_page/easyecom.gif"
+              src="/CommerceOperationsSystems/appr_gif_easyecom.gif"
               alt="EasyEcom Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -104,7 +104,7 @@ const CommerceApproach = () => {
 
             {/* Zepto (Circle 4 - Center 10.31%, 88.08%) */}
             <img
-              src="/Solution_page/zepto.gif"
+              src="/CommerceOperationsSystems/appr_gif_zepto.gif"
               alt="Zepto Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -117,7 +117,7 @@ const CommerceApproach = () => {
 
             {/* Gupshup (Circle 5 - Center 78.09%, 10.83%) */}
             <img
-              src="/Solution_page/ghupshup.gif"
+              src="/CommerceOperationsSystems/appr_gif_gupshup.gif"
               alt="Gupshup Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -130,7 +130,7 @@ const CommerceApproach = () => {
 
             {/* eShipz (Circle 6 - Center 65.98%, 89.25%) */}
             <img
-              src="/Solution_page/eshipz.gif"
+              src="/CommerceOperationsSystems/appr_gif_eshipz.gif"
               alt="eShipz Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -143,7 +143,7 @@ const CommerceApproach = () => {
 
             {/* UPS (Circle 7 - Center 83.59%, 89.00%) */}
             <img
-              src="/Solution_page/ups.gif"
+              src="/CommerceOperationsSystems/appr_gif_ups.gif"
               alt="UPS Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{

@@ -277,7 +277,7 @@ const CommerceVideoAnimation = () => {
           }}
         >
           <img
-            src="/commerce_video/left_decoration.png"
+            src="/CommerceOperationsSystems/left_decoration.png"
             alt=""
             className="w-full h-full object-contain"
           />
@@ -303,7 +303,7 @@ const CommerceVideoAnimation = () => {
           }}
         >
           <img
-            src="/commerce_video/right_decoration.png"
+            src="/CommerceOperationsSystems/right_decoration.png"
             alt=""
             className="w-full h-full object-contain"
           />
@@ -414,7 +414,7 @@ const CommerceVideoAnimation = () => {
           }}
         >
           <img
-            src="/commerce_video/ERPNext.png"
+            src="/CommerceOperationsSystems/ERPNext.png"
             alt="ERPNext"
             className="w-[72%] h-[72%] object-contain"
             onError={(e) => {
@@ -471,8 +471,8 @@ const CommerceVideoAnimation = () => {
               <img
                 src={
                   activeFrame === 1 || activeFrame === 2 || activeFrame === 10
-                    ? "/commerce_video/doc7.png"
-                    : `/commerce_video/doc${card.id + 1}.png`
+                    ? "/CommerceOperationsSystems/doc7.png"
+                    : `/CommerceOperationsSystems/doc${card.id + 1}.png`
                 }
                 alt={`Doc ${card.id + 1}`}
                 className="w-full h-full object-cover"

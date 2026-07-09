@@ -15,12 +15,12 @@ const systemItems = [
 ];
 
 const systemImages = [
-  "/Solution_page/solution_positining_image_1.svg",
-  "/Solution_page/solution_positining_image_2.svg",
-  "/Solution_page/solution_positining_image_3.svg",
-  "/Solution_page/solution_positining_image_4.svg",
-  "/Solution_page/solution_positining_image_5.svg",
-  "/Solution_page/solution_positining_image_6.svg",
+  "/CommerceOperationsSystems/pos_image_1.svg",
+  "/CommerceOperationsSystems/pos_image_2.svg",
+  "/CommerceOperationsSystems/pos_image_3.svg",
+  "/CommerceOperationsSystems/pos_image_4.svg",
+  "/CommerceOperationsSystems/pos_image_5.svg",
+  "/CommerceOperationsSystems/pos_image_6.svg",
 ];
 
 const CommerceSystem = () => {
@@ -159,7 +159,7 @@ const CommerceSystem = () => {
                           }`}
                         >
                           <img
-                            src="/Solution_page/solution_problem_tick.svg"
+                            src="/CommerceOperationsSystems/problem_tick.svg"
                             alt="Tick"
                             className={`w-3.5 h-3.5 transition-all duration-300 ${
                               isActive
@@ -191,7 +191,7 @@ const CommerceSystem = () => {
                   className="w-full h-full object-contain"
                   onError={(e) => {
                     e.target.src =
-                      "/Solution_page/solution_positining_image_1.svg";
+                      "/CommerceOperationsSystems/pos_image_1.svg";
                   }}
                 />
               </div>
@@ -249,7 +249,7 @@ const CommerceSystem = () => {
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.src =
-                    "/Solution_page/solution_positining_image.webp";
+                    "/CommerceOperationsSystems/pos_image_1.svg";
                 }}
               />
             </div>
@@ -298,7 +298,7 @@ const CommerceSystem = () => {
                           )}
                         </svg>
                         <img
-                          src="/Solution_page/solution_problem_tick.svg"
+                          src="/CommerceOperationsSystems/problem_tick.svg"
                           alt="Tick"
                           className={`w-4 h-4 relative z-10 transition-all duration-300 ${
                             isActive

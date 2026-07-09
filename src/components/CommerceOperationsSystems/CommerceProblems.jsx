@@ -17,10 +17,10 @@ const CommerceProblems = () => {
   ];
 
   const problemImages = [
-    "/Solution_page/solution_problem_img_1.svg",
-    "/Solution_page/solution_problem_img_2.svg",
-    "/Solution_page/solution_problem_img_3.svg",
-    "/Solution_page/solution_problem_img_4.svg",
+    "/CommerceOperationsSystems/problem_img_1.svg",
+    "/CommerceOperationsSystems/problem_img_2.svg",
+    "/CommerceOperationsSystems/problem_img_3.svg",
+    "/CommerceOperationsSystems/problem_img_4.svg",
   ];
 
   // Desktop Scroll Tracking
@@ -125,7 +125,7 @@ const CommerceProblems = () => {
                     className="w-full h-full object-cover absolute inset-0"
                     onError={(e) => {
                       e.target.src =
-                        "/Solution_page/solution_problem_img_1.svg";
+                        "/CommerceOperationsSystems/problem_img_1.svg";
                     }}
                   />
                 ))}
@@ -160,7 +160,7 @@ const CommerceProblems = () => {
                           }`}
                         >
                           <img
-                            src="/Solution_page/solution_problem_tick.svg"
+                            src="/CommerceOperationsSystems/problem_tick.svg"
                             alt="Tick"
                             className={`w-3.5 h-3.5 transition-all duration-300 ${
                               isActive
@@ -182,7 +182,7 @@ const CommerceProblems = () => {
 
               {/* Bottom Right Decorative Pattern */}
               <img
-                src="/Solution_page/solution_problem_bg_pattern.webp"
+                src="/CommerceOperationsSystems/problem_bg_pattern_1.webp"
                 alt=""
                 className="absolute bottom-0 right-0 pointer-events-none z-0 mix-blend-screen opacity-40 select-none w-auto h-auto max-h-[70%] lg:max-h-full"
               />
@@ -230,7 +230,7 @@ const CommerceProblems = () => {
 
             {/* Bottom Left Decorative Pattern 2 */}
             <img
-              src="/Solution_page/solution_problem_bg_pattern_2.webp"
+              src="/CommerceOperationsSystems/problem_bg_pattern_2.webp"
               alt=""
               className="absolute bottom-0 left-0 pointer-events-none z-0 mix-blend-screen opacity-40 select-none w-auto h-auto max-h-[70%] lg:max-h-full"
             />
@@ -278,7 +278,7 @@ const CommerceProblems = () => {
                   alt="Commerce Operations Infographic"
                   className="w-full h-full object-contain absolute inset-0"
                   onError={(e) => {
-                    e.target.src = "/Solution_page/solution_problem_img_1.svg";
+                    e.target.src = "/CommerceOperationsSystems/problem_img_1.svg";
                   }}
                 />
               ))}
@@ -328,7 +328,7 @@ const CommerceProblems = () => {
                           )}
                         </svg>
                         <img
-                          src="/Solution_page/solution_problem_tick.svg"
+                          src="/CommerceOperationsSystems/problem_tick.svg"
                           alt="Tick"
                           className={`w-3 h-3 relative z-10 transition-all duration-300 ${
                             isActive
@@ -350,7 +350,7 @@ const CommerceProblems = () => {
 
             {/* Bottom Right Decorative Pattern */}
             <img
-              src="/Solution_page/solution_problem_bg_pattern.webp"
+              src="/CommerceOperationsSystems/problem_bg_pattern_1.webp"
               alt=""
               className="absolute bottom-0 right-0 pointer-events-none z-0 mix-blend-screen opacity-30 select-none w-[120px] h-auto"
             />
@@ -393,7 +393,7 @@ const CommerceProblems = () => {
 
             {/* Bottom Left Decorative Pattern 2 */}
             <img
-              src="/Solution_page/solution_problem_bg_pattern_2.webp"
+              src="/CommerceOperationsSystems/problem_bg_pattern_2.webp"
               alt=""
               className="absolute bottom-0 left-0 pointer-events-none z-0 mix-blend-screen opacity-30 select-none w-[100px] h-auto"
             />

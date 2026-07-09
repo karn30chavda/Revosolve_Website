@@ -5,32 +5,32 @@ const differentiationData = [
   {
     title: "Built as an operational backbone, not an integration layer",
     desc: "Functions as the core system that manages end-to-end operations instead of simply connecting third-party tools.",
-    icon: "/Solution_page/DIFFERENTIATION_1.svg",
-    pattern: "/Solution_page/DIFFERENTIATION_1._patternsvg.svg",
+    icon: "/CommerceOperationsSystems/diff_icon_1.svg",
+    pattern: "/CommerceOperationsSystems/diff_pattern_1.svg",
     colSpan: "lg:col-span-2",
   },
   {
     title: "Designed for multi-brand, multi-channel environments",
     desc: "Supports multiple brands, marketplaces, and sales channels within a single ecosystem.",
-    icon: "/Solution_page/DIFFERENTIATION_2.svg",
+    icon: "/CommerceOperationsSystems/diff_icon_2.svg",
     colSpan: "lg:col-span-1",
   },
   {
     title: "Eliminates dependency on multiple SaaS tools",
     desc: "Reduces the need for separate software subscriptions for different operational tasks.",
-    icon: "/Solution_page/DIFFERENTIATION_3.svg",
+    icon: "/CommerceOperationsSystems/diff_icon_3.svg",
     colSpan: "lg:col-span-1",
   },
   {
     title: "Enables complete operational and financial control",
     desc: "Provides centralized oversight of inventory, orders, logistics, and financial processes.",
-    icon: "/Solution_page/DIFFERENTIATION_4.svg",
+    icon: "/CommerceOperationsSystems/diff_icon_4.svg",
     colSpan: "lg:col-span-1",
   },
   {
     title: "Scales without increasing system complexity",
     desc: "Supports business growth without adding complicated workflows or disconnected systems.",
-    icon: "/Solution_page/DIFFERENTIATION_5.svg",
+    icon: "/CommerceOperationsSystems/diff_icon_5.svg",
     colSpan: "lg:col-span-1",
   },
 ];

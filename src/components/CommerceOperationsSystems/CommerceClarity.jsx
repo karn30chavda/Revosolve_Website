@@ -17,10 +17,10 @@ const CommerceClarity = () => {
   ];
 
   const clarityImages = [
-    "/Solution_page/operational_clarity_img.webp",
-    "/Solution_page/operational_clarity_2.webp",
-    "/Solution_page/operational_clarity_3.webp",
-    "/Solution_page/operational_clarity_5.webp",
+    "/CommerceOperationsSystems/clarity_img_1.webp",
+    "/CommerceOperationsSystems/clarity_img_2.webp",
+    "/CommerceOperationsSystems/clarity_img_3.webp",
+    "/CommerceOperationsSystems/clarity_img_4.webp",
   ];
 
   // Desktop Scroll Tracking (4 stages)
@@ -115,7 +115,7 @@ const CommerceClarity = () => {
                   className="w-full h-full object-fill"
                   onError={(e) => {
                     e.target.src =
-                      "/Solution_page/operational_clarity_img.webp";
+                      "/CommerceOperationsSystems/clarity_img_1.webp";
                   }}
                 />
               </div>
@@ -148,7 +148,7 @@ const CommerceClarity = () => {
                           }`}
                         >
                           <img
-                            src="/Solution_page/solution_problem_tick.svg"
+                            src="/CommerceOperationsSystems/problem_tick.svg"
                             alt="Tick"
                             className={`w-3.5 h-3.5 transition-all duration-300 ${
                               isActive
@@ -211,7 +211,7 @@ const CommerceClarity = () => {
                 alt="Operational Clarity Graphic"
                 className="w-full h-full object-contain absolute inset-0"
                 onError={(e) => {
-                  e.target.src = "/Solution_page/operational_clarity_img.webp";
+                  e.target.src = "/CommerceOperationsSystems/clarity_img_1.webp";
                 }}
               />
             </div>
@@ -260,9 +260,9 @@ const CommerceClarity = () => {
                           )}
                         </svg>
                         <img
-                          src="/Solution_page/solution_problem_tick.svg"
+                          src="/CommerceOperationsSystems/problem_tick.svg"
                           alt="Tick"
-                          className={`w-3 h-3 relative z-10 transition-all duration-300 ${
+                          className={`w-3.5 h-3.5 relative z-10 transition-all duration-300 ${
                             isActive
                               ? "scale-100 opacity-100"
                               : "scale-90 opacity-40"

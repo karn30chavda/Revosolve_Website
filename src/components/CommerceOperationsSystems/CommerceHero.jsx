@@ -69,7 +69,7 @@ const CommerceHero = () => {
               Build Your Commerce System
             </span>
             <img 
-              src="/Solution_page/solution_hero_arrow.svg" 
+              src="/CommerceOperationsSystems/hero_btn_icon_1.svg" 
               alt="Arrow" 
               className="w-[12px] lg:w-[14px] h-[8px] lg:h-[10px] shrink-0"
             />
@@ -91,7 +91,7 @@ const CommerceHero = () => {
             
             {/* Shopify GIF (Circle 1 - Center 204, 568) */}
             <img 
-              src="/Solution_page/first_gif.gif" 
+              src="/CommerceOperationsSystems/hero_gif_1.gif" 
               alt="Shopify Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -104,7 +104,7 @@ const CommerceHero = () => {
             
             {/* Amazon GIF (Circle 2 - Center 112, 507) */}
             <img 
-              src="/Solution_page/second_gif.gif" 
+              src="/CommerceOperationsSystems/hero_gif_2.gif" 
               alt="Amazon Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -117,7 +117,7 @@ const CommerceHero = () => {
             
             {/* Flipkart GIF (Circle 3 - Center 154, 544) */}
             <img 
-              src="/Solution_page/third_gif.gif" 
+              src="/CommerceOperationsSystems/hero_gif_3.gif" 
               alt="Flipkart Logo Animation"
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
               style={{
@@ -148,7 +148,7 @@ const CommerceHero = () => {
               });
             }
           }}
-          src="/hero_section/arrow_icon.svg"
+          src="/CommerceOperationsSystems/hero_scroll_arrow.svg"
           className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-opacity cursor-pointer animate-bounce"
           alt="Scroll down"
         />

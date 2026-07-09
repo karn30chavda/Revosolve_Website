@@ -4,35 +4,35 @@ import { motion as Motion } from "framer-motion";
 const capabilitiesData = [
   {
     title: "Order Management System",
-    icon: "/Solution_page/capability_1_5.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_1.svg",
   },
   {
     title: "Multi-channel inventory synchronization",
-    icon: "/Solution_page/capability_2_6.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_2.svg",
   },
   {
     title: "Fulfillment and logistics management",
-    icon: "/Solution_page/capability_3_7.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_3.svg",
   },
   {
     title: "Amazon FBA integration",
-    icon: "/Solution_page/capability_4_8.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_4.svg",
   },
   {
     title: "Shopify / WooCommerce integrations",
-    icon: "/Solution_page/capability_1_5.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_5.svg",
   },
   {
     title: "Marketplace integrations",
-    icon: "/Solution_page/capability_2_6.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_6.svg",
   },
   {
     title: "Logistics & Backend integrations",
-    icon: "/Solution_page/capability_3_7.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_7.svg",
   },
   {
     title: "Customer communication",
-    icon: "/Solution_page/capability_4_8.svg",
+    icon: "/CommerceOperationsSystems/capability_icon_8.svg",
   },
 ];
 

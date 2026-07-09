@@ -5,53 +5,53 @@ const tabsData = [
   {
     id: "marketplace",
     label: "Marketplace Integration",
-    icon: "/Solution_page/marketplace.svg",
+    icon: "/CommerceOperationsSystems/int_tab_marketplace.svg",
   },
   {
     id: "erp",
     label: "ERP/POS/Accounting",
-    icon: "/Solution_page/erp_integration.svg",
+    icon: "/CommerceOperationsSystems/int_tab_erp.svg",
   },
   {
     id: "shipping",
     label: "Shipping Integration",
-    icon: "/Solution_page/shipping.svg",
+    icon: "/CommerceOperationsSystems/int_tab_shipping.svg",
   },
 ];
 
 const integrationsByTab = {
   marketplace: {
     left: [
-      { src: "/Solution_page/Integration_icon1.svg", name: "Shopify", short: "SF" },
-      { src: "/Solution_page/Integration_amazon.svg", name: "Amazon", short: "AMZ" },
-      { src: "/Solution_page/integration_flipkart.svg", name: "Flipkart", short: "FK" },
+      { src: "/CommerceOperationsSystems/int_shopify.svg", name: "Shopify", short: "SF" },
+      { src: "/CommerceOperationsSystems/int_amazon.svg", name: "Amazon", short: "AMZ" },
+      { src: "/CommerceOperationsSystems/int_flipkart.svg", name: "Flipkart", short: "FK" },
     ],
     right: [
-      { src: "/Solution_page/integration_woocommerce.svg", name: "WooCommerce", short: "WC" },
-      { src: "/Solution_page/integration_meesho.svg", name: "Meesho", short: "MS" },
-      { src: "/Solution_page/integration_myntra.svg", name: "Myntra", short: "MY" },
+      { src: "/CommerceOperationsSystems/int_woocommerce.svg", name: "WooCommerce", short: "WC" },
+      { src: "/CommerceOperationsSystems/int_meesho.svg", name: "Meesho", short: "MS" },
+      { src: "/CommerceOperationsSystems/int_myntra.svg", name: "Myntra", short: "MY" },
     ],
   },
   erp: {
     left: [
-      { src: "/Solution_page/Integration_urban.webp", name: "Urban Piper", short: "UP" },
-      { src: "/Solution_page/Integration_sap.webp", name: "SAP ERP", short: "SAP" },
+      { src: "/CommerceOperationsSystems/int_urban.webp", name: "Urban Piper", short: "UP" },
+      { src: "/CommerceOperationsSystems/int_sap.webp", name: "SAP ERP", short: "SAP" },
     ],
     right: [
-      { src: "/Solution_page/TallyPrime_Logo.jpg", name: "Tally Prime", short: "TLY", isLarge: true },
-      { src: "/Solution_page/Integration_tally.webp", name: "Tally ERP", short: "TLY" },
+      { src: "/CommerceOperationsSystems/int_tally_prime.jpg", name: "Tally Prime", short: "TLY", isLarge: true },
+      { src: "/CommerceOperationsSystems/int_tally.webp", name: "Tally ERP", short: "TLY" },
     ],
   },
   shipping: {
     left: [
-      { src: "/Solution_page/integration_shiprocket.webp", name: "Shiprocket", short: "SR" },
-      { src: "/Solution_page/Integration_fedx.svg", name: "FedEx", short: "FD" },
-      { src: "/Solution_page/Integration_ups.webp", name: "UPS", short: "UPS" },
+      { src: "/CommerceOperationsSystems/int_shiprocket.webp", name: "Shiprocket", short: "SR" },
+      { src: "/CommerceOperationsSystems/int_fedex.svg", name: "FedEx", short: "FD" },
+      { src: "/CommerceOperationsSystems/int_ups.webp", name: "UPS", short: "UPS" },
     ],
     right: [
-      { src: "/Solution_page/Integration_delhivery.svg", name: "Delhivery", short: "DLV" },
-      { src: "/Solution_page/Integration_ekart.svg", name: "Ekart", short: "EKT" },
-      { src: "/Solution_page/Integration_eshipz.png", name: "Eshipz", short: "ESZ" },
+      { src: "/CommerceOperationsSystems/int_delhivery.svg", name: "Delhivery", short: "DLV" },
+      { src: "/CommerceOperationsSystems/int_ekart.svg", name: "Ekart", short: "EKT" },
+      { src: "/CommerceOperationsSystems/int_eshipz.png", name: "Eshipz", short: "ESZ" },
     ],
   },
 };
@@ -194,7 +194,7 @@ const CommerceIntegrations = () => {
                     }`}
                   >
                     <img
-                      src="/Solution_page/Integration_ERP.svg"
+                      src="/CommerceOperationsSystems/int_erp_center.svg"
                       alt="ERPNext Center Logo"
                       className="w-full h-full object-contain pointer-events-none select-none"
                     />
@@ -219,7 +219,7 @@ const CommerceIntegrations = () => {
                 <div className="relative flex items-center justify-center shrink-0">
                   <div className="w-24 h-24 rounded-full flex items-center justify-center relative z-10 ring-2 ring-[#877BF1]/30 shadow-[0_0_20px_rgba(135,123,241,0.2)]">
                     <img
-                      src="/Solution_page/Integration_ERP.svg"
+                      src="/CommerceOperationsSystems/int_erp_center.svg"
                       alt="ERPNext Center Logo"
                       className="w-full h-full object-contain pointer-events-none select-none"
                     />

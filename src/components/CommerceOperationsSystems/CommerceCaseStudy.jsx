@@ -39,7 +39,7 @@ const CommerceCaseStudy = () => {
           
           {/* Top-Right Background Pattern */}
           <img
-            src="/home_section_5/right_top_pattern.svg"
+            src="/CommerceOperationsSystems/case_study_pattern.svg"
             alt=""
             loading="lazy"
             className="absolute top-0 right-0 pointer-events-none select-none"
@@ -70,11 +70,10 @@ const CommerceCaseStudy = () => {
               </div>
             </div>
 
-            {/* Bottom-Right Absolute Image */}
             <div className="absolute right-0 bottom-0 w-[330px] h-[190px] overflow-hidden shadow-2xl">
               <img
                 className="w-full h-full object-cover"
-                src="/Solution_page/solution_case_study.webp"
+                src="/CommerceOperationsSystems/case_study_img.webp"
                 alt="D2C Case Study Preview"
                 loading="lazy"
               />
@@ -89,7 +88,7 @@ const CommerceCaseStudy = () => {
         <div className="rounded-lg p-5 flex flex-col gap-6 items-start justify-start relative shadow-xl overflow-hidden w-full bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           
           <img
-            src="/Solution_page/solution_case_study.webp"
+            src="/CommerceOperationsSystems/case_study_img.webp"
             className="rounded-lg self-stretch h-[160px] object-cover relative border border-black/5"
             alt=""
             loading="lazy"
