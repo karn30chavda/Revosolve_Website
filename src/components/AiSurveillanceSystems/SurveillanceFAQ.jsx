@@ -43,10 +43,10 @@ const SurveillanceFAQ = () => {
 
           {/* Heading Block */}
           <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight text-left font-sans">
-            <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black block">
+            <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black mr-2.5">
               RevoVision,
             </span>
-            <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
+            <span className="text-[#CACBDB] font-light xl:font-thin">
               answered
             </span>
           </h2>

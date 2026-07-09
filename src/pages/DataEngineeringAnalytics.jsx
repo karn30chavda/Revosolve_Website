@@ -8,6 +8,7 @@ import DataTechStack from "../components/DataEngineeringAnalytics/DataTechStack"
 import DataIndustries from "../components/DataEngineeringAnalytics/DataIndustries";
 import DataWhyRevoSolve from "../components/DataEngineeringAnalytics/DataWhyRevoSolve";
 import DataFAQ from "../components/DataEngineeringAnalytics/DataFAQ";
+import DataCTA from "../components/DataEngineeringAnalytics/DataCTA";
 
 const DataEngineeringAnalytics = () => {
   return (
@@ -21,6 +22,7 @@ const DataEngineeringAnalytics = () => {
       <DataIndustries />
       <DataWhyRevoSolve />
       <DataFAQ />
+      <DataCTA />
     </div>
   );
 };

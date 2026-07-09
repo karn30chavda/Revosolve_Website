@@ -9,6 +9,7 @@ import DefenseIndustries from "../components/DefenseSimulationTrainingSystems/De
 import DefenseIntegrations from "../components/DefenseSimulationTrainingSystems/DefenseIntegrations";
 import DefenseWhy from "../components/DefenseSimulationTrainingSystems/DefenseWhy";
 import DefenseFAQ from "../components/DefenseSimulationTrainingSystems/DefenseFAQ";
+import DefenseCTA from "../components/DefenseSimulationTrainingSystems/DefenseCTA";
 
 const DefenseSimulationTrainingSystems = () => {
   return (
@@ -23,6 +24,7 @@ const DefenseSimulationTrainingSystems = () => {
       <DefenseIntegrations />
       <DefenseWhy />
       <DefenseFAQ />
+      <DefenseCTA />
     </main>
   );
 };

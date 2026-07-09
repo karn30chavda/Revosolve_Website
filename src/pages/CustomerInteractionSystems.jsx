@@ -9,6 +9,7 @@ import CustomerInteractionIndustries from "../components/CustomerInteractionSyst
 import CustomerInteractionIntegrations from "../components/CustomerInteractionSystems/CustomerInteractionIntegrations";
 import CustomerInteractionWhy from "../components/CustomerInteractionSystems/CustomerInteractionWhy";
 import CustomerInteractionFAQ from "../components/CustomerInteractionSystems/CustomerInteractionFAQ";
+import CustomerInteractionCTA from "../components/CustomerInteractionSystems/CustomerInteractionCTA";
 
 const CustomerInteractionSystems = () => {
   return (
@@ -30,6 +31,7 @@ const CustomerInteractionSystems = () => {
       <CustomerInteractionIntegrations />
       <CustomerInteractionWhy />
       <CustomerInteractionFAQ />
+      <CustomerInteractionCTA />
     </main>
   );
 };

@@ -1,15 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const GenAICTA = () => {
+const SurveillanceCTA = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = (actionText) => {
+  const handleNavigate = (serviceName) => {
     navigate("/connect", {
       state: {
-        category: "Services/Solution",
-        service: "Generative AI Systems",
-        notes: actionText ? `Interested in: ${actionText}` : "",
+        category: "Product",
+        service: "RevoVision AI Surveillance",
+        notes: serviceName ? `Interested in: ${serviceName}` : ""
       },
     });
   };
@@ -25,7 +25,7 @@ const GenAICTA = () => {
       >
         {/* Background Pattern */}
         <img
-          className="absolute pointer-events-none select-none opacity-[0.9] object-contain overflow-visible mix-blend-screen"
+          className="absolute pointer-events-none select-none opacity-[0.9] object-contain overflow-visible"
           style={{
             width: "40.29156rem",
             height: "19.6875rem",
@@ -33,7 +33,7 @@ const GenAICTA = () => {
             left: "50%",
             transform: "translate(-50%, -50%)",
           }}
-          src="/AiIntelligentSystems/cta_bg_pattern.svg"
+          src="/AiSurveillanceSystems/cta_bg_pattern.svg"
           alt=""
           loading="lazy"
           decoding="async"
@@ -41,18 +41,16 @@ const GenAICTA = () => {
 
         {/* Content Group */}
         <div className="flex flex-col gap-4 items-center justify-start shrink-0 relative z-10 text-center max-w-4xl">
+
           <h2
             className="text-white text-center font-sans text-[2.25rem] md:text-[2.5rem] font-black relative leading-tight"
             style={{
               letterSpacing: "0.0165rem",
             }}
           >
-            Build AI systems that become {" "}
-            <span 
-              className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black inline-block"
-              style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
-            >
-              part of your operations
+            Turn video into real-time{" "}
+            <span className="bg-linear-to-r from-[#20CEFF] to-[#FCCA71] bg-clip-text text-transparent font-black">
+              operational intelligence
             </span>
           </h2>
           
@@ -62,15 +60,17 @@ const GenAICTA = () => {
               letterSpacing: "-0.017rem",
             }}
           >
-            AI Agents, Document Intelligence, Conversational AI, or workflow automation — we engineer secure, scalable, production-ready AI systems that create measurable business value.
+            Enhancing public safety, securing critical infrastructure, improving industrial operations, 
+            or modernizing enterprise monitoring — RevoVision transforms existing surveillance into 
+            an intelligent operational decision-making platform.
           </p>
         </div>
 
         {/* Button Actions */}
         <div className="flex flex-wrap gap-4 items-center justify-center z-10 relative mt-4">
           <button
-            onClick={() => handleNavigate("Talk to an AI Solutions Architect")}
-            className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2.5 items-center justify-start shrink-0 relative group transition-all duration-300 cursor-pointer active:scale-95"
+            onClick={() => handleNavigate("Book a Live Demonstration")}
+            className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 cursor-pointer active:scale-95"
           >
             <span
               className="text-[#070784] text-center font-sans text-[1rem] leading-6 font-semibold relative"
@@ -78,25 +78,25 @@ const GenAICTA = () => {
                 letterSpacing: "-0.0195rem",
               }}
             >
-              Talk to an AI Solutions Architect
+              Book a Live Demonstration
             </span>
             <img
-              src="/AiIntelligentSystems/cta_conversation_arrow.svg"
+              src="/AiSurveillanceSystems/cta_conversation_arrow.svg"
               className="shrink-0 w-5 h-5 relative overflow-visible group-hover:translate-x-1 transition-transform duration-300"
               alt=""
             />
           </button>
 
           <button
-            onClick={() => handleNavigate("Build Your Enterprise AI System")}
+            onClick={() => handleNavigate("Talk to a Computer Vision Specialist")}
             className="border border-white/20 hover:border-white/40 text-white font-semibold rounded-sm py-4 px-8 flex flex-row gap-3 items-center justify-center transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 backdrop-blur-xs active:scale-95 group"
           >
             <span className="font-sans text-[1rem] leading-6 tracking-tight">
-              Build Your Enterprise AI System
+              Talk to a Computer Vision Specialist
             </span>
             <img
               className="shrink-0 w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
-              src="/AiIntelligentSystems/hero_btn_icon_2.svg"
+              src="/AiSurveillanceSystems/hero_icon_3.svg"
               alt=""
             />
           </button>
@@ -112,26 +112,21 @@ const GenAICTA = () => {
       >
         <img
           className="shrink-0 w-[230%] h-[315px] object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-visible pointer-events-none opacity-90 mix-blend-screen"
-          src="/AiIntelligentSystems/cta_bg_pattern.svg"
+          src="/AiSurveillanceSystems/cta_bg_pattern.svg"
           alt=""
           loading="lazy"
           decoding="async"
         />
 
         <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10 text-center pt-4">
+
           <h2
             className="text-[#ffffff] text-center font-sans text-[26px] font-bold relative self-stretch leading-tight"
             style={{
               letterSpacing: "0.26px",
             }}
           >
-            Build AI systems that become part of your{" "}
-            <span 
-              className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold inline-block"
-              style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
-            >
-              operations
-            </span>
+            Turn video into real-time operational intelligence
           </h2>
           <p
             className="text-[#cacbeb] text-center font-sans text-[14px] font-normal relative self-stretch opacity-90 leading-relaxed"
@@ -139,14 +134,14 @@ const GenAICTA = () => {
               letterSpacing: "-0.27px",
             }}
           >
-            AI Agents, Document Intelligence, Conversational AI, or workflow automation — we engineer secure, scalable, production-ready AI systems that create measurable business value.
+            RevoVision transforms existing surveillance into an intelligent operational decision-making platform.
           </p>
         </div>
 
         <div className="flex flex-col gap-3 w-full z-10 relative">
           <button
-            onClick={() => handleNavigate("Talk to an AI Solutions Architect")}
-            className="btn-premium-glow rounded py-4 px-6 flex flex-row gap-2.5 items-center justify-center w-full transition-all duration-300 cursor-pointer active:scale-95 group"
+            onClick={() => handleNavigate("Book a Live Demonstration")}
+            className="btn-premium-glow rounded py-4 px-6 flex flex-row gap-2 items-center justify-center w-full transition-all duration-300 cursor-pointer active:scale-95 group"
           >
             <span
               className="text-[#070784] text-center font-sans text-base leading-6 font-semibold relative"
@@ -154,25 +149,25 @@ const GenAICTA = () => {
                 letterSpacing: "-0.31px",
               }}
             >
-              Talk to an AI Solutions Architect
+              Book a Live Demonstration
             </span>
             <img
               className="shrink-0 w-5 h-5 relative overflow-visible transition-transform group-hover:translate-x-1"
-              src="/AiIntelligentSystems/cta_conversation_arrow.svg"
+              src="/AiSurveillanceSystems/cta_conversation_arrow.svg"
               alt="arrow"
             />
           </button>
 
           <button
-            onClick={() => handleNavigate("Build Your Enterprise AI System")}
+            onClick={() => handleNavigate("Talk to a Computer Vision Specialist")}
             className="border border-white/20 text-white font-semibold rounded py-4 px-6 flex flex-row gap-3 items-center justify-center w-full transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 backdrop-blur-xs active:scale-95 group"
           >
             <span className="font-sans text-base leading-6">
-              Build Your Enterprise AI System
+              Talk to a Computer Vision Specialist
             </span>
             <img
               className="shrink-0 w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
-              src="/AiIntelligentSystems/hero_btn_icon_2.svg"
+              src="/AiSurveillanceSystems/hero_icon_3.svg"
               alt=""
             />
           </button>
@@ -182,4 +177,4 @@ const GenAICTA = () => {
   );
 };
 
-export default GenAICTA;
+export default SurveillanceCTA;

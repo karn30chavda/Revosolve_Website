@@ -25,7 +25,7 @@ const navData = [
       image: "/navbar/products_dropdown.webp",
       title: "Products",
       gridCols: "grid-cols-1",
-      links: ["RevoDox", "AI Surveillance"],
+      links: ["RevoDox", "RevoVision"],
     },
   },
   {

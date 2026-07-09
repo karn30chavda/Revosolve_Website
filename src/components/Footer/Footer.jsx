@@ -22,7 +22,7 @@ const footerData = {
     "Public Infrastructure Operations",
     "Defense & Training Systems",
   ],
-  products: ["RevoDox", "AI Surveillance"],
+  products: ["RevoDox", "RevoVision"],
   company: ["About", "Careers", "Blog", "Contact"],
 };
 

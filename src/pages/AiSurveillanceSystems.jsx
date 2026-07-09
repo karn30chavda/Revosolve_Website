@@ -10,6 +10,7 @@ import SurveillanceIndustries from "../components/AiSurveillanceSystems/Surveill
 import SurveillanceWhy from "../components/AiSurveillanceSystems/SurveillanceWhy";
 import SurveillanceUseCases from "../components/AiSurveillanceSystems/SurveillanceUseCases";
 import SurveillanceFAQ from "../components/AiSurveillanceSystems/SurveillanceFAQ";
+import SurveillanceCTA from "../components/AiSurveillanceSystems/SurveillanceCTA";
 
 const AiSurveillanceSystems = () => {
   return (
@@ -26,7 +27,7 @@ const AiSurveillanceSystems = () => {
         <SurveillanceWhy />
         <SurveillanceUseCases />
         <SurveillanceFAQ />
-        {/* Remaining sections will be added here */}
+        <SurveillanceCTA />
       </div>
     </div>
   );
