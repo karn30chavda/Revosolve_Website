@@ -1,14 +1,14 @@
 import React from "react";
-import GenAIHero from "../components/GenAIHero/GenAIHero";
-import GenAIWhatWeDo from "../components/GenAIWhatWeDo/GenAIWhatWeDo";
-import GenAIProblems from "../components/GenAIProblems/GenAIProblems";
-import GenAISystems from "../components/GenAISystems/GenAISystems";
-import GenAIMethod from "../components/GenAIMethod/GenAIMethod";
-import GenAITech from "../components/GenAITech/GenAITech";
-import GenAIIndustries from "../components/GenAIIndustries/GenAIIndustries";
-import GenAIDifferentiation from "../components/GenAIDifferentiation/GenAIDifferentiation";
-import GenAIFAQ from "../components/GenAIFAQ/GenAIFAQ";
-import GenAICTA from "../components/GenAICTA/GenAICTA";
+import GenAIHero from "../components/AiIntelligentSystems/GenAIHero";
+import GenAIWhatWeDo from "../components/AiIntelligentSystems/GenAIWhatWeDo";
+import GenAIProblems from "../components/AiIntelligentSystems/GenAIProblems";
+import GenAISystems from "../components/AiIntelligentSystems/GenAISystems";
+import GenAIMethod from "../components/AiIntelligentSystems/GenAIMethod";
+import GenAITech from "../components/AiIntelligentSystems/GenAITech";
+import GenAIIndustries from "../components/AiIntelligentSystems/GenAIIndustries";
+import GenAIDifferentiation from "../components/AiIntelligentSystems/GenAIDifferentiation";
+import GenAIFAQ from "../components/AiIntelligentSystems/GenAIFAQ";
+import GenAICTA from "../components/AiIntelligentSystems/GenAICTA";
 
 const AiIntelligentSystems = () => {
   return (
