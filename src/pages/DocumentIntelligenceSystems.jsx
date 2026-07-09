@@ -1,10 +1,10 @@
 import React from "react";
-import DocHero from "../components/DocHero/DocHero";
-import DocChallenge from "../components/DocChallenge/DocChallenge";
-import DocApproach from "../components/DocApproach/DocApproach";
-import DocCapabilities from "../components/DocCapabilities/DocCapabilities";
-import DocDifferentiation from "../components/DocDifferentiation/DocDifferentiation";
-import DocCTA from "../components/DocCTA/DocCTA";
+import DocHero from "../components/DocumentIntelligenceSystems/DocHero";
+import DocChallenge from "../components/DocumentIntelligenceSystems/DocChallenge";
+import DocApproach from "../components/DocumentIntelligenceSystems/DocApproach";
+import DocCapabilities from "../components/DocumentIntelligenceSystems/DocCapabilities";
+import DocDifferentiation from "../components/DocumentIntelligenceSystems/DocDifferentiation";
+import DocCTA from "../components/DocumentIntelligenceSystems/DocCTA";
 
 const DocumentIntelligenceSystems = () => {
   return (
