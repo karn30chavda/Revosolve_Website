@@ -32,7 +32,7 @@ const DocCTA = () => {
             left: "50%",
             transform: "translate(-50%, -50%)",
           }}
-          src="/home_section_7/bg_pattern.svg"
+          src="/DocumentIntelligenceSystems/cta_bg_pattern.svg"
           alt=""
           loading="lazy"
           decoding="async"
@@ -72,7 +72,7 @@ const DocCTA = () => {
             Start a Conversation
           </span>
           <img 
-            src="/home_section_7/conversation_arrow.svg"
+            src="/DocumentIntelligenceSystems/cta_conversation_arrow.svg"
             className="shrink-0 w-5 h-5 relative overflow-visible group-hover:translate-x-1 transition-transform duration-300"
             alt=""
           />
@@ -88,7 +88,7 @@ const DocCTA = () => {
       >
         <img
           className="shrink-0 w-[230%] h-[315px] object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-visible pointer-events-none opacity-90 mix-blend-screen"
-          src="/home_section_7/bg_pattern.svg"
+          src="/DocumentIntelligenceSystems/cta_bg_pattern.svg"
           alt=""
           loading="lazy"
           decoding="async"
@@ -127,7 +127,7 @@ const DocCTA = () => {
           </span>
           <img 
             className="shrink-0 w-5 h-5 relative overflow-visible transition-transform group-hover:translate-x-1" 
-            src="/home_section_7/conversation_arrow.svg" 
+            src="/DocumentIntelligenceSystems/cta_conversation_arrow.svg" 
             alt="arrow"
           />
         </button>

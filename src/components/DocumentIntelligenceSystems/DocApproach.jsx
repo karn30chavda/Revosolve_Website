@@ -91,7 +91,7 @@ const DocApproach = () => {
 
           <div className="w-full lg:w-[50%] h-[280px] sm:h-[360px] lg:h-[460px] relative overflow-hidden shrink-0 z-10">
             <img
-              src="/soulution_doc_intelligence_system/docApproach.png"
+              src="/DocumentIntelligenceSystems/approach_image.png"
               alt="OCR to Document Intelligence"
               className="w-full h-full object-cover"
             />
@@ -99,7 +99,7 @@ const DocApproach = () => {
           </div>
 
           <img 
-            src="/soulution_doc_intelligence_system/docChallengepattern.svg" 
+            src="/DocumentIntelligenceSystems/challenge_pattern.svg" 
             alt="" 
             className="absolute left-0 top-[5%] w-[192px] h-[263px] pointer-events-none opacity-30 lg:opacity-50 z-0 select-none mix-blend-screen scale-x-[-1] scale-y-[-1]"
           />

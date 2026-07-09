@@ -5,26 +5,26 @@ const differentiationData = [
   {
     title: "Built as end-to-end systems, not standalone OCR tools",
     desc: "required Text for this Card",
-    icon: "/Solution_page/DIFFERENTIATION_1.svg",
-    pattern: "/Solution_page/DIFFERENTIATION_1._patternsvg.svg",
+    icon: "/DocumentIntelligenceSystems/diff_icon_1.svg",
+    pattern: "/DocumentIntelligenceSystems/diff_pattern.svg",
     colSpan: "lg:col-span-4",
   },
   {
     title: "Designed for BFSI and government workflows",
     desc: "required Text for this Card",
-    icon: "/Solution_page/DIFFERENTIATION_2.svg",
+    icon: "/DocumentIntelligenceSystems/diff_icon_2.svg",
     colSpan: "lg:col-span-2",
   },
   {
     title: "Integrates with existing infrastructure",
     desc: "required Text for this Card",
-    icon: "/Solution_page/DIFFERENTIATION_3.svg",
+    icon: "/DocumentIntelligenceSystems/diff_icon_3.svg",
     colSpan: "lg:col-span-3",
   },
   {
     title: "Scalable for high-volume processing",
     desc: "required Text for this Card",
-    icon: "/Solution_page/DIFFERENTIATION_4.svg",
+    icon: "/DocumentIntelligenceSystems/diff_icon_4.svg",
     colSpan: "lg:col-span-3",
   },
 ];

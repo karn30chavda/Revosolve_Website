@@ -37,7 +37,7 @@ const DocHero = () => {
       {/* Mobile Background Image & Tint Wash (Visible only on mobile/tablet below 1290px) */}
       <div className="absolute top-[3.74938rem] bottom-0 left-0 right-0 min-[1290px]:hidden z-0 pointer-events-none">
         <img
-          src="/soulution_doc_intelligence_system/DocHero.png"
+          src="/DocumentIntelligenceSystems/hero_image.png"
           alt=""
           className="w-full h-full object-cover object-top-right"
         />
@@ -47,7 +47,7 @@ const DocHero = () => {
 
       {/* Desktop 3D Scroll Background Image Layer (Aligned Top Right and faded to Left - Desktop only) */}
       <div
-        className="hidden min-[1290px]:block absolute right-0 top-0 bottom-0 w-[60%] h-full bg-[url('/soulution_doc_intelligence_system/DocHero.png')] bg-top-right bg-cover bg-no-repeat pointer-events-none mix-blend-screen opacity-90 z-0"
+        className="hidden min-[1290px]:block absolute right-0 top-0 bottom-0 w-[60%] h-full bg-[url('/DocumentIntelligenceSystems/hero_image.png')] bg-top-right bg-cover bg-no-repeat pointer-events-none mix-blend-screen opacity-90 z-0"
         style={{
           maskImage:
             "linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 20%, black 80%)",
@@ -108,7 +108,7 @@ const DocHero = () => {
               Build Your Document System
             </span>
             <img
-              src="/Solution_page/solution_hero_arrow.svg"
+              src="/DocumentIntelligenceSystems/hero_btn_icon_1.svg"
               alt="Arrow"
               className="w-[12px] min-[1290px]:w-[14px] h-[8px] lg:h-[10px] shrink-0"
             />
@@ -120,7 +120,7 @@ const DocHero = () => {
       <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
         <img
           onClick={handleScrollDown}
-          src="/hero_section/arrow_icon.svg"
+          src="/DocumentIntelligenceSystems/hero_scroll_arrow.svg"
           className="w-6.5 h-5.5 object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer animate-bounce"
           alt="Scroll down"
         />
@@ -129,7 +129,7 @@ const DocHero = () => {
       {/* Atmospheric Transition Gradient (The Bridge) at bottom */}
       <div className="absolute -bottom-16 left-0 right-0 w-full pointer-events-none z-30 transform-gpu translate-y-[60%]">
         <img
-          src="/hero_section/gradient.png"
+          src="/DocumentIntelligenceSystems/hero_bg_gradient.png"
           className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
           alt=""
         />

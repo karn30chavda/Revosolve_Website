@@ -10,7 +10,7 @@ const DocChallenge = () => {
       {/* Atmospheric Transition Gradient (The Bridge) Reversed at top */}
       <div className="absolute top-0 left-0 right-0 w-full pointer-events-none z-30 transform-gpu -translate-y-1/2 scale-y-[-1]">
         <img
-          src="/hero_section/gradient.png"
+          src="/DocumentIntelligenceSystems/hero_bg_gradient.png"
           className="w-full h-auto object-cover scale-[2.0] md:scale-110 opacity-100"
           alt=""
         />
@@ -52,7 +52,7 @@ const DocChallenge = () => {
         >
           <div className="w-full lg:w-[50%] h-[280px] sm:h-[360px] lg:h-[460px] relative overflow-hidden shrink-0 z-10">
             <img
-              src="/soulution_doc_intelligence_system/docChallengeImg.png"
+              src="/DocumentIntelligenceSystems/challenge_image.png"
               alt="Hands sorting a stack of documents"
               className="w-full h-full object-cover"
             />
@@ -115,7 +115,7 @@ const DocChallenge = () => {
 
           </div>
           <img 
-            src="/soulution_doc_intelligence_system/docChallengepattern.svg" 
+            src="/DocumentIntelligenceSystems/challenge_pattern.svg" 
             alt="" 
             className="absolute right-0 top-[5%] w-[192px] h-[263px] pointer-events-none opacity-30 lg:opacity-50 z-0 select-none mix-blend-screen"
           />

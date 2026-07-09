@@ -4,23 +4,23 @@ import { motion as Motion } from "framer-motion";
 const capabilitiesData = [
   {
     title: "OCR & intelligent extraction",
-    icon: "/soulution_doc_intelligence_system/doc_capabilities_1.svg",
+    icon: "/DocumentIntelligenceSystems/capability_icon_1.svg",
   },
   {
     title: "Data validation systems",
-    icon: "/soulution_doc_intelligence_system/doc_capabilities_2.svg",
+    icon: "/DocumentIntelligenceSystems/capability_icon_2.svg",
   },
   {
     title: "KYC/KYB processing",
-    icon: "/soulution_doc_intelligence_system/doc_capabilities_3.svg",
+    icon: "/DocumentIntelligenceSystems/capability_icon_3.svg",
   },
   {
     title: "Workflow automation",
-    icon: "/soulution_doc_intelligence_system/doc_capabilities_4.svg",
+    icon: "/DocumentIntelligenceSystems/capability_icon_4.svg",
   },
   {
     title: "API & backend integrations",
-    icon: "/soulution_doc_intelligence_system/doc_capabilities_5.svg",
+    icon: "/DocumentIntelligenceSystems/capability_icon_5.svg",
   },
 ];
 
