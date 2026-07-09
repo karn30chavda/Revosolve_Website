@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const Hero = () => {
+const HomeHero = () => {
   const navigate = useNavigate();
   return (
     <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center pt-22 bg-[#01031c] transform-gpu font-sans">
@@ -131,4 +131,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;

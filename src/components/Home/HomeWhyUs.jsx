@@ -1,6 +1,6 @@
 import React from "react";
 
-const WhyUs = () => {
+const HomeWhyUs = () => {
   const whyUsList = [
     "Domain-driven technology solutions",
     "Experience working with government initiatives",
@@ -114,4 +114,4 @@ const WhyUs = () => {
   );
 };
 
-export default WhyUs;
+export default HomeWhyUs;

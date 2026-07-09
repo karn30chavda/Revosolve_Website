@@ -65,7 +65,7 @@ const solutions = [
   },
 ];
 
-const IntelligentSolutions = () => {
+const HomeIntelligentSolutions = () => {
   const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const controls = useAnimation();
@@ -472,4 +472,4 @@ const IntelligentSolutions = () => {
   );
 };
 
-export default IntelligentSolutions;
+export default HomeIntelligentSolutions;

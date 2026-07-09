@@ -1,7 +1,7 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
 
-const Marquee = () => {
+const HomeMarquee = () => {
   const logos = [
     "/marquee_icons/1.svg",
     "/marquee_icons/2.svg",
@@ -68,4 +68,4 @@ const Marquee = () => {
   );
 };
 
-export default Marquee;
+export default HomeMarquee;

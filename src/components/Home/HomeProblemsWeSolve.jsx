@@ -95,7 +95,7 @@ const ProjectCard = ({ card, index, total, scrollYProgress }) => {
   );
 };
 
-const ProblemsWeSolve = () => {
+const HomeProblemsWeSolve = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -265,4 +265,4 @@ const ProblemsWeSolve = () => {
   );
 };
 
-export default ProblemsWeSolve;
+export default HomeProblemsWeSolve;

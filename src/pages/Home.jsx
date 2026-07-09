@@ -1,17 +1,17 @@
 import React from "react";
-import Hero from "../components/Hero/Hero";
-import Marquee from "../components/Marquee/Marquee";
-import ProblemsWeSolve from "../components/ProblemsWeSolve/ProblemsWeSolve";
-import IntelligentSolutions from "../components/IntelligentSolutions/IntelligentSolutions";
-import CaseStudies from "../components/CaseStudies/CaseStudies";
-import WhyUs from "../components/WhyUs/WhyUs";
-import CallToAction from "../components/CallToAction/CallToAction";
+import HomeHero from "../components/Home/HomeHero";
+import HomeMarquee from "../components/Home/HomeMarquee";
+import HomeProblemsWeSolve from "../components/Home/HomeProblemsWeSolve";
+import HomeIntelligentSolutions from "../components/Home/HomeIntelligentSolutions";
+import HomeCaseStudies from "../components/Home/HomeCaseStudies";
+import HomeWhyUs from "../components/Home/HomeWhyUs";
+import HomeCallToAction from "../components/Home/HomeCallToAction";
 
 const Home = () => {
   return (
     <>
       <div className="relative z-0">
-        <Hero />
+        <HomeHero />
       </div>
 
       <div className="relative z-30">
@@ -41,12 +41,12 @@ const Home = () => {
           </div>
 
           <div className="relative z-10">
-            <Marquee />
-            <ProblemsWeSolve />
-            <IntelligentSolutions />
-            <CaseStudies />
-            <WhyUs />
-            <CallToAction />
+            <HomeMarquee />
+            <HomeProblemsWeSolve />
+            <HomeIntelligentSolutions />
+            <HomeCaseStudies />
+            <HomeWhyUs />
+            <HomeCallToAction />
           </div>
         </div>
       </div>

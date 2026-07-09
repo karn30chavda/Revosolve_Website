@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const CaseStudies = () => {
+const HomeCaseStudies = () => {
   const navigate = useNavigate();
 
   const caseData = {
@@ -200,4 +200,4 @@ const CaseStudies = () => {
   );
 };
 
-export default CaseStudies;
+export default HomeCaseStudies;
