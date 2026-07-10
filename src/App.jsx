@@ -17,7 +17,7 @@ import DataEngineeringAnalytics from "./pages/DataEngineeringAnalytics";
 import DefenseSimulationTrainingSystems from "./pages/DefenseSimulationTrainingSystems";
 import AiSurveillanceSystems from "./pages/AiSurveillanceSystems";
 import SimulationDigitalTwinSystems from "./pages/SimulationDigitalTwinSystems";
-// import Testing from "./pages/Testing";
+import Testing from "./pages/Testing";
 
 function App() {
   return (
@@ -72,7 +72,7 @@ function App() {
             path="/services/data-engineering-analytics"
             element={<DataEngineeringAnalytics />}
           />
-          {/* <Route path="/testing" element={<Testing />} /> */}
+          <Route path="/testing" element={<Testing />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
