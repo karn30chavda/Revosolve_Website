@@ -59,7 +59,7 @@ const compare = [
 const FlowDotX = ({ w = 26, delay = 0 }) => (
   <div className="relative h-px bg-white/20" style={{ width: w }}>
     <span
-      className="absolute top-[-3px] w-1.5 h-1.5 rounded-full bg-[#877BF1] shadow-[0_0_8px_#877BF1]"
+      className="absolute top-[-3px] w-1.5 h-1.5 rounded-full bg-[#FCCA71] shadow-[0_0_8px_#FCCA71]"
       style={{
         animation: "rseFlowX 2s linear infinite",
         animationDelay: `${delay}s`,
@@ -69,11 +69,11 @@ const FlowDotX = ({ w = 26, delay = 0 }) => (
 );
 
 const CmpVisualTrad = ({ idx }) => {
-  const c = "#5C5F85";
+  const c = "#8F92B8";
   switch (idx) {
     case 0:
       return (
-        <div className="flex items-center gap-2 opacity-50" style={{ color: c }}>
+        <div className="flex items-center gap-2" style={{ color: c }}>
           <Gear size={20} />
           <span className="w-[32px] border-t border-dashed" style={{ borderColor: c }} />
           <Users size={16} />
@@ -81,7 +81,7 @@ const CmpVisualTrad = ({ idx }) => {
       );
     case 1:
       return (
-        <div className="flex items-center gap-[12px] opacity-50" style={{ color: c }}>
+        <div className="flex items-center gap-[12px]" style={{ color: c }}>
           <AppWindow size={18} />
           <AppWindow size={18} />
           <AppWindow size={18} />
@@ -89,7 +89,7 @@ const CmpVisualTrad = ({ idx }) => {
       );
     case 2:
       return (
-        <div className="flex items-center gap-[10px] opacity-50" style={{ color: c }}>
+        <div className="flex items-center gap-[10px]" style={{ color: c }}>
           <ClipboardText size={20} />
           <div className="flex flex-col gap-1">
             <span className="w-[54px] h-[2px]" style={{ backgroundColor: c }} />
@@ -100,11 +100,11 @@ const CmpVisualTrad = ({ idx }) => {
       );
     case 3:
       return (
-        <div className="flex items-center gap-2 opacity-55">
+        <div className="flex items-center gap-2">
           <div
-            className="w-[32px] h-[32px] border border-white/10 rounded"
+            className="w-[32px] h-[32px] border border-white/20 rounded"
             style={{
-              background: "repeating-linear-gradient(45deg, #191b33 0 4px, #14162c 4px 8px)",
+              background: "repeating-linear-gradient(45deg, #232647 0 4px, #191b33 4px 8px)",
             }}
           />
           <span className="font-mono text-[9px] tracking-widest uppercase" style={{ color: c }}>
@@ -114,7 +114,7 @@ const CmpVisualTrad = ({ idx }) => {
       );
     case 4:
       return (
-        <div className="flex items-center gap-2.5 opacity-50" style={{ color: c }}>
+        <div className="flex items-center gap-2.5" style={{ color: c }}>
           <LockSimple size={20} />
           <div className="flex gap-1">
             <span className="w-[24px] h-2 rounded-xs" style={{ backgroundColor: c }} />
@@ -125,9 +125,9 @@ const CmpVisualTrad = ({ idx }) => {
       );
     default:
       return (
-        <div className="flex items-center gap-1.5 opacity-55" style={{ color: c }}>
+        <div className="flex items-center gap-1.5" style={{ color: c }}>
           <span className="w-14 h-[1.5px]" style={{ backgroundColor: c }} />
-          <XCircle size={18} color={GOLD} />
+          <XCircle size={18} color="#D15B5B" />
         </div>
       );
   }
@@ -138,21 +138,21 @@ const CmpVisualRevo = ({ idx }) => {
     case 0:
       return (
         <div className="flex items-center gap-1.5">
-          <UsersThree size={20} color={ACCENT} />
+          <UsersThree size={20} color={GOLD} />
           <FlowDotX w={18} />
-          <FlowArrow size={16} color={ACCENT2} />
+          <FlowArrow size={16} color="#FFFFFF" />
           <FlowDotX w={18} delay={0.6} />
-          <Gear size={16} color={ACCENT2} />
+          <Gear size={16} color={GOLD} className="animate-spin" style={{ animationDuration: "8s" }} />
         </div>
       );
     case 1:
       return (
         <div className="flex items-center gap-1.5">
-          <AppWindow size={18} color={ACCENT2} />
+          <AppWindow size={18} color="#FFFFFF" />
           <FlowDotX w={14} />
-          <ShareNetwork size={22} color={ACCENT} />
+          <ShareNetwork size={22} color={GOLD} className="animate-pulse" />
           <FlowDotX w={14} delay={0.6} />
-          <AppWindow size={18} color={ACCENT2} />
+          <AppWindow size={18} color="#FFFFFF" />
         </div>
       );
     case 2:
@@ -160,23 +160,23 @@ const CmpVisualRevo = ({ idx }) => {
         <div className="flex items-center gap-2.5">
           <Heart
             size={20}
-            color={ACCENT}
+            color={GOLD}
             className="animate-[rsePulse_1.6s_ease-in-out_infinite]"
           />
           <div className="flex gap-1.5">
             <UserCircle
               size={18}
-              color={ACCENT2}
+              color="#FFFFFF"
               className="animate-[rsePulse_1.9s_ease-in-out_infinite]"
             />
             <UserCircle
               size={18}
-              color={ACCENT2}
+              color="#FFFFFF"
               className="animate-[rsePulse_1.9s_ease-in-out_infinite_0.35s]"
             />
             <UserCircle
               size={18}
-              color={ACCENT}
+              color={GOLD}
               className="animate-[rsePulse_1.9s_ease-in-out_infinite_0.7s]"
             />
           </div>
@@ -187,13 +187,13 @@ const CmpVisualRevo = ({ idx }) => {
         <div className="flex items-center gap-2.5">
           <div className="flex flex-col gap-0.5 items-center">
             <span
-              className="w-[50px] h-2 bg-[#877BF1] rounded-xs shadow-[0_0_8px_rgba(135,123,241,0.5)] animate-[rseLayer_3.2s_ease-in-out_infinite]"
+              className="w-[50px] h-2 bg-[#FCCA71] rounded-xs shadow-[0_0_8px_rgba(252,202,113,0.6)] animate-[rseLayer_3.2s_ease-in-out_infinite]"
             />
-            <span className="w-[50px] h-2 bg-[#A9A0F5] rounded-xs" />
-            <span className="w-[50px] h-2 bg-[#A9A0F5] rounded-xs" />
-            <span className="w-[50px] h-2 bg-[#877BF1]/35 rounded-xs" />
+            <span className="w-[50px] h-2 bg-white rounded-xs" />
+            <span className="w-[50px] h-2 bg-white rounded-xs" />
+            <span className="w-[50px] h-2 bg-[#FCCA71]/40 rounded-xs" />
           </div>
-          <span className="font-mono text-[9px] tracking-widest text-[#A9A0F5] uppercase">
+          <span className="font-mono text-[9px] tracking-widest text-[#FCCA71] uppercase font-bold">
             Modular
           </span>
         </div>
@@ -201,7 +201,7 @@ const CmpVisualRevo = ({ idx }) => {
     case 4:
       return (
         <div className="flex items-center gap-2.5">
-          <Eye size={18} color={ACCENT} />
+          <Eye size={18} color={GOLD} />
           <div
             className="relative w-16 h-1.5 rounded-full overflow-hidden border"
             style={{
@@ -210,18 +210,18 @@ const CmpVisualRevo = ({ idx }) => {
             }}
           >
             <span
-              className="absolute top-0 bottom-0 w-6 bg-linear-to-r from-transparent via-[#877BF1]/85 to-transparent animate-[rseFlowX_1.8s_linear_infinite]"
+              className="absolute top-0 bottom-0 w-6 bg-linear-to-r from-transparent via-[#FCCA71]/95 to-transparent animate-[rseFlowX_1.8s_linear_infinite]"
             />
           </div>
-          <CheckCircle size={16} color={ACCENT2} />
+          <CheckCircle size={16} color="#FFFFFF" />
         </div>
       );
     default:
       return (
         <div className="flex items-center gap-2.5">
-          <InfinityIcon size={26} color={ACCENT} />
+          <InfinityIcon size={26} color={GOLD} className="animate-pulse" />
           <FlowDotX w={30} />
-          <ChartLineUp size={18} color={ACCENT2} />
+          <ChartLineUp size={18} color="#FFFFFF" />
         </div>
       );
   }
@@ -311,7 +311,7 @@ const EnterpriseComparison = () => {
                 >
                   <span
                     className={`text-[14px] md:text-[15px] font-semibold transition-colors duration-300 ${
-                      isActive ? "" : "text-[#9B9EBF] group-hover:text-white"
+                      isActive ? "" : "text-[#B4B6D4] group-hover:text-white"
                     }`}
                     style={{
                       color: isActive ? GOLD : undefined,
@@ -368,8 +368,8 @@ const EnterpriseComparison = () => {
                 <div className="relative z-10 flex flex-col justify-between h-full gap-6">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6b5a4d]" />
-                      <span className="font-mono text-[10px] md:text-[11px] tracking-[0.14em] text-[#5C5F85] uppercase select-none">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D15B5B] shadow-[0_0_8px_#D15B5B]" />
+                      <span className="font-mono text-[10px] md:text-[11px] tracking-[0.14em] text-[#C5C6DD] uppercase select-none font-bold">
                         Traditional
                       </span>
                     </div>
@@ -378,7 +378,7 @@ const EnterpriseComparison = () => {
                     </div>
                   </div>
                   <div
-                    className="text-[14px] md:text-[15.5px] leading-relaxed text-[#8F92B8]"
+                    className="text-[14px] md:text-[15.5px] leading-relaxed text-[#EFF0FF]"
                     style={fadeStyle}
                   >
                     {compare[cmpIdx].trad}
@@ -398,8 +398,8 @@ const EnterpriseComparison = () => {
                 <div className="relative z-10 flex flex-col justify-between h-full gap-6">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#877BF1] shadow-[0_0_9px_#877BF1]" />
-                      <span className="font-mono text-[10px] md:text-[11px] tracking-[0.14em] text-[#A9A0F5] uppercase select-none">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FCCA71] shadow-[0_0_9px_#FCCA71]" />
+                      <span className="font-mono text-[10px] md:text-[11px] tracking-[0.14em] text-[#FCCA71] uppercase select-none font-bold">
                         RevoSolve
                       </span>
                     </div>
@@ -408,7 +408,7 @@ const EnterpriseComparison = () => {
                     </div>
                   </div>
                   <div
-                    className="text-[14px] md:text-[15.5px] leading-relaxed text-[#EFF0FF] font-medium"
+                    className="text-[14px] md:text-[15.5px] leading-relaxed text-white font-semibold"
                     style={fadeStyle}
                   >
                     {compare[cmpIdx].revo}
