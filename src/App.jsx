@@ -16,6 +16,7 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import DataEngineeringAnalytics from "./pages/DataEngineeringAnalytics";
 import DefenseSimulationTrainingSystems from "./pages/DefenseSimulationTrainingSystems";
 import AiSurveillanceSystems from "./pages/AiSurveillanceSystems";
+import SimulationDigitalTwinSystems from "./pages/SimulationDigitalTwinSystems";
 // import Testing from "./pages/Testing";
 
 function App() {
@@ -53,6 +54,10 @@ function App() {
           <Route
             path="/solutions/ai-surveillance-systems"
             element={<AiSurveillanceSystems />}
+          />
+          <Route
+            path="/solutions/simulation-digital-twin-systems"
+            element={<SimulationDigitalTwinSystems />}
           />
           <Route
             path="/services/open-source-erp-systems"

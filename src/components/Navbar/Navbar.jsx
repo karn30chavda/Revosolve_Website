@@ -190,6 +190,8 @@ const Navbar = () => {
                                       ? "/solutions/defense-simulation-training-systems"
                                       : link === "AI Surveillance Systems"
                                       ? "/solutions/ai-surveillance-systems"
+                                      : link === "Simulation & Digital Twin Systems"
+                                      ? "/solutions/simulation-digital-twin-systems"
                                       : "/coming-soon")
                                     : (item.label === "Services"
                                       ? (link === "Open Source & ERP Systems"

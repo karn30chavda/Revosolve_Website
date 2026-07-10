@@ -115,7 +115,9 @@ const Footer = () => {
                               ? "/solutions/defense-simulation-training-systems"
                             : item === "AI Surveillance Systems"
                               ? "/solutions/ai-surveillance-systems"
-                              : "/coming-soon"
+                              : item === "Simulation & Digital Twin Systems"
+                                ? "/solutions/simulation-digital-twin-systems"
+                                : "/coming-soon"
                     }
                     className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
                     style={{ letterSpacing: "-0.00938rem" }}

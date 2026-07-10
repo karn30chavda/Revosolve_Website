@@ -405,6 +405,8 @@ const HomeIntelligentSolutions = () => {
                           navigate("/solutions/defense-simulation-training-systems");
                         } else if (card.category === "AI Surveillance Systems") {
                           navigate("/solutions/ai-surveillance-systems");
+                        } else if (card.category === "Simulation & Digital Twin Systems") {
+                          navigate("/solutions/simulation-digital-twin-systems");
                         } else {
                           navigate("/coming-soon");
                         }
