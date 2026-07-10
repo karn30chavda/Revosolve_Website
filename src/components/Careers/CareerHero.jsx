@@ -19,9 +19,9 @@ const CareerHero = ({ scrollToOpenings }) => {
       {/* Main Content Row: Wraps left content and absolute right image for height matching on desktop */}
       <div className="w-full min-[1290px]:w-full flex flex-col min-[1290px]:flex-row items-center justify-start pl-[5%] md:pl-[7.5%] min-[1290px]:pl-[7.5%] pr-[5%] min-[1290px]:pr-12 py-12 min-[1290px]:py-12 z-20 relative bg-transparent">
         {/* Left Column: Copy & Actions */}
-        <div className="flex flex-col items-center min-[1290px]:items-start text-center min-[1290px]:text-left gap-4 min-[1290px]:gap-6 w-full min-[1290px]:max-w-[540px] xl:max-w-[700px] min-[1290px]:flex-1">
+        <div className="flex flex-col items-center min-[1290px]:items-start text-center min-[1290px]:text-left gap-2 min-[1290px]:gap-3 w-full min-[1290px]:max-w-[540px] xl:max-w-[700px] min-[1290px]:flex-1">
           {/* Desktop Original Pill */}
-          <div className="hidden min-[1290px]:block opacity-30 justify-start mb-2">
+          <div className="hidden min-[1290px]:block opacity-30 justify-start mb-0">
             <span className="text-white text-lg font-normal font-sans tracking-tight">
               [
             </span>
@@ -34,7 +34,7 @@ const CareerHero = ({ scrollToOpenings }) => {
           </div>
 
           {/* Mobile Styled Glassmorphic Careers Badge */}
-          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-1 w-fit mx-auto">
+          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-0 w-fit mx-auto">
             <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
             <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
               careers
@@ -52,7 +52,7 @@ const CareerHero = ({ scrollToOpenings }) => {
           </div>
 
           {/* Description */}
-          <p className="max-w-full min-[1290px]:max-w-[480px] xl:max-w-[553px] opacity-75 justify-start text-[#FBFBFF] text-[3.8vw] sm:text-base xl:text-[18px] font-normal font-sans leading-relaxed min-[1290px]:leading-normal mt-4 mb-6">
+          <p className="max-w-full min-[1290px]:max-w-[480px] xl:max-w-[553px] opacity-75 justify-start text-[#FBFBFF] text-[3.8vw] sm:text-base xl:text-[18px] font-normal font-sans leading-relaxed min-[1290px]:leading-normal mt-2 mb-3">
             At RevoSolve, we don't just build software, we engineer digital
             ecosystems that power modern enterprises. We're a team of thinkers,
             builders, problem-solvers, and innovators driven by one goal: to
@@ -62,20 +62,20 @@ const CareerHero = ({ scrollToOpenings }) => {
           {/* CTA Button */}
           <button
             onClick={scrollToOpenings}
-            className="h-[46px] min-[1290px]:h-[56px] py-[8px] min-[1290px]:py-[10px] px-[24px] min-[1290px]:px-[35px] rounded-[8px] border-2 border-[rgba(91,98,191,0.37)] backdrop-blur-[2px] flex justify-center items-center gap-[12px] min-[1290px]:gap-[22px] bg-transparent cursor-pointer transition-all duration-300 hover:bg-white/5 active:scale-95 shrink-0"
+            className="h-[46px] min-[1290px]:h-[56px] py-[8px] min-[1290px]:py-[10px] px-[24px] min-[1290px]:px-[35px] rounded-[8px] border-2 border-[rgba(91,98,191,0.37)] backdrop-blur-[2px] flex justify-center items-center gap-[12px] min-[1290px]:gap-[22px] bg-transparent cursor-pointer transition-all duration-300 hover:bg-white/5 active:scale-95 shrink-0 group"
           >
             <span className="text-white text-center font-sans text-[14px] min-[1290px]:text-[16px] font-medium leading-[20px] min-[1290px]:leading-[24px] tracking-[-0.312px]">
               View Open Roles
             </span>
             <img
-              src="/Careers/career_hero_icon.svg"
+              src="/Careers/hero_btn_icon_2.svg"
               alt="Arrow"
-              className="w-[12px] min-[1290px]:w-[14px] h-[8px] min-[1290px]:h-[10px] shrink-0"
+              className="w-[12px] min-[1290px]:w-[14px] h-[8px] min-[1290px]:h-[10px] shrink-0 group-hover:translate-x-1 transition-transform duration-300"
             />
           </button>
 
           {/* Mobile Inline Scroll Arrow */}
-          <div className="min-[1290px]:hidden mt-8 flex flex-col items-center justify-center">
+          <div className="min-[1290px]:hidden mt-4 flex flex-col items-center justify-center">
             <img
               onClick={scrollToOpenings}
               src="/Careers/career_hero_arrow.svg"

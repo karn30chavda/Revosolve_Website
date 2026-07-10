@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight } from "@phosphor-icons/react";
 
 const CareerOpenings = () => {
   const jobs = [
@@ -35,7 +36,7 @@ const CareerOpenings = () => {
   ];
 
   return (
-    <section id="openings-section" className="relative w-full bg-[#01031c] pt-12 pb-8 scroll-mt-24">
+    <section id="openings-section" className="relative w-full bg-[#01031c] pt-12 pb-8 scroll-mt-24 font-sans">
       {/* Light Blue/Indigo Glow behind heading content (top right) */}
       <div className="absolute top-[-5%] right-[-5%] w-[450px] h-[450px] bg-[#38bdf8]/10 rounded-full blur-[120px] pointer-events-none z-0" />
       {/* Decorative Glow Spots */}
@@ -43,13 +44,13 @@ const CareerOpenings = () => {
 
       <div className="relative z-10 w-[85%] mx-auto flex flex-col items-start justify-start">
         {/* Section Tag */}
-        <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
+        <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30 select-none">
           [OPENINGS ]
         </div>
 
         {/* Heading Block */}
         <div className="w-full flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-20 mt-1 pb-1">
-          <h2 className="text-2xl md:text-3xl xl:text-[36px] leading-tight tracking-[0.264px] font-sans">
+          <h2 className="text-2xl md:text-3xl xl:text-[36px] leading-tight tracking-[0.264px] font-sans text-left">
             <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black">
               Explore exciting career opportunities
             </span>{" "}
@@ -69,7 +70,11 @@ const CareerOpenings = () => {
           {jobs.map((job, idx) => (
             <div
               key={idx}
-              className="w-full px-5 py-6 bg-[#1d1e32] rounded-[10px] border-2 border-indigo-500/30 hover:border-indigo-500 hover:bg-[#23243d] transition-all duration-300 flex flex-col justify-between items-start gap-5 group"
+              style={{
+                backgroundColor: "rgba(29, 30, 50, 1)",
+                borderColor: "rgba(99, 102, 241, 0.3)"
+              }}
+              className="w-full px-5 py-6 rounded-[10px] border-t-2 border-t-[#FCCA71]/80 border-x border-b hover:border-indigo-500 hover:bg-[rgba(38,40,66,1)] transition-all duration-300 flex flex-col justify-between items-start gap-5 group cursor-pointer"
             >
               <div className="w-full flex flex-col justify-start items-start gap-3">
                 {/* Tags */}
@@ -85,7 +90,7 @@ const CareerOpenings = () => {
                 </div>
 
                 {/* Job Title & Department */}
-                <div className="w-full flex flex-col justify-start items-start">
+                <div className="w-full flex flex-col justify-start items-start text-left">
                   <h4 className="text-white text-lg md:text-xl font-semibold font-sans leading-7">
                     {job.title}
                   </h4>
@@ -98,10 +103,10 @@ const CareerOpenings = () => {
               {/* Apply Button */}
               <button className="h-10 px-4 rounded-lg border border-[#877BF1]/40 backdrop-blur-[2px] flex items-center justify-center gap-2 text-white font-sans text-xs md:text-sm font-medium hover:bg-[#877BF1]/10 active:scale-95 transition-all duration-300 cursor-pointer self-start">
                 <span>Apply</span>
-                <img
-                  src="/Careers/career_hero_icon.svg"
-                  alt="Arrow"
-                  className="w-[16px] h-[8px] group-hover:translate-x-1 transition-transform shrink-0"
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform shrink-0"
+                  weight="bold"
                 />
               </button>
             </div>

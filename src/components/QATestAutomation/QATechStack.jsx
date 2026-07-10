@@ -1,5 +1,57 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import {
+  CursorClick,
+  Play,
+  Globe,
+  DeviceMobile,
+  BracketsCurly,
+  Gauge,
+  ShieldWarning,
+  Gear,
+  Infinity as InfinityIcon,
+  GithubLogo,
+  GitlabLogo,
+  Cloud,
+  FileCode,
+  Code,
+  PaperPlane,
+  Flask,
+  TrendUp,
+  Flame,
+  Bug,
+  MagnifyingGlass,
+  Browsers,
+  Coffee,
+  TerminalWindow,
+} from "@phosphor-icons/react";
+
+const iconMap = {
+  "Selenium": CursorClick,
+  "Playwright": Play,
+  "Cypress": Globe,
+  "Appium": DeviceMobile,
+  "Postman": PaperPlane,
+  "REST Assured": BracketsCurly,
+  "SoapUI": Flask,
+  "Apache JMeter": TrendUp,
+  "LoadRunner": Gauge,
+  "Gatling": Flame,
+  "OWASP ZAP": ShieldWarning,
+  "Burp Suite": Bug,
+  "SonarQube": MagnifyingGlass,
+  "Jenkins": Gear,
+  "Azure DevOps": InfinityIcon,
+  "GitHub Actions": GithubLogo,
+  "GitLab CI/CD": GitlabLogo,
+  "BrowserStack": Browsers,
+  "Sauce Labs": Cloud,
+  "LambdaTest": Globe,
+  "Java": Coffee,
+  "Python": TerminalWindow,
+  "JavaScript": FileCode,
+  "C#": Code,
+};
 
 const techCats = [
   { cat: "Test Automation", items: ["Selenium", "Playwright", "Cypress", "Appium"] },
@@ -12,6 +64,7 @@ const techCats = [
 ];
 
 const TechCard = ({ name }) => {
+  const Icon = iconMap[name];
   return (
     <Motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -19,11 +72,17 @@ const TechCard = ({ name }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.3 }}
       whileHover={{ 
-        scale: 1.05
+        scale: 1.05,
+        backgroundColor: "rgba(39, 41, 69, 1)",
+        borderColor: "rgba(95, 95, 255, 1)"
       }}
-      className="flex items-center justify-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[60px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none bg-[#1d1e32] border-[#5f5fbf]/40 hover:bg-[#262842] hover:border-[#5f5fff]"
+      style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      <span className="text-[#E7E6FC] text-center text-xs md:text-sm font-semibold select-none px-1 leading-tight line-clamp-2">
+      {Icon && (
+        <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
+      )}
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
         {name}
       </span>
     </Motion.div>

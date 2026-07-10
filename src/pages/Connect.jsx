@@ -268,7 +268,7 @@ const Connect = () => {
 
         {/* Right Column: Contact Form */}
         <div 
-          className="rounded-2xl p-5 md:p-8 flex flex-col gap-8 md:gap-10 items-center justify-start shrink-0 w-full lg:w-156 relative min-h-146"
+          className="rounded-2xl p-5 md:p-8 flex flex-col gap-5 md:gap-6 items-center justify-start shrink-0 w-full lg:w-156 relative min-h-0"
           style={{
             background: "linear-gradient(188.91deg, rgba(24, 25, 46, 1) 0%, rgba(15, 15, 37, 1) 100%)",
             border: "1px solid rgba(255, 255, 255, 0.05)"
@@ -394,7 +394,7 @@ const Connect = () => {
                 {/* Row 3: Message */}
                 <div className="flex flex-col gap-2 w-full">
                   <label className="text-[#AAA9BE] text-sm leading-4">Message</label>
-                  <div className="bg-[#23243A] rounded-lg p-3 h-32 flex items-start focus-within:ring-1 focus-within:ring-[#787BBC] transition-all border border-white/5">
+                  <div className="bg-[#23243A] rounded-lg p-3 h-20 flex items-start focus-within:ring-1 focus-within:ring-[#787BBC] transition-all border border-white/5">
                     <textarea 
                       placeholder="Tell us about your project, or how we can help..." 
                       value={formData.message}

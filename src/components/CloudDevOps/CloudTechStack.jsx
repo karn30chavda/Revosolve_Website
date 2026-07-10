@@ -1,170 +1,84 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import {
+  CloudArrowUp,
+  Cloud,
+  Globe,
+  Cube,
+  CirclesThreePlus,
+  Stack,
+  TerminalWindow,
+  FileCode,
+  Infinity as InfinityIcon,
+  GithubLogo,
+  Gear,
+  GitlabLogo,
+  Gauge,
+  ChartLine,
+  MagnifyingGlass,
+  Eye,
+  ShieldWarning,
+  ShieldCheck,
+  Key,
+} from "@phosphor-icons/react";
 
 const techCats = [
   {
     cat: "Cloud Platforms",
     items: [
-      {
-        name: "Azure",
-        logoSrc: "/CloudDevOps/tech_azure.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "AWS",
-        logoSrc: "/CloudDevOps/tech_aws.svg",
-        lighten: true,
-        zoom: true,
-      },
-      {
-        name: "GCP",
-        logoSrc: "/CloudDevOps/tech_gcp.svg",
-        lighten: true,
-      },
+      { name: "Azure", icon: CloudArrowUp },
+      { name: "AWS", icon: Cloud },
+      { name: "GCP", icon: Globe },
     ],
   },
   {
     cat: "Containers & Orchestration",
     items: [
-      {
-        name: "Docker",
-        logoSrc: "/CloudDevOps/tech_docker.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "Kubernetes",
-        logoSrc: "/CloudDevOps/tech_kubernetes.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "OpenShift",
-        logoSrc: "/CloudDevOps/tech_openshift.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
+      { name: "Docker", icon: Cube },
+      { name: "Kubernetes", icon: CirclesThreePlus },
+      { name: "OpenShift", icon: CirclesThreePlus },
     ],
   },
   {
     cat: "Infrastructure as Code",
     items: [
-      {
-        name: "Terraform",
-        logoSrc: "/CloudDevOps/tech_terraform.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "Ansible",
-        logoSrc: "/CloudDevOps/tech_ansible.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "ARM Templates",
-        logoSrc: "/CloudDevOps/tech_arm_templates.svg",
-        lighten: true,
-      },
-      {
-        name: "CloudFormation",
-        logoSrc: "/CloudDevOps/tech_cloudformation.svg",
-        lighten: true,
-      },
+      { name: "Terraform", icon: Stack },
+      { name: "Ansible", icon: TerminalWindow },
+      { name: "ARM Templates", icon: FileCode },
+      { name: "CloudFormation", icon: Cloud },
     ],
   },
   {
     cat: "DevOps",
     items: [
-      {
-        name: "Azure DevOps",
-        logoSrc: "/CloudDevOps/tech_azure_devops.svg",
-        lighten: true,
-      },
-      {
-        name: "GitHub Actions",
-        logoSrc: "/CloudDevOps/tech_github.svg",
-        lighten: true,
-        zoom: true,
-      },
-      {
-        name: "Jenkins",
-        logoSrc: "/CloudDevOps/tech_jenkins.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "GitLab CI/CD",
-        logoSrc: "/CloudDevOps/tech_gitlab.svg",
-        lighten: true,
-        zoom: true,
-      },
+      { name: "Azure DevOps", icon: InfinityIcon },
+      { name: "GitHub Actions", icon: GithubLogo },
+      { name: "Jenkins", icon: Gear },
+      { name: "GitLab CI/CD", icon: GitlabLogo },
     ],
   },
   {
     cat: "Monitoring",
     items: [
-      {
-        name: "Prometheus",
-        logoSrc: "/CloudDevOps/tech_prometheus.svg",
-        zoomLarge: true,
-      },
-      {
-        name: "Grafana",
-        logoSrc: "/CloudDevOps/tech_grafana.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "ELK Stack",
-        logoSrc: "/CloudDevOps/tech_elk_stack.svg",
-        lighten: true,
-      },
-      {
-        name: "Datadog",
-        logoSrc: "/CloudDevOps/tech_datadog.svg",
-        lighten: true,
-      },
+      { name: "Prometheus", icon: Gauge },
+      { name: "Grafana", icon: ChartLine },
+      { name: "ELK Stack", icon: MagnifyingGlass },
+      { name: "Datadog", icon: Eye },
     ],
   },
   {
     cat: "Security",
     items: [
-      {
-        name: "Microsoft Defender",
-        logoSrc: "/CloudDevOps/tech_microsoft_defender.svg",
-        lighten: true,
-      },
-      {
-        name: "Azure Security Center",
-        logoSrc: "/CloudDevOps/tech_azure_security_center.svg",
-        lighten: true,
-      },
-      {
-        name: "AWS Security Hub",
-        logoSrc: "/CloudDevOps/tech_aws_security_hub.svg",
-        lighten: true,
-      },
-      {
-        name: "HashiCorp Vault",
-        logoSrc: "/CloudDevOps/tech_hashicorp_vault.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
+      { name: "Microsoft Defender", icon: ShieldWarning },
+      { name: "Azure Security Center", icon: ShieldCheck },
+      { name: "AWS Security Hub", icon: ShieldCheck },
+      { name: "HashiCorp Vault", icon: Key },
     ],
   },
 ];
 
 const TechCard = ({ item }) => {
-  const [imgFailed, setImgFailed] = useState(false);
-  const isGitHubActions = item.name === "GitHub Actions";
-
-  // Reset fail state when switching tabs/item changes
-  React.useEffect(() => {
-    setImgFailed(false);
-  }, [item.logoSrc]);
-
+  const Icon = item.icon;
   return (
     <Motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -177,41 +91,14 @@ const TechCard = ({ item }) => {
         borderColor: "rgba(95, 95, 255, 1)"
       }}
       style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
-      className={`flex items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none ${
-        isGitHubActions 
-          ? "flex-row gap-4 sm:gap-5 p-3 sm:p-4" 
-          : "flex-col p-2.5 sm:p-3"
-      }`}
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      {!imgFailed ? (
-        <img 
-          src={item.logoSrc} 
-          alt={item.name} 
-          onError={() => setImgFailed(true)}
-          style={{ 
-            transform: item.shrink ? "scale(0.7)" : (item.zoomLarge ? "scale(1.55)" : (item.zoom ? "scale(1.2)" : "none")),
-            filter: item.lighten ? "invert(1) hue-rotate(180deg)" : "none"
-          }}
-          className={`w-auto h-7 sm:h-8 md:h-9 object-contain transition-transform duration-300 ${
-            isGitHubActions ? "shrink-0" : "mx-auto"
-          }`} 
-        />
-      ) : (
-        <span className="text-[#E7E6FC] text-center text-xs md:text-sm font-semibold select-none px-1 leading-tight line-clamp-2">
-          {item.name}
-        </span>
+      {Icon && (
+        <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
       )}
-
-      {isGitHubActions && !imgFailed && (
-        <div className="flex flex-col items-start justify-center gap-0.5 leading-tight">
-          <span className="text-[#E7E6FC] text-[10px] sm:text-[11px] md:text-xs font-semibold select-none whitespace-nowrap">
-            GitHub
-          </span>
-          <span className="text-[#E7E6FC] text-[10px] sm:text-[11px] md:text-xs font-semibold select-none whitespace-nowrap">
-            Actions
-          </span>
-        </div>
-      )}
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
+        {item.name}
+      </span>
     </Motion.div>
   );
 };

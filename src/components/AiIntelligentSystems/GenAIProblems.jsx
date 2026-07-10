@@ -13,32 +13,32 @@ const problemsList = [
   {
     title: "AI Without Business Context",
     desc: "Many AI initiatives focus on technology rather than solving real operational challenges.",
-    icon: <Target size={28} className="text-[#877BF1]" weight="light" />,
+    icon: Target,
   },
   {
     title: "Disconnected Enterprise Knowledge",
     desc: "Business information exists across multiple systems, making it hard for employees and customers to access accurate information.",
-    icon: <Books size={28} className="text-[#877BF1]" weight="light" />,
+    icon: Books,
   },
   {
     title: "Manual Decision-Making",
     desc: "Employees spend significant time gathering information and performing repetitive decision-support activities.",
-    icon: <HandTap size={28} className="text-[#877BF1]" weight="light" />,
+    icon: HandTap,
   },
   {
     title: "High Customer Support Volumes",
     desc: "Support teams face increasing workloads while customers expect faster, more personalized interactions.",
-    icon: <Headset size={28} className="text-[#877BF1]" weight="light" />,
+    icon: Headset,
   },
   {
     title: "Repetitive Business Processes",
     desc: "Manual document processing, approvals, and administrative tasks reduce operational efficiency.",
-    icon: <ArrowsClockwise size={28} className="text-[#877BF1]" weight="light" />,
+    icon: ArrowsClockwise,
   },
   {
     title: "AI Governance Challenges",
     desc: "Organizations require secure, explainable, and compliant AI systems suitable for enterprise environments.",
-    icon: <Scales size={28} className="text-[#877BF1]" weight="light" />,
+    icon: Scales,
   }
 ];
 
@@ -63,11 +63,11 @@ const GenAIProblems = () => {
         
         {/* Header Block */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end w-full gap-6 lg:gap-12">
-          <div className="flex flex-col items-start min-w-fit">
+          <div className="flex flex-col items-start min-w-fit text-left">
             <span className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4">
               [problems we solve]
             </span>
-            <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight text-left font-sans">
+            <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight font-sans">
               <span className="font-black block">
                 <span className="text-[#877BF1]">Enterprise </span>
                 <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">AI</span>
@@ -77,8 +77,8 @@ const GenAIProblems = () => {
               </span>
             </h2>
           </div>
-          <div className="max-w-xl lg:pb-1">
-            <p className="text-[#CACBDB] text-sm font-normal leading-relaxed opacity-70 text-left">
+          <div className="max-w-xl lg:pb-1 text-left">
+            <p className="text-[#CACBDB] text-sm font-normal leading-relaxed opacity-70">
               Organizations invest heavily in AI but struggle to reach business value – disconnected pilots, poor data quality, and missing operational integration.
             </p>
           </div>
@@ -86,43 +86,48 @@ const GenAIProblems = () => {
 
         {/* Problems Grid - 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {problemsList.map((item, idx) => (
-            <Motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              whileHover={{ 
-                scale: 1.015
-              }}
-              style={{ 
-                backgroundColor: "rgba(2, 3, 25, 1)",
-                borderColor: "rgba(95, 95, 255, 1)"
-              }}
-              className={`flex flex-col justify-between items-start p-8 min-h-[220px] w-full rounded-[8px] border-2 cursor-pointer transition-all duration-300 relative group overflow-hidden ${
-                idx === 6 ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""
-              }`}
-            >
-              {/* Card Glow Effect */}
-              <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
+          {problemsList.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <Motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ 
+                  scale: 1.015,
+                  backgroundColor: "rgba(38, 40, 66, 1)",
+                  borderColor: "rgba(99, 102, 241, 0.7)"
+                }}
+                style={{ 
+                  backgroundColor: "rgba(29, 30, 50, 1)",
+                  borderColor: "rgba(99, 102, 241, 0.3)"
+                }}
+                className={`flex flex-col justify-between items-start p-8 min-h-[220px] w-full rounded-[8px] border-t-2 border-t-[#FCCA71]/80 border-x border-b cursor-pointer transition-all duration-300 relative group overflow-hidden ${
+                  idx === 6 ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""
+                }`}
+              >
+                {/* Card Glow Effect */}
+                <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
 
-              {/* Top part: Icon */}
-              <div className="w-10 h-10 flex items-center justify-center shrink-0 relative z-10 p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-all duration-300 mb-4">
-                {item.icon}
-              </div>
+                {/* Top part: Icon */}
+                <div className="w-8 h-8 flex items-center justify-start text-[#FCCA71] mb-6 shrink-0 relative z-10">
+                  <Icon size={26} className="text-[#FCCA71]" weight="light" />
+                </div>
 
-              {/* Bottom part: Text stack */}
-              <div className="flex flex-col gap-3 relative z-10 w-full text-left mt-auto">
-                <h4 className="text-white text-[18px] font-bold leading-tight">
-                  {item.title}
-                </h4>
-                <p className="text-[#CACBDB] text-[13.5px] font-normal leading-relaxed opacity-60 group-hover:opacity-85 transition-opacity duration-300">
-                  {item.desc}
-                </p>
-              </div>
-            </Motion.div>
-          ))}
+                {/* Bottom part: Text stack */}
+                <div className="flex flex-col gap-3 relative z-10 w-full text-left mt-auto">
+                  <h4 className="text-white text-[18px] font-bold leading-tight font-sans">
+                    {item.title}
+                  </h4>
+                  <p className="text-[#AAA9BE] text-[13.5px] font-normal leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300 font-sans">
+                    {item.desc}
+                  </p>
+                </div>
+              </Motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

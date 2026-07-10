@@ -1,64 +1,91 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import {
+  Globe,
+  MapTrifold,
+  Sphere,
+  MapPin,
+  Cube,
+  GameController,
+  Infinity as InfinityIcon,
+  Compass,
+  WifiHigh,
+  Cpu,
+  Broadcast,
+  Plugs,
+  ShareNetwork,
+  Database,
+  Hourglass,
+  ChartLine,
+  FileCode,
+  SquaresFour,
+  Flame,
+  Brain,
+  CloudArrowUp,
+  Cloud,
+  BracketsCurly,
+  ArrowsLeftRight,
+} from "@phosphor-icons/react";
 
 const techCats = [
   {
     cat: "GIS & Mapping",
     items: [
-      { name: "ArcGIS" },
-      { name: "QGIS" },
-      { name: "CesiumJS" },
-      { name: "Mapbox" },
+      { name: "ArcGIS", icon: Globe },
+      { name: "QGIS", icon: MapTrifold },
+      { name: "CesiumJS", icon: Sphere },
+      { name: "Mapbox", icon: MapPin },
     ],
   },
   {
     cat: "3D & Visualization",
     items: [
-      { name: "Unity" },
-      { name: "Unreal Engine" },
-      { name: "NVIDIA Omniverse" },
-      { name: "WebGL" },
+      { name: "Unity", icon: Cube },
+      { name: "Unreal Engine", icon: GameController },
+      { name: "NVIDIA Omniverse", icon: InfinityIcon },
+      { name: "WebGL", icon: Compass },
     ],
   },
   {
     cat: "IoT & Telemetry",
     items: [
-      { name: "MQTT" },
-      { name: "Azure IoT Hub" },
-      { name: "AWS IoT Core" },
-      { name: "SCADA Integration" },
+      { name: "MQTT", icon: WifiHigh },
+      { name: "Azure IoT Hub", icon: Cpu },
+      { name: "AWS IoT Core", icon: Broadcast },
+      { name: "SCADA Integration", icon: Plugs },
     ],
   },
   {
     cat: "Data & Streaming",
     items: [
-      { name: "Apache Kafka" },
-      { name: "PostgreSQL" },
-      { name: "TimescaleDB" },
-      { name: "InfluxDB" },
+      { name: "Apache Kafka", icon: ShareNetwork },
+      { name: "PostgreSQL", icon: Database },
+      { name: "TimescaleDB", icon: Hourglass },
+      { name: "InfluxDB", icon: ChartLine },
     ],
   },
   {
     cat: "AI & Simulation",
     items: [
-      { name: "Python" },
-      { name: "TensorFlow" },
-      { name: "PyTorch" },
-      { name: "Predictive Models" },
+      { name: "Python", icon: FileCode },
+      { name: "TensorFlow", icon: SquaresFour },
+      { name: "PyTorch", icon: Flame },
+      { name: "Predictive Models", icon: Brain },
     ],
   },
   {
     cat: "Cloud & APIs",
     items: [
-      { name: "Microsoft Azure" },
-      { name: "AWS" },
-      { name: "REST APIs" },
-      { name: "WebSockets" },
+      { name: "Microsoft Azure", icon: CloudArrowUp },
+      { name: "AWS", icon: Cloud },
+      { name: "REST APIs", icon: BracketsCurly },
+      { name: "WebSockets", icon: ArrowsLeftRight },
     ],
   },
 ];
 
 const TechCard = ({ item }) => {
+  const Icon = item.icon;
   return (
     <Motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -71,9 +98,12 @@ const TechCard = ({ item }) => {
         borderColor: "rgba(95, 95, 255, 1)"
       }}
       style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
-      className="flex items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-2.5 sm:p-3"
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      <span className="text-[#E7E6FC] text-center text-xs md:text-sm font-semibold select-none px-1 leading-tight line-clamp-2">
+      {Icon && (
+        <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
+      )}
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
         {item.name}
       </span>
     </Motion.div>

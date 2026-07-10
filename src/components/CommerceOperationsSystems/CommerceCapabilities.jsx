@@ -1,38 +1,48 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
+import {
+  Receipt,
+  ArrowsLeftRight,
+  Truck,
+  CloudArrowUp,
+  ShoppingBag,
+  Storefront,
+  Database,
+  ChatText
+} from "@phosphor-icons/react";
 
 const capabilitiesData = [
   {
     title: "Order Management System",
-    icon: "/CommerceOperationsSystems/capability_icon_1.svg",
+    icon: Receipt,
   },
   {
     title: "Multi-channel inventory synchronization",
-    icon: "/CommerceOperationsSystems/capability_icon_2.svg",
+    icon: ArrowsLeftRight,
   },
   {
     title: "Fulfillment and logistics management",
-    icon: "/CommerceOperationsSystems/capability_icon_3.svg",
+    icon: Truck,
   },
   {
     title: "Amazon FBA integration",
-    icon: "/CommerceOperationsSystems/capability_icon_4.svg",
+    icon: CloudArrowUp,
   },
   {
     title: "Shopify / WooCommerce integrations",
-    icon: "/CommerceOperationsSystems/capability_icon_5.svg",
+    icon: ShoppingBag,
   },
   {
     title: "Marketplace integrations",
-    icon: "/CommerceOperationsSystems/capability_icon_6.svg",
+    icon: Storefront,
   },
   {
     title: "Logistics & Backend integrations",
-    icon: "/CommerceOperationsSystems/capability_icon_7.svg",
+    icon: Database,
   },
   {
     title: "Customer communication",
-    icon: "/CommerceOperationsSystems/capability_icon_8.svg",
+    icon: ChatText,
   },
 ];
 
@@ -49,7 +59,7 @@ const CommerceCapabilities = () => {
           {/* Left Block */}
           <div className="flex flex-col items-start justify-start">
             {/* Section Tag */}
-            <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
+            <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30 font-sans">
               [capabilities]
             </div>
 
@@ -79,40 +89,43 @@ const CommerceCapabilities = () => {
 
         {/* Capabilities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          {capabilitiesData.map((item, idx) => (
-            <Motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              whileHover={{
-                scale: 1.02,
-                backgroundColor: "rgba(167, 139, 250, 0.15)",
-                borderColor: "rgba(99, 102, 241, 0.9)",
-              }}
-              className="flex flex-col justify-start items-start p-8 h-[176px] w-full bg-violet-400/10 rounded-[5px] border border-indigo-500/60 cursor-pointer transition-all duration-300 relative group"
-            >
-              {/* Glow Highlight Effect */}
-              <div className="absolute inset-0 bg-radial from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[5px]" />
+          {capabilitiesData.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <Motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                whileHover={{
+                  scale: 1.02,
+                  backgroundColor: "rgba(38, 40, 66, 1)",
+                  borderColor: "rgba(99, 102, 241, 0.7)",
+                }}
+                style={{
+                  backgroundColor: "rgba(29, 30, 50, 1)",
+                  borderColor: "rgba(99, 102, 241, 0.3)",
+                }}
+                className="flex flex-col justify-start items-start p-8 h-[176px] w-full rounded-[8px] border-t-2 border-t-[#FCCA71]/80 border-x border-b cursor-pointer transition-all duration-300 relative group"
+              >
+                {/* Glow Highlight Effect */}
+                <div className="absolute inset-0 bg-radial from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px]" />
 
-              {/* Icon Container */}
-              <div className="w-7 h-6 flex items-center justify-center mb-8 shrink-0 relative z-10">
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              {/* Title Container */}
-              <div className="flex-1 flex flex-col justify-start items-start w-full relative z-10">
-                <div className="text-[#E7E6FC] text-[18px] font-semibold font-sans leading-[24px] text-left group-hover:text-white transition-colors duration-300">
-                  {item.title}
+                {/* Icon Container */}
+                <div className="w-8 h-8 flex items-center justify-start text-[#FCCA71] mb-6 shrink-0 relative z-10">
+                  <Icon size={26} className="text-[#FCCA71]" weight="light" />
                 </div>
-              </div>
-            </Motion.div>
-          ))}
+
+                {/* Title Container */}
+                <div className="flex-1 flex flex-col justify-start items-start w-full relative z-10">
+                  <div className="text-[#E7E6FC] text-[18px] font-semibold font-sans leading-[24px] text-left group-hover:text-white transition-colors duration-300">
+                    {item.title}
+                  </div>
+                </div>
+              </Motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

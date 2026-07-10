@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { UsersThree, HandHeart, BookOpen } from "@phosphor-icons/react";
 
 const CareerWhyJoin = () => {
   const [activeCard, setActiveCard] = useState(0);
@@ -8,37 +9,37 @@ const CareerWhyJoin = () => {
       title: "Growth Circles",
       description:
         "Collaborative forums where team members explore new skills, share experiences, and grow together, because personal and professional growth go hand in hand.",
-      icon: "/Careers/career_join_1.svg",
+      icon: UsersThree,
     },
     {
       title: "Corporate Social Responsibility",
       description:
         "Through meaningful initiatives, we give back to communities and support a sustainable future. Because real success includes responsibility.",
-      icon: "/Careers/career_join_2.svg",
+      icon: HandHeart,
     },
     {
       title: "Learning Opportunities",
       description:
         "From hands-on projects to expert-led sessions, our team is always learning. Because evolving skills means evolving solutions.",
-      icon: "/Careers/career_join_3.svg",
+      icon: BookOpen,
     },
   ];
 
   return (
-    <section id="why-join-section" className="relative w-full bg-[#01031c] pt-8 pb-8 lg:pt-10 lg:pb-12 scroll-mt-20">
+    <section id="why-join-section" className="relative w-full bg-[#01031c] pt-8 pb-8 lg:pt-10 lg:pb-12 scroll-mt-20 font-sans">
       {/* Decorative Blur Background Spot */}
       <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-30 w-[85%] mx-auto flex flex-col items-start justify-start">
         {/* Section Tag */}
-        <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30">
+        <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30 select-none">
           [WHAT]
         </div>
 
         {/* Heading Block: Left Title and Right Description Row */}
         <div className="w-full flex flex-col lg:flex-row lg:items-end lg:justify-start lg:gap-20 mt-1 pb-1">
-          <div className="flex flex-col items-start justify-start">
+          <div className="flex flex-col items-start justify-start text-left">
             <h2 className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-2xl md:text-3xl xl:text-[36px] font-black leading-tight tracking-[0.264px]">
               Why Join
             </h2>
@@ -60,35 +61,36 @@ const CareerWhyJoin = () => {
           <div className="w-full lg:w-[35%] flex flex-col justify-start items-start gap-5 shrink-0">
             {joinCards.map((card, idx) => {
               const isActive = idx === activeCard;
+              const Icon = card.icon;
               return (
                 <div
                   key={idx}
                   onClick={() => setActiveCard(idx)}
-                  className={`w-full p-6 flex flex-col justify-start items-start overflow-hidden cursor-pointer transition-all duration-300 rounded-[10px] border-2 ${
+                  style={{
+                    backgroundColor: isActive ? "rgba(38, 40, 66, 1)" : "rgba(29, 30, 50, 0.4)",
+                    borderColor: isActive ? "rgba(99, 102, 241, 0.7)" : "rgba(99, 102, 241, 0.2)"
+                  }}
+                  className={`w-full p-6 flex flex-col justify-start items-start overflow-hidden cursor-pointer transition-all duration-300 rounded-[10px] ${
                     isActive
-                      ? "bg-[#191C63] border-transparent shadow-[0_0_20px_rgba(74,81,177,0.15)]"
-                      : "bg-transparent border-indigo-500/30 hover:border-indigo-500/60"
+                      ? "border-t-2 border-t-[#FCCA71]/80 border-x border-b shadow-[0_0_20px_rgba(74,81,177,0.15)]"
+                      : "border hover:border-indigo-500/50"
                   }`}
                 >
                   <div className="w-full flex flex-col justify-start items-start">
                     {/* Icon (Above) */}
-                    <div className="w-9 h-9 flex items-center justify-start shrink-0 mb-4">
-                      <img
-                        src={card.icon}
-                        className="w-8 h-8 object-contain"
-                        alt={card.title}
-                      />
+                    <div className="w-8 h-8 flex items-center justify-start text-[#FCCA71] mb-4 shrink-0">
+                      <Icon size={26} className="text-[#FCCA71]" weight="light" />
                     </div>
                     {/* Title (Below Icon) */}
-                    <h4 className="text-white text-lg font-medium font-sans leading-6 mb-2.5">
+                    <h4 className="text-white text-lg font-semibold font-sans leading-6 mb-2.5 text-left">
                       {card.title}
                     </h4>
                     {/* Description */}
                     <p
-                      className={`w-full text-sm font-sans leading-relaxed transition-all duration-300 ${
+                      className={`w-full text-sm font-sans leading-relaxed transition-all duration-300 text-left ${
                         isActive
                           ? "text-[#fbfbff] opacity-90 font-normal"
-                          : "text-[#CACBDB] opacity-60 font-light"
+                          : "text-[#AAA9BE] opacity-60 font-light"
                       }`}
                     >
                       {card.description}

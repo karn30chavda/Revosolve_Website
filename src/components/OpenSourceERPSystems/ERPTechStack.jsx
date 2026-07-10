@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import {
-  Package,
-  Code,
+  AppWindow,
+  Hammer,
   FileCode,
   Database,
   StackSimple,
@@ -16,7 +16,6 @@ import {
   CirclesThreePlus,
   Cloud,
   CloudArrowUp,
-  GoogleChromeLogo,
   Receipt,
   CreditCard,
   Bank,
@@ -24,27 +23,31 @@ import {
   Fingerprint,
   WhatsappLogo,
   Envelope,
+  TerminalWindow,
+  HardDrive,
+  Browsers,
+  ShareNetwork,
 } from "@phosphor-icons/react";
 
 const techCats = [
   {
     cat: "Enterprise Platforms",
     items: [
-      { name: "ERPNext", icon: Package },
-      { name: "Frappe Framework", icon: Code },
+      { name: "ERPNext", icon: AppWindow },
+      { name: "Frappe Framework", icon: Hammer },
     ],
   },
   {
     cat: "Programming",
     items: [
-      { name: "Python", icon: FileCode },
+      { name: "Python", icon: TerminalWindow },
       { name: "JavaScript", icon: FileCode },
     ],
   },
   {
     cat: "Databases",
     items: [
-      { name: "MariaDB", icon: Database },
+      { name: "MariaDB", icon: HardDrive },
       { name: "PostgreSQL", icon: Database },
       { name: "Redis", icon: StackSimple },
     ],
@@ -52,7 +55,7 @@ const techCats = [
   {
     cat: "Frontend",
     items: [
-      { name: "HTML5", icon: Globe },
+      { name: "HTML5", icon: Browsers },
       { name: "CSS3", icon: PaintBrush },
       { name: "Vue.js", icon: Atom },
     ],
@@ -70,7 +73,7 @@ const techCats = [
     items: [
       { name: "Docker", icon: Cube },
       { name: "Kubernetes", icon: CirclesThreePlus },
-      { name: "Nginx", icon: Globe },
+      { name: "Nginx", icon: ShareNetwork },
     ],
   },
   {
@@ -78,7 +81,7 @@ const techCats = [
     items: [
       { name: "AWS", icon: Cloud },
       { name: "Azure", icon: CloudArrowUp },
-      { name: "Google Cloud", icon: GoogleChromeLogo },
+      { name: "Google Cloud", icon: Globe },
     ],
   },
   {
@@ -109,10 +112,10 @@ const TechCard = ({ item }) => {
         borderColor: "rgba(95, 95, 255, 1)"
       }}
       style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
-      className="flex flex-col items-center justify-center gap-2 rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[72px] md:min-h-[84px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-3"
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      <Icon size={24} className="text-[#877BF1] shrink-0" weight="light" />
-      <span className="text-[#E7E6FC] text-center text-xs md:text-sm font-semibold select-none leading-tight">
+      <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
         {item.name}
       </span>
     </Motion.div>

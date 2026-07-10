@@ -1,43 +1,85 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import {
+  Sparkle,
+  Brain,
+  Cpu,
+  Robot,
+  FileText,
+  Cloud,
+  Database,
+  TerminalWindow,
+  Code,
+  FileCode,
+  MagnifyingGlass,
+  BracketsCurly,
+  ShareNetwork,
+  WebhooksLogo,
+  Leaf,
+  StackSimple,
+} from "@phosphor-icons/react";
 
 const techCats = [
   {
     cat: "AI Models",
-    items: ["OpenAI", "Claude", "Gemini", "Llama"],
+    items: [
+      { name: "OpenAI", icon: Sparkle },
+      { name: "Claude", icon: Brain },
+      { name: "Gemini", icon: Cpu },
+      { name: "Llama", icon: Robot },
+    ],
   },
   {
     cat: "OCR",
     items: [
-      "Tesseract",
-      "Azure Document Intelligence",
-      "Google Document AI",
-      "AWS Textract",
+      { name: "Tesseract", icon: FileText },
+      { name: "Azure Document Intelligence", icon: Cloud },
+      { name: "Google Document AI", icon: Brain },
+      { name: "AWS Textract", icon: Database },
     ],
   },
   {
     cat: "Backend",
-    items: ["Python", "FastAPI", "Node.js"],
+    items: [
+      { name: "Python", icon: TerminalWindow },
+      { name: "FastAPI", icon: Code },
+      { name: "Node.js", icon: FileCode },
+    ],
   },
   {
     cat: "Databases",
-    items: ["PostgreSQL", "MongoDB", "Redis"],
+    items: [
+      { name: "PostgreSQL", icon: Database },
+      { name: "MongoDB", icon: Leaf },
+      { name: "Redis", icon: StackSimple },
+    ],
   },
   {
     cat: "Search",
-    items: ["Elasticsearch", "OpenSearch"],
+    items: [
+      { name: "Elasticsearch", icon: MagnifyingGlass },
+      { name: "OpenSearch", icon: MagnifyingGlass },
+    ],
   },
   {
     cat: "Cloud",
-    items: ["Microsoft Azure", "AWS", "Google Cloud"],
+    items: [
+      { name: "Microsoft Azure", icon: Cloud },
+      { name: "AWS", icon: Cloud },
+      { name: "Google Cloud", icon: Cloud },
+    ],
   },
   {
     cat: "APIs",
-    items: ["REST", "GraphQL", "Webhooks"],
+    items: [
+      { name: "REST", icon: BracketsCurly },
+      { name: "GraphQL", icon: ShareNetwork },
+      { name: "Webhooks", icon: WebhooksLogo },
+    ],
   },
 ];
 
-const TechPill = ({ name }) => (
+const TechPill = ({ name, icon: Icon }) => (
   <Motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     whileInView={{ opacity: 1, scale: 1 }}
@@ -52,9 +94,17 @@ const TechPill = ({ name }) => (
       backgroundColor: "rgba(29, 30, 50, 1)",
       borderColor: "rgba(95, 95, 255, 0.4)",
     }}
-    className="flex items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-2.5 sm:p-3"
+    className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
   >
-    <span className="text-[#E7E6FC] text-center text-sm md:text-base font-semibold select-none px-1 leading-tight line-clamp-2">
+    {Icon && (
+      <Icon
+        size={22}
+        color="#FCCA71"
+        weight="bold"
+        className="shrink-0"
+      />
+    )}
+    <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
       {name}
     </span>
   </Motion.div>
@@ -120,8 +170,8 @@ const DocTechStack = () => {
               transition={{ duration: 0.25 }}
               className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 w-full relative z-10"
             >
-              {techCats[activeTab].items.map((name, idx) => (
-                <TechPill key={idx} name={name} />
+              {techCats[activeTab].items.map((item, idx) => (
+                <TechPill key={idx} name={item.name} icon={item.icon} />
               ))}
             </Motion.div>
           </AnimatePresence>

@@ -8,19 +8,19 @@ const PipeNode = ({ icon, label, hot }) => {
   const IconComponent = icon;
   return (
     <div className="text-center flex-1">
-      <div className={`w-[54px] h-[54px] sm:w-[60px] sm:h-[60px] mx-auto mb-2.5 border flex items-center justify-center rounded-sm transition-all duration-300 relative overflow-hidden ${hot ? "border-[#877BF1] bg-[#877BF1]/12 text-[#A9A0F5]" : "border-[#877BF1]/25 text-[#CACBDB] bg-transparent"}`}>
+      <div className={`w-[54px] h-[54px] sm:w-[60px] sm:h-[60px] mx-auto mb-2.5 border flex items-center justify-center rounded-sm transition-all duration-300 relative overflow-hidden ${hot ? "border-[#FCCA71] bg-[#FCCA71]/12 text-[#FCCA71]" : "border-white/10 text-[#CACBDB] bg-transparent"}`}>
         {hot && (
           <div 
             className="absolute inset-0 pointer-events-none" 
             style={{
-              background: "conic-gradient(from 0deg, transparent 0 84%, rgba(135,123,241,0.4) 92%, transparent 100%)",
+              background: "conic-gradient(from 0deg, transparent 0 84%, rgba(252,202,113,0.4) 92%, transparent 100%)",
               animation: "rvRadar 3s linear infinite"
             }}
           />
         )}
-        <IconComponent size={hot ? 26 : 22} className="relative z-10 text-white" />
+        <IconComponent size={hot ? 26 : 22} className={`relative z-10 ${hot ? "text-[#FCCA71]" : "text-white"}`} />
       </div>
-      <div className={`font-mono text-[9px] sm:text-[10px] tracking-wider uppercase ${hot ? "text-[#A9A0F5] font-bold" : "text-[#8F92B8]"}`}>
+      <div className={`font-mono text-[9px] sm:text-[10px] tracking-wider uppercase ${hot ? "text-[#FCCA71] font-bold" : "text-[#8F92B8]"}`}>
         {label}
       </div>
     </div>
@@ -28,9 +28,9 @@ const PipeNode = ({ icon, label, hot }) => {
 };
 
 const PipeFlow = ({ delay = 0 }) => (
-  <div className="relative flex-1 h-[1.5px] bg-[#877BF1]/25">
+  <div className="relative flex-1 h-[1.5px] bg-[#FCCA71]/25">
     <span 
-      className="absolute top-[-2.5px] w-1.5 h-1.5 rounded-full bg-[#877BF1] shadow-[0_0_8px_#877BF1]" 
+      className="absolute top-[-2.5px] w-1.5 h-1.5 rounded-full bg-[#FCCA71] shadow-[0_0_8px_#FCCA71]" 
       style={{ 
         animation: "rvFlowX 2.4s linear infinite", 
         animationDelay: `${delay}s` 
@@ -94,11 +94,11 @@ const SurveillanceWhatIs = () => {
           >
             <div 
               style={{ 
-                backgroundColor: "rgba(13, 15, 48, 0.75)",
-                borderColor: "rgba(135, 123, 241, 0.2)",
+                backgroundColor: "rgba(29, 30, 50, 0.9)",
+                borderColor: "rgba(99, 102, 241, 0.3)",
                 boxShadow: "0 20px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(135, 123, 241, 0.05)"
               }}
-              className="border rounded-[22px] p-5 sm:p-6 xl:p-8 w-full relative overflow-hidden group flex flex-col justify-between"
+              className="border-t-2 border-t-[#FCCA71]/80 border-x border-b rounded-[22px] p-5 sm:p-6 xl:p-8 w-full relative overflow-hidden group flex flex-col justify-between"
             >
               {/* Subtle top glare */}
               <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-[#877BF1]/30 to-transparent pointer-events-none" />
@@ -126,15 +126,15 @@ const SurveillanceWhatIs = () => {
               {/* Bottom Badges */}
               <div className="flex justify-between mt-6 pt-4 border-t border-[rgba(135,123,241,0.18)] w-full flex-wrap gap-y-3">
                 <span className="font-mono text-[10.5px] tracking-wider uppercase text-[#CACBDB]/90 flex items-center gap-2">
-                  <Lightning size={15} className="text-[#877BF1]" />
+                  <Lightning size={15} className="text-[#FCCA71]" />
                   <span>Real-Time</span>
                 </span>
                 <span className="font-mono text-[10.5px] tracking-wider uppercase text-[#CACBDB]/90 flex items-center gap-2">
-                  <PlugsConnected size={15} className="text-[#877BF1]" />
+                  <PlugsConnected size={15} className="text-[#FCCA71]" />
                   <span>Enterprise Integrated</span>
                 </span>
                 <span className="font-mono text-[10.5px] tracking-wider uppercase text-[#CACBDB]/90 flex items-center gap-2">
-                  <Scales size={15} className="text-[#877BF1]" />
+                  <Scales size={15} className="text-[#FCCA71]" />
                   <span>Audit-Ready</span>
                 </span>
               </div>

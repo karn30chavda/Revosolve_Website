@@ -20,6 +20,17 @@ import {
   GitBranch,
   Gear,
   Stack,
+  Atom,
+  Shield,
+  Globe,
+  AndroidLogo,
+  AppleLogo,
+  StackSimple,
+  CirclesThreePlus,
+  GithubLogo,
+  Leaf,
+  HardDrives,
+  HardDrive,
 } from "@phosphor-icons/react";
 
 const techCats = [
@@ -39,10 +50,10 @@ const techCats = [
     purpose:
       "Create intuitive, responsive, user-centric interfaces that improve adoption and operational efficiency.",
     items: [
-      { name: "React", icon: AppWindow },
-      { name: "Angular", icon: AppWindow },
-      { name: "Vue.js", icon: AppWindow },
-      { name: "Next.js", icon: AppWindow },
+      { name: "React", icon: Atom },
+      { name: "Angular", icon: Shield },
+      { name: "Vue.js", icon: Atom },
+      { name: "Next.js", icon: Globe },
     ],
   },
   {
@@ -51,9 +62,9 @@ const techCats = [
       "Extend enterprise workflows to field teams, operational staff, and mobile-first environments.",
     items: [
       { name: "Flutter", icon: DeviceMobile },
-      { name: "React Native", icon: DeviceMobile },
-      { name: "Native Android", icon: DeviceMobile },
-      { name: "Native iOS", icon: DeviceMobile },
+      { name: "React Native", icon: Atom },
+      { name: "Native Android", icon: AndroidLogo },
+      { name: "Native iOS", icon: AppleLogo },
     ],
   },
   {
@@ -62,10 +73,10 @@ const techCats = [
       "Store, process, and manage enterprise data securely while supporting high transaction volumes.",
     items: [
       { name: "PostgreSQL", icon: Database },
-      { name: "SQL Server", icon: Database },
-      { name: "MariaDB", icon: Database },
-      { name: "MongoDB", icon: Database },
-      { name: "Redis", icon: Database },
+      { name: "SQL Server", icon: HardDrives },
+      { name: "MariaDB", icon: HardDrive },
+      { name: "MongoDB", icon: Leaf },
+      { name: "Redis", icon: StackSimple },
     ],
   },
   {
@@ -75,7 +86,7 @@ const techCats = [
     items: [
       { name: "Microsoft Azure", icon: CloudArrowUp },
       { name: "AWS", icon: Cloud },
-      { name: "Google Cloud", icon: Cloud },
+      { name: "Google Cloud", icon: Globe },
     ],
   },
   {
@@ -95,9 +106,9 @@ const techCats = [
     purpose:
       "Accelerate software delivery while maintaining consistency, security, and reliability.",
     items: [
-      { name: "Docker", icon: Package },
-      { name: "Kubernetes", icon: Cube },
-      { name: "GitHub Actions", icon: GitBranch },
+      { name: "Docker", icon: Cube },
+      { name: "Kubernetes", icon: CirclesThreePlus },
+      { name: "GitHub Actions", icon: GithubLogo },
       { name: "Jenkins", icon: Gear },
       { name: "Terraform", icon: Stack },
     ],
@@ -105,6 +116,7 @@ const techCats = [
 ];
 
 const TechCard = ({ item }) => {
+  const Icon = item.icon;
   return (
     <Motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -120,9 +132,12 @@ const TechCard = ({ item }) => {
         backgroundColor: "rgba(29, 30, 50, 1)",
         borderColor: "rgba(95, 95, 255, 0.4)",
       }}
-      className="flex flex-col items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[56px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-3"
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      <span className="text-[#E7E6FC] text-center text-xs md:text-sm font-semibold select-none px-1 leading-tight line-clamp-2">
+      {Icon && (
+        <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
+      )}
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
         {item.name}
       </span>
     </Motion.div>

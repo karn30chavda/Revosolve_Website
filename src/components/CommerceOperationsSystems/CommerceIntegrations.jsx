@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import { Storefront, Database, Truck } from "@phosphor-icons/react";
 
 const tabsData = [
   {
     id: "marketplace",
     label: "Marketplace Integration",
-    icon: "/CommerceOperationsSystems/int_tab_marketplace.svg",
+    icon: Storefront,
   },
   {
     id: "erp",
     label: "ERP/POS/Accounting",
-    icon: "/CommerceOperationsSystems/int_tab_erp.svg",
+    icon: Database,
   },
   {
     id: "shipping",
     label: "Shipping Integration",
-    icon: "/CommerceOperationsSystems/int_tab_shipping.svg",
+    icon: Truck,
   },
 ];
 
@@ -127,33 +128,28 @@ const CommerceIntegrations = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
           {tabsData.map((tab) => {
             const isActive = activeTab === tab.id;
+            const Icon = tab.icon;
             return (
               <div
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-row items-center gap-4 p-4 rounded-[8px] border cursor-pointer transition-all duration-300 w-full ${
                   isActive
-                    ? "bg-[#5F5FFF] border-[#5F5FFF] text-[#FAFAFA] shadow-lg shadow-indigo-900/20"
+                    ? "bg-[rgba(29,30,50,1)] border-t-2 border-t-[#FCCA71]/80 border-x border-b border-[rgba(99,102,241,0.3)] text-white shadow-lg"
                     : "bg-transparent border-white/10 text-[#FAFAFA]/70 hover:border-white/20 hover:bg-white/3"
                 }`}
               >
                 {/* Icon Wrapper */}
                 <div
                   className={`w-10 h-10 rounded-[8px] flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                    isActive ? "bg-white/13" : "bg-white/5"
+                    isActive ? "bg-[#FCCA71]/10 text-[#FCCA71]" : "bg-white/5 text-[#AAA9BE]"
                   }`}
                 >
-                  <img
-                    src={tab.icon}
-                    alt=""
-                    className={`w-5 h-5 object-contain transition-all duration-300 ${
-                      isActive ? "brightness-200" : "opacity-80"
-                    }`}
-                  />
+                  <Icon size={20} weight={isActive ? "fill" : "light"} />
                 </div>
                 {/* Label */}
                 <span className={`text-[15px] font-medium leading-[22px] font-sans text-left select-none transition-colors duration-300 ${
-                  isActive ? "text-[#FAFAFA]" : "text-[#AAA9BE]"
+                  isActive ? "text-[#FCCA71]" : "text-[#AAA9BE]"
                 }`}>
                   {tab.label}
                 </span>

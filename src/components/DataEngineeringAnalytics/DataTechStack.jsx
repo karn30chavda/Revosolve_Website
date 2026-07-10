@@ -22,6 +22,9 @@ import {
   Plugs,
   ArrowsMerge,
   FileCode,
+  Leaf,
+  HardDrives,
+  HardDrive,
 } from "@phosphor-icons/react";
 
 const techCats = [
@@ -38,10 +41,10 @@ const techCats = [
     cat: "Databases",
     items: [
       { name: "PostgreSQL", icon: Database },
-      { name: "SQL Server", icon: Database },
-      { name: "MySQL", icon: Database },
+      { name: "SQL Server", icon: HardDrives },
+      { name: "MySQL", icon: HardDrive },
       { name: "MariaDB", icon: Database },
-      { name: "MongoDB", icon: Database },
+      { name: "MongoDB", icon: Leaf },
     ],
   },
   {
@@ -108,12 +111,12 @@ const TechCard = ({ item }) => {
         backgroundColor: "rgba(29, 30, 50, 1)",
         borderColor: "rgba(95, 95, 255, 0.4)",
       }}
-      className="flex flex-col items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-3 gap-2"
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
       {IconComponent && (
-        <IconComponent size={24} className="text-[#877BF1] transition-transform duration-300" weight="light" />
+        <IconComponent size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
       )}
-      <span className="text-[#E7E6FC] text-center text-xs md:text-sm font-semibold select-none px-1 leading-tight line-clamp-2">
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
         {item.name}
       </span>
     </Motion.div>

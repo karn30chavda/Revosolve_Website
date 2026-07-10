@@ -3,7 +3,6 @@ import { motion as Motion } from "framer-motion";
 import {
   Monitor,
   ClockCountdown,
-  EyeClosed,
   MapPin,
   Rewind,
   SquaresFour,
@@ -14,32 +13,32 @@ const problemsList = [
   {
     title: "Continuous Manual Monitoring",
     desc: "Security teams cannot effectively monitor hundreds of live camera feeds simultaneously.",
-    icon: <Monitor size={28} className="text-[#877BF1]" weight="light" />,
+    icon: Monitor,
   },
   {
     title: "Delayed Incident Response",
     desc: "Critical events are often identified after operational damage has already occurred.",
-    icon: <ClockCountdown size={28} className="text-[#877BF1]" weight="light" />,
+    icon: ClockCountdown,
   },
   {
     title: "Limited Operational Visibility",
     desc: "Organizations lack centralized intelligence across distributed locations and facilities.",
-    icon: <MapPin size={28} className="text-[#877BF1]" weight="light" />,
+    icon: MapPin,
   },
   {
     title: "Reactive Operations",
     desc: "Most surveillance systems record evidence rather than preventing operational issues.",
-    icon: <Rewind size={28} className="text-[#877BF1]" weight="light" />,
+    icon: Rewind,
   },
   {
     title: "Multiple Disconnected Systems",
     desc: "Video management, access control, alarms, and operational workflows often exist in separate systems.",
-    icon: <SquaresFour size={28} className="text-[#877BF1]" weight="light" />,
+    icon: SquaresFour,
   },
   {
     title: "Compliance & Audit Challenges",
     desc: "Organizations require automated event logging, audit trails, and incident reporting.",
-    icon: <Scales size={28} className="text-[#877BF1]" weight="light" />,
+    icon: Scales,
   }
 ];
 
@@ -77,41 +76,46 @@ const SurveillanceProblems = () => {
 
         {/* Problems Grid - 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {problemsList.map((item, idx) => (
-            <Motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              whileHover={{ 
-                scale: 1.015
-              }}
-              style={{ 
-                backgroundColor: "rgba(2, 3, 25, 1)",
-                borderColor: "rgba(95, 95, 255, 1)"
-              }}
-              className="flex flex-col justify-between items-start p-8 min-h-[220px] w-full rounded-[8px] border-2 cursor-pointer transition-all duration-300 relative group overflow-hidden"
-            >
-              {/* Card Glow Effect */}
-              <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
+          {problemsList.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <Motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ 
+                  scale: 1.015,
+                  backgroundColor: "rgba(38, 40, 66, 1)",
+                  borderColor: "rgba(99, 102, 241, 0.7)"
+                }}
+                style={{ 
+                  backgroundColor: "rgba(29, 30, 50, 1)",
+                  borderColor: "rgba(99, 102, 241, 0.3)"
+                }}
+                className="flex flex-col justify-between items-start p-8 min-h-[220px] w-full rounded-[8px] border-t-2 border-t-[#FCCA71]/80 border-x border-b cursor-pointer transition-all duration-300 relative group overflow-hidden"
+              >
+                {/* Card Glow Effect */}
+                <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
 
-              {/* Top part: Icon */}
-              <div className="w-10 h-10 flex items-center justify-center shrink-0 relative z-10 p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-all duration-300 mb-4">
-                {item.icon}
-              </div>
+                {/* Top part: Icon */}
+                <div className="w-8 h-8 flex items-center justify-start text-[#FCCA71] mb-6 shrink-0 relative z-10">
+                  <Icon size={26} className="text-[#FCCA71]" weight="light" />
+                </div>
 
-              {/* Bottom part: Text stack */}
-              <div className="flex flex-col gap-3 relative z-10 w-full text-left mt-auto">
-                <h4 className="text-white text-[18px] font-bold leading-tight">
-                  {item.title}
-                </h4>
-                <p className="text-[#CACBDB] text-[13.5px] font-normal leading-relaxed opacity-60 group-hover:opacity-85 transition-opacity duration-300">
-                  {item.desc}
-                </p>
-              </div>
-            </Motion.div>
-          ))}
+                {/* Bottom part: Text stack */}
+                <div className="flex flex-col gap-3 relative z-10 w-full text-left mt-auto">
+                  <h4 className="text-white text-[18px] font-bold leading-tight font-sans">
+                    {item.title}
+                  </h4>
+                  <p className="text-[#AAA9BE] text-[13.5px] font-normal leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300 font-sans">
+                    {item.desc}
+                  </p>
+                </div>
+              </Motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,70 +1,97 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import {
+  Eye,
+  Brain,
+  Cpu,
+  Sparkle,
+  Target,
+  Camera,
+  SquaresFour,
+  Flame,
+  Broadcast,
+  VideoCamera,
+  PlugsConnected,
+  FileCode,
+  Lightning,
+  Cube,
+  Database,
+  Leaf,
+  StackSimple,
+  CloudArrowUp,
+  Cloud,
+  Globe,
+  BracketsCurly,
+  WifiHigh,
+  ArrowsLeftRight,
+  ShareNetwork,
+} from "@phosphor-icons/react";
 
 const techCats = [
   {
     cat: "Artificial Intelligence",
     items: [
-      { name: "Computer Vision" },
-      { name: "Deep Learning" },
-      { name: "Edge AI" },
-      { name: "Generative AI" },
+      { name: "Computer Vision", icon: Eye },
+      { name: "Deep Learning", icon: Brain },
+      { name: "Edge AI", icon: Cpu },
+      { name: "Generative AI", icon: Sparkle },
     ],
   },
   {
     cat: "AI Frameworks",
     items: [
-      { name: "YOLO" },
-      { name: "OpenCV" },
-      { name: "TensorFlow" },
-      { name: "PyTorch" },
+      { name: "YOLO", icon: Target },
+      { name: "OpenCV", icon: Camera },
+      { name: "TensorFlow", icon: SquaresFour },
+      { name: "PyTorch", icon: Flame },
     ],
   },
   {
     cat: "Edge & Video Processing",
     items: [
-      { name: "NVIDIA Jetson" },
-      { name: "NVIDIA DeepStream" },
-      { name: "ONVIF" },
-      { name: "RTSP" },
+      { name: "NVIDIA Jetson", icon: Cpu },
+      { name: "NVIDIA DeepStream", icon: Broadcast },
+      { name: "ONVIF", icon: VideoCamera },
+      { name: "RTSP", icon: PlugsConnected },
     ],
   },
   {
     cat: "Backend",
     items: [
-      { name: "Python" },
-      { name: "FastAPI" },
-      { name: "Node.js" },
+      { name: "Python", icon: FileCode },
+      { name: "FastAPI", icon: Lightning },
+      { name: "Node.js", icon: Cube },
     ],
   },
   {
     cat: "Databases",
     items: [
-      { name: "PostgreSQL" },
-      { name: "MongoDB" },
-      { name: "Redis" },
+      { name: "PostgreSQL", icon: Database },
+      { name: "MongoDB", icon: Leaf },
+      { name: "Redis", icon: StackSimple },
     ],
   },
   {
     cat: "Cloud",
     items: [
-      { name: "Microsoft Azure" },
-      { name: "AWS" },
-      { name: "Google Cloud" },
+      { name: "Microsoft Azure", icon: CloudArrowUp },
+      { name: "AWS", icon: Cloud },
+      { name: "Google Cloud", icon: Globe },
     ],
   },
   {
     cat: "Integrations",
     items: [
-      { name: "REST APIs" },
-      { name: "MQTT" },
-      { name: "WebSockets" },
-      { name: "Kafka" },
+      { name: "REST APIs", icon: BracketsCurly },
+      { name: "MQTT", icon: WifiHigh },
+      { name: "WebSockets", icon: ArrowsLeftRight },
+      { name: "Kafka", icon: ShareNetwork },
     ],
   },
 ];
 
 const TechCard = ({ item }) => {
+  const Icon = item.icon;
   return (
     <Motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -77,9 +104,12 @@ const TechCard = ({ item }) => {
         borderColor: "rgba(95, 95, 255, 1)"
       }}
       style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
-      className="flex flex-col items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-2.5 sm:p-3"
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      <span className="text-[#E7E6FC] text-center text-sm md:text-base font-semibold select-none px-1 leading-tight line-clamp-2">
+      {Icon && (
+        <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
+      )}
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
         {item.name}
       </span>
     </Motion.div>

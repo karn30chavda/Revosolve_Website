@@ -5,20 +5,20 @@ const CareerCTA = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-transparent pt-2 pb-16 md:py-16 flex flex-col items-center justify-start relative w-full transform-gpu">
+    <section className="bg-transparent pt-2 pb-10 md:py-12 flex flex-col items-center justify-start relative w-full overflow-hidden transform-gpu font-sans z-20">
       {/* Light Blue Gradient Glow in top left between this and openings component */}
       <div className="absolute top-[-10%] left-[5%] w-[400px] h-[400px] bg-[#38bdf8]/10 rounded-full blur-[110px] pointer-events-none z-0" />
 
       {/* Desktop View */}
       <div
-        className="hidden md:flex w-[85%] mx-auto rounded-lg py-16 px-12 flex-col gap-8 items-center justify-end relative overflow-hidden drop-shadow-2xl z-10"
+        className="hidden md:flex w-[85%] mx-auto rounded-lg py-10 px-8 flex-col gap-6 items-center justify-end relative overflow-hidden drop-shadow-2xl"
         style={{
           background: "linear-gradient(290deg, #20CEFF -65.3%, #070784 64.5%), #151618",
         }}
       >
         {/* Background Pattern */}
         <img
-          className="absolute pointer-events-none select-none opacity-[0.9] object-contain overflow-visible"
+          className="absolute pointer-events-none select-none opacity-[0.9] object-contain overflow-visible mix-blend-screen"
           style={{
             width: "40.29156rem",
             height: "19.6875rem",
@@ -33,17 +33,23 @@ const CareerCTA = () => {
         />
 
         {/* Content Group */}
-        <div className="flex flex-col gap-2 items-center justify-start shrink-0 relative z-10 text-center">
+        <div className="flex flex-col gap-4 items-center justify-start shrink-0 relative z-10 text-center max-w-4xl">
           <h2
-            className="text-white text-center font-sans text-2xl md:text-[32px] font-bold relative md:w-236 max-w-full leading-normal"
+            className="text-white text-center font-sans text-[2.25rem] md:text-[2.5rem] font-black relative leading-tight"
             style={{
               letterSpacing: "0.0165rem",
             }}
           >
-            Don't see your role? Apply anyway
+            Don't see your role?{" "}
+            <span 
+              className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black inline-block"
+              style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+            >
+              Apply anyway
+            </span>
           </h2>
           <p
-            className="text-[#CACBEB] text-center font-sans text-sm md:text-base font-normal relative mt-2 opacity-90"
+            className="text-[#CACBEB] text-center font-sans text-[1.15rem] leading-relaxed font-normal relative mt-2 max-w-3xl opacity-90"
             style={{
               letterSpacing: "-0.017rem",
             }}
@@ -55,7 +61,7 @@ const CareerCTA = () => {
         {/* CTA Button */}
         <button
           onClick={() => navigate("/connect")}
-          className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer"
+          className="btn-premium-glow rounded-sm py-4 px-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer active:scale-95 mt-4"
         >
           <span
             className="text-[#070784] text-center font-sans text-[1rem] leading-6 font-semibold relative"
@@ -75,7 +81,7 @@ const CareerCTA = () => {
 
       {/* Mobile View */}
       <div
-        className="md:hidden w-[85%] mx-auto rounded-lg pt-16 pr-[22px] pb-16 pl-[22px] flex flex-col gap-8 items-center justify-end relative overflow-hidden shadow-2xl z-10"
+        className="md:hidden w-[90%] mx-auto rounded-lg py-10 px-6 flex flex-col gap-6 items-center justify-end relative overflow-hidden shadow-2xl"
         style={{
           background: "linear-gradient(-70.26deg, rgba(32, 206, 255, 1) 0%, rgba(7, 7, 132, 1) 100%), linear-gradient(to left, #151618, #151618)",
         }}
@@ -88,14 +94,20 @@ const CareerCTA = () => {
           decoding="async"
         />
 
-        <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10">
+        <div className="flex flex-col gap-4 items-center justify-start self-stretch shrink-0 relative z-10 text-center pt-4">
           <h2
-            className="text-[#ffffff] text-center font-sans text-[28px] font-bold relative self-stretch leading-tight"
+            className="text-[#ffffff] text-center font-sans text-[26px] font-bold relative self-stretch leading-tight"
             style={{
               letterSpacing: "0.26px",
             }}
           >
-            Don't see your role? Apply anyway
+            Don't see your role?{" "}
+            <span 
+              className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold inline-block"
+              style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+            >
+              Apply anyway
+            </span>
           </h2>
           <p
             className="text-[#cacbeb] text-center font-sans text-[14px] font-normal relative self-stretch opacity-90 leading-relaxed"
@@ -109,7 +121,7 @@ const CareerCTA = () => {
 
         <button
           onClick={() => navigate("/connect")}
-          className="btn-premium-glow rounded pt-4 pr-8 pb-4 pl-8 flex flex-row gap-2 items-center justify-start shrink-0 relative group transition-all duration-300 z-10 cursor-pointer active:scale-95"
+          className="btn-premium-glow rounded py-4 px-6 flex flex-row gap-2 items-center justify-center w-full transition-all duration-300 z-10 cursor-pointer active:scale-95 group"
         >
           <span
             className="text-[#070784] text-center font-sans text-base leading-6 font-semibold relative"

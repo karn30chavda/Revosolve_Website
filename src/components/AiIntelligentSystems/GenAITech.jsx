@@ -1,114 +1,105 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import {
+  Sparkle,
+  Brain,
+  Cpu,
+  Robot,
+  Wind,
+  Link,
+  BookOpen,
+  Users,
+  Gear,
+  Tree,
+  Graph,
+  CirclesThreePlus,
+  MagnifyingGlass,
+  TerminalWindow,
+  Lightning,
+  Flask,
+  Cube,
+  Database,
+  Leaf,
+  StackSimple,
+  CloudArrowUp,
+  Cloud,
+  Globe,
+  ShieldCheck,
+  FlowArrow,
+  Eye,
+  ChatText,
+  Shield,
+} from "@phosphor-icons/react";
 
 const techCats = [
   {
     cat: "Foundation Models",
     items: [
-      { name: "OpenAI GPT", logoSrc: "/AiIntelligentSystems/tech_openai.svg", lighten: true },
-      { name: "Anthropic Claude", logoSrc: "/AiIntelligentSystems/tech_claude.svg" },
-      { name: "Google Gemini", logoSrc: "/AiIntelligentSystems/tech_gemini.svg" },
-      { name: "Meta Llama", logoSrc: "/AiIntelligentSystems/tech_meta.svg" },
-      { name: "Mistral", logoSrc: "/AiIntelligentSystems/tech_mistral.svg", lighten: true },
+      { name: "OpenAI GPT", icon: Sparkle },
+      { name: "Anthropic Claude", icon: Brain },
+      { name: "Google Gemini", icon: Cpu },
+      { name: "Meta Llama", icon: Robot },
+      { name: "Mistral", icon: Wind },
     ],
   },
   {
     cat: "AI Frameworks",
     items: [
-      { name: "LangChain", logoSrc: "/AiIntelligentSystems/tech_langchain.svg", lighten: true },
-      { name: "LlamaIndex", logoSrc: "/AiIntelligentSystems/tech_llamaindex.svg", lighten: true },
-      { name: "CrewAI", logoSrc: "/AiIntelligentSystems/tech_crewai.svg", lighten: true },
-      { name: "AutoGen", logoSrc: "/AiIntelligentSystems/tech_autogen.svg", lighten: true, zoomLarge: true },
+      { name: "LangChain", icon: Link },
+      { name: "LlamaIndex", icon: BookOpen },
+      { name: "CrewAI", icon: Users },
+      { name: "AutoGen", icon: Gear },
     ],
   },
   {
     cat: "Vector Databases",
     items: [
-      { name: "Pinecone", logoSrc: "/AiIntelligentSystems/tech_pinecone.svg", lighten: true },
-      { name: "Weaviate", logoSrc: "/AiIntelligentSystems/tech_weaviate.svg", zoomLarge: true },
-      { name: "ChromaDB", logoSrc: "/AiIntelligentSystems/tech_chromadb.svg", lighten: true, zoomLarge: true, showTextBelow: true },
-      { name: "FAISS", logoSrc: "" },
+      { name: "Pinecone", icon: Tree },
+      { name: "Weaviate", icon: Graph },
+      { name: "ChromaDB", icon: CirclesThreePlus },
+      { name: "FAISS", icon: MagnifyingGlass },
     ],
   },
   {
     cat: "Backend Technologies",
     items: [
-      {
-        name: "Python",
-        logoSrc: "/AiIntelligentSystems/tech_python.svg",
-        lighten: true,
-        zoomXLarge: true,
-      },
-      {
-        name: "FastAPI",
-        logoSrc: "/AiIntelligentSystems/tech_fastapi.svg",
-      },
-      {
-        name: "Flask",
-        logoSrc: "",
-        zoomLarge: true,
-      },
-      {
-        name: "Node.js",
-        logoSrc: "/AiIntelligentSystems/tech_nodejs.svg",
-        lighten: true,
-        zoomXLarge: true,
-      },
+      { name: "Python", icon: TerminalWindow },
+      { name: "FastAPI", icon: Lightning },
+      { name: "Flask", icon: Flask },
+      { name: "Node.js", icon: Cube },
     ],
   },
   {
     cat: "Databases",
     items: [
-      {
-        name: "PostgreSQL",
-        logoSrc: "/AiIntelligentSystems/tech_postgresql.svg",
-      },
-      { name: "MongoDB", logoSrc: "" },
-      { name: "Redis", logoSrc: "" },
-      { name: "Elasticsearch", logoSrc: "" },
+      { name: "PostgreSQL", icon: Database },
+      { name: "MongoDB", icon: Leaf },
+      { name: "Redis", icon: StackSimple },
+      { name: "Elasticsearch", icon: MagnifyingGlass },
     ],
   },
   {
     cat: "Cloud Platforms",
     items: [
-      {
-        name: "Microsoft Azure",
-        logoSrc: "/AiIntelligentSystems/tech_azure.svg",
-        lighten: true,
-        zoomXLarge: true,
-      },
-      {
-        name: "AWS",
-        logoSrc: "/AiIntelligentSystems/tech_aws.svg",
-        lighten: true,
-        zoomLarge: true,
-      },
-      {
-        name: "Google Cloud",
-        logoSrc: "/AiIntelligentSystems/tech_gcp.svg",
-        lighten: true,
-      },
+      { name: "Microsoft Azure", icon: CloudArrowUp },
+      { name: "AWS", icon: Cloud },
+      { name: "Google Cloud", icon: Globe },
     ],
   },
   {
     cat: "Monitoring & Governance",
     items: [
-      { name: "LangSmith", logoSrc: "" },
-      { name: "MLflow", logoSrc: "" },
-      { name: "OpenTelemetry", logoSrc: "" },
-      { name: "Prompt Evaluation", logoSrc: "" },
-      { name: "AI Guardrails", logoSrc: "" },
+      { name: "LangSmith", icon: ShieldCheck },
+      { name: "MLflow", icon: FlowArrow },
+      { name: "OpenTelemetry", icon: Eye },
+      { name: "Prompt Evaluation", icon: ChatText },
+      { name: "AI Guardrails", icon: Shield },
     ],
   },
 ];
 
 const TechCard = ({ item }) => {
-  const [imgFailed, setImgFailed] = useState(false);
-
-  React.useEffect(() => {
-    setImgFailed(false);
-  }, [item.logoSrc]);
-
+  const Icon = item.icon;
   return (
     <Motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -121,31 +112,14 @@ const TechCard = ({ item }) => {
         borderColor: "rgba(95, 95, 255, 1)"
       }}
       style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
-      className="flex flex-col items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-2.5 sm:p-3"
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      {item.logoSrc && !imgFailed ? (
-        <div className="flex flex-col items-center justify-center gap-1.5 w-full">
-          <img 
-            src={item.logoSrc} 
-            alt={item.name} 
-            onError={() => setImgFailed(true)}
-            style={{ 
-              transform: item.shrink ? "scale(0.7)" : (item.zoomXLarge ? "scale(1.85)" : (item.zoomLarge ? "scale(1.5)" : "none")),
-              filter: item.lighten ? "invert(1) hue-rotate(180deg)" : "none"
-            }}
-            className="w-auto max-w-[80%] h-5 sm:h-[22px] md:h-6 object-contain transition-transform duration-300 mx-auto" 
-          />
-          {item.showTextBelow && (
-            <span className="text-[#AAA9BE] text-center text-[10px] sm:text-xs font-semibold select-none leading-none mt-0.5">
-              {item.name}
-            </span>
-          )}
-        </div>
-      ) : (
-        <span className="text-[#E7E6FC] text-center text-sm md:text-base font-semibold select-none px-1 leading-tight line-clamp-2">
-          {item.name}
-        </span>
+      {Icon && (
+        <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
       )}
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
+        {item.name}
+      </span>
     </Motion.div>
   );
 };

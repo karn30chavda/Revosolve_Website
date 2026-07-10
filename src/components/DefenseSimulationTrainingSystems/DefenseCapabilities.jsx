@@ -84,15 +84,15 @@ const DefenseCapabilities = () => {
   return (
     <section
       id="capabilities"
-      className="relative w-full pt-16 pb-20 md:pt-24 md:pb-28 px-[5%] lg:px-[7.5%] overflow-hidden z-20 text-[#FBFBFF] font-sans"
+      className="relative w-full pt-4 pb-20 md:pt-6 md:pb-28 px-[5%] lg:px-[7.5%] overflow-hidden z-20 text-[#FBFBFF] font-sans"
     >
       {/* Decorative Background Glows */}
       <div className="absolute top-[30%] left-[-10%] w-[50%] h-[50%] bg-[#877BF1]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-[#FCCA71]/3 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1240px] mx-auto relative z-10 flex flex-col gap-12">
+      <div className="max-w-[1240px] mx-auto relative z-10 flex flex-col gap-8">
         {/* Header Section */}
-        <Motion.div {...reveal(0)} className="flex flex-col gap-6 max-w-[740px] pb-6">
+        <Motion.div {...reveal(0)} className="flex flex-col gap-3 max-w-[740px] pb-3">
           {/* Desktop bracket tag */}
           <div className="hidden min-[1290px]:block opacity-30">
             <span className="text-white text-lg font-normal font-sans tracking-tight">[ </span>
@@ -135,8 +135,11 @@ const DefenseCapabilities = () => {
                 backgroundColor: "rgba(38, 40, 66, 1)",
                 borderColor: "rgba(99, 102, 241, 0.7)"
               }}
-              style={{ backgroundColor: "rgba(29, 30, 50, 1)" }}
-              className="flex flex-col justify-start items-start p-8 min-h-[220px] w-full rounded-[8px] border border-indigo-500/30 hover:border-indigo-500/60 cursor-pointer transition-all duration-300 relative group overflow-hidden"
+              style={{ 
+                backgroundColor: "rgba(29, 30, 50, 1)",
+                borderColor: "rgba(99, 102, 241, 0.3)"
+              }}
+              className="flex flex-col justify-start items-start p-8 min-h-[220px] w-full rounded-[8px] border-t-2 border-t-[#FCCA71]/80 border-x border-b cursor-pointer transition-all duration-300 relative group overflow-hidden"
             >
               {/* Card Glow Effect */}
               <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
@@ -157,8 +160,8 @@ const DefenseCapabilities = () => {
               )}
 
               {/* Icon Container */}
-              <div className="w-8 h-8 flex items-center justify-start mb-6 shrink-0 relative z-10">
-                <c.icon size={26} className="text-[#877BF1]" weight="light" />
+              <div className="w-8 h-8 flex items-center justify-start mb-4 shrink-0 relative z-10">
+                <c.icon size={26} className="text-[#FCCA71]" weight="light" />
               </div>
 
               {/* Text Content Block */}

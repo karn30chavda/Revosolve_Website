@@ -1,86 +1,113 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import {
+  Code,
+  FileCode,
+  Cube,
+  Atom,
+  Shield,
+  Globe,
+  DeviceMobile,
+  AndroidLogo,
+  AppleLogo,
+  Cloud,
+  CloudArrowUp,
+  Database,
+  StackSimple,
+  CirclesThreePlus,
+  GithubLogo,
+  Gear,
+  Stack,
+  BracketsCurly,
+  ShareNetwork,
+  Key,
+  Fingerprint,
+  Leaf,
+  HardDrives,
+  HardDrive
+} from "@phosphor-icons/react";
 
 const techCats = [
   {
     cat: "Backend",
     purpose: "Secure, high-performance platform services for mission-critical workloads.",
     items: [
-      { name: ".NET" },
-      { name: "Java" },
-      { name: "Python" },
-      { name: "Node.js" }
+      { name: ".NET", icon: Code },
+      { name: "Java", icon: FileCode },
+      { name: "Python", icon: FileCode },
+      { name: "Node.js", icon: Cube }
     ]
   },
   {
     cat: "Frontend",
     purpose: "Intuitive, responsive product interfaces that improve adoption.",
     items: [
-      { name: "React" },
-      { name: "Angular" },
-      { name: "Next.js" },
-      { name: "Vue.js" }
+      { name: "React", icon: Atom },
+      { name: "Angular", icon: Shield },
+      { name: "Next.js", icon: Globe },
+      { name: "Vue.js", icon: Atom }
     ]
   },
   {
     cat: "Mobile",
     purpose: "Extend platforms to mobile-first users, field teams, and customers.",
     items: [
-      { name: "Flutter" },
-      { name: "React Native" },
-      { name: "Android" },
-      { name: "iOS" }
+      { name: "Flutter", icon: DeviceMobile },
+      { name: "React Native", icon: Atom },
+      { name: "Android", icon: AndroidLogo },
+      { name: "iOS", icon: AppleLogo }
     ]
   },
   {
     cat: "Cloud",
     purpose: "Scalable, resilient, cloud-native platform delivery.",
     items: [
-      { name: "AWS" },
-      { name: "Azure" },
-      { name: "Google Cloud" }
+      { name: "AWS", icon: Cloud },
+      { name: "Azure", icon: CloudArrowUp },
+      { name: "Google Cloud", icon: Globe }
     ]
   },
   {
     cat: "Databases",
     purpose: "Secure platform data at high transaction volumes.",
     items: [
-      { name: "PostgreSQL" },
-      { name: "MongoDB" },
-      { name: "Redis" },
-      { name: "MariaDB" }
+      { name: "PostgreSQL", icon: Database },
+      { name: "MongoDB", icon: Leaf },
+      { name: "Redis", icon: StackSimple },
+      { name: "MariaDB", icon: HardDrive }
     ]
   },
   {
     cat: "Containers",
     purpose: "Package and orchestrate platform services for consistency and scale.",
     items: [
-      { name: "Docker" },
-      { name: "Kubernetes" }
+      { name: "Docker", icon: Cube },
+      { name: "Kubernetes", icon: CirclesThreePlus }
     ]
   },
   {
     cat: "DevOps",
     purpose: "Accelerate delivery with consistency, security, and reliability.",
     items: [
-      { name: "GitHub Actions" },
-      { name: "Jenkins" },
-      { name: "Terraform" }
+      { name: "GitHub Actions", icon: GithubLogo },
+      { name: "Jenkins", icon: Gear },
+      { name: "Terraform", icon: Stack }
     ]
   },
   {
     cat: "APIs",
     purpose: "Connect platforms with enterprise systems and third-party ecosystems.",
     items: [
-      { name: "REST" },
-      { name: "GraphQL" },
-      { name: "OAuth" },
-      { name: "OpenID Connect" }
+      { name: "REST", icon: BracketsCurly },
+      { name: "GraphQL", icon: ShareNetwork },
+      { name: "OAuth", icon: Key },
+      { name: "OpenID Connect", icon: Fingerprint }
     ]
   }
 ];
 
 const TechCard = ({ item }) => {
+  const Icon = item.icon;
   return (
     <Motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -93,9 +120,12 @@ const TechCard = ({ item }) => {
         borderColor: "rgba(95, 95, 255, 1)"
       }}
       style={{ backgroundColor: "rgba(29, 30, 50, 1)", borderColor: "rgba(95, 95, 255, 0.4)" }}
-      className="flex flex-col items-center justify-center rounded-xl border-2 cursor-pointer transition-all duration-300 min-h-[64px] md:min-h-[76px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[190px] xl:max-w-none p-2.5 sm:p-3"
+      className="flex flex-col items-center justify-center rounded-xl border cursor-pointer transition-all duration-300 min-h-[68px] md:min-h-[78px] w-[calc(50%-8px)] sm:w-[calc(33.33%-14px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-18px)] max-w-[170px] xl:max-w-none p-2 gap-1.5"
     >
-      <span className="text-[#E7E6FC] text-center text-sm md:text-base font-semibold select-none px-1 leading-tight line-clamp-2">
+      {Icon && (
+        <Icon size={22} className="text-[#FCCA71] shrink-0" weight="bold" />
+      )}
+      <span className="text-[#E7E6FC] text-center text-[11px] md:text-xs font-bold select-none leading-tight line-clamp-2">
         {item.name}
       </span>
     </Motion.div>
