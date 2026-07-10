@@ -10,7 +10,6 @@ const footerData = {
     "QA and Test Automation",
     "AI & Intelligent Systems",
     "Cloud and Devops",
-    "Simulation & Immersive Systems",
     "Data Engineering & Analytics",
   ],
   solutions: [
