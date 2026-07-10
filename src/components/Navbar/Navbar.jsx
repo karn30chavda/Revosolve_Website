@@ -206,6 +206,8 @@ const Navbar = () => {
                                         ? "/services/data-engineering-analytics"
                                         : link === "Legacy Transformation Systems"
                                         ? "/services/legacy-transformation-systems"
+                                        : link === "QA and Test Automation"
+                                        ? "/services/qa-and-test-automation"
                                         : "/coming-soon")
                                       : "/coming-soon")
                                 }
@@ -328,6 +330,8 @@ const Navbar = () => {
                                     ? "/services/data-engineering-analytics"
                                     : link === "Legacy Transformation Systems"
                                     ? "/services/legacy-transformation-systems"
+                                    : link === "QA and Test Automation"
+                                    ? "/services/qa-and-test-automation"
                                     : "/coming-soon")
                                   : (link === "Careers" ? "/careers" : "/coming-soon"))
                             }

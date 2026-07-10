@@ -19,7 +19,8 @@ import AiSurveillanceSystems from "./pages/AiSurveillanceSystems";
 import SimulationDigitalTwinSystems from "./pages/SimulationDigitalTwinSystems";
 import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
 import LegacyTransformationSystems from "./pages/LegacyTransformationSystems";
-// import Testing from "./pages/Testing"
+// import Testing from "./pages/Testing";
+import QATestAutomation from "./pages/QATestAutomation";
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
           />
           <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
           <Route path="/services/legacy-transformation-systems" element={<LegacyTransformationSystems />} />
+          <Route path="/services/qa-and-test-automation" element={<QATestAutomation />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />

@@ -84,6 +84,8 @@ const Footer = () => {
                         ? "/services/data-engineering-analytics"
                       : item === "Legacy Transformation Systems"
                         ? "/services/legacy-transformation-systems"
+                      : item === "QA and Test Automation"
+                        ? "/services/qa-and-test-automation"
                         : "/coming-soon"
                   }
                   className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
