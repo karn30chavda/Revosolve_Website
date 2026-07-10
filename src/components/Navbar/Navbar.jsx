@@ -204,6 +204,8 @@ const Navbar = () => {
                                         ? "/services/ai-intelligent-systems"
                                         : link === "Data Engineering & Data Analytics"
                                         ? "/services/data-engineering-analytics"
+                                        : link === "Legacy Transformation Systems"
+                                        ? "/services/legacy-transformation-systems"
                                         : "/coming-soon")
                                       : "/coming-soon")
                                 }
@@ -324,6 +326,8 @@ const Navbar = () => {
                                     ? "/services/ai-intelligent-systems"
                                     : link === "Data Engineering & Data Analytics"
                                     ? "/services/data-engineering-analytics"
+                                    : link === "Legacy Transformation Systems"
+                                    ? "/services/legacy-transformation-systems"
                                     : "/coming-soon")
                                   : (link === "Careers" ? "/careers" : "/coming-soon"))
                             }

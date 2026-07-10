@@ -18,7 +18,8 @@ import DefenseSimulationTrainingSystems from "./pages/DefenseSimulationTrainingS
 import AiSurveillanceSystems from "./pages/AiSurveillanceSystems";
 import SimulationDigitalTwinSystems from "./pages/SimulationDigitalTwinSystems";
 import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
-import Testing from "./pages/Testing"
+import LegacyTransformationSystems from "./pages/LegacyTransformationSystems";
+// import Testing from "./pages/Testing"
 
 function App() {
   return (
@@ -74,10 +75,11 @@ function App() {
             element={<DataEngineeringAnalytics />}
           />
           <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
-           {/* <Route path="/testing" element={<Testing />} */}
+          <Route path="/services/legacy-transformation-systems" element={<LegacyTransformationSystems />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
+          {/* <Route path="/testing" element={<Testing />} /> */}
 
           {/* Fallback route - optional */}
           <Route path="*" element={<Home />} />

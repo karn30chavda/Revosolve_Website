@@ -80,9 +80,11 @@ const Footer = () => {
                         ? "/services/cloud-and-devops"
                       : item === "AI & Intelligent Systems"
                         ? "/services/ai-intelligent-systems"
-                        : item === "Data Engineering & Analytics"
-                          ? "/services/data-engineering-analytics"
-                          : "/coming-soon"
+                      : item === "Data Engineering & Analytics"
+                        ? "/services/data-engineering-analytics"
+                      : item === "Legacy Transformation Systems"
+                        ? "/services/legacy-transformation-systems"
+                        : "/coming-soon"
                   }
                   className="text-white text-left md:text-right font-normal text-[0.875rem] leading-5 hover:text-lavender transition-all"
                   style={{ letterSpacing: "-0.00938rem" }}
