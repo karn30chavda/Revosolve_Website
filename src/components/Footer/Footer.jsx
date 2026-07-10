@@ -76,6 +76,8 @@ const Footer = () => {
                       ? "/services/open-source-erp-systems"
                       : item === "Enterprise Application Systems"
                         ? "/services/enterprise-application-systems"
+                      : item === "Product & Platform Engineering"
+                        ? "/services/product-and-platform-engineering"
                       : item === "Cloud and Devops"
                         ? "/services/cloud-and-devops"
                       : item === "AI & Intelligent Systems"
