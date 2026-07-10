@@ -109,14 +109,14 @@ const LegacyTransformationHero = ({ scrollToNextSection }) => {
       <div className="w-full max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-16 z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center justify-between">
         
         {/* Left Column: Copy & Actions */}
-        <div className="lg:col-span-6 flex flex-col items-start text-left gap-3 sm:gap-4 w-full">
+        <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left gap-3 sm:gap-4 w-full">
           {/* Heading */}
           <div className="w-full">
             <Motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="text-white text-[28px] sm:text-[34px] md:text-[40px] lg:text-[42px] xl:text-[48px] font-black font-sans leading-tight tracking-tight pb-1"
+              className="text-white text-[20px] sm:text-[34px] md:text-[40px] lg:text-[42px] xl:text-[48px] font-black font-sans leading-tight tracking-tight pb-1 text-center lg:text-left"
             >
               Modernizing business-critical systems{" "}
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
@@ -130,12 +130,12 @@ const LegacyTransformationHero = ({ scrollToNextSection }) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-3 text-[14px] sm:text-[16px] lg:text-[17px] font-normal font-sans leading-relaxed mt-2 mb-1"
+            className="flex flex-col items-center lg:items-start gap-3 text-[14px] sm:text-[16px] lg:text-[17px] font-normal font-sans leading-relaxed mt-2 mb-1"
           >
             <p className="text-[#CACBDB] opacity-95">
               Technology should accelerate business growth — not become the reason it slows down.
             </p>
-            <p className="text-[#8F92B8] opacity-90">
+            <p className="text-[#8F92B8] opacity-90 text-center lg:text-left">
               We help governments, financial institutions, and enterprises modernize legacy applications, migrate critical workloads, and transform aging technology into scalable, secure, cloud-ready systems — while preserving operational continuity.
             </p>
           </Motion.div>
@@ -145,14 +145,14 @@ const LegacyTransformationHero = ({ scrollToNextSection }) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-start w-full mt-1 mb-4"
+            className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full mt-1 mb-4"
           >
             {/* Primary Button */}
             <button
               onClick={goConnect}
-              className="btn-premium-glow w-full sm:w-auto min-w-[180px] sm:min-w-[200px] px-5 h-10 md:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+              className="btn-premium-glow w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 md:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
             >
-              <span className="relative z-10 text-[13px] md:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
+              <span className="relative z-10 text-[12px] sm:text-[13px] md:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                 Modernize Your Legacy Systems
               </span>
               <img
@@ -165,9 +165,9 @@ const LegacyTransformationHero = ({ scrollToNextSection }) => {
             {/* Secondary Button */}
             <button
               onClick={goConnect}
-              className="w-full sm:w-auto min-w-[180px] sm:min-w-[200px] px-5 h-10 md:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+              className="w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 md:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
             >
-              <span className="text-white text-[13px] md:text-[14px] font-semibold tracking-tight whitespace-nowrap">
+              <span className="text-white text-[12px] sm:text-[13px] md:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                 Talk to a Modernization Expert
               </span>
               <img
@@ -190,12 +190,12 @@ const LegacyTransformationHero = ({ scrollToNextSection }) => {
               background: "linear-gradient(160deg, #0F1034, #0A0B28)",
               boxShadow: "0 24px 60px rgba(0,0,0,0.5)",
             }}
-            className="w-full max-w-[540px] rounded-md p-4 sm:p-6"
+            className="w-[85vw] sm:w-full sm:max-w-[480px] lg:max-w-[540px] rounded-md p-4 sm:p-6"
           >
             {/* Console Header */}
             <div className="flex justify-between items-center mb-5 font-mono text-[clamp(8px,1.2vw,10px)] tracking-[0.14em] uppercase">
               <span className="text-[#5C5F85]">migration_console</span>
-              <span className="text-[#A9A0F5]">● zero-downtime cutover in progress</span>
+              <span className="text-[#A9A0F5]">● zero-downtime cutover</span>
             </div>
 
             {/* Vertical Migration Bridge Stack */}

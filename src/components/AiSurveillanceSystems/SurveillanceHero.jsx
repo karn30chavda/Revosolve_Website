@@ -81,10 +81,10 @@ const SurveillanceHero = () => {
           <div className="flex flex-col items-center min-[1290px]:items-start gap-4 w-full">
             {/* Main Headline Stack */}
             <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full gap-1">
-              <h1 className="max-w-full min-[1290px]:w-auto bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[7.5vw] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
+              <h1 className="max-w-full min-[1290px]:w-auto bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[20px] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
                 Your cameras record.
               </h1>
-              <h3 className="max-w-full min-[1290px]:w-auto justify-start text-white text-[7.5vw] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
+              <h3 className="max-w-full min-[1290px]:w-auto justify-start text-white text-[20px] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
                 RevoVision understands.
               </h3>
             </div>

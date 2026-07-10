@@ -61,7 +61,7 @@ const DataHero = ({ scrollToNextSection }) => {
           transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
           className="lg:col-span-7 space-y-6 text-center lg:text-left"
         >
-          <h1 className="max-w-full text-white text-[24px] sm:text-[32px] md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-tight pb-1">
+          <h1 className="max-w-full text-white text-[20px] sm:text-[32px] md:text-4xl lg:text-[34px] xl:text-[44px] font-black font-sans leading-tight lg:leading-[46px] xl:leading-[56px] tracking-tight pb-1">
             Enterprise data, transformed into{" "}
             <span
               style={{
@@ -82,10 +82,10 @@ const DataHero = ({ scrollToNextSection }) => {
             BI, AI, and operational decision-making.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-4 items-center">
             <button
               onClick={goConnect}
-              className="btn-premium-glow min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+              className="btn-premium-glow w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
             >
               <span className="relative z-10 text-center text-[13px] min-[1290px]:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                 Build Your Data Platform
@@ -99,7 +99,7 @@ const DataHero = ({ scrollToNextSection }) => {
 
             <button
               onClick={goConnect}
-              className="min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+              className="w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
             >
               <span className="text-white text-center text-[13px] min-[1290px]:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                 Talk to an Expert

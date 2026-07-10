@@ -75,7 +75,7 @@ const ERPHero = ({ scrollToWhatWeDo }) => {
 
           {/* Heading */}
           <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full">
-            <h1 className="max-w-full justify-start text-white text-[24px] sm:text-[32px] md:text-4xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px] pb-1">
+            <h1 className="max-w-full justify-start text-white text-[20px] sm:text-[32px] md:text-4xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px] pb-1">
               Enterprise operating systems that connect{" "}
               <span
                 style={{
@@ -101,7 +101,7 @@ const ERPHero = ({ scrollToWhatWeDo }) => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 min-[1290px]:gap-6 items-center justify-center min-[1290px]:justify-start shrink-0 relative w-full mt-6 mb-4">
+          <div className="flex flex-col sm:flex-row gap-3 min-[1290px]:gap-6 items-center justify-center min-[1290px]:justify-start shrink-0 relative w-full mt-6 mb-4">
             {/* Primary Button */}
             <button
               onClick={() =>
@@ -112,7 +112,7 @@ const ERPHero = ({ scrollToWhatWeDo }) => {
                   },
                 })
               }
-              className="btn-premium-glow min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+              className="btn-premium-glow w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
             >
               <span className="relative z-10 text-center text-[13px] min-[1290px]:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                 Build Your Enterprise Operating System
@@ -134,7 +134,7 @@ const ERPHero = ({ scrollToWhatWeDo }) => {
                   },
                 })
               }
-              className="min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+              className="w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
             >
               <span className="text-white text-center text-[13px] min-[1290px]:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                 Talk to an ERP Solutions Architect
@@ -156,7 +156,7 @@ const ERPHero = ({ scrollToWhatWeDo }) => {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0.7, 0.2, 1] }}
-            className="w-full max-w-[440px] xl:max-w-[480px]"
+            className="w-[85vw] sm:w-full sm:max-w-[440px] xl:max-w-[480px]"
             style={{
               border: "1px solid rgba(135,123,241,0.18)",
               background: "linear-gradient(160deg, #0F1034, #0A0B28)",

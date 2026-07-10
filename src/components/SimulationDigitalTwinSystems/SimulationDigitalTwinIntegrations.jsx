@@ -57,26 +57,10 @@ const SimulationDigitalTwinIntegrations = () => {
           transition={{ duration: 0.55 }}
           className="w-full mb-12 max-w-3xl flex flex-col items-center justify-center text-center mx-auto"
         >
-          {/* Desktop Original Pill */}
-          <div className="hidden min-[1290px]:block opacity-30 mb-4 text-center">
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              [
-            </span>
-            <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-              enterprise integrations
-            </span>
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              ]
-            </span>
-          </div>
-
-          {/* Mobile Styled Glassmorphic Solutions Badge */}
-          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-4 w-fit mx-auto">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-            <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-              integrations
-            </span>
-          </div>
+          {/* Section Tag */}
+          <span className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4 block text-center">
+            [enterprise integrations]
+          </span>
 
           <h2 className="text-[28px] md:text-[36px] xl:text-[40px] leading-tight font-bold tracking-tight text-center font-sans">
             <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold block">

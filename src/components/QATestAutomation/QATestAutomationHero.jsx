@@ -170,10 +170,15 @@ const QATestAutomationHero = ({ scrollToNextSection }) => {
       <div className="w-full max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-16 z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center justify-between">
         
         {/* Left Column: Copy & Actions */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left gap-3 sm:gap-4 w-full">
-          <Motion.div initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}>
+        <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-3 sm:gap-4 w-full">
+          <Motion.div
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
+            className="flex flex-col items-center lg:items-start w-full"
+          >
             
-            <h1 className="text-white text-[28px] sm:text-[34px] md:text-[40px] lg:text-[42px] xl:text-[48px] font-black font-sans leading-tight tracking-tight pb-1 mb-6">
+            <h1 className="text-white text-[20px] sm:text-[34px] md:text-[40px] lg:text-[42px] xl:text-[48px] font-black font-sans leading-tight tracking-tight pb-1 mb-6 text-center lg:text-left">
               Engineering reliability into{" "}
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">every digital system</span>
             </h1>
@@ -185,10 +190,10 @@ const QATestAutomationHero = ({ scrollToNextSection }) => {
               Intelligent test automation, performance validation, continuous testing, and quality governance — so your systems stay reliable, secure, and scalable as they evolve.
             </p>
 
-            <div className="flex flex-wrap gap-4 items-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full mb-10">
               <button
                 onClick={goConnect}
-                className="btn-premium-glow min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+                className="btn-premium-glow w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
               >
                 <span className="relative z-10 text-center text-[13px] min-[1290px]:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                   Modernize Your Quality Engineering
@@ -202,7 +207,7 @@ const QATestAutomationHero = ({ scrollToNextSection }) => {
 
               <button
                 onClick={goConnect}
-                className="min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+                className="w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
               >
                 <span className="text-white text-center text-[13px] min-[1290px]:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                   Talk to a QA &amp; Automation Expert
@@ -223,7 +228,7 @@ const QATestAutomationHero = ({ scrollToNextSection }) => {
             initial={{ opacity: 0, y: 26 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0.7, 0.2, 1] }}
-            className="w-full max-w-[540px] rounded-md border border-[#877BF1]/25 bg-[#0A0B28] shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
+            className="w-[85vw] sm:w-full sm:max-w-[480px] lg:max-w-[540px] rounded-md border border-[#877BF1]/25 bg-[#0A0B28] shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
           >
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-[#877BF1]/18">
               <span className="font-mono text-[11px] tracking-wider text-[#CACBDB] uppercase">regression_suite · run #482</span>

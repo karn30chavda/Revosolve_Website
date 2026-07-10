@@ -87,26 +87,10 @@ const CustomerInteractionCapabilities = () => {
           transition={{ duration: 0.55 }}
           className="flex flex-col justify-start w-full mb-12"
         >
-          {/* Desktop Original Pill */}
-          <div className="hidden min-[1290px]:block opacity-30 justify-start mb-4">
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              [
-            </span>
-            <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-              capabilities
-            </span>
-            <span className="text-white text-lg font-normal font-sans tracking-tight">
-              ]
-            </span>
-          </div>
-
-          {/* Mobile Styled Glassmorphic Solutions Badge */}
-          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 mb-4 w-fit">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-            <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-              capabilities
-            </span>
-          </div>
+          {/* Section Tag */}
+          <span className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4 block text-left">
+            [capabilities]
+          </span>
 
           <h2 className="text-[24px] md:text-[32px] xl:text-[36px] leading-tight font-bold tracking-tight text-left">
             <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold block sm:inline">

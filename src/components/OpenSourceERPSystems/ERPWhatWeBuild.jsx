@@ -19,62 +19,62 @@ const buildItems = [
   {
     title: "Enterprise Operating Systems",
     desc: "Integrated platforms connecting finance, procurement, HR, CRM, inventory, projects, assets, and reporting.",
-    icon: <Cpu size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <Cpu size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "ERPNext Implementations",
     desc: "End-to-end implementation, configuration, customization, integration, and optimization of ERPNext.",
-    icon: <Package size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <Package size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Frappe Framework Development",
     desc: "Custom enterprise applications built on Frappe for organization-specific operational requirements.",
-    icon: <Code size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <Code size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Low-Code Business Applications",
     desc: "Rapidly digitize approvals, inspections, compliance, operations, and internal processes.",
-    icon: <MagicWand size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <MagicWand size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Workflow Automation Platforms",
     desc: "Configurable approvals, notifications, SLAs, escalations, and business rules for complex workflows.",
-    icon: <FlowArrow size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <FlowArrow size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "HRMS & Workforce Management",
     desc: "Employee lifecycle, attendance, payroll integration, leave, onboarding, and field workforce tracking.",
-    icon: <UsersThree size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <UsersThree size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Project & Portfolio Management",
     desc: "Planning, milestones, budgets, procurement, billing, profitability, and execution in one platform.",
-    icon: <Kanban size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <Kanban size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Procurement & Supply Chain",
     desc: "Automated procurement workflows, vendor management, approvals, inventory planning, and visibility.",
-    icon: <Truck size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <Truck size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Asset Management",
     desc: "Track assets, maintenance schedules, utilization, depreciation, and lifecycle performance.",
-    icon: <Wrench size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <Wrench size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Finance & Accounting",
     desc: "Integrated accounting, budgeting, cost centers, GST compliance, reporting, and audit readiness.",
-    icon: <Calculator size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <Calculator size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Business Intelligence & Reporting",
     desc: "Executive dashboards, operational KPIs, project analytics, and organization-wide reporting.",
-    icon: <ChartBar size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <ChartBar size={26} className="text-[#FCCA71]" weight="light" />,
   },
   {
     title: "Enterprise Integrations",
     desc: "Banking systems, GST portal, payment gateways, biometrics, CRM, eCommerce, logistics, and APIs.",
-    icon: <PlugsConnected size={26} className="text-[#877BF1]" weight="light" />,
+    icon: <PlugsConnected size={26} className="text-[#FCCA71]" weight="light" />,
   },
 ];
 

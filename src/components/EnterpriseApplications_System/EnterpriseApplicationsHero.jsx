@@ -142,7 +142,7 @@ const EnterpriseApplicationsHero = ({ scrollToNextSection }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="max-w-full justify-start text-white text-[28px] sm:text-[38px] md:text-5xl min-[1290px]:text-[34px] xl:text-[48px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[58px] tracking-tight pb-1"
+              className="max-w-full justify-start text-white text-[20px] sm:text-[38px] md:text-5xl min-[1290px]:text-[34px] xl:text-[48px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[58px] tracking-tight pb-1"
             >
               Building business-critical systems that power{" "}
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">

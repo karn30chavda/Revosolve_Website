@@ -66,7 +66,7 @@ const GenAIHero = () => {
 
           {/* Heading */}
           <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full">
-            <h1 className="max-w-full justify-start text-white text-[24px] sm:text-[32px] md:text-4xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px] pb-1">
+            <h1 className="max-w-full justify-start text-white text-[20px] sm:text-[32px] md:text-4xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px] pb-1">
               Transforming institutional workflows through{" "}
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
                 applied AI
@@ -83,7 +83,7 @@ const GenAIHero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 min-[1290px]:gap-6 items-center justify-center min-[1290px]:justify-start shrink-0 relative w-full mt-6 mb-4">
+          <div className="flex flex-col sm:flex-row gap-3 min-[1290px]:gap-6 items-center justify-center min-[1290px]:justify-start shrink-0 relative w-full mt-6 mb-4">
             
             {/* Primary Button (Standard Website Theme Style) */}
             <button
@@ -95,7 +95,7 @@ const GenAIHero = () => {
                   },
                 })
               }
-              className="btn-premium-glow min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+              className="btn-premium-glow w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
             >
               <span className="relative z-10 text-center text-[13px] min-[1290px]:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                 Build Your AI System
@@ -117,7 +117,7 @@ const GenAIHero = () => {
                   },
                 })
               }
-              className="min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+              className="w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
             >
               <span className="text-white text-center text-[13px] min-[1290px]:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                 Talk to an AI Solutions Architect
@@ -141,7 +141,7 @@ const GenAIHero = () => {
             initial={{ opacity: 0, y: 25, scale: 0.98 }} 
             animate={{ opacity: 1, y: 0, scale: 1 }} 
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-[500px] xl:max-w-[540px] rounded-xl border border-[rgba(135,123,241,0.25)] bg-[#0A0B28] shadow-[0_24px_60px_rgba(0,0,0,0.55)] overflow-hidden"
+            className="w-[85vw] sm:w-full sm:max-w-[500px] xl:max-w-[540px] rounded-xl border border-[rgba(135,123,241,0.25)] bg-[#0A0B28] shadow-[0_24px_60px_rgba(0,0,0,0.55)] overflow-hidden"
           >
             {/* Terminal Header */}
             <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-[rgba(135,123,241,0.18)] bg-[#0A0B28]">

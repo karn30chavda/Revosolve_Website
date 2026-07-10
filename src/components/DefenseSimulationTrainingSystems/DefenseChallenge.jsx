@@ -58,22 +58,10 @@ const DefenseChallenge = () => {
           {/* LEFT: Tag + Title + Para 1 */}
           <Motion.div {...reveal(0)} className="flex flex-col gap-6">
 
-            {/* Desktop bracket tag */}
-            <div className="hidden min-[1290px]:block opacity-30">
-              <span className="text-white text-lg font-normal font-sans tracking-tight">[ </span>
-              <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-                The Operational Challenge
-              </span>
-              <span className="text-white text-lg font-normal font-sans tracking-tight"> ]</span>
-            </div>
-
-            {/* Mobile pill tag */}
-            <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 w-fit">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-              <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-                The Operational Challenge
-              </span>
-            </div>
+            {/* Section Tag */}
+            <span className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4 block text-left">
+              [the operational challenge]
+            </span>
 
             {/* Title */}
             <h2 className="text-[24px] md:text-[32px] xl:text-[36px] leading-tight font-bold tracking-tight text-left">

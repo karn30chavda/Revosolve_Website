@@ -77,8 +77,8 @@ const ERPProblemsWeSolve = () => {
               <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] pointer-events-none z-0" />
 
               {/* Top: Icon */}
-              <div className="w-10 h-10 flex items-center justify-center shrink-0 relative z-10 p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-all duration-300 mb-4">
-                <p.Icon size={22} className="text-[#877BF1]" />
+              <div className="w-10 h-10 flex items-center justify-center shrink-0 relative z-10 p-2 rounded-lg bg-[#FCCA71]/10 border border-[#FCCA71]/20 group-hover:bg-[#FCCA71]/20 transition-all duration-300 mb-4">
+                <p.Icon size={22} className="text-[#FCCA71]" />
               </div>
 
               {/* Bottom: Text */}

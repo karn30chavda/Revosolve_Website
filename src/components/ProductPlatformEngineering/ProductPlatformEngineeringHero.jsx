@@ -74,14 +74,15 @@ const ProductPlatformEngineeringHero = ({ scrollToNextSection }) => {
       <div className="w-full max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-16 z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center justify-between">
         
         {/* Left Column: Copy & Actions */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left gap-3 sm:gap-4 w-full">
+        <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-3 sm:gap-4 w-full">
           <Motion.div
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
+            className="flex flex-col items-center lg:items-start w-full"
           >
 
-            <h1 className="text-white text-[28px] sm:text-[34px] md:text-[40px] lg:text-[42px] xl:text-[48px] font-black font-sans leading-tight tracking-tight pb-1 mb-6">
+            <h1 className="text-white text-[20px] sm:text-[34px] md:text-[40px] lg:text-[42px] xl:text-[48px] font-black font-sans leading-tight tracking-tight pb-1 mb-6">
               Digital products and platforms that{" "}
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
                 scale with your business
@@ -96,11 +97,11 @@ const ProductPlatformEngineeringHero = ({ scrollToNextSection }) => {
               Instead of simply delivering software, we engineer platforms that become the technology foundation of your business.
             </p>
 
-            <div className="flex flex-wrap gap-4 items-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start mb-10 w-full">
               {/* Primary Button */}
               <button
                 onClick={goConnect}
-                className="btn-premium-glow min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+                className="btn-premium-glow w-[250px] sm:w-[270px] px-4 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
               >
                 <span className="relative z-10 text-center text-[13px] min-[1290px]:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                   Build Your Digital Platform
@@ -115,7 +116,7 @@ const ProductPlatformEngineeringHero = ({ scrollToNextSection }) => {
               {/* Secondary Button */}
               <button
                 onClick={goConnect}
-                className="min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+                className="w-[250px] sm:w-[270px] px-4 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
               >
                 <span className="text-white text-center text-[13px] min-[1290px]:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                   Talk to Our Engineering Team
@@ -137,7 +138,7 @@ const ProductPlatformEngineeringHero = ({ scrollToNextSection }) => {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0.7, 0.2, 1] }}
-            className="relative w-[min(86vw,440px)] aspect-square mx-auto"
+            className="relative w-[300px] sm:w-[360px] lg:w-[400px] xl:w-[440px] aspect-square mx-auto"
           >
             {/* outer ring */}
             <div
@@ -181,12 +182,12 @@ const ProductPlatformEngineeringHero = ({ scrollToNextSection }) => {
 
             {/* core */}
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center border border-[#877BF1] bg-linear-to-b from-[#181440]/95 to-[#0a0b28]/95 w-[140px] h-[140px] flex flex-col items-center justify-center animate-[ppeCorePulse_4s_ease-in-out_infinite] rounded-full"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center border border-[#877BF1] bg-linear-to-b from-[#181440]/95 to-[#0a0b28]/95 w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] flex flex-col items-center justify-center animate-[ppeCorePulse_4s_ease-in-out_infinite] rounded-full"
             >
-              <Stack size={32} className="text-[#A9A0F5]" />
-              <div className="font-bold text-[14px] mt-2 leading-tight text-white">Platform Core</div>
+              <Stack size={26} className="text-[#A9A0F5]" />
+              <div className="font-bold text-[11px] sm:text-[14px] mt-1 sm:mt-2 leading-tight text-white">Platform Core</div>
               <div
-                className="font-mono text-[9px] tracking-widest text-[#FCCA71] uppercase mt-1"
+                className="font-mono text-[8px] sm:text-[9px] tracking-widest text-[#FCCA71] uppercase mt-0.5 sm:mt-1"
               >
                 ● scaling
               </div>

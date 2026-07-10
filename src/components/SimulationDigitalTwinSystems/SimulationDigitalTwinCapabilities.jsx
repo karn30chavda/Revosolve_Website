@@ -93,22 +93,10 @@ const SimulationDigitalTwinCapabilities = () => {
       <div className="max-w-[1240px] mx-auto relative z-10 flex flex-col gap-12">
         {/* Header Section */}
         <Motion.div {...reveal(0)} className="flex flex-col gap-6 max-w-[740px] pb-6">
-          {/* Desktop bracket tag */}
-          <div className="hidden min-[1290px]:block opacity-30">
-            <span className="text-white text-lg font-normal font-sans tracking-tight">[ </span>
-            <span className="text-white text-lg font-normal font-sans uppercase tracking-tight">
-              System Capabilities
-            </span>
-            <span className="text-white text-lg font-normal font-sans tracking-tight"> ]</span>
-          </div>
-
-          {/* Mobile pill tag */}
-          <div className="flex min-[1290px]:hidden items-center justify-center whitespace-nowrap rounded-full bg-white/5 h-8 px-4 gap-2 backdrop-blur-md border border-white/10 w-fit">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#877BF1] animate-pulse" />
-            <span className="text-[#fbfbff] text-[12px] font-semibold tracking-widest uppercase opacity-90">
-              System Capabilities
-            </span>
-          </div>
+          {/* Section Tag */}
+          <span className="text-white/30 text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mb-4 block text-left">
+            [capabilities]
+          </span>
 
           {/* Title */}
           <h2 className="text-2xl md:text-3xl xl:text-[36px] leading-tight tracking-tight text-left">

@@ -85,10 +85,10 @@ const DocHero = () => {
           <div className="flex flex-col items-center min-[1290px]:items-start gap-4 w-full">
             {/* Main Headline Stack */}
             <div className="flex flex-col items-center min-[1290px]:justify-start min-[1290px]:items-start w-full gap-1">
-              <h1 className="max-w-full min-[1290px]:w-auto bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[7.5vw] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
+              <h1 className="max-w-full min-[1290px]:w-auto bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent text-[20px] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
                 Transform documents into
               </h1>
-              <h3 className="max-w-full min-[1290px]:w-auto justify-start text-white text-[7.5vw] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
+              <h3 className="max-w-full min-[1290px]:w-auto justify-start text-white text-[20px] sm:text-4xl md:text-5xl min-[1290px]:text-[34px] xl:text-[44px] font-black font-sans leading-tight min-[1290px]:leading-[46px] xl:leading-[56px] tracking-[0.264px]">
                 intelligent business workflows
               </h3>
             </div>
@@ -106,10 +106,10 @@ const DocHero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center min-[1290px]:justify-start items-center">
+          <div className="flex flex-col sm:flex-row gap-3 w-full justify-center min-[1290px]:justify-start items-center">
             <button
               onClick={goConnect}
-              className="btn-premium-glow min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
+              className="btn-premium-glow w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-sm flex items-center justify-center gap-2.5 cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
             >
               <span className="relative z-10 text-center text-[13px] min-[1290px]:text-[14px] font-sans font-semibold tracking-tight whitespace-nowrap">
                 Book a Product Demo
@@ -123,7 +123,7 @@ const DocHero = () => {
 
             <button
               onClick={goConnect}
-              className="min-w-[200px] max-w-full px-5 h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
+              className="w-[250px] sm:w-[270px] px-4 h-9 sm:h-10 min-[1290px]:h-11 rounded-md border-2 border-white/20 flex items-center justify-center gap-3 backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent group"
             >
               <span className="text-white text-center text-[13px] min-[1290px]:text-[14px] font-semibold tracking-tight whitespace-nowrap">
                 Talk to a Product Specialist
@@ -142,7 +142,7 @@ const DocHero = () => {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-[18px] items-stretch w-full min-[1290px]:max-w-[480px] xl:max-w-[520px] flex-1 z-10"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-[18px] items-stretch w-[85vw] sm:w-full min-[1290px]:max-w-[480px] xl:max-w-[520px] flex-1 z-10 mx-auto lg:mx-0"
         >
           {/* Document scan */}
           <div className="relative bg-[#07092c] border border-[rgba(135,123,241,0.18)] shadow-[0_20px_50px_rgba(0,0,0,0.4)] p-[22px_20px] overflow-hidden flex flex-col justify-between">
@@ -222,7 +222,7 @@ const DocHero = () => {
       </div>
 
       {/* Down Chevron Arrow Indicator */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
+      <div className="absolute bottom-2 sm:bottom-16 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center justify-center">
         <img
           onClick={handleScrollDown}
           src="/DocumentIntelligenceSystems/hero_scroll_arrow.svg"

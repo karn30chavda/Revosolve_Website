@@ -57,14 +57,14 @@ const HomeHero = () => {
         <div className="flex flex-col items-center justify-center relative mb-6 w-full px-2">
           <h1 className="text-center w-full flex flex-col items-center gap-2.5">
             <div
-              className="text-center relative w-full md:w-[934px] text-[28px] md:text-[54px] md:leading-[1.1] 
+              className="text-center relative w-full md:w-[934px] text-[22px] sm:text-[28px] md:text-[54px] md:leading-[1.1] 
               bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent 
               font-extrabold md:font-black tracking-tight"
             >
               Engineering Technology Systems
             </div>
             <div
-              className="text-[#ffffff] text-center relative w-full md:w-[934px] text-[28px] md:text-[54px] 
+              className="text-[#ffffff] text-center relative w-full md:w-[934px] text-[22px] sm:text-[28px] md:text-[54px] 
               md:leading-[1.1] font-extrabold md:font-black tracking-tight"
             >
               for Governments, Finance, and Enterprise
