@@ -161,27 +161,6 @@ const SimulationDigitalTwinCapabilities = () => {
             </Motion.div>
           ))}
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-          <Motion.div
-            {...reveal(10)}
-            className="border border-dashed border-[#877BF1] p-5 md:p-6 font-mono text-[12px] tracking-wide text-[#E7E6FC] leading-relaxed bg-[rgba(135,123,241,0.06)] rounded-[8px]"
-          >
-            <span className="text-[#FCCA71] uppercase tracking-widest font-semibold block mb-1">
-              iot signals
-            </span>
-            temperature · pressure · energy · water · traffic · air_quality · equipment_health · weather · occupancy
-          </Motion.div>
-          <Motion.div
-            {...reveal(11)}
-            className="border border-dashed border-[#877BF1] p-5 md:p-6 font-mono text-[12px] tracking-wide text-[#E7E6FC] leading-relaxed bg-[rgba(135,123,241,0.06)] rounded-[8px]"
-          >
-            <span className="text-[#FCCA71] uppercase tracking-widest font-semibold block mb-1">
-              simulate scenarios
-            </span>
-            road_closures · flood_events · emergency_response · traffic_diversions · infrastructure_expansion · utility_failures · population_growth
-          </Motion.div>
-        </div>
       </div>
     </section>
   );

@@ -211,7 +211,13 @@ const Navbar = () => {
                                         : link === "QA and Test Automation"
                                         ? "/services/qa-and-test-automation"
                                         : "/coming-soon")
-                                      : "/coming-soon")
+                                      : (item.label === "Products"
+                                        ? (link === "RevoDox"
+                                          ? "/solutions/document-intelligence-systems"
+                                          : link === "RevoVision"
+                                          ? "/solutions/ai-surveillance-systems"
+                                          : "/coming-soon")
+                                        : "/coming-soon"))
                                 }
                                 onClick={() => setOpenDropdownIdx(null)}
                                 className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
@@ -337,7 +343,13 @@ const Navbar = () => {
                                     : link === "QA and Test Automation"
                                     ? "/services/qa-and-test-automation"
                                     : "/coming-soon")
-                                  : (link === "Careers" ? "/careers" : "/coming-soon"))
+                                  : (item.label === "Products"
+                                    ? (link === "RevoDox"
+                                      ? "/solutions/document-intelligence-systems"
+                                      : link === "RevoVision"
+                                      ? "/solutions/ai-surveillance-systems"
+                                      : "/coming-soon")
+                                    : (link === "Careers" ? "/careers" : "/coming-soon")))
                             }
                             onClick={() => setIsMenuOpen(false)}
                             className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"

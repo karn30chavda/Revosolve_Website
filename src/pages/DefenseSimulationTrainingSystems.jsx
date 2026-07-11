@@ -6,7 +6,6 @@ import DefenseCapabilities from "../components/DefenseSimulationTrainingSystems/
 import DefenseFlow from "../components/DefenseSimulationTrainingSystems/DefenseFlow";
 import DefenseOutcomes from "../components/DefenseSimulationTrainingSystems/DefenseOutcomes";
 import DefenseIndustries from "../components/DefenseSimulationTrainingSystems/DefenseIndustries";
-import DefenseIntegrations from "../components/DefenseSimulationTrainingSystems/DefenseIntegrations";
 import DefenseWhy from "../components/DefenseSimulationTrainingSystems/DefenseWhy";
 import DefenseFAQ from "../components/DefenseSimulationTrainingSystems/DefenseFAQ";
 import DefenseCTA from "../components/DefenseSimulationTrainingSystems/DefenseCTA";
@@ -21,7 +20,6 @@ const DefenseSimulationTrainingSystems = () => {
       <DefenseFlow />
       <DefenseOutcomes />
       <DefenseIndustries />
-      <DefenseIntegrations />
       <DefenseWhy />
       <DefenseFAQ />
       <DefenseCTA />
