@@ -164,27 +164,6 @@ const DefenseCapabilities = () => {
             </Motion.div>
           ))}
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-          <Motion.div
-            {...reveal(10)}
-            className="border border-dashed border-[#877BF1] p-5 md:p-6 font-mono text-[12px] tracking-wide text-[#E7E6FC] leading-relaxed bg-[rgba(135,123,241,0.06)] rounded-[8px]"
-          >
-            <span className="text-[#FCCA71] uppercase tracking-widest font-semibold block mb-1">
-              scenario library
-            </span>
-            helicopter_emergencies · naval_equipment_ops · fire_response · disaster_recovery · hazmat_incidents · infrastructure_failures · search_and_rescue · industrial_shutdowns
-          </Motion.div>
-          <Motion.div
-            {...reveal(11)}
-            className="border border-dashed border-[#877BF1] p-5 md:p-6 font-mono text-[12px] tracking-wide text-[#E7E6FC] leading-relaxed bg-[rgba(135,123,241,0.06)] rounded-[8px]"
-          >
-            <span className="text-[#FCCA71] uppercase tracking-widest font-semibold block mb-1">
-              performance metrics
-            </span>
-            completion · reaction_time · decision_accuracy · procedure_compliance · scenario_outcomes · competency_progression · operational_readiness
-          </Motion.div>
-        </div>
       </div>
     </section>
   );

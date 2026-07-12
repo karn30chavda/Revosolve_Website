@@ -24,7 +24,7 @@ const SimulationDigitalTwinSystems = () => {
         <SimulationDigitalTwinOutcomes />
         <SimulationDigitalTwinIndustries />
         <SimulationDigitalTwinTechStack />
-        <SimulationDigitalTwinIntegrations />
+        {/* <SimulationDigitalTwinIntegrations /> */}
         <SimulationDigitalTwinWhyRevoSolve />
         <SimulationDigitalTwinFAQ />
         <SimulationDigitalTwinCTA />
