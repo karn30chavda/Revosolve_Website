@@ -137,7 +137,13 @@ const Navbar = () => {
                 >
                   {!item.dropdown ? (
                     <Link
-                      to={item.label === "Careers" ? "/careers" : "/coming-soon"}
+                      to={
+                        item.label === "Careers"
+                          ? "/careers"
+                          : item.label === "About Us"
+                          ? "/about-us"
+                          : "/coming-soon"
+                      }
                       onClick={() => setOpenDropdownIdx(null)}
                     >
                       {item.label}
@@ -180,44 +186,53 @@ const Navbar = () => {
                                 key={linkIdx}
                                 to={
                                   item.label === "Solutions"
-                                    ? (link === "Commerce Operations Systems"
+                                    ? link === "Commerce Operations Systems"
                                       ? "/solutions/commerce-operations-systems"
                                       : link === "Document Intelligence Systems"
-                                      ? "/solutions/document-intelligence-systems"
-                                      : link === "Customer Interaction Systems"
-                                      ? "/solutions/customer-interaction-systems"
-                                      : link === "Defense & Training Systems"
-                                      ? "/solutions/defense-simulation-training-systems"
-                                      : link === "AI Surveillance Systems"
-                                      ? "/solutions/ai-surveillance-systems"
-                                      : link === "Simulation & Digital Twin Systems"
-                                      ? "/solutions/simulation-digital-twin-systems"
-                                      : "/coming-soon")
-                                    : (item.label === "Services"
-                                      ? (link === "Open Source & ERP Systems"
+                                        ? "/solutions/document-intelligence-systems"
+                                        : link ===
+                                            "Customer Interaction Systems"
+                                          ? "/solutions/customer-interaction-systems"
+                                          : link ===
+                                              "Defense & Training Systems"
+                                            ? "/solutions/defense-simulation-training-systems"
+                                            : link === "AI Surveillance Systems"
+                                              ? "/solutions/ai-surveillance-systems"
+                                              : link ===
+                                                  "Simulation & Digital Twin Systems"
+                                                ? "/solutions/simulation-digital-twin-systems"
+                                                : "/coming-soon"
+                                    : item.label === "Services"
+                                      ? link === "Open Source & ERP Systems"
                                         ? "/services/open-source-erp-systems"
-                                        : link === "Enterprise Application Systems"
-                                        ? "/services/enterprise-application-systems"
-                                        : link === "Product & Platform Engineering"
-                                        ? "/services/product-and-platform-engineering"
-                                        : link === "Cloud and Devops"
-                                        ? "/services/cloud-and-devops"
-                                        : link === "AI & Intelligent Systems"
-                                        ? "/services/ai-intelligent-systems"
-                                        : link === "Data Engineering & Data Analytics"
-                                        ? "/services/data-engineering-analytics"
-                                        : link === "Legacy Transformation Systems"
-                                        ? "/services/legacy-transformation-systems"
-                                        : link === "QA and Test Automation"
-                                        ? "/services/qa-and-test-automation"
-                                        : "/coming-soon")
-                                      : (item.label === "Products"
-                                        ? (link === "RevoDox"
+                                        : link ===
+                                            "Enterprise Application Systems"
+                                          ? "/services/enterprise-application-systems"
+                                          : link ===
+                                              "Product & Platform Engineering"
+                                            ? "/services/product-and-platform-engineering"
+                                            : link === "Cloud and Devops"
+                                              ? "/services/cloud-and-devops"
+                                              : link ===
+                                                  "AI & Intelligent Systems"
+                                                ? "/services/ai-intelligent-systems"
+                                                : link ===
+                                                    "Data Engineering & Data Analytics"
+                                                  ? "/services/data-engineering-analytics"
+                                                  : link ===
+                                                      "Legacy Transformation Systems"
+                                                    ? "/services/legacy-transformation-systems"
+                                                    : link ===
+                                                        "QA and Test Automation"
+                                                      ? "/services/qa-and-test-automation"
+                                                      : "/coming-soon"
+                                      : item.label === "Products"
+                                        ? link === "RevoDox"
                                           ? "/solutions/document-intelligence-systems"
                                           : link === "RevoVision"
-                                          ? "/solutions/ai-surveillance-systems"
-                                          : "/coming-soon")
-                                        : "/coming-soon"))
+                                            ? "/solutions/ai-surveillance-systems"
+                                            : "/coming-soon"
+                                        : "/coming-soon"
                                 }
                                 onClick={() => setOpenDropdownIdx(null)}
                                 className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
@@ -306,7 +321,7 @@ const Navbar = () => {
                   {/* Detailed Sublinks for Mobile */}
                   {item.dropdown && (
                     <div
-                      className={`overflow-hidden transition-all duration-200 ease-in-out transform-gpu will-change-[max-height] ${isActive ? "max-h-[500px] py-4" : "max-h-0"}`}
+                      className={`overflow-hidden transition-all duration-200 ease-in-out transform-gpu will-change-[max-height] ${isActive ? "max-h-125 py-4" : "max-h-0"}`}
                     >
                       <div className="flex flex-col gap-4 pl-4">
                         {item.dropdown.links.map((link, lIdx) => (
@@ -314,42 +329,50 @@ const Navbar = () => {
                             key={lIdx}
                             to={
                               item.label === "Solutions"
-                                ? (link === "Commerce Operations Systems"
+                                ? link === "Commerce Operations Systems"
                                   ? "/solutions/commerce-operations-systems"
                                   : link === "Document Intelligence Systems"
-                                  ? "/solutions/document-intelligence-systems"
-                                  : link === "Customer Interaction Systems"
-                                  ? "/solutions/customer-interaction-systems"
-                                  : link === "Defense & Training Systems"
-                                  ? "/solutions/defense-simulation-training-systems"
-                                  : link === "AI Surveillance Systems"
-                                  ? "/solutions/ai-surveillance-systems"
-                                  : "/coming-soon")
-                                : (item.label === "Services"
-                                  ? (link === "Open Source & ERP Systems"
+                                    ? "/solutions/document-intelligence-systems"
+                                    : link === "Customer Interaction Systems"
+                                      ? "/solutions/customer-interaction-systems"
+                                      : link === "Defense & Training Systems"
+                                        ? "/solutions/defense-simulation-training-systems"
+                                        : link === "AI Surveillance Systems"
+                                          ? "/solutions/ai-surveillance-systems"
+                                          : "/coming-soon"
+                                : item.label === "Services"
+                                  ? link === "Open Source & ERP Systems"
                                     ? "/services/open-source-erp-systems"
                                     : link === "Enterprise Application Systems"
-                                    ? "/services/enterprise-application-systems"
-                                    : link === "Product & Platform Engineering"
-                                    ? "/services/product-and-platform-engineering"
-                                    : link === "Cloud and Devops"
-                                    ? "/services/cloud-and-devops"
-                                    : link === "AI & Intelligent Systems"
-                                    ? "/services/ai-intelligent-systems"
-                                    : link === "Data Engineering & Data Analytics"
-                                    ? "/services/data-engineering-analytics"
-                                    : link === "Legacy Transformation Systems"
-                                    ? "/services/legacy-transformation-systems"
-                                    : link === "QA and Test Automation"
-                                    ? "/services/qa-and-test-automation"
-                                    : "/coming-soon")
-                                  : (item.label === "Products"
-                                    ? (link === "RevoDox"
+                                      ? "/services/enterprise-application-systems"
+                                      : link ===
+                                          "Product & Platform Engineering"
+                                        ? "/services/product-and-platform-engineering"
+                                        : link === "Cloud and Devops"
+                                          ? "/services/cloud-and-devops"
+                                          : link === "AI & Intelligent Systems"
+                                            ? "/services/ai-intelligent-systems"
+                                            : link ===
+                                                "Data Engineering & Data Analytics"
+                                              ? "/services/data-engineering-analytics"
+                                              : link ===
+                                                  "Legacy Transformation Systems"
+                                                ? "/services/legacy-transformation-systems"
+                                                : link ===
+                                                    "QA and Test Automation"
+                                                  ? "/services/qa-and-test-automation"
+                                                  : "/coming-soon"
+                                  : item.label === "Products"
+                                    ? link === "RevoDox"
                                       ? "/solutions/document-intelligence-systems"
                                       : link === "RevoVision"
-                                      ? "/solutions/ai-surveillance-systems"
-                                      : "/coming-soon")
-                                    : (link === "Careers" ? "/careers" : "/coming-soon")))
+                                        ? "/solutions/ai-surveillance-systems"
+                                        : "/coming-soon"
+                                    : link === "Careers"
+                                      ? "/careers"
+                                      : link === "About Us"
+                                      ? "/about-us"
+                                      : "/coming-soon"
                             }
                             onClick={() => setIsMenuOpen(false)}
                             className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
