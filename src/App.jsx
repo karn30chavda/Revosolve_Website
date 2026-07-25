@@ -21,6 +21,7 @@ import EnterpriseApplicationSystems from "./pages/EnterpriseApplicationSystems";
 import LegacyTransformationSystems from "./pages/LegacyTransformationSystems";
 import QATestAutomation from "./pages/QATestAutomation";
 import ProductPlatformEngineering from "./pages/ProductPlatformEngineering";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -75,14 +76,26 @@ function App() {
             path="/services/data-engineering-analytics"
             element={<DataEngineeringAnalytics />}
           />
-          <Route path="/services/enterprise-application-systems" element={<EnterpriseApplicationSystems />} />
-          <Route path="/services/legacy-transformation-systems" element={<LegacyTransformationSystems />} />
-          <Route path="/services/qa-and-test-automation" element={<QATestAutomation />} />
-          <Route path="/services/product-and-platform-engineering" element={<ProductPlatformEngineering />} />
+          <Route
+            path="/services/enterprise-application-systems"
+            element={<EnterpriseApplicationSystems />}
+          />
+          <Route
+            path="/services/legacy-transformation-systems"
+            element={<LegacyTransformationSystems />}
+          />
+          <Route
+            path="/services/qa-and-test-automation"
+            element={<QATestAutomation />}
+          />
+          <Route
+            path="/services/product-and-platform-engineering"
+            element={<ProductPlatformEngineering />}
+          />
           <Route path="/connect" element={<Connect />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
-
+          <Route path="/about-us" element={<AboutUs />} />
           {/* Fallback route - optional */}
           <Route path="*" element={<Home />} />
         </Routes>
