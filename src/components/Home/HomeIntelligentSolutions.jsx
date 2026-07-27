@@ -9,7 +9,7 @@ const solutions = [
     title: "Digitizing Physical Document Workflows for Government Operations",
     description:
       "Transform offline document processing into structured, automated workflows enabling faster data extraction, validation, and decision-making across departments",
-    image: "/Home/solutions_ocr.jpeg",
+    image: "/Home/document-intelligence.png",
   },
   {
     id: 1,
@@ -18,7 +18,7 @@ const solutions = [
       "Automating Customer Interaction for Financial & Service Institutions",
     description:
       "Build intelligent interaction systems that handle customer queries, support workflows, and service requests across voice, chat, and AI-driven interfaces.",
-    image: "/Home/solutions_os.jpg",
+    image: "/Home/customer-interaction-systems.png",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const solutions = [
     title: "Unifying Commerce Operations Across Channels",
     description:
       "Centralize order management, inventory, fulfillment, and communication into a single operational system across ecommerce platforms and marketplaces.",
-    image: "/Home/solutions_surveillance.jpg",
+    image: "/Home/commerce-operations-systems.png",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const solutions = [
       "Simulating Real-World Systems with Digital Twin & Immersive Technologies",
     description:
       "Create virtual environments for monitoring, training, and operational simulation enabling better planning and decision-making across complex systems.",
-    image: "/Home/solutions_os.jpg",
+    image: "/Home/digital-twin-systems.png",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const solutions = [
       "Intelligent Surveillance & Monitoring for Public and Enterprise Environments",
     description:
       "Deploy AI-powered systems for real-time monitoring, anomaly detection, and situational awareness across infrastructure and operational environments.",
-    image: "/Home/solutions_surveillance.jpg",
+    image: "/Home/ai-surveillance.png",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const solutions = [
     title: "Managing Infrastructure Projects from Tender to Execution",
     description:
       "A unified system to manage tenders, execution, workforce, assets, and financials across infrastructure and government projects.",
-    image: "/Home/solutions_os.jpg",
+    image: "/Home/public-infrastructure-operations.png",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const solutions = [
       "Immersive Training & Simulation for Defense and Public Sector Operations",
     description:
       "Enable realistic, scenario-based training environments that prepare personnel for critical operations, emergency situations, and complex system handling improving readiness, response, and decision-making without real-world risk.",
-    image: "/Home/solutions_ocr.jpeg",
+    image: "/Home/defense-training-systems.png",
   },
 ];
 
@@ -418,7 +418,7 @@ const HomeIntelligentSolutions = () => {
                       }}
                     >
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-linear-to-bl from-[#9CA0F5] to-[#CACBEB]" />
-                      <div className="relative w-full h-[140px] md:h-[200px] mb-4 rounded-lg bg-[#1d1f4c]/10 overflow-hidden shrink-0 z-10 border border-black/5">
+                      <div className="relative w-full h-[140px] md:h-[200px] mb-4 rounded-lg bg-gradient-to-br from-[#0f1419] to-[#1a2a4a] overflow-hidden shrink-0 z-10 border border-black/20 flex items-center justify-center">
                         <img
                           src={card.image}
                           alt=""
