@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
+// Helper function to create URL-friendly paths from link names
+const slugify = (text) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
+
 const navData = [
   {
     label: "Solutions",
@@ -14,7 +21,11 @@ const navData = [
         { name: "Commerce Operations Systems", image: "/navbar/commerce-operations-systems.png" },
         { name: "Simulation & Digital Twin Systems", image: "/navbar/digital-twin-systems.png" },
         { name: "AI Surveillance Systems", image: "/navbar/ai-surveillance.png" },
-        { name: "Public Infrastructure Operations", image: "/navbar/public-infrastructure-operations.png" },
+        {
+          name: "Public Infrastructure Operations",
+          image: "/navbar/public-infrastructure-operations.png",
+          path: "/coming-soon",
+        },
         { name: "Defense & Training Systems", image: "/navbar/defense-training-systems.png" },
       ],
     },
@@ -36,7 +47,7 @@ const navData = [
       gridCols: "grid-cols-2",
       links: [
         "Enterprise Application Systems",
-        "Product & Platform Engineering",
+        "Product and Platform Engineering",
         "Legacy Transformation Systems",
         "Open Source & ERP Systems",
         "QA and Test Automation",
@@ -96,6 +107,15 @@ export const Navbar = () => {
     setMobileDropdownIdx((prev) => (prev === idx ? null : idx));
   };
 
+  // Resolves custom paths when provided, or generates clean slugified paths
+  const getDropdownPath = (category, linkObj) => {
+    if (typeof linkObj === "object" && linkObj.path) {
+      return linkObj.path;
+    }
+    const name = typeof linkObj === "string" ? linkObj : linkObj.name;
+    return `/${slugify(category)}/${slugify(name)}`;
+  };
+
   return (
     <nav
       ref={navRef}
@@ -146,8 +166,8 @@ export const Navbar = () => {
                         item.label === "Careers"
                           ? "/careers"
                           : item.label === "About Us"
-                            ? "/about-us"
-                            : "/coming-soon"
+                          ? "/about-us"
+                          : `/${slugify(item.label)}`
                       }
                       onClick={() => setOpenDropdownIdx(null)}
                     >
@@ -200,7 +220,7 @@ export const Navbar = () => {
                               return (
                                 <Link
                                   key={linkIdx}
-                                  to="/coming-soon"
+                                  to={getDropdownPath(item.label, linkObj)}
                                   onClick={() => {
                                     setOpenDropdownIdx(null);
                                     setHoveredLinkImage(null);
@@ -271,9 +291,26 @@ export const Navbar = () => {
                     }
                     className="flex flex-row items-center justify-between w-full h-[3.35988rem] pr-0 shrink-0 border-b-[0.768px] border-[rgba(91,98,191,0.37)] cursor-pointer hover:opacity-80 transition-opacity"
                   >
-                    <div className="text-[#FFF] text-left font-sans text-[17px] leading-7 font-thin opacity-[0.64] tracking-[-0.02744rem]">
-                      {item.label}
-                    </div>
+                    {!item.dropdown ? (
+                      <Link
+                        to={
+                          item.label === "Careers"
+                            ? "/careers"
+                            : item.label === "About Us"
+                            ? "/about-us"
+                            : `/${slugify(item.label)}`
+                        }
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-[#FFF] text-left font-sans text-[17px] leading-7 font-thin opacity-[0.64] tracking-[-0.02744rem] w-full"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <div className="text-[#FFF] text-left font-sans text-[17px] leading-7 font-thin opacity-[0.64] tracking-[-0.02744rem]">
+                        {item.label}
+                      </div>
+                    )}
+
                     {item.dropdown && (
                       <img
                         src="/navbar/nav_drop_icon.webp"
@@ -299,7 +336,7 @@ export const Navbar = () => {
                           return (
                             <Link
                               key={lIdx}
-                              to="/coming-soon"
+                              to={getDropdownPath(item.label, linkObj)}
                               onClick={() => setIsMenuOpen(false)}
                               className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
                             >
