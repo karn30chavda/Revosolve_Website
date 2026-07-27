@@ -111,7 +111,7 @@ const CAPABILITIES = [
 
 export const WhatWeEngineer = () => {
   return (
-    <section className="relative w-full pt-20 pb-16 min-[1290px]:pt-28 min-[1290px]:pb-20 font-sans overflow-hidden">
+    <section className="relative w-full pt-8 pb-16 min-[1290px]:pt-16 min-[1290px]:pb-20 font-sans overflow-hidden">
       <div className="w-[85%] max-w-7xl mx-auto relative z-10">
         
         {/* Header Grid: Tag, Title & Right Description */}

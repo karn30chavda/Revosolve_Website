@@ -75,24 +75,28 @@ const PrincipleCard = ({ p, i, t, total }) => {
     >
       <div 
         style={{ 
-          backgroundColor: "rgba(29, 30, 50, 1)",
-          borderColor: "rgba(99, 102, 241, 0.3)"
+          background: `linear-gradient(135deg, rgba(15, 14, 35, 0.98) 0%, rgba(40, 25, 90, 0.95) 100%)`,
+          borderColor: `${p.accent}40`,
+          borderTopColor: "#FCCA71"
         }}
-        className="flex flex-col justify-start items-start p-8 min-h-[220px] w-full rounded-[8px] border-t-2 border-t-[#FCCA71]/80 border-x border-b relative group overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.5)]"
+        className="flex flex-col justify-start items-start p-8 min-h-55 w-full rounded-lg border-t-2 relative group overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.5)] backdrop-blur-sm"
       >
         {/* Card Radial Glow Overlay */}
-        <div className="absolute inset-0 bg-radial from-indigo-500/10 to-transparent pointer-events-none z-0" />
+        <div 
+          style={{ background: `radial-gradient(circle at 100% 0%, ${p.accent}15 0%, transparent 60%)` }}
+          className="absolute inset-0 pointer-events-none z-0"
+        />
 
         {/* Bottom Background Pattern */}
         <img 
           src="/CloudDevOps/build_bg_pattern.svg" 
           alt="" 
-          className="absolute bottom-0 right-0 w-[215px] h-[71px] pointer-events-none opacity-40 z-0 scale-x-[-1]" 
+          className="absolute bottom-0 right-0 w-53.75 h-17.75 pointer-events-none opacity-40 z-0 scale-x-[-1]" 
         />
 
         {/* Icon */}
         <div className="w-8 h-8 flex items-center justify-start mb-6 shrink-0 relative z-10">
-          <Icon size={26} className="text-[#FCCA71]" weight="light" />
+          <Icon size={26} color="#FCCA71" weight="light" />
         </div>
 
         {/* Content Block */}
@@ -100,10 +104,10 @@ const PrincipleCard = ({ p, i, t, total }) => {
           <div className="font-mono text-[11px] uppercase tracking-widest text-[#FCCA71] font-semibold">
             {p.tag}
           </div>
-          <h4 className="text-[#E7E6FC] text-[20px] sm:text-[22px] font-semibold font-sans leading-[28px] text-left">
+          <h4 className="text-[#FCCA71] text-[20px] sm:text-[22px] font-semibold font-sans leading-7 text-left">
             {p.title}
           </h4>
-          <p className="text-[#AAA9BE] text-[14px] sm:text-[15px] font-normal font-sans leading-[22px] text-left max-w-full">
+          <p className="text-[#D8D6E8] text-[14px] sm:text-[15px] font-normal font-sans leading-5.5 text-left max-w-full">
             {p.desc}
           </p>
         </div>
@@ -185,7 +189,7 @@ export const EngineeringPrinciples = () => {
             </div>
 
             {/* Progress bar */}
-            <div className="mt-4 h-0.5 rounded-full bg-white/10 overflow-hidden max-w-[240px]">
+            <div className="mt-4 h-0.5 rounded-full bg-white/10 overflow-hidden max-w-60">
               <Motion.div
                 className="h-full origin-left"
                 style={{
@@ -197,7 +201,7 @@ export const EngineeringPrinciples = () => {
           </div>
 
           {/* Right Rail: Lock-Screen Pinned Card Stack */}
-          <div className="min-[1290px]:col-span-7 relative h-[420px] sm:h-[460px] flex items-center">
+          <div className="min-[1290px]:col-span-7 relative h-105 sm:h-115 flex items-center">
             {PRINCIPLES.map((p, i) => (
               <PrincipleCard
                 key={p.title}

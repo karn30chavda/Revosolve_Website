@@ -90,7 +90,7 @@ const CountUp = ({ value, className = "" }) => {
 
 export const OutcomesOfConnectedOperations = () => {
   return (
-    <section className="relative w-full py-10 min-[1290px]:py-14 font-sans overflow-hidden -mt-10 min-[1290px]:-mt-16">
+    <section className="relative w-full py-10 min-[1290px]:py-14 font-sans overflow-hidden lg:-mt-10 min-[1290px]:-mt-16">
       <div className="w-[85%] max-w-7xl mx-auto relative z-10">
         
         {/* Header Grid: Section Tag & Gradient Title */}
@@ -118,14 +118,14 @@ export const OutcomesOfConnectedOperations = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{ delay: i * 0.06, duration: 0.6 }}
-                className="group grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 md:gap-8 py-5 border-b border-white/10 hover:bg-white/[0.015] transition-colors cursor-pointer"
+                className="group grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 md:gap-8 py-5 border-b border-white/10 hover:bg-white/1.5 transition-colors cursor-pointer"
               >
                 <span className="font-mono text-xs text-white/25 w-6">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
                 <div className="flex items-center gap-4 min-w-0">
-                  <div className="w-11 h-11 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center flex-shrink-0 group-hover:border-[#FCCA71] group-hover:bg-[#FCCA71]/10 transition-all">
+                  <div className="w-11 h-11 rounded-xl border border-white/10 bg-white/2 flex items-center justify-center shrink-0 group-hover:border-[#FCCA71] group-hover:bg-[#FCCA71]/10 transition-all">
                     <Icon size={18} className="text-white/70 group-hover:text-[#FCCA71] transition-colors" />
                   </div>
                   <span className="text-lg md:text-2xl text-white/85 group-hover:text-white transition-colors truncate font-sans">
@@ -145,7 +145,7 @@ export const OutcomesOfConnectedOperations = () => {
 
                 <ArrowUpRight
                   size={22}
-                  className="text-white/20 group-hover:text-[#FCCA71] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0"
+                  className="text-white/20 group-hover:text-[#FCCA71] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0"
                 />
               </Motion.div>
             );

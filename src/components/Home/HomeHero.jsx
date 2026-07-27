@@ -35,7 +35,7 @@ const HomeHero = () => {
         {/* Tagline Pill - Mobile Optimized */}
         <div
           className="flex items-center justify-center whitespace-nowrap relative group 
-          rounded-full bg-white/5 h-10 px-5 md:px-7 gap-2 grow-0 shrink-0 md:min-w-[329px] md:w-fit md:h-[38px] backdrop-blur-md 
+          rounded-full bg-white/5 h-10 px-5 md:px-7 gap-2 grow-0 shrink-0 md:min-w-82.25 md:w-fit md:h-9.5 backdrop-blur-md 
           border border-white/20 mb-8"
         >
           <div className="text-[#fbfbff] text-[13px] md:text-lg font-medium tracking-[0.01em]  opacity-90">
@@ -57,21 +57,21 @@ const HomeHero = () => {
         <div className="flex flex-col items-center justify-center relative mb-6 w-full px-2">
           <h1 className="text-center w-full flex flex-col items-center gap-2.5">
             <div
-              className="text-center relative w-full md:w-[934px] text-[22px] sm:text-[28px] md:text-[54px] md:leading-[1.1] 
+              className="text-center relative w-full md:w-233.5 text-[22px] sm:text-[28px] md:text-[54px] md:leading-[1.1] 
               bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent 
               font-extrabold md:font-black tracking-tight"
             >
               Engineering Technology Systems
             </div>
             <div
-              className="text-[#ffffff] text-center relative w-full md:w-[934px] text-[22px] sm:text-[28px] md:text-[54px] 
+              className="text-[#ffffff] text-center relative w-full md:w-233.5 text-[22px] sm:text-[28px] md:text-[54px] 
               md:leading-[1.1] font-extrabold md:font-black tracking-tight"
             >
               for Governments, Finance, and Enterprise
             </div>
           </h1>
 
-          <p className="text-[#fbfbff] text-center text-[14px] md:text-lg font-normal relative w-full md:w-[562px] opacity-60 leading-relaxed mt-10 md:mt-6">
+          <p className="text-[#fbfbff] text-center text-[14px] md:text-lg font-normal relative w-full md:w-140.5 opacity-60 leading-relaxed mt-10 md:mt-6">
             Revosolve helps businesses transform ideas into scalable digital
             solutions using AI, cloud infrastructure and modern software
             engineering.
@@ -83,7 +83,7 @@ const HomeHero = () => {
           {/* Main Button */}
           <button
             onClick={() => navigate("/connect")}
-            className="btn-premium-glow w-[280px] md:w-64 h-12 md:h-14 rounded-sm flex items-center justify-center gap-3
+            className="btn-premium-glow w-70 md:w-64 h-12 md:h-14 rounded-sm flex items-center justify-center gap-3
             cursor-pointer border-none group transition-all duration-300 active:scale-95 text-[#070784]"
           >
             <span className="relative z-10 text-center text-[14px] md:text-lg font-sans font-semibold tracking-tight">
@@ -99,7 +99,7 @@ const HomeHero = () => {
           {/* Secondary Button */}
           <button
             onClick={() => navigate("/coming-soon")}
-            className="w-[280px] md:w-64 h-12 md:h-14 rounded-md border-2 border-white/20 flex items-center justify-center gap-4 
+            className="w-70 md:w-64 h-12 md:h-14 rounded-md border-2 border-white/20 flex items-center justify-center gap-4 
             backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent"
           >
             <span className="text-white text-center text-[14px] md:text-lg font-semibold tracking-tight">
