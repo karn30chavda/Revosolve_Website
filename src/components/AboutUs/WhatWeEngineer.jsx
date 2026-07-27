@@ -103,7 +103,7 @@ const CAPABILITIES = [
       { name: "Open Source ERP Systems (Frappe/ERPNext)", link: "/services/open-source-erp-systems" },
       { name: "Enterprise Systems Integration", link: "/services/enterprise-application-systems" },
       { name: "Cloud Infrastructure Modernization", link: "/services/cloud-and-devops" },
-      { name: "Custom Operational Workflows", link: "/connect" },
+      { name: "Custom Operational Workflows", link: "/services/open-source-erp-systems"  },
       { name: "Scalable SaaS Architecture", link: "/services/product-and-platform-engineering" },
     ],
   },
