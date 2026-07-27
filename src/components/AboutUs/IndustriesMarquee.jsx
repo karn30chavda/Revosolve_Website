@@ -32,17 +32,17 @@ export const IndustriesMarquee = () => {
   const marqueeItems = [...INDUSTRIES, ...INDUSTRIES, ...INDUSTRIES];
 
   return (
-    <section className="relative w-full pt-14 pb-20 min-[1290px]:pt-16 min-[1290px]:pb-28 font-sans overflow-hidden">
+    <section className="relative w-full pt-14 pb-10 min-[1290px]:pt-16 min-[1290px]:pb-28 font-sans overflow-hidden">
       <div className="w-[85%] max-w-7xl mx-auto relative z-10 mb-12">
         
-        {/* Header Grid: Tag, Title & Right Description */}
-        <div className="flex flex-col min-[1290px]:flex-row justify-between items-start min-[1290px]:items-end gap-6">
-          <div className="flex flex-col gap-2">
+        {/* Header Grid: Tag, Title & Right Description - Centered on mobile */}
+        <div className="flex flex-col min-[1290px]:flex-row justify-between items-center min-[1290px]:items-end gap-6 text-center min-[1290px]:text-left">
+          <div className="flex flex-col items-center min-[1290px]:items-start gap-2">
             <div className="text-white text-[16px] sm:text-[18px] font-normal uppercase tracking-[0.264px] leading-relaxed opacity-30">
               [industries we serve]
             </div>
-            <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight text-left font-sans">
-              <span className="font-black block bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent max-w-fit">
+            <h2 className="text-[28px] md:text-[38px] xl:text-[42px] leading-tight tracking-tight font-sans">
+              <span className="font-black block bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent min-[1290px]:max-w-fit mx-auto min-[1290px]:mx-0">
                 Adapting to every
               </span>
               <span className="text-[#CACBDB] font-light xl:font-thin block mt-1">
@@ -80,7 +80,7 @@ export const IndustriesMarquee = () => {
                   key={`r1-${index}`}
                   className="flex items-center gap-4 text-3xl sm:text-4xl md:text-5xl font-black text-white/50 hover:text-white transition-colors group shrink-0 cursor-default"
                 >
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center group-hover:border-[#FCCA71] group-hover:bg-[#FCCA71]/10 transition-colors">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-white/10 bg-white/3 flex items-center justify-center group-hover:border-[#FCCA71] group-hover:bg-[#FCCA71]/10 transition-colors">
                     <Icon size={20} className="text-white/60 group-hover:text-[#FCCA71] transition-colors" />
                   </div>
                   <span className="whitespace-nowrap tracking-tight font-sans">
@@ -113,7 +113,7 @@ export const IndustriesMarquee = () => {
                   key={`r2-${index}`}
                   className="flex items-center gap-4 text-3xl sm:text-4xl md:text-5xl font-black text-white/50 hover:text-white transition-colors group shrink-0 cursor-default"
                 >
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center group-hover:border-[#FCCA71] group-hover:bg-[#FCCA71]/10 transition-colors">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-white/10 bg-white/3 flex items-center justify-center group-hover:border-[#FCCA71] group-hover:bg-[#FCCA71]/10 transition-colors">
                     <Icon size={20} className="text-white/60 group-hover:text-[#FCCA71] transition-colors" />
                   </div>
                   <span className="whitespace-nowrap tracking-tight font-sans">

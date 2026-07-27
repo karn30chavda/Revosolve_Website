@@ -46,7 +46,7 @@ const OrbitDiagram = () => {
 
   return (
     <div
-      className="relative w-full aspect-square max-w-[460px] mx-auto pointer-events-none"
+      className="relative w-full aspect-square max-w-115 mx-auto pointer-events-none"
       data-testid="orbit-diagram"
     >
       <svg

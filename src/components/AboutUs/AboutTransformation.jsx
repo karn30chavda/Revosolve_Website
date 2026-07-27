@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion as Motion, useScroll, useSpring, useTransform } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion as Motion, useScroll, useSpring, useTransform, useMotionValue } from "framer-motion";
 import {
   FileText,
   Database,
@@ -92,11 +92,60 @@ const FragmentedApp = ({ app, i, t }) => {
 
 export const AboutTransformation = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const mobileProgress = useMotionValue(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Mobile: Automatic looping animation with pause after all 3 phases
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const controls = {
+      stop: false,
+    };
+
+    const animate = () => {
+      if (controls.stop) return;
+
+      const startTime = Date.now();
+      const cycleTime = 3600; // 3 phases × 1200ms each = 3600ms
+      const pauseAfterCycle = 1000; // 1 second pause after completing all 3 phases
+      const totalDuration = cycleTime + pauseAfterCycle;
+
+      const tick = () => {
+        if (controls.stop) return;
+        const elapsed = Date.now() - startTime;
+        const progress = (elapsed % totalDuration) / cycleTime;
+        mobileProgress.set(Math.min(progress, 1));
+        requestAnimationFrame(tick);
+      };
+
+      tick();
+    };
+
+    animate();
+
+    return () => {
+      controls.stop = true;
+    };
+  }, [isMobile, mobileProgress]);
+
+  // Desktop: Scroll-based animation
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start 80px", "end end"],
   });
-  const t = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
+  const scrollT = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
+
+  // Use mobile progress on mobile, scroll progress on desktop
+  const t = isMobile ? mobileProgress : scrollT;
 
   const stage1 = useTransform(t, [0, 0.3], [1, 0]);
   const stage2 = useTransform(t, [0.25, 0.5, 0.75], [0, 1, 0]);
@@ -110,11 +159,11 @@ export const AboutTransformation = () => {
     <section
       id="about-content"
       ref={ref}
-      className="relative h-[170vh] font-sans"
+      className={`relative ${isMobile ? "h-auto py-1 pb-32" : "h-[170vh]"} font-sans`}
       data-testid="frag-to-unified"
     >
-      <div className="sticky top-20 h-[calc(100vh-80px)] flex items-center overflow-hidden">
-        <div className="w-[85%] mx-auto relative z-10">
+      <div className={`${isMobile ? "relative" : "sticky"} top-20 ${isMobile ? "h-auto" : "h-[calc(100vh-80px)]"} flex items-center overflow-hidden`}>
+        <div className={`${isMobile ? "w-full px-5" : "w-[85%]"} mx-auto relative z-10`}>
           {/* Header row with dynamic morphing phase labels */}
           <div className="flex justify-between items-center mb-6 relative h-8">
             <Motion.span
@@ -144,7 +193,7 @@ export const AboutTransformation = () => {
 
           {/* Visualization Canvas */}
           <div
-            className="relative w-full h-[52vh] rounded-3xl border border-[rgba(135,123,241,0.25)] bg-[#07092b]/60 backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            className={`relative w-full ${isMobile ? "h-64" : "h-[52vh]"} rounded-3xl border border-[rgba(135,123,241,0.25)] bg-[#07092b]/60 backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]`}
           >
             {/* Grid overlay */}
             <div 

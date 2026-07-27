@@ -381,62 +381,71 @@ const Navbar = () => {
                       className={`overflow-hidden transition-all duration-200 ease-in-out transform-gpu will-change-[max-height] ${isActive ? "max-h-125 py-4" : "max-h-0"}`}
                     >
                       <div className="flex flex-col gap-4 pl-4">
-                        {item.dropdown.links.map((link, lIdx) => (
+                        {item.dropdown.links.map((linkObj, lIdx) => {
+                          const linkName =
+                            typeof linkObj === "string"
+                              ? linkObj
+                              : (linkObj?.name || "");
+                          
+                          if (!linkName) return null;
+                          
+                          return (
                           <Link
                             key={lIdx}
                             to={
                               item.label === "Solutions"
-                                ? link === "Commerce Operations Systems"
+                                ? linkName === "Commerce Operations Systems"
                                   ? "/solutions/commerce-operations-systems"
-                                  : link === "Document Intelligence Systems"
+                                  : linkName === "Document Intelligence Systems"
                                     ? "/solutions/document-intelligence-systems"
-                                    : link === "Customer Interaction Systems"
+                                    : linkName === "Customer Interaction Systems"
                                       ? "/solutions/customer-interaction-systems"
-                                      : link === "Defense & Training Systems"
+                                      : linkName === "Defense & Training Systems"
                                         ? "/solutions/defense-simulation-training-systems"
-                                        : link === "AI Surveillance Systems"
+                                        : linkName === "AI Surveillance Systems"
                                           ? "/solutions/ai-surveillance-systems"
                                           : "/coming-soon"
                                 : item.label === "Services"
-                                  ? link === "Open Source & ERP Systems"
+                                  ? linkName === "Open Source & ERP Systems"
                                     ? "/services/open-source-erp-systems"
-                                    : link === "Enterprise Application Systems"
+                                    : linkName === "Enterprise Application Systems"
                                       ? "/services/enterprise-application-systems"
-                                      : link ===
+                                      : linkName ===
                                           "Product & Platform Engineering"
                                         ? "/services/product-and-platform-engineering"
-                                        : link === "Cloud and Devops"
+                                        : linkName === "Cloud and Devops"
                                           ? "/services/cloud-and-devops"
-                                          : link === "AI & Intelligent Systems"
+                                          : linkName === "AI & Intelligent Systems"
                                             ? "/services/ai-intelligent-systems"
-                                            : link ===
+                                            : linkName ===
                                                 "Data Engineering & Data Analytics"
                                               ? "/services/data-engineering-analytics"
-                                              : link ===
+                                              : linkName ===
                                                   "Legacy Transformation Systems"
                                                 ? "/services/legacy-transformation-systems"
-                                                : link ===
+                                                : linkName ===
                                                     "QA and Test Automation"
                                                   ? "/services/qa-and-test-automation"
                                                   : "/coming-soon"
                                   : item.label === "Products"
-                                    ? link === "RevoDox"
+                                    ? linkName === "RevoDox"
                                       ? "/solutions/document-intelligence-systems"
-                                      : link === "RevoVision"
+                                      : linkName === "RevoVision"
                                         ? "/solutions/ai-surveillance-systems"
                                         : "/coming-soon"
-                                    : link === "Careers"
+                                    : linkName === "Careers"
                                       ? "/careers"
-                                      : link === "About Us"
+                                      : linkName === "About Us"
                                         ? "/about-us"
                                         : "/coming-soon"
                             }
                             onClick={() => setIsMenuOpen(false)}
                             className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
                           >
-                            {link}
+                            {linkName}
                           </Link>
-                        ))}
+                          );
+                        })}
                       </div>
                     </div>
                   )}

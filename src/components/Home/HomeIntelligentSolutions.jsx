@@ -209,7 +209,7 @@ const HomeIntelligentSolutions = () => {
                 </span>
                 <span className="text-[#CACBDB] font-thin ml-2">for</span>
               </span>
-              <span className="text-[#CACBDB] block font-thin mt-[-4px]">
+              <span className="text-[#CACBDB] block font-thin -mt-1">
                 real business challenges
               </span>
             </h2>
@@ -276,9 +276,9 @@ const HomeIntelligentSolutions = () => {
         </div>
 
         {/* Unified Responsive Container: Sidebar (Desktop) + Marquee (Global) */}
-        <div className="flex flex-col md:flex-row gap-0 md:gap-16 items-start relative min-h-[440px]">
+        <div className="flex flex-col md:flex-row gap-0 md:gap-16 items-start relative min-h-110">
           {/* Desktop Sidebar (Optional Navigation trigger) */}
-          <div className="hidden md:flex w-[280px] flex-col gap-0.5 shrink-0 pt-16 sticky top-24 self-start z-20 mr-12">
+          <div className="hidden md:flex w-70 flex-col gap-0.5 shrink-0 pt-16 sticky top-24 self-start z-20 mr-12">
             {solutions.map((item, idx) => (
               <button
                 key={`sidebar-tab-${idx}`}
@@ -315,7 +315,7 @@ const HomeIntelligentSolutions = () => {
           {/* Infinite Marquee (Always Moving) */}
           <div className="flex-1 min-w-0 w-full relative">
             <div
-              className="relative w-full h-[520px] md:h-[540px] overflow-hidden cursor-grab active:cursor-grabbing"
+              className="relative w-full h-130 md:h-135 overflow-hidden cursor-grab active:cursor-grabbing"
               onMouseEnter={() => {
                 isPaused.current = true;
                 controls.stop();
@@ -391,7 +391,7 @@ const HomeIntelligentSolutions = () => {
                 {marqueeSolutions.map((card, idx) => (
                   <div
                     key={`marquee-card-${idx}`}
-                    className="w-[320px] md:w-[424px] h-[400px] md:h-[470px] shrink-0"
+                    className="w-80 md:w-106 h-100 md:h-117.5 shrink-0"
                   >
                     <div
                       onClick={() => {
@@ -411,14 +411,14 @@ const HomeIntelligentSolutions = () => {
                           navigate("/coming-soon");
                         }
                       }}
-                      className="w-full h-full rounded-xl overflow-hidden relative flex flex-col p-6 md:p-[22px] pb-6 shadow-2xl bg-white transition-all duration-700 ease-out group hover:-translate-y-2 cursor-pointer"
+                      className="w-full h-full rounded-xl overflow-hidden relative flex flex-col p-6 md:p-5.5 pb-6 shadow-2xl bg-white transition-all duration-700 ease-out group hover:-translate-y-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(180deg, #FFFFFF 0%, #D8D9F2 35%, #A6A9F7 100%)",
                       }}
                     >
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-linear-to-bl from-[#9CA0F5] to-[#CACBEB]" />
-                      <div className="relative w-full h-[140px] md:h-[200px] mb-4 rounded-lg bg-gradient-to-br from-[#0f1419] to-[#1a2a4a] overflow-hidden shrink-0 z-10 border border-black/20 flex items-center justify-center">
+                      <div className="relative w-full h-35 md:h-50 mb-4 rounded-lg bg-linear-to-br from-[#0f1419] to-[#1a2a4a] overflow-hidden shrink-0 z-10 border border-black/20 flex items-center justify-center">
                         <img
                           src={card.image}
                           alt=""

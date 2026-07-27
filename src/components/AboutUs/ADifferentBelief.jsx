@@ -14,7 +14,7 @@ export const ADifferentBelief = () => {
   return (
     <section
       ref={ref}
-      className="relative w-full py-12 md:py-16 font-sans overflow-hidden bg-[#01031c]"
+      className="relative w-full py-18 md:py-16 font-sans overflow-hidden bg-[#01031c]"
       data-testid="section-different-belief"
     >
       {/* Giant Background Light Watermark Text: OPERATIONS */}
@@ -67,7 +67,7 @@ export const ADifferentBelief = () => {
                 background: "linear-gradient(180deg, #877BF1, #FCCA71)",
               }}
             />
-            <blockquote className="italic font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-snug">
+            <blockquote className="italic font-serif text-lg sm:text-2xl md:text-3xl lg:text-3xl text-white font-normal leading-snug">
               &ldquo;Technology should{" "}
               <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-normal">
                 reflect

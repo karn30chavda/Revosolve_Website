@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion as Motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Brain, Database, Stack as Layers, Gear as Cog, GitMerge as Workflow } from "@phosphor-icons/react";
@@ -48,6 +48,16 @@ const STACK_LAYERS = [
 
 export const OperationalDiagram = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -55,6 +65,12 @@ export const OperationalDiagram = () => {
   const t = useSpring(scrollYProgress, { stiffness: 60, damping: 22 });
   const rotate = useTransform(t, [0, 1], [-8, 8]);
   const lift = useTransform(t, [0, 1], [-12, 12]);
+
+  // Responsive sizing
+  const containerHeight = isMobile ? "h-80" : "h-130";
+  const layerHeight = isMobile ? "h-14" : "h-18.5";
+  const layerSpacing = isMobile ? 64 : 82;
+  const rowYBase = isMobile ? 28 : 40;
 
   return (
     <div
@@ -92,7 +108,7 @@ export const OperationalDiagram = () => {
 
       {/* Isometric stack container */}
       <Motion.div
-        className="relative w-full h-130"
+        className={`relative w-full ${containerHeight}`}
         style={{
           transformStyle: "preserve-3d",
           perspective: "1400px",
@@ -109,7 +125,7 @@ export const OperationalDiagram = () => {
         >
           {STACK_LAYERS.map((layer, i) => {
             const Icon = layer.icon;
-            const rowY = 40 + i * 82; // vertical spacing so each slab visible
+            const rowY = rowYBase + i * layerSpacing;
             const z = (STACK_LAYERS.length - i) * 8;
             return (
               <Motion.div
@@ -121,7 +137,7 @@ export const OperationalDiagram = () => {
                   duration: 0.9,
                   ease: [0.2, 0.8, 0.2, 1],
                 }}
-                className="absolute left-0 right-0 h-16 md:h-18.5 rounded-2xl border backdrop-blur-md flex items-center px-5 gap-4"
+                className={`absolute left-0 right-0 ${layerHeight} rounded-2xl border backdrop-blur-md flex items-center px-5 gap-4`}
                 style={{
                   top: rowY,
                   transform: `translateZ(${z}px)`,
@@ -339,7 +355,7 @@ export const AboutHero = () => {
       </div>
 
       {/* Scroll Down Arrow - Desktop & Mobile */}
-      <div className="absolute bottom-6 lg:bottom-10 left-0 right-0 w-full flex justify-center z-40">
+      <div className="absolute bottom-0 md:bottom-10 left-0 right-0 w-full flex justify-center z-40 mt-12 md:mt-0">
         <img
           onClick={handleScrollDown}
           src="/AboutUs/hero_scroll_arrow.svg"

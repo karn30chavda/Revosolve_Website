@@ -31,7 +31,7 @@ const Home = () => {
 
           {/* Shared Background Patterns */}
           <div className="absolute top-0 left-0 w-full h-full z-1 overflow-hidden pointer-events-none opacity-40">
-            <div className="absolute top-0 left-0 w-full h-[869px]">
+            <div className="absolute top-0 left-0 w-full h-217.25">
               <img
                 src="/Home/problems_bg_pattern.png"
                 alt=""
