@@ -5,24 +5,45 @@ const navData = [
   {
     label: "Solutions",
     dropdown: {
-      image: "/navbar/solution_dropdown.webp",
+      defaultImage: "/navbar/document-intelligence.png",
       title: "Solutions",
       gridCols: "grid-cols-2",
       links: [
-        "Document Intelligence Systems",
-        "Customer Interaction Systems",
-        "Commerce Operations Systems",
-        "Simulation & Digital Twin Systems",
-        "AI Surveillance Systems",
-        "Public Infrastructure Operations",
-        "Defense & Training Systems",
+        {
+          name: "Document Intelligence Systems",
+          image: "/navbar/document-intelligence.png",
+        },
+        {
+          name: "Customer Interaction Systems",
+          image: "/navbar/customer-interaction-systems.png",
+        },
+        {
+          name: "Commerce Operations Systems",
+          image: "/navbar/commerce-operations-systems.png",
+        },
+        {
+          name: "Simulation & Digital Twin Systems",
+          image: "/navbar/digital-twin-systems.png",
+        },
+        {
+          name: "AI Surveillance Systems",
+          image: "/navbar/ai-surveillance.png",
+        },
+        {
+          name: "Public Infrastructure Operations",
+          image: "/navbar/public-infrastructure-operations.png",
+        },
+        {
+          name: "Defense & Training Systems",
+          image: "/navbar/defense-training-systems.png",
+        },
       ],
     },
   },
   {
     label: "Products",
     dropdown: {
-      image: "/navbar/products_dropdown.webp",
+      defaultImage: "/navbar/products_dropdown.webp",
       title: "Products",
       gridCols: "grid-cols-1",
       links: ["RevoDox", "RevoVision"],
@@ -31,7 +52,7 @@ const navData = [
   {
     label: "Services",
     dropdown: {
-      image: "/navbar/service_dropdown.webp",
+      defaultImage: "/navbar/service_dropdown.webp",
       title: "Services",
       gridCols: "grid-cols-2",
       links: [
@@ -55,6 +76,7 @@ const navData = [
 
 const Navbar = () => {
   const [openDropdownIdx, setOpenDropdownIdx] = useState(null);
+  const [hoveredLinkImage, setHoveredLinkImage] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileDropdownIdx, setMobileDropdownIdx] = useState(null);
   const navRef = React.useRef(null);
@@ -63,6 +85,7 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setOpenDropdownIdx(null);
+        setHoveredLinkImage(null);
         setIsMenuOpen(false);
         setMobileDropdownIdx(null);
       }
@@ -70,6 +93,7 @@ const Navbar = () => {
 
     const handleScroll = () => {
       setOpenDropdownIdx(null);
+      setHoveredLinkImage(null);
       if (window.scrollY > 50) {
         setIsMenuOpen(false);
         setMobileDropdownIdx(null);
@@ -110,6 +134,7 @@ const Navbar = () => {
           to="/"
           onClick={() => {
             setOpenDropdownIdx(null);
+            setHoveredLinkImage(null);
             setIsMenuOpen(false);
           }}
           className="flex items-center shrink-0 cursor-pointer transform-gpu"
@@ -141,8 +166,8 @@ const Navbar = () => {
                         item.label === "Careers"
                           ? "/careers"
                           : item.label === "About Us"
-                          ? "/about-us"
-                          : "/coming-soon"
+                            ? "/about-us"
+                            : "/coming-soon"
                       }
                       onClick={() => setOpenDropdownIdx(null)}
                     >
@@ -168,11 +193,15 @@ const Navbar = () => {
                     >
                       <div className="inline-flex flex-row p-6 gap-8 rounded-2xl bg-[#EAEAFF] shadow-2xl border border-white/20">
                         <div className="shrink-0 flex items-stretch">
-                          <img
-                            src={item.dropdown.image}
-                            alt={item.dropdown.title}
-                            className="w-72 object-cover rounded-lg shadow-inner"
-                          />
+                          <div className="w-72 h-48 overflow-hidden rounded-lg shadow-inner bg-[#010319] flex items-center justify-center">
+                            <img
+                              src={
+                                hoveredLinkImage || item.dropdown.defaultImage
+                              }
+                              alt={item.dropdown.title}
+                              className="w-full h-full object-contain transition-all duration-300"
+                            />
+                          </div>
                         </div>
                         <div className="flex flex-col items-start min-w-48 justify-center">
                           <span className="text-[#8e95c4] text-xs font-semibold mb-6 uppercase tracking-widest">
@@ -181,72 +210,100 @@ const Navbar = () => {
                           <div
                             className={`grid ${item.dropdown.gridCols} gap-x-12 gap-y-4 w-full`}
                           >
-                            {item.dropdown.links.map((link, linkIdx) => (
-                              <Link
-                                key={linkIdx}
-                                to={
-                                  item.label === "Solutions"
-                                    ? link === "Commerce Operations Systems"
-                                      ? "/solutions/commerce-operations-systems"
-                                      : link === "Document Intelligence Systems"
-                                        ? "/solutions/document-intelligence-systems"
-                                        : link ===
-                                            "Customer Interaction Systems"
-                                          ? "/solutions/customer-interaction-systems"
-                                          : link ===
-                                              "Defense & Training Systems"
-                                            ? "/solutions/defense-simulation-training-systems"
-                                            : link === "AI Surveillance Systems"
-                                              ? "/solutions/ai-surveillance-systems"
-                                              : link ===
-                                                  "Simulation & Digital Twin Systems"
-                                                ? "/solutions/simulation-digital-twin-systems"
-                                                : "/coming-soon"
-                                    : item.label === "Services"
-                                      ? link === "Open Source & ERP Systems"
-                                        ? "/services/open-source-erp-systems"
-                                        : link ===
-                                            "Enterprise Application Systems"
-                                          ? "/services/enterprise-application-systems"
-                                          : link ===
-                                              "Product & Platform Engineering"
-                                            ? "/services/product-and-platform-engineering"
-                                            : link === "Cloud and Devops"
-                                              ? "/services/cloud-and-devops"
-                                              : link ===
-                                                  "AI & Intelligent Systems"
-                                                ? "/services/ai-intelligent-systems"
-                                                : link ===
-                                                    "Data Engineering & Data Analytics"
-                                                  ? "/services/data-engineering-analytics"
-                                                  : link ===
-                                                      "Legacy Transformation Systems"
-                                                    ? "/services/legacy-transformation-systems"
-                                                    : link ===
-                                                        "QA and Test Automation"
-                                                      ? "/services/qa-and-test-automation"
-                                                      : "/coming-soon"
-                                      : item.label === "Products"
-                                        ? link === "RevoDox"
+                            {item.dropdown.links.map((linkObj, linkIdx) => {
+                              const linkName =
+                                typeof linkObj === "string"
+                                  ? linkObj
+                                  : linkObj.name;
+                              const linkImage =
+                                typeof linkObj === "string"
+                                  ? null
+                                  : linkObj.image;
+
+                              return (
+                                <Link
+                                  key={linkIdx}
+                                  to={
+                                    item.label === "Solutions"
+                                      ? linkName ===
+                                        "Commerce Operations Systems"
+                                        ? "/solutions/commerce-operations-systems"
+                                        : linkName ===
+                                            "Document Intelligence Systems"
                                           ? "/solutions/document-intelligence-systems"
-                                          : link === "RevoVision"
-                                            ? "/solutions/ai-surveillance-systems"
-                                            : "/coming-soon"
-                                        : "/coming-soon"
-                                }
-                                onClick={() => setOpenDropdownIdx(null)}
-                                className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
-                              >
-                                <span className="group-hover/link:underline decoration-[#070784] underline-offset-4 transition-all">
-                                  {link}
-                                </span>
-                                <img
-                                  src="/navbar/dropdown_link_icon.webp"
-                                  className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
-                                  alt=""
-                                />
-                              </Link>
-                            ))}
+                                          : linkName ===
+                                              "Customer Interaction Systems"
+                                            ? "/solutions/customer-interaction-systems"
+                                            : linkName ===
+                                                "Defense & Training Systems"
+                                              ? "/solutions/defense-simulation-training-systems"
+                                              : linkName ===
+                                                  "AI Surveillance Systems"
+                                                ? "/solutions/ai-surveillance-systems"
+                                                : linkName ===
+                                                    "Simulation & Digital Twin Systems"
+                                                  ? "/solutions/simulation-digital-twin-systems"
+                                                  : "/coming-soon"
+                                      : item.label === "Services"
+                                        ? linkName ===
+                                          "Open Source & ERP Systems"
+                                          ? "/services/open-source-erp-systems"
+                                          : linkName ===
+                                              "Enterprise Application Systems"
+                                            ? "/services/enterprise-application-systems"
+                                            : linkName ===
+                                                "Product & Platform Engineering"
+                                              ? "/services/product-and-platform-engineering"
+                                              : linkName === "Cloud and Devops"
+                                                ? "/services/cloud-and-devops"
+                                                : linkName ===
+                                                    "AI & Intelligent Systems"
+                                                  ? "/services/ai-intelligent-systems"
+                                                  : linkName ===
+                                                      "Data Engineering & Data Analytics"
+                                                    ? "/services/data-engineering-analytics"
+                                                    : linkName ===
+                                                        "Legacy Transformation Systems"
+                                                      ? "/services/legacy-transformation-systems"
+                                                      : linkName ===
+                                                          "QA and Test Automation"
+                                                        ? "/services/qa-and-test-automation"
+                                                        : "/coming-soon"
+                                        : item.label === "Products"
+                                          ? linkName === "RevoDox"
+                                            ? "/solutions/document-intelligence-systems"
+                                            : linkName === "RevoVision"
+                                              ? "/solutions/ai-surveillance-systems"
+                                              : "/coming-soon"
+                                          : "/coming-soon"
+                                  }
+                                  onClick={() => {
+                                    setOpenDropdownIdx(null);
+                                    setHoveredLinkImage(null);
+                                  }}
+                                  onMouseEnter={() => {
+                                    if (linkImage) {
+                                      setHoveredLinkImage(linkImage);
+                                    }
+                                  }}
+                                  onMouseLeave={() => {
+                                    if (linkImage) {
+                                      setHoveredLinkImage(null);
+                                    }
+                                  }}
+                                  className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
+                                >
+                                  <span className="group-hover/link:underline decoration-[#070784] underline-offset-4 transition-all">
+                                    {linkName}
+                                  </span>
+                                  <img
+                                    src="/navbar/dropdown_link_icon.webp"
+                                    className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300"
+                                    alt=""
+                                  />
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
                       </div>
@@ -371,8 +428,8 @@ const Navbar = () => {
                                     : link === "Careers"
                                       ? "/careers"
                                       : link === "About Us"
-                                      ? "/about-us"
-                                      : "/coming-soon"
+                                        ? "/about-us"
+                                        : "/coming-soon"
                             }
                             onClick={() => setIsMenuOpen(false)}
                             className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
