@@ -324,11 +324,6 @@ export const Navbar = () => {
                                       setHoveredLinkImage(linkImage);
                                     }
                                   }}
-                                  onMouseLeave={() => {
-                                    if (linkImage) {
-                                      setHoveredLinkImage(null);
-                                    }
-                                  }}
                                   className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
                                 >
                                   <span className="group-hover/link:underline decoration-[#070784] underline-offset-4 transition-all">
