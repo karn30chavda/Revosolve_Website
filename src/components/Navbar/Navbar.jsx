@@ -1,13 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-// Helper function to create URL-friendly paths from link names
-const slugify = (text) =>
-  text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "");
-
 const navData = [
   {
     label: "Solutions",
@@ -16,17 +9,34 @@ const navData = [
       title: "Solutions",
       gridCols: "grid-cols-2",
       links: [
-        { name: "Document Intelligence Systems", image: "/navbar/document-intelligence.png" },
-        { name: "Customer Interaction Systems", image: "/navbar/customer-interaction-systems.png" },
-        { name: "Commerce Operations Systems", image: "/navbar/commerce-operations-systems.png" },
-        { name: "Simulation & Digital Twin Systems", image: "/navbar/digital-twin-systems.png" },
-        { name: "AI Surveillance Systems", image: "/navbar/ai-surveillance.png" },
+        {
+          name: "Document Intelligence Systems",
+          image: "/navbar/document-intelligence.png",
+        },
+        {
+          name: "Customer Interaction Systems",
+          image: "/navbar/customer-interaction-systems.png",
+        },
+        {
+          name: "Commerce Operations Systems",
+          image: "/navbar/commerce-operations-systems.png",
+        },
+        {
+          name: "Simulation & Digital Twin Systems",
+          image: "/navbar/digital-twin-systems.png",
+        },
+        {
+          name: "AI Surveillance Systems",
+          image: "/navbar/ai-surveillance.png",
+        },
         {
           name: "Public Infrastructure Operations",
           image: "/navbar/public-infrastructure-operations.png",
-          path: "/coming-soon",
         },
-        { name: "Defense & Training Systems", image: "/navbar/defense-training-systems.png" },
+        {
+          name: "Defense & Training Systems",
+          image: "/navbar/defense-training-systems.png",
+        },
       ],
     },
   },
@@ -47,7 +57,7 @@ const navData = [
       gridCols: "grid-cols-2",
       links: [
         "Enterprise Application Systems",
-        "Product and Platform Engineering",
+        "Product & Platform Engineering",
         "Legacy Transformation Systems",
         "Open Source & ERP Systems",
         "QA and Test Automation",
@@ -62,6 +72,97 @@ const navData = [
   { label: "About Us", dropdown: null },
   { label: "Careers", dropdown: null },
 ];
+
+const mobileNavData = [
+  navData[0], // Solutions
+  navData[1], // Products
+  navData[2], // Services
+  {
+    label: "Company",
+    dropdown: {
+      links: ["About Us", "Careers", "Case Studies", "Blog"],
+    },
+  },
+];
+
+const getLinkPath = (category, linkObj) => {
+  const linkName = typeof linkObj === "string" ? linkObj : (linkObj?.name || category);
+
+  // Top level direct item checks
+  if (linkName === "Careers") return "/careers";
+  if (linkName === "About Us") return "/about-us";
+  if (linkName === "Case Studies") return "/coming-soon";
+  if (linkName === "Blog") return "/coming-soon";
+
+  if (category === "Solutions") {
+    switch (linkName) {
+      case "Commerce Operations Systems":
+        return "/solutions/commerce-operations-systems";
+      case "Document Intelligence Systems":
+        return "/solutions/document-intelligence-systems";
+      case "Customer Interaction Systems":
+        return "/solutions/customer-interaction-systems";
+      case "Defense & Training Systems":
+      case "Defense & Simulation Training Systems":
+        return "/solutions/defense-simulation-training-systems";
+      case "AI Surveillance Systems":
+        return "/solutions/ai-surveillance-systems";
+      case "Simulation & Digital Twin Systems":
+        return "/solutions/simulation-digital-twin-systems";
+      default:
+        return "/coming-soon";
+    }
+  }
+
+  if (category === "Products") {
+    switch (linkName) {
+      case "RevoDox":
+        return "/solutions/document-intelligence-systems";
+      case "RevoVision":
+        return "/solutions/ai-surveillance-systems";
+      default:
+        return "/coming-soon";
+    }
+  }
+
+  if (category === "Services") {
+    switch (linkName) {
+      case "Open Source & ERP Systems":
+        return "/services/open-source-erp-systems";
+      case "Enterprise Application Systems":
+        return "/services/enterprise-application-systems";
+      case "Product & Platform Engineering":
+      case "Product and Platform Engineering":
+        return "/services/product-and-platform-engineering";
+      case "Cloud and Devops":
+      case "Cloud and DevOps":
+        return "/services/cloud-and-devops";
+      case "AI & Intelligent Systems":
+        return "/services/ai-intelligent-systems";
+      case "Data Engineering & Data Analytics":
+        return "/services/data-engineering-analytics";
+      case "Legacy Transformation Systems":
+        return "/services/legacy-transformation-systems";
+      case "QA and Test Automation":
+        return "/services/qa-and-test-automation";
+      default:
+        return "/coming-soon";
+    }
+  }
+
+  if (category === "Company") {
+    switch (linkName) {
+      case "About Us":
+        return "/about-us";
+      case "Careers":
+        return "/careers";
+      default:
+        return "/coming-soon";
+    }
+  }
+
+  return "/coming-soon";
+};
 
 export const Navbar = () => {
   const [openDropdownIdx, setOpenDropdownIdx] = useState(null);
@@ -107,15 +208,6 @@ export const Navbar = () => {
     setMobileDropdownIdx((prev) => (prev === idx ? null : idx));
   };
 
-  // Resolves custom paths when provided, or generates clean slugified paths
-  const getDropdownPath = (category, linkObj) => {
-    if (typeof linkObj === "object" && linkObj.path) {
-      return linkObj.path;
-    }
-    const name = typeof linkObj === "string" ? linkObj : linkObj.name;
-    return `/${slugify(category)}/${slugify(name)}`;
-  };
-
   return (
     <nav
       ref={navRef}
@@ -125,6 +217,7 @@ export const Navbar = () => {
           : "h-[3.74938rem] min-[1290px]:h-20 bg-[#010319] min-[1290px]:bg-nav-bg top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md"
       }`}
     >
+      {/* Top Bar */}
       <div className="flex items-center justify-between w-full h-[3.74938rem] min-[1290px]:h-20 px-[1.24956rem] min-[1290px]:px-8">
         {/* Logo */}
         <Link
@@ -143,7 +236,7 @@ export const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop Links */}
+        {/* Desktop Navigation Links */}
         <div className="hidden min-[1290px]:flex items-center gap-10">
           <ul className="flex items-center gap-8">
             {navData.map((item, idx) => {
@@ -162,13 +255,7 @@ export const Navbar = () => {
                 >
                   {!item.dropdown ? (
                     <Link
-                      to={
-                        item.label === "Careers"
-                          ? "/careers"
-                          : item.label === "About Us"
-                          ? "/about-us"
-                          : `/${slugify(item.label)}`
-                      }
+                      to={getLinkPath(item.label, item.label)}
                       onClick={() => setOpenDropdownIdx(null)}
                     >
                       {item.label}
@@ -187,6 +274,7 @@ export const Navbar = () => {
                     />
                   )}
 
+                  {/* Desktop Mega Menu Dropdown */}
                   {item.dropdown && (
                     <div
                       onClick={(e) => e.stopPropagation()}
@@ -210,23 +298,36 @@ export const Navbar = () => {
                           <span className="text-[#8e95c4] text-xs font-semibold mb-6 uppercase tracking-widest">
                             {item.dropdown.title}
                           </span>
-                          <div className={`grid ${item.dropdown.gridCols} gap-x-12 gap-y-4 w-full`}>
+                          <div
+                            className={`grid ${item.dropdown.gridCols} gap-x-12 gap-y-4 w-full`}
+                          >
                             {item.dropdown.links.map((linkObj, linkIdx) => {
                               const linkName =
-                                typeof linkObj === "string" ? linkObj : linkObj.name;
+                                typeof linkObj === "string"
+                                  ? linkObj
+                                  : linkObj.name;
                               const linkImage =
-                                typeof linkObj === "string" ? null : linkObj.image;
+                                typeof linkObj === "string"
+                                  ? null
+                                  : linkObj.image;
 
                               return (
                                 <Link
                                   key={linkIdx}
-                                  to={getDropdownPath(item.label, linkObj)}
+                                  to={getLinkPath(item.label, linkObj)}
                                   onClick={() => {
                                     setOpenDropdownIdx(null);
                                     setHoveredLinkImage(null);
                                   }}
                                   onMouseEnter={() => {
-                                    if (linkImage) setHoveredLinkImage(linkImage);
+                                    if (linkImage) {
+                                      setHoveredLinkImage(linkImage);
+                                    }
+                                  }}
+                                  onMouseLeave={() => {
+                                    if (linkImage) {
+                                      setHoveredLinkImage(null);
+                                    }
                                   }}
                                   className="flex items-center gap-2 text-[#070784] font-sans text-sm font-normal leading-5 tracking-wide group/link w-fit"
                                 >
@@ -251,6 +352,7 @@ export const Navbar = () => {
             })}
           </ul>
 
+          {/* Desktop Connect Button */}
           <Link
             to="/connect"
             onClick={() => setOpenDropdownIdx(null)}
@@ -278,8 +380,9 @@ export const Navbar = () => {
       {isMenuOpen && (
         <div className="min-[1290px]:hidden w-full bg-[#010319] flex flex-col items-start justify-start px-5.5 pb-8 pt-2 gap-0 relative animate-[fadeIn_0.3s_ease-out]">
           <div className="flex flex-col w-full">
-            {navData.map((item, idx) => {
+            {mobileNavData.map((item, idx, arr) => {
               const isActive = mobileDropdownIdx === idx;
+              const isLast = idx === arr.length - 1;
 
               return (
                 <div key={idx} className="flex flex-col w-full">
@@ -289,17 +392,15 @@ export const Navbar = () => {
                         ? toggleMobileDropdown(idx)
                         : setIsMenuOpen(false)
                     }
-                    className="flex flex-row items-center justify-between w-full h-[3.35988rem] pr-0 shrink-0 border-b-[0.768px] border-[rgba(91,98,191,0.37)] cursor-pointer hover:opacity-80 transition-opacity"
+                    className={`flex flex-row items-center justify-between w-full h-[3.35988rem] pr-0 shrink-0 ${
+                      isLast
+                        ? "border-none"
+                        : "border-b-[0.768px] border-[rgba(91,98,191,0.37)]"
+                    } cursor-pointer hover:opacity-80 transition-opacity`}
                   >
                     {!item.dropdown ? (
                       <Link
-                        to={
-                          item.label === "Careers"
-                            ? "/careers"
-                            : item.label === "About Us"
-                            ? "/about-us"
-                            : `/${slugify(item.label)}`
-                        }
+                        to={getLinkPath(item.label, item.label)}
                         onClick={() => setIsMenuOpen(false)}
                         className="text-[#FFF] text-left font-sans text-[17px] leading-7 font-thin opacity-[0.64] tracking-[-0.02744rem] w-full"
                       >
@@ -322,21 +423,26 @@ export const Navbar = () => {
                     )}
                   </div>
 
+                  {/* Sublinks for Mobile Dropdown */}
                   {item.dropdown && (
                     <div
-                      className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                      className={`overflow-hidden transition-all duration-200 ease-in-out transform-gpu will-change-[max-height] ${
                         isActive ? "max-h-125 py-4" : "max-h-0"
                       }`}
                     >
                       <div className="flex flex-col gap-4 pl-4">
                         {item.dropdown.links.map((linkObj, lIdx) => {
                           const linkName =
-                            typeof linkObj === "string" ? linkObj : linkObj.name;
+                            typeof linkObj === "string"
+                              ? linkObj
+                              : linkObj?.name || "";
+
+                          if (!linkName) return null;
 
                           return (
                             <Link
                               key={lIdx}
-                              to={getDropdownPath(item.label, linkObj)}
+                              to={getLinkPath(item.label, linkName)}
                               onClick={() => setIsMenuOpen(false)}
                               className="text-white/60 text-[14px] font-sans hover:text-white transition-colors cursor-pointer"
                             >
