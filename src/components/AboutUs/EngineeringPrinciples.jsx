@@ -49,23 +49,57 @@ const PRINCIPLES = [
 const PrincipleCard = ({ p, i, t, total }) => {
   const step = 1 / total;
   const start = i * step;
-  const end = start + step;
+  const end = Math.min((i + 1) * step, 1);
 
-  // Keyframes creating a clear rest/pause plateau when card is centered
   const enterEnd = start + step * 0.25;
   const exitStart = start + step * 0.75;
 
-  // Shifted resting y-position up from 56px to 0px so cards appear higher up
-  const y = useTransform(t, [start, enterEnd, exitStart, end], [100, 0, 0, -80]);
-  const scale = useTransform(t, [start, enterEnd, exitStart, end], [0.94, 1, 1, 0.94]);
-  
-  // Sharp opacity window staying 1.0 during rest phase
-  const opacity = useTransform(
-    t,
-    [start - 0.001, enterEnd, exitStart, end + 0.001],
-    [0, 1, 1, 0]
-  );
-  
+  const isFirst = i === 0;
+  const isLast = i === total - 1;
+
+  // Keyframes ensuring:
+  // 1. First card (i === 0) starts already displayed at y: 0, opacity: 1 (no animation from below)
+  // 2. Last card (i === total - 1) remains pinned at y: 0, opacity: 1 when reaching the bottom
+  const yInput = isFirst
+    ? [0, exitStart, end]
+    : isLast
+    ? [start, enterEnd, 1]
+    : [start, enterEnd, exitStart, end];
+
+  const yOutput = isFirst
+    ? [0, 0, -80]
+    : isLast
+    ? [100, 0, 0]
+    : [100, 0, 0, -80];
+
+  const scaleInput = isFirst
+    ? [0, exitStart, end]
+    : isLast
+    ? [start, enterEnd, 1]
+    : [start, enterEnd, exitStart, end];
+
+  const scaleOutput = isFirst
+    ? [1, 1, 0.94]
+    : isLast
+    ? [0.94, 1, 1]
+    : [0.94, 1, 1, 0.94];
+
+  const opacityInput = isFirst
+    ? [0, exitStart, end + 0.001]
+    : isLast
+    ? [start - 0.001, enterEnd, 1]
+    : [start - 0.001, enterEnd, exitStart, end + 0.001];
+
+  const opacityOutput = isFirst
+    ? [1, 1, 0]
+    : isLast
+    ? [0, 1, 1]
+    : [0, 1, 1, 0];
+
+  const y = useTransform(t, yInput, yOutput);
+  const scale = useTransform(t, scaleInput, scaleOutput);
+  const opacity = useTransform(t, opacityInput, opacityOutput);
+
   const Icon = p.icon;
 
   return (
@@ -126,15 +160,26 @@ const PrincipleCard = ({ p, i, t, total }) => {
 
 const PrincipleIndicator = ({ i, t, total, label, accent }) => {
   const step = 1 / total;
-  const active = useTransform(
-    t,
-    [i * step - 0.02, i * step + step * 0.2],
-    [0.35, 1]
-  );
+  const isFirst = i === 0;
+  const isLast = i === total - 1;
+
+  const opacityInput = isFirst
+    ? [0, step * 0.75, step]
+    : isLast
+    ? [i * step - 0.05, i * step + step * 0.25, 1]
+    : [i * step - 0.05, i * step + step * 0.25, (i + 1) * step - 0.05, (i + 1) * step];
+
+  const opacityOutput = isFirst
+    ? [1, 1, 0.35]
+    : isLast
+    ? [0.35, 1, 1]
+    : [0.35, 1, 1, 0.35];
+
+  const active = useTransform(t, opacityInput, opacityOutput);
   const scale = useTransform(
     t,
-    [i * step - 0.02, i * step + step * 0.2],
-    [0.8, 1]
+    opacityInput,
+    opacityOutput.map((val) => (val === 1 ? 1 : 0.8))
   );
 
   return (
