@@ -52,7 +52,7 @@ const navData = [
   {
     label: "Services",
     dropdown: {
-      defaultImage: "/navbar/service_dropdown.webp",
+      defaultImage: "/navbar/enterprise-application-systems.png",
       title: "Services",
       gridCols: "grid-cols-2",
       links: [
@@ -237,8 +237,8 @@ export const Navbar = () => {
       ref={navRef}
       className={`fixed z-50 transition-all duration-300 transform-gpu w-full min-[1290px]:w-[95%] min-[1290px]:left-1/2 min-[1290px]:-translate-x-1/2 ${
         isMenuOpen
-          ? "h-auto bg-[#010319] top-0 shadow-2xl"
-          : "h-[3.74938rem] min-[1290px]:h-20 bg-[#010319] min-[1290px]:bg-nav-bg top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md"
+          ? "h-auto bg-[#0a113b] top-0 shadow-2xl"
+          : "h-[3.74938rem] min-[1290px]:h-20 bg-[#0a113b] min-[1290px]:bg-nav-bg top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md"
       }`}
     >
       {/* Top Bar */}
@@ -310,11 +310,11 @@ export const Navbar = () => {
                     >
                       <div className="inline-flex flex-row p-6 gap-8 rounded-2xl bg-[#EAEAFF] shadow-2xl border border-white/20">
                         <div className="shrink-0 flex items-stretch">
-                          <div className="w-72 h-48 overflow-hidden rounded-lg shadow-inner bg-[#010319] flex items-center justify-center">
+                          <div className={`${item.dropdown.imageContainerClass || "w-72 h-48"} overflow-hidden rounded-lg shadow-inner bg-[#0A0B28] flex items-center justify-center`}>
                             <img
                               src={hoveredLinkImage || item.dropdown.defaultImage}
                               alt={item.dropdown.title}
-                              className="w-full h-full object-contain transition-all duration-300"
+                              className="w-full h-full object-fill transition-all duration-300"
                             />
                           </div>
                         </div>
@@ -397,7 +397,7 @@ export const Navbar = () => {
 
       {/* Mobile Accordion Menu */}
       {isMenuOpen && (
-        <div className="min-[1290px]:hidden w-full bg-[#010319] flex flex-col items-start justify-start px-5.5 pb-8 pt-2 gap-0 relative animate-[fadeIn_0.3s_ease-out]">
+        <div className="min-[1290px]:hidden w-full bg-[#0a113b] flex flex-col items-start justify-start px-5.5 pb-8 pt-2 gap-0 relative animate-[fadeIn_0.3s_ease-out]">
           <div className="flex flex-col w-full">
             {mobileNavData.map((item, idx, arr) => {
               const isActive = mobileDropdownIdx === idx;
