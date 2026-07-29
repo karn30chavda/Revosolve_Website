@@ -56,14 +56,38 @@ const navData = [
       title: "Services",
       gridCols: "grid-cols-2",
       links: [
-        "Enterprise Application Systems",
-        "Product & Platform Engineering",
-        "Legacy Transformation Systems",
-        "Open Source & ERP Systems",
-        "QA and Test Automation",
-        "AI & Intelligent Systems",
-        "Cloud and Devops",
-        "Data Engineering & Data Analytics",
+        {
+          name: "Enterprise Application Systems",
+          image: "/navbar/enterprise-application-systems.png",
+        },
+        {
+          name: "Product & Platform Engineering",
+          image: "/navbar/product-platform-engineering.png",
+        },
+        {
+          name: "Legacy Transformation Systems",
+          image: "/navbar/legacy-transformation-systems.png",
+        },
+        {
+          name: "Open Source & ERP Systems",
+          image: "/navbar/open-source-erp-systems.png",
+        },
+        {
+          name: "QA and Test Automation",
+          image: "/navbar/qa-test-automation.png",
+        },
+        {
+          name: "AI & Intelligent Systems",
+          image: "/navbar/ai-intelligent-systems.png",
+        },
+        {
+          name: "Cloud and Devops",
+          image: "/navbar/cloud-devops.png",
+        },
+        {
+          name: "Data Engineering & Data Analytics",
+          image: "/navbar/data-engineering-analytics.png",
+        },
       ],
     },
   },
