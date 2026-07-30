@@ -13,6 +13,7 @@ import OpenSourceERPSystems from "./pages/OpenSourceERPSystems";
 import CloudDevOps from "./pages/CloudDevOps";
 import AiIntelligentSystems from "./pages/AiIntelligentSystems";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import PublicInfrastructureOperationsSystems from "./pages/PublicInfrastructureOperationsSystems";
 import DataEngineeringAnalytics from "./pages/DataEngineeringAnalytics";
 import DefenseSimulationTrainingSystems from "./pages/DefenseSimulationTrainingSystems";
 import AiSurveillanceSystems from "./pages/AiSurveillanceSystems";
@@ -62,6 +63,10 @@ function App() {
           <Route
             path="/solutions/simulation-digital-twin-systems"
             element={<SimulationDigitalTwinSystems />}
+          />
+          <Route
+            path="/solutions/public-infrastructure-operations-systems"
+            element={<PublicInfrastructureOperationsSystems />}
           />
           <Route
             path="/services/open-source-erp-systems"

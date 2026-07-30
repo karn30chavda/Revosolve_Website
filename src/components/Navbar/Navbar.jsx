@@ -133,6 +133,9 @@ const getLinkPath = (category, linkObj) => {
         return "/solutions/ai-surveillance-systems";
       case "Simulation & Digital Twin Systems":
         return "/solutions/simulation-digital-twin-systems";
+      case "Public Infrastructure Operations":
+      case "Public Infrastructure Operations Systems":
+        return "/solutions/public-infrastructure-operations-systems";
       default:
         return "/coming-soon";
     }
@@ -237,8 +240,8 @@ export const Navbar = () => {
       ref={navRef}
       className={`fixed z-50 transition-all duration-300 transform-gpu w-full min-[1290px]:w-[95%] min-[1290px]:left-1/2 min-[1290px]:-translate-x-1/2 ${
         isMenuOpen
-          ? "h-auto bg-[#0a113b] top-0 shadow-2xl"
-          : "h-[3.74938rem] min-[1290px]:h-20 bg-[#0a113b] min-[1290px]:bg-nav-bg top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md"
+          ? "h-auto bg-[#050726] top-0 shadow-2xl"
+          : "h-[3.74938rem] min-[1290px]:h-20 bg-[#050726] min-[1290px]:bg-nav-bg backdrop-blur-xl top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md"
       }`}
     >
       {/* Top Bar */}
