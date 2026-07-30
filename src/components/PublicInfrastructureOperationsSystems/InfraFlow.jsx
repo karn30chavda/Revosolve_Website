@@ -12,16 +12,6 @@ import {
   ArrowRight,
 } from "@phosphor-icons/react";
 
-const eventChain = [
-  { label1: "Tender Won", label2: "Project Created" },
-  { label1: "Project Created", label2: "Teams Allocated" },
-  { label1: "Material Request", label2: "Procurement Triggered" },
-  { label1: "Milestone Complete", label2: "Billing Triggered" },
-  { label1: "Invoice Raised", label2: "Finance Updated" },
-  { label1: "Finance Updated", label2: "Profitability Updated" },
-  { label1: "Profitability Updated", label2: "Dashboards Update Live" },
-];
-
 const flowNodesChain = [
   { icon: FileText, label: "Tender Won" },
   { icon: SquaresFour, label: "Project Created" },
@@ -218,15 +208,29 @@ const InfraFlow = () => {
           <div className="font-mono text-[11px] sm:text-xs text-[#877BF1] tracking-widest uppercase mb-2 md:mb-3">
             step {activeStep + 1} of {flowNodesChain.length}
           </div>
-          <div className="text-[18px] sm:text-[26px] md:text-[30px] font-bold flex items-center justify-center gap-2 sm:gap-3.5 flex-wrap">
-            <span className="text-[#8F92B8]">
-              {eventChain[Math.min(activeStep, eventChain.length - 1)].label1}
-            </span>
-            <ArrowRight size={20} className="text-[#FCCA71] shrink-0 sm:hidden" />
-            <ArrowRight size={24} className="text-[#FCCA71] shrink-0 hidden sm:block" />
-            <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold">
-              {eventChain[Math.min(activeStep, eventChain.length - 1)].label2}
-            </span>
+          <div className="text-[18px] sm:text-[26px] md:text-[30px] font-bold flex items-center justify-center gap-2 sm:gap-3.5 flex-wrap min-h-11">
+            {activeStep === 0 ? (
+              <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold">
+                {flowNodesChain[0].label}
+              </span>
+            ) : (
+              <>
+                <span className="text-[#8F92B8]">
+                  {flowNodesChain[activeStep - 1].label}
+                </span>
+                <ArrowRight
+                  size={20}
+                  className="text-[#FCCA71] shrink-0 sm:hidden"
+                />
+                <ArrowRight
+                  size={24}
+                  className="text-[#FCCA71] shrink-0 hidden sm:block"
+                />
+                <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-bold">
+                  {flowNodesChain[activeStep].label}
+                </span>
+              </>
+            )}
           </div>
         </div>
       </div>
