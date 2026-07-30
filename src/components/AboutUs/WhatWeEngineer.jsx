@@ -77,6 +77,7 @@ const CAPABILITIES = [
       { name: "Defense Simulation & Training", link: "/solutions/defense-simulation-training-systems" },
       { name: "AI Surveillance Systems", link: "/solutions/ai-surveillance-systems" },
       { name: "Simulation & Digital Twin", link: "/solutions/simulation-digital-twin-systems" },
+      { name: "Public Infrastructure Operations", link: "/solutions/public-infrastructure-operations-systems" },
     ],
   },
   {

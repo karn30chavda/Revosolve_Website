@@ -407,6 +407,11 @@ const HomeIntelligentSolutions = () => {
                           navigate("/solutions/ai-surveillance-systems");
                         } else if (card.category === "Simulation & Digital Twin Systems") {
                           navigate("/solutions/simulation-digital-twin-systems");
+                        } else if (
+                          card.category === "Public Infrastructure Operations Systems" ||
+                          card.category === "Public Infrastructure Operations"
+                        ) {
+                          navigate("/solutions/public-infrastructure-operations-systems");
                         } else {
                           navigate("/coming-soon");
                         }
