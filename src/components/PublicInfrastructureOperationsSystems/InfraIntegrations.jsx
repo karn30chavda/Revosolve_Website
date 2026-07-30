@@ -57,7 +57,8 @@ const integData = [
 
 const convergenceDetail = {
   label: "All Systems Synchronized",
-  icon: Hexagon,
+  isImage: true,
+  imageSrc: "/PublicInfrastructureOperationsSystems/Revosolve.webp",
   items: ["Tenders", "ERP / SAP", "GST & Tally", "Biometrics", "WhatsApp", "Open APIs"],
   purpose:
     "Every enterprise system, field device, and financial platform operates in 100% live synchronization with RevoSolve Core.",
@@ -65,12 +66,12 @@ const convergenceDetail = {
 
 const InfraIntegrations = () => {
   const [isInView, setIsInView] = useState(false);
-  const [targetStep, setTargetStep] = useState(0);
+  const [targetStep, setTargetStep] = useState(-1);
   const [displayStep, setDisplayStep] = useState(-1);
 
   // Auto-advance target step forward when section is in viewport
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || targetStep === -1) return;
 
     // Snappy 1.8s reset for Convergence (step 6), 3.8s for line drawing steps 0..5
     const intervalTime = targetStep === 6 ? 1800 : 3800;
@@ -90,7 +91,7 @@ const InfraIntegrations = () => {
 
   // Update displayStep (active node highlight & detail card) after golden line arrives
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || targetStep === -1) return;
 
     // Instant 100ms delay for step 6 (All Active Core Convergence), 2200ms for line drawing nodes 0..5
     const delay = targetStep === 6 ? 100 : 2200;
@@ -103,7 +104,7 @@ const InfraIntegrations = () => {
 
   const isAllActive = displayStep === 6;
   const activeDetail =
-    displayStep === -1 || displayStep === 0
+    displayStep === -1
       ? integData[0]
       : isAllActive
       ? convergenceDetail
@@ -113,8 +114,14 @@ const InfraIntegrations = () => {
   return (
     <Motion.section
       id="integrations"
-      onViewportEnter={() => setIsInView(true)}
-      viewport={{ once: false, amount: 0.2 }}
+      onViewportEnter={() => {
+        if (!isInView) {
+          setIsInView(true);
+          setTargetStep(0);
+          setDisplayStep(-1);
+        }
+      }}
+      viewport={{ once: false, amount: 0.3 }}
       className="relative w-full py-12 md:py-20 px-[5%] lg:px-[7.5%] overflow-hidden z-20 text-[#FBFBFF] font-sans"
     >
       <style>{`
@@ -146,7 +153,8 @@ const InfraIntegrations = () => {
       <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
         {/* LEFT COLUMN: Orbit Diagram */}
         <div className="lg:col-span-6 relative w-full max-w-120 mx-auto aspect-square">
-          <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full overflow-visible pointer-events-none z-0">
+          {/* Main SVG Layer for Orbit Ring, Spoke Lines, and Tip Dot (z-10 - Behind Central Core z-20) */}
+          <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full overflow-visible pointer-events-none z-10">
             {/* Dashed Orbit Ring */}
             <circle
               cx="50"
@@ -164,7 +172,7 @@ const InfraIntegrations = () => {
               const x = 50 + 38 * Math.cos(angle);
               const y = 50 + 38 * Math.sin(angle);
               const isPastLine = displayStep !== -1 && (isAllActive || i <= displayStep);
-              const isGrowingLine = !isAllActive && i === targetStep && displayStep !== targetStep;
+              const isGrowingLine = !isAllActive && targetStep === i && displayStep !== targetStep;
 
               return (
                 <g key={t.label}>
@@ -179,10 +187,10 @@ const InfraIntegrations = () => {
                         ? "rgba(252,202,113,0.85)"
                         : "rgba(135,123,241,0.2)"
                     }
-                    strokeWidth={isPastLine ? "0.6" : "0.3"}
+                    strokeWidth={isPastLine ? "0.45" : "0.2"}
                   />
 
-                  {/* Slowly Growing Golden Line from Center to Target Node */}
+                  {/* Slowly Growing Golden Line from Center (50,50) to Target Node (x,y) */}
                   {isGrowingLine && (
                     <line
                       key={`line-${targetStep}`}
@@ -191,7 +199,7 @@ const InfraIntegrations = () => {
                       x2={x}
                       y2={y}
                       stroke="rgba(252,202,113,0.95)"
-                      strokeWidth="0.75"
+                      strokeWidth="0.45"
                       strokeDasharray="38"
                       strokeDashoffset="38"
                       style={{ animation: "pioLineGrow 3.0s ease-out forwards" }}
@@ -201,29 +209,38 @@ const InfraIntegrations = () => {
               );
             })}
 
-            {/* Single Golden Particle Gliding Along Leading Tip */}
-            {!isAllActive && displayStep !== targetStep && (
-              <circle
-                key={`dot-${targetStep}`}
-                r="1.4"
-                fill="#FCCA71"
-                className="shadow-[0_0_10px_#FCCA71]"
+            {/* Traveling Golden Arrowhead Gliding Outward Along Extending Spoke Line */}
+            {!isAllActive && targetStep >= 0 && targetStep < 6 && displayStep !== targetStep && (
+              <Motion.g
+                key={`arrow-group-${targetStep}`}
+                initial={{ x: 50, y: 50 }}
+                animate={{
+                  x: 50 + 38 * Math.cos(((-90 + targetStep * 60) * Math.PI) / 180),
+                  y: 50 + 38 * Math.sin(((-90 + targetStep * 60) * Math.PI) / 180),
+                }}
+                transition={{ duration: 3.0, ease: "easeOut" }}
               >
-                <animateMotion
-                  dur="3.0s"
-                  fill="freeze"
-                  repeatCount="1"
-                  path={`M50 50 L${
-                    50 + 38 * Math.cos(((-90 + targetStep * 60) * Math.PI) / 180)
-                  } ${
-                    50 + 38 * Math.sin(((-90 + targetStep * 60) * Math.PI) / 180)
-                  }`}
-                />
-              </circle>
+                {/* Micro Golden Arrowhead Oriented Along Spoke Angle */}
+                <g transform={`rotate(${-90 + targetStep * 60 + 90})`}>
+                  {/* Subtle Outer Glow Arrowhead */}
+                  <path
+                    d="M 0 -1.4 L 1.0 0.9 L 0 0.3 L -1.0 0.9 Z"
+                    fill="#FCCA71"
+                    opacity={0.4}
+                    transform="scale(1.1)"
+                  />
+                  {/* Small Solid Golden Arrowhead */}
+                  <path
+                    d="M 0 -1.4 L 1.0 0.9 L 0 0.3 L -1.0 0.9 Z"
+                    fill="#FCCA71"
+                    style={{ filter: "drop-shadow(0 0 3px #FCCA71)" }}
+                  />
+                </g>
+              </Motion.g>
             )}
           </svg>
 
-          {/* Central REVOSOLVE CORE Node */}
+          {/* Central REVOSOLVE CORE Node (z-20 - Covers Center (50,50) So Line & Dot Emerge Together) */}
           <div
             className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[24%] aspect-square rounded-full flex flex-col items-center justify-center transition-all duration-700 z-20 cursor-pointer ${
               isAllActive
@@ -235,12 +252,13 @@ const InfraIntegrations = () => {
               setDisplayStep(6);
             }}
           >
-            <Hexagon
-              size={24}
-              className={isAllActive ? "text-black" : "text-white"}
+            <img
+              src="/PublicInfrastructureOperationsSystems/Revosolve.webp"
+              alt="RevoSolve Core"
+              className="w-6.5 h-6.5 sm:w-7 sm:h-7 object-contain mb-0.5"
             />
             <span
-              className={`font-mono text-[8px] font-bold tracking-wider text-center leading-tight mt-1 ${
+              className={`font-mono text-[8px] font-bold tracking-wider text-center leading-tight mt-0.5 ${
                 isAllActive ? "text-black" : "text-white"
               }`}
             >
@@ -250,7 +268,7 @@ const InfraIntegrations = () => {
             </span>
           </div>
 
-          {/* 6 Clockwise Orbit Nodes */}
+          {/* 6 Clockwise Orbit Nodes (z-30) */}
           {integData.map((t, i) => {
             const angle = ((-90 + i * 60) * Math.PI) / 180;
             const x = 50 + 38 * Math.cos(angle);
@@ -322,7 +340,15 @@ const InfraIntegrations = () => {
           className="lg:col-span-6 border border-[#877BF1]/25 bg-linear-to-br from-[#12143E]/70 to-[#0A0B28]/70 rounded-xl p-6 sm:p-8 min-h-65 shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
         >
           <div className="flex items-center gap-3 mb-5">
-            <ActiveIcon size={24} className="text-[#FCCA71]" />
+            {activeDetail.isImage ? (
+              <img
+                src={activeDetail.imageSrc}
+                alt=""
+                className="w-6 h-6 object-contain"
+              />
+            ) : (
+              <ActiveIcon size={24} className="text-[#FCCA71]" />
+            )}
             <h3 className="text-lg sm:text-xl font-bold text-white m-0">
               {activeDetail.label}
             </h3>
