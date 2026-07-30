@@ -8,15 +8,11 @@ const faqs = [
   },
   {
     q: "How is this different from project management software?",
-    a: "It connects tenders, surveys, field operations, procurement, finance, and governance into one operational platform, not just schedules and tasks.",
+    a: "It connects tenders, field operations, procurement, finance, and governance into one operational platform, not just schedules and tasks.",
   },
   {
     q: "Can it integrate with Tender247 and Tender Tiger?",
     a: "Yes, through APIs or approved integration methods with major tender and procurement portals.",
-  },
-  {
-    q: "Does it support field surveys?",
-    a: "Yes — drone inspections, geo-tagged data collection, and offline mobile workflows.",
   },
   {
     q: "Can project profitability be tracked?",
