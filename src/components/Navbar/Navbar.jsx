@@ -240,8 +240,8 @@ export const Navbar = () => {
       ref={navRef}
       className={`fixed z-50 transition-all duration-300 transform-gpu w-full min-[1290px]:w-[95%] min-[1290px]:left-1/2 min-[1290px]:-translate-x-1/2 ${
         isMenuOpen
-          ? "h-auto bg-[#050726] top-0 shadow-2xl"
-          : "h-[3.74938rem] min-[1290px]:h-20 bg-[#050726] min-[1290px]:bg-nav-bg backdrop-blur-xl top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md"
+          ? "h-auto bg-[#010319] top-0 shadow-2xl"
+          : "h-[3.74938rem] min-[1290px]:h-20 bg-[#010319] min-[1290px]:bg-nav-bg top-0 min-[1290px]:top-6 min-[1290px]:rounded-2xl border-b border-[rgba(91,98,191,0.37)] min-[1290px]:border-white/10 shadow-md"
       }`}
     >
       {/* Top Bar */}
@@ -400,7 +400,7 @@ export const Navbar = () => {
 
       {/* Mobile Accordion Menu */}
       {isMenuOpen && (
-        <div className="min-[1290px]:hidden w-full bg-[#0a113b] flex flex-col items-start justify-start px-5.5 pb-8 pt-2 gap-0 relative animate-[fadeIn_0.3s_ease-out]">
+        <div className="min-[1290px]:hidden w-full bg-[#010319] flex flex-col items-start justify-start px-5.5 pb-8 pt-2 gap-0 relative animate-[fadeIn_0.3s_ease-out]">
           <div className="flex flex-col w-full">
             {mobileNavData.map((item, idx, arr) => {
               const isActive = mobileDropdownIdx === idx;
