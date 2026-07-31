@@ -270,7 +270,8 @@ const MarketplaceFragmentedStack = () => {
                 transform: `rotate(${l.angle}deg)`,
                 transformOrigin: "50% 50%",
                 background: l.background,
-                animation: `mkFlicker ${l.dur} ease-in-out infinite`,
+                opacity: 0.12,
+                animation: `mkFlicker ${l.dur} ease-in-out infinite both`,
                 animationDelay: l.delay,
               }}
             />

@@ -49,29 +49,30 @@ const CareerSupportingYou = () => {
   ];
 
   return (
-    <section className="relative w-full bg-[#01031c] pt-8 pb-16 lg:pt-12 lg:pb-16 font-sans">
+    <section className="relative w-full bg-[#01031c] pt-10 sm:pt-14 lg:pt-16 pb-16 lg:pb-20 font-sans">
       {/* Decorative Glow Spots */}
       <div className="absolute top-[30%] left-[-10%] w-[40%] h-[40%] bg-[#877BF1]/3 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[45%] h-[45%] bg-[#FCCA71]/2 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 w-[85%] mx-auto flex flex-col items-start justify-start">
         {/* Section Tag */}
-        <div className="text-white text-[18px] font-normal uppercase tracking-[0.264px] leading-[57px] opacity-30 select-none">
+        <div className="text-white text-[14px] sm:text-[16px] font-normal uppercase tracking-[0.264px] leading-snug opacity-30 select-none mb-1">
           [PROBLEMS WE SOLVE]
         </div>
 
         {/* Heading Block */}
-        <div className="w-full flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-20 mt-1 pb-1">
+        <div className="w-full flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-20 mt-0 pb-1">
           <h2 className="text-2xl md:text-3xl xl:text-[36px] leading-tight tracking-[0.264px] font-sans text-left">
             <span className="bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent font-black">
               Supporting You,
-            </span>{" "}
+            </span>
+            <br />
             <span className="text-[#CACBDB] font-light">
               In and Out of the Office
             </span>
           </h2>
 
-          <p className="text-[#CACBDB] text-xs xl:text-sm font-normal font-sans leading-relaxed max-w-full lg:max-w-[400px] text-left opacity-75 lg:mb-1 mt-4 lg:mt-0">
+          <p className="text-[#CACBDB] text-xs xl:text-sm font-normal font-sans leading-relaxed max-w-full lg:max-w-100 text-left opacity-75 lg:mb-1 mt-4 lg:mt-0">
             We believe great work starts with a great work environment. That’s
             why we offer more than just competitive salaries—think flexible
             schedules, learning support, wellness initiatives, team outings, and
