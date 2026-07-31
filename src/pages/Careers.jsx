@@ -22,7 +22,7 @@ const Careers = () => {
 
   return (
     <div
-      className="min-h-screen w-full flex flex-col items-center justify-start relative overflow-hidden font-sans"
+      className="min-h-screen w-full flex flex-col items-center justify-start relative overflow-x-clip font-sans"
       style={{
         background: "#01031c",
       }}
