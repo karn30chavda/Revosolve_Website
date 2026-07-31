@@ -22,7 +22,7 @@ const footerData = {
     "Defense & Training Systems",
   ],
   products: ["RevoDox", "RevoVision"],
-  company: ["About", "Careers", "Blog", "Contact"],
+  company: ["About", "Careers", "Case Studies", "Blog", "Contact"],
 };
 
 const Footer = () => {
@@ -183,7 +183,9 @@ const Footer = () => {
                       ? "/careers"
                       : item === "About" || item === "About Us"
                         ? "/about-us"
-                        : "/coming-soon";
+                        : item === "Case Studies"
+                          ? "/case-studies"
+                          : "/coming-soon";
                 return (
                   <Link
                     key={idx}
