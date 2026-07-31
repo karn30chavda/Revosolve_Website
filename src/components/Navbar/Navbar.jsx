@@ -115,7 +115,7 @@ const getLinkPath = (category, linkObj) => {
   // Top level direct item checks
   if (linkName === "Careers") return "/careers";
   if (linkName === "About Us") return "/about-us";
-  if (linkName === "Case Studies") return "/coming-soon";
+  if (linkName === "Case Studies") return "/case-studies";
   if (linkName === "Blog") return "/coming-soon";
 
   if (category === "Solutions") {
@@ -183,6 +183,8 @@ const getLinkPath = (category, linkObj) => {
         return "/about-us";
       case "Careers":
         return "/careers";
+      case "Case Studies":
+        return "/case-studies";
       default:
         return "/coming-soon";
     }

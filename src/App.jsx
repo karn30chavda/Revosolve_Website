@@ -23,6 +23,7 @@ import LegacyTransformationSystems from "./pages/LegacyTransformationSystems";
 import QATestAutomation from "./pages/QATestAutomation";
 import ProductPlatformEngineering from "./pages/ProductPlatformEngineering";
 import AboutUs from "./pages/AboutUs";
+import MarketplaceCaseStudy from "./pages/MarketplaceCaseStudy";
 
 function App() {
   return (
@@ -101,6 +102,10 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route
+            path="/case-studies"
+            element={<MarketplaceCaseStudy />}
+          />
           {/* Fallback route - optional */}
           <Route path="*" element={<Home />} />
         </Routes>

@@ -25,7 +25,7 @@ const HomeCaseStudies = () => {
           [ Case study ]
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6 md:gap-[33px] items-start md:items-end justify-start self-stretch relative">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8.25 items-start md:items-end justify-start self-stretch relative">
           <div className="flex flex-col">
             {/* Real results, real impact - 900 weight, Gradient */}
             <h2 className="text-left leading-tight font-black text-[28px] md:text-[2.375rem] bg-[linear-gradient(89.75deg,#877BF1_0%,#FCCA71_100%)] bg-clip-text text-transparent">
@@ -38,7 +38,7 @@ const HomeCaseStudies = () => {
           </div>
 
           <div className="md:pb-2.5 flex flex-row gap-2.5 items-center justify-start relative">
-            <div className="text-[#FBFBFF]/50 text-left text-[14px] md:text-[0.875rem] font-normal max-w-[300px] md:w-[320px] leading-normal">
+            <div className="text-[#FBFBFF]/50 text-left text-[14px] md:text-[0.875rem] font-normal max-w-75 md:w-[320px] leading-normal">
               Discover how we’ve helped clients turn challenges into measurable
               success
             </div>
@@ -47,8 +47,8 @@ const HomeCaseStudies = () => {
       </div>
 
       {/* Cards section - Desktop View */}
-      <div className="hidden md:flex w-[85%] mx-auto px-4 flex-row gap-[22px] items-start justify-start relative">
-        <div className="rounded-lg border-2 border-transparent p-[25px] flex flex-col gap-4 items-start justify-start flex-1 h-[441px] relative overflow-hidden bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
+      <div className="hidden md:flex w-[85%] mx-auto px-4 flex-row gap-5.5 items-start justify-start relative">
+        <div className="rounded-lg border-2 border-transparent p-6.25 flex flex-col gap-4 items-start justify-start flex-1 h-110.25 relative overflow-hidden bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           <img
             src="/Home/case_top_pattern.svg"
             alt=""
@@ -57,8 +57,8 @@ const HomeCaseStudies = () => {
           />
 
           <div className="pt-4 pl-4 flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative">
-            <div className="pb-4 flex flex-col gap-7 items-start justify-start w-[418px] relative">
-              <div className="rounded-[58px] border-2 border-[rgba(91,98,191,0.37)] py-[3px] px-4 flex flex-row gap-2.5 items-center justify-center relative backdrop-blur-[2px]">
+            <div className="pb-4 flex flex-col gap-7 items-start justify-start w-104.5 relative">
+              <div className="rounded-[58px] border-2 border-[rgba(91,98,191,0.37)] py-0.75 px-4 flex flex-row gap-2.5 items-center justify-center relative backdrop-blur-[2px]">
                 <div className="text-[#020319]/60 text-center text-base font-normal tracking-[-0.31px]">
                   Domain: {caseData.domain}
                 </div>
@@ -73,14 +73,14 @@ const HomeCaseStudies = () => {
                 </p>
               </div>
 
-              <div className="rounded-lg flex flex-row gap-[15px] items-center justify-start relative">
+              <div className="rounded-lg flex flex-row gap-3.75 items-center justify-start relative">
                 {caseData.techLogos.map((src, index) => (
                   <div
                     key={index}
-                    className="bg-white/50 rounded-lg p-2.5 flex items-center justify-center w-auto h-auto min-w-[60px]"
+                    className="bg-white/50 rounded-lg p-2.5 flex items-center justify-center w-auto h-auto min-w-15"
                   >
                     <img
-                      className={`h-[45px] object-contain ${index === 2 ? "mix-blend-multiply" : ""}`}
+                      className={`h-11.25 object-contain ${index === 2 ? "mix-blend-multiply" : ""}`}
                       src={src}
                       alt="tech logo"
                       loading="lazy"
@@ -91,8 +91,8 @@ const HomeCaseStudies = () => {
               </div>
 
               <div
-                className="flex flex-row gap-[7px] items-center justify-start relative cursor-pointer group"
-                onClick={() => navigate("/coming-soon")}
+                className="flex flex-row gap-1.75 items-center justify-start relative cursor-pointer group"
+                onClick={() => navigate("/case-studies")}
               >
                 <button className="text-[#050737] text-left text-lg font-normal cursor-pointer font-sans">
                   Explore
@@ -105,7 +105,7 @@ const HomeCaseStudies = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 bottom-0 w-[420px] h-[240px] overflow-hidden rounded-tl-lg shadow-2xl">
+            <div className="absolute right-0 bottom-0 w-105 h-60 overflow-hidden rounded-tl-lg shadow-2xl">
               <img
                 className="w-full h-full object-cover"
                 src={caseData.previewImage}
@@ -120,16 +120,16 @@ const HomeCaseStudies = () => {
 
       {/* Cards section - Mobile View */}
       <div className="md:hidden w-[85%] mx-auto">
-        <div className="rounded-lg p-4 flex flex-col gap-[22px] items-start justify-start relative shadow-xl overflow-hidden w-full bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
+        <div className="rounded-lg p-4 flex flex-col gap-5.5 items-start justify-start relative shadow-xl overflow-hidden w-full bg-[linear-gradient(186deg,#CACBEB_4.87%,#9CA0F5_166.88%)]">
           <img
             src="/Home/case_img_mobile.svg"
-            className="rounded-lg self-stretch h-[185px] object-cover relative border border-black/5"
+            className="rounded-lg self-stretch h-46.25 object-cover relative border border-black/5"
             alt=""
             loading="lazy"
           />
 
           <div className="flex flex-col gap-6 items-start justify-start self-stretch relative">
-            <div className="rounded-[58px] border-2 border-[rgba(91,98,191,0.37)] py-[3px] px-4 flex flex-row items-center justify-center relative backdrop-blur-[2px]">
+            <div className="rounded-[58px] border-2 border-[rgba(91,98,191,0.37)] py-0.75 px-4 flex flex-row items-center justify-center relative backdrop-blur-[2px]">
               <div className="text-[#020319]/60 text-center font-normal text-[14px] leading-relaxed tracking-tight">
                 Domain: {caseData.domain}
               </div>
@@ -152,7 +152,7 @@ const HomeCaseStudies = () => {
                 >
                   <img
                     src={src}
-                    className={`h-[32px] w-auto object-contain ${idx === 2 ? "mix-blend-multiply" : ""}`}
+                    className={`h-8 w-auto object-contain ${idx === 2 ? "mix-blend-multiply" : ""}`}
                     alt=""
                     loading="lazy"
                   />
@@ -161,8 +161,8 @@ const HomeCaseStudies = () => {
             </div>
 
             <div
-              onClick={() => navigate("/coming-soon")}
-              className="flex flex-row gap-[7px] items-center justify-start shrink-0 relative cursor-pointer active:scale-95 transition-transform"
+              onClick={() => navigate("/case-studies")}
+              className="flex flex-row gap-1.75 items-center justify-start shrink-0 relative cursor-pointer active:scale-95 transition-transform"
             >
               <div className="text-[#050737] text-left text-lg font-normal relative font-sans">
                 Explore
@@ -181,8 +181,8 @@ const HomeCaseStudies = () => {
       {/* Footer CTA */}
       <div className="w-full flex justify-center mt-4 px-4">
         <button
-          onClick={() => navigate("/coming-soon")}
-          className="group rounded-lg border-2 border-[rgba(91,98,191,0.37)] py-2.5 px-[25px] md:px-[35px] flex flex-row gap-4 md:gap-[22px] items-center justify-center h-12 md:h-14 relative backdrop-blur-[2px] cursor-pointer hover:bg-white/5 transition-all active:scale-95"
+          onClick={() => navigate("/case-studies")}
+          className="group rounded-lg border-2 border-[rgba(91,98,191,0.37)] py-2.5 px-6.25 md:px-8.75 flex flex-row gap-4 md:gap-5.5 items-center justify-center h-12 md:h-14 relative backdrop-blur-[2px] cursor-pointer hover:bg-white/5 transition-all active:scale-95"
         >
           <span className="text-white text-center font-medium text-sm md:text-base leading-6 tracking-[-0.31px] font-sans">
             Explore all case studies
