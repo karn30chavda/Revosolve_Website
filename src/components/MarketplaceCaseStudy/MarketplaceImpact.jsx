@@ -41,10 +41,10 @@ const MarketplaceImpact = () => (
         className="mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight tracking-[-0.03em] max-w-3xl"
       >
         <span className="font-extrabold bg-linear-to-r from-[#877BF1] to-[#FCCA71] bg-clip-text text-transparent">
-          What the business gained,
+          Buisness Value 
         </span>{" "}
         <span className="font-light text-white/90">
-          operationally
+          Delivered
         </span>
       </Motion.h2>
 
