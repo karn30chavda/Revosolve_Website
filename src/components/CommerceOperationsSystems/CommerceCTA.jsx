@@ -68,7 +68,7 @@ const CommerceCTA = () => {
             navigate("/connect", {
               state: {
                 category: "Services/Solution",
-                service: "Customer Interaction Systems",
+                service: "Commerce Operations Systems",
               },
             })
           }
@@ -132,7 +132,7 @@ const CommerceCTA = () => {
             navigate("/connect", {
               state: {
                 category: "Services/Solution",
-                service: "Customer Interaction Systems",
+                service: "Commerce Operations Systems",
               },
             })
           }

@@ -107,7 +107,7 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
                 navigate("/connect", {
                   state: {
                     category: "Services/Solution",
-                    service: "Cloud Infrastructure & DevOps",
+                    service: "Cloud and Devops",
                   },
                 })
               }
@@ -129,7 +129,7 @@ const CloudDevOpsHero = ({ scrollToNextSection }) => {
                 navigate("/connect", {
                   state: {
                     category: "Services/Solution",
-                    service: "Cloud Infrastructure & DevOps",
+                    service: "Cloud and Devops",
                   },
                 })
               }

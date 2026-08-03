@@ -8,7 +8,7 @@ const QACTA = () => {
     navigate("/connect", {
       state: {
         category: "Services/Solution",
-        service: "Quality Engineering & Test Automation",
+        service: "QA and Test Automation",
         notes: actionText ? `Interested in: ${actionText}` : ""
       },
     });

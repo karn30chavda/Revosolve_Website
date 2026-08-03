@@ -59,7 +59,7 @@ const CommerceHero = () => {
               navigate("/connect", {
                 state: {
                   category: "Services/Solution",
-                  service: "Customer Interaction Systems",
+                  service: "Commerce Operations Systems",
                 },
               })
             }

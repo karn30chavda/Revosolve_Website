@@ -46,14 +46,7 @@ const unified = [
 const MarketplaceHero = () => {
   const navigate = useNavigate();
 
-  const goConnect = (notes) =>
-    navigate("/connect", {
-      state: {
-        category: "Case Study",
-        service: "Commerce Operations Systems",
-        notes,
-      },
-    });
+  const goConnect = () => navigate("/connect");
 
   const handleScrollDown = () => {
     const target = document.getElementById("solutions-content");

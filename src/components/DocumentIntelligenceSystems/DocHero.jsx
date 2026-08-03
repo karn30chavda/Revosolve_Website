@@ -9,8 +9,8 @@ const DocHero = () => {
   const goConnect = () => {
     navigate("/connect", {
       state: {
-        category: "Products",
-        service: "RevoDox Document Intelligence",
+        category: "Services/Solution",
+        service: "Document Intelligence Systems",
       },
     });
   };

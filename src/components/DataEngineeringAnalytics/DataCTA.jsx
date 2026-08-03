@@ -8,7 +8,7 @@ const DataCTA = () => {
     navigate("/connect", {
       state: {
         category: "Services/Solution",
-        service: "Data Engineering & Intelligence",
+        service: "Data Engineering & Data Analytics",
         notes: actionText ? `Interested in: ${actionText}` : "",
       },
     });

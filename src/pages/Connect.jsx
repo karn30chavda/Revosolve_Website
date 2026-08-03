@@ -32,23 +32,57 @@ const Connect = () => {
   // Automatically select category and service if passed in navigation state
   useEffect(() => {
     if (location.state?.category) {
-      setActiveCategory(location.state.category);
+      const cat = location.state.category.toLowerCase();
+      if (cat.includes("product")) {
+        setActiveCategory("Product Inquiry");
+      } else {
+        setActiveCategory("Services/Solution");
+      }
     }
   }, [location.state]);
+
+  // Helper for normalizing strings for fuzzy comparison
+  const normalizeStr = (str) =>
+    (str || "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]/g, "");
 
   // Set the selected service once options are loaded from ERP
   useEffect(() => {
     if (interestOptions.length > 0 && location.state && !stateApplied.current) {
       const { category, service } = location.state;
       if (service) {
-        const matched = interestOptions.find(
-          (item) =>
-            item.reason === category &&
-            (item.sub_reason === service ||
-              item.sub_reason.toLowerCase().includes(service.toLowerCase()) ||
-              service.toLowerCase().includes(item.sub_reason.toLowerCase()))
-        );
+        let targetCat = category;
+        if (targetCat) {
+          if (targetCat.toLowerCase().includes("product")) {
+            targetCat = "Product Inquiry";
+          } else {
+            targetCat = "Services/Solution";
+          }
+        }
+
+        const normService = normalizeStr(service);
+
+        const matched = interestOptions.find((item) => {
+          const catMatch = !targetCat || item.reason === targetCat;
+          const itemSub = (item.sub_reason || "").trim();
+          const normItemSub = normalizeStr(itemSub);
+          const normItemName = normalizeStr(item.name);
+
+          return (
+            catMatch &&
+            (itemSub === service ||
+              itemSub.toLowerCase() === service.toLowerCase() ||
+              normItemSub === normService ||
+              normItemSub.includes(normService) ||
+              normService.includes(normItemSub) ||
+              normItemName.includes(normService))
+          );
+        });
+
         if (matched) {
+          setActiveCategory(matched.reason);
           setSelectedService(matched.sub_reason);
           setSelectedServiceName(matched.name);
           stateApplied.current = true;

@@ -109,7 +109,7 @@ const TestRow = ({ state, name, badge }) => {
 
 const QATestAutomationHero = ({ scrollToNextSection }) => {
   const navigate = useNavigate();
-  const goConnect = () => navigate("/connect", { state: { category: "Services/Solution", service: "Quality Engineering & Test Automation" } });
+  const goConnect = () => navigate("/connect", { state: { category: "Services/Solution", service: "QA and Test Automation" } });
 
   const [currentStep, setCurrentStep] = useState(0);
 

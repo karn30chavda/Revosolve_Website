@@ -31,14 +31,7 @@ const reveal = {
 const MarketplaceCTA = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = (actionText) =>
-    navigate("/connect", {
-      state: {
-        category: "Case Study",
-        service: "Commerce Operations Systems",
-        notes: actionText ? `Interested in: ${actionText}` : "",
-      },
-    });
+  const handleNavigate = () => navigate("/connect");
 
   return (
     <section

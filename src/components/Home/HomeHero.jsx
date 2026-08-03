@@ -98,7 +98,7 @@ const HomeHero = () => {
 
           {/* Secondary Button */}
           <button
-            onClick={() => navigate("/coming-soon")}
+            onClick={() => navigate("/case-studies")}
             className="w-70 md:w-64 h-12 md:h-14 rounded-md border-2 border-white/20 flex items-center justify-center gap-4 
             backdrop-blur-md cursor-pointer hover:bg-white/5 transition-all active:scale-95 text-white bg-transparent"
           >
