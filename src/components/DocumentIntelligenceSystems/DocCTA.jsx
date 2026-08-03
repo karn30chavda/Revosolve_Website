@@ -7,8 +7,8 @@ const DocCTA = () => {
   const handleNavigate = (serviceName) => {
     navigate("/connect", {
       state: {
-        category: "Product",
-        service: "RevoDox Document Intelligence",
+        category: "Services/Solution",
+        service: "Document Intelligence Systems",
         notes: serviceName ? `Interested in: ${serviceName}` : "",
       },
     });

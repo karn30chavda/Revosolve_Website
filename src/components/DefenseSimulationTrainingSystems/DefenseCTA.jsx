@@ -8,7 +8,7 @@ const DefenseCTA = () => {
     navigate("/connect", {
       state: {
         category: "Services/Solution",
-        service: "Defense Simulation & Training Systems",
+        service: "Defense & Training Systems",
         notes: actionText ? `Interested in: ${actionText}` : ""
       },
     });

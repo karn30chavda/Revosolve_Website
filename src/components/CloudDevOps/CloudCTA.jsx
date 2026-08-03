@@ -8,7 +8,7 @@ const CloudCTA = () => {
     navigate("/connect", {
       state: {
         category: "Services/Solution",
-        service: "Cloud Infrastructure & DevOps",
+        service: "Cloud and Devops",
         notes: actionText ? `Interested in: ${actionText}` : ""
       },
     });

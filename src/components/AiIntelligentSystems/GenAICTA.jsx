@@ -8,7 +8,7 @@ const GenAICTA = () => {
     navigate("/connect", {
       state: {
         category: "Services/Solution",
-        service: "Generative AI Systems",
+        service: "AI & Intelligent Systems",
         notes: actionText ? `Interested in: ${actionText}` : "",
       },
     });

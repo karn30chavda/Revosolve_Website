@@ -91,7 +91,7 @@ const GenAIHero = () => {
                 navigate("/connect", {
                   state: {
                     category: "Services/Solution",
-                    service: "Generative AI Systems",
+                    service: "AI & Intelligent Systems",
                   },
                 })
               }
@@ -113,7 +113,7 @@ const GenAIHero = () => {
                 navigate("/connect", {
                   state: {
                     category: "Services/Solution",
-                    service: "Generative AI Systems",
+                    service: "AI & Intelligent Systems",
                   },
                 })
               }

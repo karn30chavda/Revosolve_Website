@@ -7,8 +7,8 @@ const SurveillanceCTA = () => {
   const handleNavigate = (serviceName) => {
     navigate("/connect", {
       state: {
-        category: "Product",
-        service: "RevoVision AI Surveillance",
+        category: "Services/Solution",
+        service: "AI Surveillance Systems",
         notes: serviceName ? `Interested in: ${serviceName}` : ""
       },
     });

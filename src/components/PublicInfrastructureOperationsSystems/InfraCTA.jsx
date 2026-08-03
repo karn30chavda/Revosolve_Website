@@ -8,7 +8,7 @@ const InfraCTA = () => {
     navigate("/connect", {
       state: {
         category: "Services/Solution",
-        service: "Public Infrastructure Operations Systems",
+        service: "Public Infrastructure Operations",
         notes: actionText ? `Interested in: ${actionText}` : "",
       },
     });

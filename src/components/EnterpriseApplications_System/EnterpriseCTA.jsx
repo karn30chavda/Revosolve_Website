@@ -8,7 +8,7 @@ const EnterpriseCTA = () => {
     navigate("/connect", {
       state: {
         category: "Services/Solution",
-        service: "Enterprise Applications & System Engineering",
+        service: "Enterprise Application Systems",
         notes: actionText ? `Interested in: ${actionText}` : ""
       },
     });
